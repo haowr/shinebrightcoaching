@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="row">
+         <div class = "col s4 right-align">
+    <i class = "material-icons" ng-click="closeBookingPage()">keyboard_return</i>
+</div>
+<div class="col s4 center-align">
+    <span class='montserrat underline' style="font-size:20px;"> {{currentDate}}</span>
+</div>
+<div class = "col s4">
+</div>
+    </div>
+    <div>
+    <div class="col s3">
+        <p class="montserrat"> Discovery</p>
+    </div>
+    <div class="col s9">
+        
+        <label for="Sex">Available Hours *</label>
+        <select class="error browser-default animated" id="sex" ng-model="discoveryData.time" ng-class="{'shake':shakeOn}" npme="time" required>
+            <option value="" disabled selected>Hours</option>
+            <option ng-show="bookDiscovery1" value="1:00pm">1:00pm</option>
+            <option ng-show="bookDiscovery101" value="1:10pm">1:10pm</option>
+            <option ng-show="bookDiscovery21" value="1:20pm">1:20pm</option>
+            <option ng-show="bookDiscovery31" value="1:30pm">1:30pm</option>
+            <option ng-show="bookDiscovery41" value="1:40pm">1:40pm</option>      
+            <option ng-show="bookDiscovery51" value="1:50pm">1:50pm</option>
+           
+        </select>
+        
+
+
+
+    
+    </div>
+            <div class = "col s3">
+  </div>
+        <div class = "col s9 ">
+             <a ng-click="submitDiscovery('one')" class="waves-effect waves-light btn">Submit</a>
+
+    </div>
+      </div>
+
+    </div>
+
+    <div >
+
+        <div class="col s3">
+            <p class="montserrat"> Check-Up</p>
+        </div>
+        <div class="col s9">
+
+            <label for="Sex">Available Hours *</label>
+            <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="checkUpData.time" name="time" required>
+                <option value="" disabled selected>Hours</option>
+                <option ng-show="bookCheckUp1" value="1:00pm">1:00pm</option>
+                <option ng-show="bookCheckUp101" value="1:10pm">1:10pm</option>
+                <option ng-show="bookCheckUp21" value="1:20pm">1:20pm</option>
+                <option ng-show="bookCheckUp31" value="1:30pm">1:30pm</option>
+                <option ng-show="bookCheckUp41" value="1:40pm">1:40pm</option>                          
+                <option ng-show="bookCheckUp51" value="1:50pm">1:50pm</option>
+            </select>
+        </div>
+          <div class = "col s3">
+  </div>
+        <div class = "col s9 ">
+             <a ng-click="submitCheckUp('one')" class="waves-effect waves-light btn">Submit</a>
+
+    </div>
+        <div class="col s3">
+            <p class="montserrat"> Session</p>
+        </div>
+        <div class="col s9">
+
+            <label for="Sex">Available Hours *</label>
+            <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="sessionData.time" name="time" required>
+                <option value="" disabled selected>Hours</option>
+                <option ng-show="bookSession1" value="1:00pm">1:00pm</option>
+                <option ng-show="bookSession101" value="1:10pm">1:10pm</option>
+                <option ng-show="bookSession21" value="1:20pm">1:20pm</option>
+                <option ng-show="bookSession31" value="1:30pm">1:30pm</option>
+                <option ng-show="bookSession41" value="1:40pm">1:40pm</option>                          
+                <option ng-show="bookSession51" value="1:50pm">1:50pm</option>
+            </select>
+        </div>
+
+    </div>
+
+  
+   
+
+    <div class = "col s3">
+  </div>
+        <div class = "col s9 ">
+             <a ng-click="submitSession('one')" class="waves-effect waves-light btn">Submit</a>
+
+    </div>
+
+</div>

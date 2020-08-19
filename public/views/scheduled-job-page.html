@@ -1,0 +1,858 @@
+<div class="row"></div>
+<div class = "col s3 left-align">
+    <a href="#" style="color:black;" class="underline"><i class = "material-icons" style="font-size:50px;" ng-click="exitScheduledJobPage()">keyboard_return</i></a>
+</div>
+<div class="col s6 center-align">
+  <br>
+    <span class='montserrat' style="font-size:40px;color:black;"> {{currentDate}}</span>
+</div>
+<div class = "col s3">
+</div>
+<div class ="row"></div>
+<div class ="row"></div>
+
+<div class = "col s12" style="border-bottom:2px solid black;"></div>
+<div class="row">
+</div>
+<div class="row center-align show-on-small">
+
+    <a href="#" style="color:black;">
+      <div class="col s3 " style="border-color:#ffeb3b;  ">
+      
+        
+          <div ng-click="openBookingPage('eight')" >
+
+            <div class = "col s12 center-align">
+              <p class="montserrat" style="font-size:25px;">Check-Up</p>
+              <div class = "col s2"></div>
+              <div class="col s8" style="border:1px solid grey;"></div>
+              <div class = "col s2"></div>
+
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:00am </p>
+
+            </div>
+            <div class = "col s2">
+  <br>
+
+              <span class="montserrat" style="font-size:25px;">-</span>
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:50am </p>
+
+            </div>
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+              </div>
+            </div>
+            <div class = "row"></div>
+          <div class = "col s12 center-align">
+            <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+
+          </div>
+
+          
+
+              <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+              <div ng-show="checkUpFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+
+
+              <div ng-show="discoveryFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+              </div>
+              <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+              </div>
+
+              <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">hearing</i>
+              </div>
+              <div ng-show="sessionFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">hearing</i>
+              </div>
+
+
+              <div class="row"></div>
+
+          </div>
+          <div class="col s3"></div>
+          <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+          <div class = "col s3"></div>
+
+      </div>
+    </a>
+    
+    <a href="#" style="color:black;">
+      <div class="col s3 " style="border-color:#ffeb3b;  ">
+      
+        
+          <div ng-click="openBookingPage('eight')" >
+
+            <div class = "col s12 center-align">
+              <p class="montserrat" style="font-size:25px;">Check-Up</p>
+              <div class = "col s2"></div>
+              <div class="col s8" style="border:1px solid grey;"></div>
+              <div class = "col s2"></div>
+
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:00am </p>
+
+            </div>
+            <div class = "col s2">
+  <br>
+
+              <span class="montserrat" style="font-size:25px;">-</span>
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:50am </p>
+
+            </div>
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+              </div>
+            </div>
+            <div class = "row"></div>
+          <div class = "col s12 center-align">
+            <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+
+          </div>
+
+          
+
+              <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+              <div ng-show="checkUpFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+
+
+              <div ng-show="discoveryFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+              </div>
+              <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+              </div>
+
+              <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">hearing</i>
+              </div>
+              <div ng-show="sessionFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">hearing</i>
+              </div>
+
+
+              <div class="row"></div>
+
+          </div>
+          <div class="col s3"></div>
+          <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+          <div class = "col s3"></div>
+
+      </div>
+    </a>
+        
+    <a href="#" style="color:black;">
+      <div class="col s3 " style="border-color:#ffeb3b;  ">
+      
+        
+          <div ng-click="openBookingPage('eight')" >
+
+            <div class = "col s12 center-align">
+              <p class="montserrat" style="font-size:25px;">Check-Up</p>
+              <div class = "col s2"></div>
+              <div class="col s8" style="border:1px solid grey;"></div>
+              <div class = "col s2"></div>
+
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:00am </p>
+
+            </div>
+            <div class = "col s2">
+  <br>
+
+              <span class="montserrat" style="font-size:25px;">-</span>
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:50am </p>
+
+            </div>
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+              </div>
+            </div>
+            <div class = "row"></div>
+          <div class = "col s12 center-align">
+            <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+
+          </div>
+
+          
+
+              <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+              <div ng-show="checkUpFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+
+
+              <div ng-show="discoveryFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+              </div>
+              <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+              </div>
+
+              <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">hearing</i>
+              </div>
+              <div ng-show="sessionFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">hearing</i>
+              </div>
+
+
+              <div class="row"></div>
+
+          </div>
+          <div class="col s3"></div>
+          <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+          <div class = "col s3"></div>
+
+      </div>
+    </a>
+           
+      <a href="#" style="color:black;">
+        <div class="col s3 " style="border-color:#ffeb3b;  ">
+        
+          
+            <div ng-click="openBookingPage('eight')" >
+  
+              <div class = "col s12 center-align">
+                <p class="montserrat" style="font-size:25px;">Check-Up</p>
+                <div class = "col s2"></div>
+                <div class="col s8" style="border:1px solid grey;"></div>
+                <div class = "col s2"></div>
+  
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:00am </p>
+  
+              </div>
+              <div class = "col s2">
+    <br>
+  
+                <span class="montserrat" style="font-size:25px;">-</span>
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:50am </p>
+  
+              </div>
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+  
+              </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+                </div>
+              </div>
+              <div class = "row"></div>
+            <div class = "col s12 center-align">
+              <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+  
+            </div>
+  
+            
+  
+                <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+                <div ng-show="checkUpFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+  
+  
+                <div ng-show="discoveryFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+                </div>
+                <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+                </div>
+  
+                <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+                </div>
+                <div ng-show="sessionFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+                </div>
+  
+  
+                <div class="row"></div>
+  
+            </div>
+            <div class="col s3"></div>
+            <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+            <div class = "col s3"></div>
+  
+        </div>
+      </a>
+        
+</div>
+
+<div class="row center-align show-on-small">
+
+  <a href="#" style="color:black;">
+    <div class="col s3 " style="border-color:#ffeb3b;  ">
+    
+      
+        <div ng-click="openBookingPage('eight')" >
+
+          <div class = "col s12 center-align">
+            <p class="montserrat" style="font-size:25px;">Check-Up</p>
+            <div class = "col s2"></div>
+            <div class="col s8" style="border:1px solid grey;"></div>
+            <div class = "col s2"></div>
+
+
+          </div>
+          <div class = "col s5">
+
+            <p class="montserrat" style="font-size:25px;">8:00am </p>
+
+          </div>
+          <div class = "col s2">
+<br>
+
+            <span class="montserrat" style="font-size:25px;">-</span>
+
+          </div>
+          <div class = "col s5">
+
+            <p class="montserrat" style="font-size:25px;">8:50am </p>
+
+          </div>
+          <div class = "col s4">
+            <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+              <!--<span class = " red-text">Checkup Available</span>-->
+              <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+          </div>
+          </div>
+          <div class = "col s4">
+            <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+            </div>
+          </div>
+          <div class = "col s4">
+            <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+            </div>
+          </div>
+          <div class = "row"></div>
+        <div class = "col s12 center-align">
+          <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+
+        </div>
+
+        
+
+            <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+
+            </div>
+            <div ng-show="checkUpFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+
+            </div>
+
+
+            <div ng-show="discoveryFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+            </div>
+
+            <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionFull8" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+            </div>
+
+
+            <div class="row"></div>
+
+        </div>
+        <div class="col s3"></div>
+        <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+        <div class = "col s3"></div>
+
+    </div>
+  </a>
+    
+    <a href="#" style="color:black;">
+      <div class="col s3 " style="border-color:#ffeb3b;  ">
+      
+        
+          <div ng-click="openBookingPage('eight')" >
+
+            <div class = "col s12 center-align">
+              <p class="montserrat" style="font-size:25px;">Check-Up</p>
+              <div class = "col s2"></div>
+              <div class="col s8" style="border:1px solid grey;"></div>
+              <div class = "col s2"></div>
+
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:00am </p>
+
+            </div>
+            <div class = "col s2">
+  <br>
+
+              <span class="montserrat" style="font-size:25px;">-</span>
+
+            </div>
+            <div class = "col s5">
+
+              <p class="montserrat" style="font-size:25px;">8:50am </p>
+
+            </div>
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+              </div>
+            </div>
+            <div class = "row"></div>
+          <div class = "col s12 center-align">
+            <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+
+          </div>
+
+          
+
+              <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+              <div ng-show="checkUpFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+
+              </div>
+
+
+              <div ng-show="discoveryFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+              </div>
+              <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+              </div>
+
+              <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons yellow-text text-lighten-2">hearing</i>
+              </div>
+              <div ng-show="sessionFull8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons red-text text-lighten-2">hearing</i>
+              </div>
+
+
+              <div class="row"></div>
+
+          </div>
+          <div class="col s3"></div>
+          <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+          <div class = "col s3"></div>
+
+      </div>
+    </a>
+
+      <a href="#" style="color:black;">
+        <div class="col s3 " style="border-color:#ffeb3b;  ">
+        
+          
+            <div ng-click="openBookingPage('eight')" >
+  
+              <div class = "col s12 center-align">
+                <p class="montserrat" style="font-size:25px;">Check-Up</p>
+                <div class = "col s2"></div>
+                <div class="col s8" style="border:1px solid grey;"></div>
+                <div class = "col s2"></div>
+  
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:00am </p>
+  
+              </div>
+              <div class = "col s2">
+    <br>
+  
+                <span class="montserrat" style="font-size:25px;">-</span>
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:50am </p>
+  
+              </div>
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+  
+              </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+                </div>
+              </div>
+              <div class = "row"></div>
+            <div class = "col s12 center-align">
+              <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+  
+            </div>
+  
+            
+  
+                <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+                <div ng-show="checkUpFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+  
+  
+                <div ng-show="discoveryFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+                </div>
+                <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+                </div>
+  
+                <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+                </div>
+                <div ng-show="sessionFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+                </div>
+  
+  
+                <div class="row"></div>
+  
+            </div>
+            <div class="col s3"></div>
+            <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+            <div class = "col s3"></div>
+  
+        </div>
+      </a>
+      <a href="#" style="color:black;">
+        <div class="col s3 " style="border-color:#ffeb3b;  ">
+        
+          
+            <div ng-click="openBookingPage('eight')" >
+  
+              <div class = "col s12 center-align">
+                <p class="montserrat" style="font-size:25px;">Check-Up</p>
+                <div class = "col s2"></div>
+                <div class="col s8" style="border:1px solid grey;"></div>
+                <div class = "col s2"></div>
+  
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:00am </p>
+  
+              </div>
+              <div class = "col s2">
+    <br>
+  
+                <span class="montserrat" style="font-size:25px;">-</span>
+  
+              </div>
+              <div class = "col s5">
+  
+                <p class="montserrat" style="font-size:25px;">8:50am </p>
+  
+              </div>
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn" style="border:2px solid grey;">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+  
+              </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+                </div>
+              </div>
+              <div class = "row"></div>
+            <div class = "col s12 center-align">
+              <button type="submit"class="waves-effect waves-light blue-grey btn">Open</button>
+  
+            </div>
+  
+            
+  
+                <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+                <div ng-show="checkUpFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+  
+                </div>
+  
+  
+                <div ng-show="discoveryFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+                </div>
+                <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+                </div>
+  
+                <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+                </div>
+                <div ng-show="sessionFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+                </div>
+  
+  
+                <div class="row"></div>
+  
+            </div>
+            <div class="col s3"></div>
+            <div class ="col s6" style="border-bottom:1.5px solid grey;"></div>
+            <div class = "col s3"></div>
+  
+        </div>
+      </a>
+
+
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+
+</script>
+
+
+<!--
+<div class = "col s12">
+    <div class = "row">
+    
+    <div class = "col s12">
+                <div class="row">
+    <form class="col s12">
+              <div class="row">
+        <div class="input-field col s6">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    </div>
+
+    </div>
+          <div style="height:200px;width:200px;">
+                        <canvas height="100" width="100" id="doughnut" class="chart chart-doughnut" chart-data="data2" chart-options="options" chart-labels="labels">
+                        </canvas>
+                    </div>
+                    <div id="test-slider"></div>
+</div>
+<canvas id="doughnut" class="chart chart-doughnut"
+  chart-data="scheduledJob.data" chart-labels="scheduledJob.labels">
+</canvas> -->

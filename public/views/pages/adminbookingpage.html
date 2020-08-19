@@ -1,0 +1,131 @@
+<div class = "col s12">
+
+    <div class="row">
+                <div class="col s2 center-align">
+                    
+                    <span class="montserrat grey-text truncate">Pending/Complete</span>
+                </div>
+
+                <div class="col s2">
+                    <span class="montserrat grey-text">Client</span>
+                </div>
+
+                <div class="col s8">
+                    <span class="montserrat grey-text">Details</span>
+
+                </div>
+               
+                        <div class = "col s12" style="border:1px solid grey">
+                        </div>
+                        <div class = "row">
+                        </div>
+                            <div ng-repeat="page in bookingsPaginated[page] track by $index">
+                <div class="row animated fadeIn">
+                            <div class="col s2">
+                                        <div ng-show="!page.completed">
+                                            <i ng-click="openBooking($index,page.bookingIndex)" class="material-icons">brightness_low</i>
+                                        </div>
+                                        <div ng-show="page.completed">
+                                            <i ng-click="openBooking($index,page.bookingIndex)" class="material-icons">brightness_7</i>
+                                        </div>
+                            </div>
+                            <div class="col s2 center-align">
+                                        <span ng-click="openBooking($index,page.bookingIndex)" class="montserrat grey-text truncate">{{page.clientname}}</span>
+                            </div>
+
+
+                            <div class="col s8" ng-click="openBooking($index,page.bookingIndex)" ng-show="bookingIndex !== $index" style="border:1px solid #ddd; height:40px;">
+
+                                        <span class="montserrat grey-text">{{page.subject}}</span>
+
+
+
+                            </div>
+                            
+                            <div class="col s8"  style="border:1px solid #ddd;"ng-show="bookingIndex == $index" >
+
+
+                                        <!--<div >-->
+                                                        <div class = "row" ng-show="!loadingChanges  && !loadingChangesUndo ">
+                                                                        <div class = "s12 center-align">
+
+                                                                            
+                                                                                            <p class = "montserrat"style="text-decoration:underline;">{{page.date}}</p>
+                                                                                        <p class = "montserrat"style="text-decoration:underline;">{{page.time}}</p>
+                                                                                        <p class = "montserrat"style="text-decoration:underline;">{{page.clientname}}</p>
+                                                                                        <p class = "montserrat"style="text-decoration:underline;">{{page.clientphonenumber}}</p>
+                                                                                        <p class = "montserrat"style="text-decoration:underline;">{{page.clientemail}}</p>
+                                                                                        
+                                                                                        <div ng-show="!page.completed">
+                                                                                            <button ng-click="markAsComplete(page.bookingIndex,$index);" class="waves-effect waves-light blue-grey btn">Mark As Completed</button>
+                                                                                        </div>
+                                                                                        <div ng-show="page.completed">
+                                                                                            <button ng-click="markAsInComplete(page.bookingIndex);" class="waves-effect waves-light blue-grey btn">Undo</button>
+                                                                                        </div>
+
+
+
+                                                                            </div>
+                                                            
+                                                        </div>
+                                       <!-- </div>-->
+                                         <div ng-show="loadingChanges "class="center-align" >
+                                                   <div class = "hide-on-med-and-down">
+                                                 <h3 class = "montserrat animated bounce infinite blue-grey-text" >All Done!</h3>
+                                                 <h3 class = "montserrat animated bounce infinite blue-grey-text">:)</h3>
+                                        </div>
+                                        <div class = "hide-on-large-only">
+                                                 <p class = "montserrat animated bounce infinite blue-grey-text" style="font-size:30px;">All Done!</p>
+                                                 <p class = "montserrat animated bounce infinite blue-grey-text" style="font-size:30px;">:)</p>
+                                        </div>
+                                                 <p class = "motserrat grey-text">(Booking Has Been Set To Completed)</p>
+                                        </div>
+                                        <div ng-show="loadingChangesUndo "class="center-align" >
+                                            <div class = "hide-on-med-and-down">
+                                                 <h3 class = "montserrat animated bounce infinite blue-grey-text" >Ok, Maybe Not!</h3>
+                                                 <h3 class = "montserrat animated bounce infinite blue-grey-text">:/</h3>
+                                        </div>
+                                        <div class = "hide-on-large-only">
+                                                 <p class = "montserrat animated bounce infinite blue-grey-text" style="font-size:30px;">Ok, Maybe Not!</p>
+                                                 <p class = "montserrat animated bounce infinite blue-grey-text" style="font-size:30px;">:/</p>
+                                        </div>
+                                                 <p class = "motserrat grey-text">(Booking Has Been Set To Pending)</p>
+                                        </div>
+
+                            </div>
+                            
+
+
+
+            </div>
+                                 
+        </div>
+                    <div class = "row">
+                                    
+                                                <div class="col s3 animated fadeIn center-align " style="border-left:1px solid #ddd;" >
+                                               <i ng-click="firstPage()" class = "material-icons">first_page</i>
+                                               </div>
+                                                <div class="col s6 animated fadeIn center-align " style="border-bottom:1px solid #ddd;" ng-show="messageIndex == $index">
+                                                    <div class = "row">
+                                                        <div class = "col s6 center-align">
+                                                            <i ng-click="previousPage()"class = "material-icons">navigate_before</i>
+                                                            </div>
+                                                        <div class = "col s6 right-align">
+                                                            
+                                                            <i ng-click="nextPage()"class = "material-icons">navigate_next</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col s3 animated fadeIn centert-align " style="border-right:1px solid #ddd;" >
+                                                <i ng-click="lastPage()" class = "material-icons">last_page</i>
+                                                </div>
+                                    </div>
+
+                
+
+
+    </div>
+
+
+            </div>
+          

@@ -1,0 +1,58 @@
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row" ng-show="loadingIntake">
+  <div class = "col s12 center-align">
+    <p class = "montserrat animated swing"style="font-size:30px;">Thanks! :)</p>
+    <p class = "montserrat animated swing"style="font-size:20px;">(Completing Registration)</p>
+
+
+<i class="fa fa-spinner fa-spin fa-3x fa-fw " style="font-size:20px;"></i>
+  </div>
+</div>
+<div ng-show="!loadingIntake"class = 'row'></div>
+<div ng-show="!loadingIntake"style="border-bottom:1px solid black;"class = "col s12 ">
+  <p style="font-size:28px;" class = "center-align railway">Tell Us About Yourself!</p>
+
+</div>
+<div class="row" ng-show="!loadingIntake">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="intakeInfo.question1" name="question1"></textarea>
+          <label for="textarea1" class = "montserrat blue-grey-text" style="font-size:20px;">What Is Going Well?</label>
+        </div>
+  
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" ng-model="intakeInfo.question2" name="question2"class="materialize-textarea"></textarea>
+          <label for="textarea1" class = "montserrat blue-grey-text"style="font-size:20px;">Where I Am Feeling Challenged?</label>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" ng-model="intakeInfo.question3" name="question3" class="materialize-textarea"></textarea>
+          <label for="textarea1" class = "montserrat blue-grey-text" style="font-size:20px;">What I Would Like To Work On?</label>
+        </div>
+        <div ng-show="allFieldsMustBeFilledIn" class = "col s12 red lighten-4 center-align animated shake">
+          <p class = "montserrat"> All Fields Must Be Filled In</p>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "input-field col s12 center-align">
+               <button ng-click="submitIntake()"class="waves-effect waves-light blue-grey btn">Submit</button>
+
+        </div>
+    </form>
+  </div>

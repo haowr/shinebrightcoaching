@@ -1,0 +1,313 @@
+<div class="col s12 hide-on-small-only animated fadeIn" ng-show="!heyLeah">
+
+
+
+    <div class="col s3 center-align ">
+        <p class="montserrat white-text">Activity</p>
+    </div>
+    <div class="col s3 center-align ">
+        <p class="montserrat white-text">Activity</p>
+    </div>
+    <div class="col s3 center-align ">
+        <p class="montserrat white-text">Activity</p>
+    </div>
+    <div class="col s3 center-align ">
+        <p class="montserrat white-text">Activity</p>
+    </div>
+    <div class="col s6 left-align">
+        <span class="montserrat blue-grey-text "style="font-size:20px;">Name:</span>
+        <p class="montserrat grey-text">{{clientName}}</p>
+        <span class="montserrat blue-grey-text"style="font-size:20px;">Email:</span>
+        <p class="montserrat">{{clientEmail}}</p>
+
+    </div>
+    <div class="col s6 left-align">
+
+        <div style="height:200px; border:1px solid #ddd;">
+            <div class="row">
+                <div class="col s12" style="border-bottom:1px solid #ddd;">
+                    <div class="center-align">
+                        <i class="material-icons grey-text">schedule
+                        </i><span style="font-size:10px">({{bookings.length}})</span>
+                    </div>
+                </div>
+
+                <div ng-show="!pendingBookings">
+                    <div class="row">
+                    </div>
+                    <div class="col s2">
+
+                        <div class="left-align">
+                            <i ng-click="changeBooking()" class="material-icons grey-text animated flash">chevron_left</i>
+                        </div>
+                    </div>
+                    <div class="col s8" style="border:1px solid #ddd;" ng-click="openAdminBookingsPage()">
+
+                        <div class="center-align">
+                            <p class="montserrat grey-text">{{bookings[currentBooking].date}}</p>
+
+                            <span class="montserrat grey-text">{{bookings[currentBooking].time}}</span>
+
+                        </div>
+                    </div>
+                    <div class="col s2">
+                        <div class="right-align">
+                            <i class="material-icons grey-text animated flash">chevron_right</i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="center-align" ng-show="pendingBookings">
+
+                    
+                    <div ng-show="amountPending >1 &&!loadingAmountPending">
+                        <p class="montserrat blue-grey-text">There are {{amountPending}} booking(s) left to be completed.</p>
+                    </div>
+                    <div ng-show="loadingAmountPending">
+                        <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                    </div>
+                    <div ng-show="!loadingAmountPending">
+                        <i  ng-click="closePendingBookingsPage()"class="material-icons">clear</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="messageArray.length >0">
+        <div class="col s12 left-align">
+            <p class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})</p>
+
+        </div>
+
+
+
+        <div class="col s12 left-align">
+            <div style="height:200px; border:1px solid #ddd;" ng-click="openMessagePage()">
+
+                
+
+                <div class="row">
+                </div>
+                <i class="material-icons grey-text">format_quote
+                        </i><span class="montserrat grey-text">{{messageArray[messageArray.length-1].body}}</span>
+                <i class="material-icons grey-text">format_quote
+                        </i>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-show="messageArray.length ==0">
+        <div class="col s12 left-align">
+            <p class="montserrat grey-text ">No Messages Yet! (0 of 0)</p>
+
+        </div>
+
+
+
+        <div class="col s12 left-align">
+            <div style="height:200px; border:1px solid grey;" ng-click="openMessagePage()">
+
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col s2">
+                    </div>
+                    <div class="col s8 " style="height:100px; border:1px solid #ddd" ;>
+                    </div>
+                    <div class="col s2">
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col 12 left-align">
+        <br>
+
+    </div>
+
+
+</div>
+
+<div class="col s12 hide-on-large-only" ng-show="!heyLeah">
+
+
+
+
+    <div class="col s12 left-align">
+        <span class="montserrat " style="font-size:20px;">Name:</span>
+        <p class="montserrat grey-text" >{{clientName}}</p>
+        <span class="montserrat" style="font-size:20px;">Email:</span>
+        <p class="montserrat">{{clientEmail}}</p>
+
+    </div>
+    <div class="col s12 left-align">
+
+        <div style="height:200px; border:1px solid #ddd;">
+            <div class="row">
+                <div class="col s12" style="border-bottom:1px solid #ddd;">
+                    <div class="center-align">
+                        <i class="material-icons grey-text">schedule
+                        </i><span style="font-size:10px">({{bookings.length}})</span>
+                    </div>
+                </div>
+                <div ng-show="!pendingBookings">
+                    <div class="row">
+                    </div>
+                    <div class="col s2">
+
+                        <div class="left-align">
+                            <i ng-click="changeBooking()" class="material-icons grey-text animated flash">chevron_left</i>
+                        </div>
+                    </div>
+                    <div class="col s8" style="border:1px solid #ddd;" ng-click="openAdminBookingsPage()">
+
+                        <div class="center-align">
+                            <p class="montserrat grey-text">{{bookings[currentBooking].date}}</p>
+
+                            <span class="montserrat grey-text">{{bookings[currentBooking].time}}</span>
+
+                        </div>
+                    </div>
+                    <div class="col s2">
+                        <div class="right-align">
+                            <i class="material-icons grey-text animated flash">chevron_right</i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class = "row" ng-show="pendingBookings">
+                    <div class = "col s12 center-align">
+                            <div ng-show="amountPending ==1 &&!loadingAmountPending">
+                        <p class="montserrat blue-grey-text">There is 1 bookingleft to be completed.</p>
+                    </div>
+                           <div ng-show="amountPending >1 &&!loadingAmountPending">
+                        <p class="montserrat blue-grey-text">There are {{amountPending}} booking(s) left to be completed.</p>
+                    </div>
+                    <div ng-show="loadingAmountPending">
+                        <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                    </div>
+                    <div ng-show="!loadingAmountPending">
+                        <i ng-click="closePendingBookingsPage()" class="material-icons">clear</i>
+                    </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 left-align">
+        <p ng-show="messageArray.length >0" class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})</p>
+        <p ng-show="messageArray.length ==0" class="montserrat grey-text ">Recent Message(None Yet!)</p>
+
+    </div>
+
+
+
+    <div class="col s12 left-align" ng-show="messageArray.length >0">
+        <div style="height:200px; border:1px solid #ddd;" ng-click="openMessagePage()">
+            <!--
+            <div style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
+            </div>
+            -->
+            <div class="row">
+            </div>
+            <i class="material-icons grey-text">format_quote
+                        </i><span class="montserrat grey-text">{{messageArray[messageArray.length-1].body}}</span>
+            <i class="material-icons grey-text">format_quote
+                        </i>
+
+        </div>
+    </div>
+    <div class="col 12 left-align">
+        <br>
+
+    </div>
+
+
+</div>
+
+<div class="col s12 center-align " ng-show="heyLeah">
+
+
+   
+    <div ng-show="entrance1">
+        <h3 class=" animated lightSpeedIn">
+            Hey! Let's help some people!
+        </h3>
+        <div ng-show="notClicked">
+            <h3 class="animated fadeIn">
+                (ง’̀-‘́)ง
+            </h3>
+        </div>
+        <div ng-show="clicked">
+            <h3 class="animated shake">
+                (ง’̀-‘́)ง
+            </h3>
+        </div>
+        <button ng-click="enterInfoPageWait()" class="waves-effect waves-light blue-grey btn">Alright!</button>
+    </div>
+    <div ng-show="entrance2">
+        <div class="hide-on-med-and-down">
+            <h3 class=" animated lightSpeedIn">
+                Hey! Who's a SUPER-woman?
+            </h3>
+        </div>
+        <div class="hide-on-large-only">
+            <p class=" montserrat animated lightSpeedIn" style="font-size:35px">
+                Hey! Who's a SUPER-woman?
+            </p>
+        </div>
+        <div ng-show="notClicked">
+            <div class="hide-on-med-and-down">
+                <h3 class="animated fadeIn">
+                    (. ❛ ᴗ ❛.)
+                </h3>
+            </div>
+            <div class="hide-on-large-only">
+                <p class="animated fadeIn montserrat" style="font-size:30px;">
+                    (. ❛ ᴗ ❛.)
+                </p>
+            </div>
+        </div>
+        <div ng-show="clicked">
+            <div class="hide-on-med-and-down">
+                <h3 class="animated bounce">
+                    ヘ( ^o^)ノ＼(^_^ )
+                </h3>
+            </div>
+            <div class="hide-on-large-only">
+                <p class="montserrat animated bounce" style="font-size:30px;">
+                    ヘ( ^o^)ノ＼(^_^ )
+                </p>
+            </div>
+        </div>
+        <button ng-click="enterInfoPageWait()" class="waves-effect waves-light blue-grey btn">ME!</button>
+    </div>
+
+    <div ng-show="entrance3">
+        <h3 class=" animated lightSpeedIn">
+            Ready To Shine Bright???
+        </h3>
+        <div ng-show="clicked">
+          <div class="hide-on-med-and-down">
+                <h3 class="animated fadeIn">
+                    (✿◠‿◠)
+                </h3>
+            </div>
+        <div class="hide-on-large-only">
+                <p class="montserrat animated fadeIn" style="font-size:30px;">
+                    (✿◠‿◠)
+                </p>
+            </div>
+        </div>
+        <button type="submit" ng-click="enterInfoPageWait()" class="waves-effect waves-light blue-grey btn">Yeah!</button>
+    </div>
+
+
+</div>

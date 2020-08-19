@@ -1,0 +1,133 @@
+<div class = "row">
+    <div class = "col s12 center-align  " style="border-bottom:1px solid black;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 class = "montserrat animated slideInRight">Intake Forms</h4>
+    </div>
+<div class = "col s1">
+</div>
+<div class="col s10">
+
+
+
+    <div class="row">
+        
+
+        <div class="col s12 center-align">
+            <span class="montserrat grey-text">Client</span>
+
+        </div>
+
+        <div class="col s12" style="border:1px solid grey">
+        </div>
+        <div class="row">
+        </div>
+        <div ng-show="intakesPaginated[0].length>0">
+            <div ng-repeat="page in intakesPaginated[page] track by $index">
+              
+                <div class="row animated fadeIn">
+                 
+                    <div class="col s12 center-align" style="border-bottom:1px solid #ddd;">
+                        <span ng-click="openIndividualIntake(page.id,page.client,page.question1,page.question2,page.queston2)" class="montserrat grey-text truncate underline" style="font-size:25px;">{{page.client}}</span>
+                    </div>
+<!--
+
+                    <div class="col s8" ng-click="openBooking($index,page.bookingIndex)" ng-show="bookingIndex !== $index" style="border:1px solid #ddd; height:40px;">
+
+                        <p class="montserrat grey-text">{{page.question1}}</p>
+                                                <p class="montserrat grey-text">{{page.question2}}</p>
+
+                        <p class="montserrat grey-text">{{page.question3}}</p>
+
+
+
+
+                    </div>
+
+                    <div class="col s8" style="border:1px solid #ddd;" ng-show="bookingIndex == $index">
+
+
+                        <!--<div >-->
+                     <!--   <div class="row" ng-show="!loadingChanges  && !loadingChangesUndo ">
+                            <div class="s12 center-align">
+
+
+                                <p class="montserrat" style="text-decoration:underline;">{{page.date}}</p>
+                                <p class="montserrat" style="text-decoration:underline;">{{page.time}}</p>
+                                <p class="montserrat" style="text-decoration:underline;">{{page.clientname}}</p>
+                                <p class="montserrat" style="text-decoration:underline;">{{page.clientphonenumber}}</p>
+                                <p class="montserrat" style="text-decoration:underline;">{{page.clientemail}}</p>
+
+                                <div ng-show="!page.completed">
+                                    <button ng-click="markAsComplete(page.bookingIndex,$index);" class="waves-effect waves-light blue-grey btn">Mark As Completed</button>
+                                </div>
+                                <div ng-show="page.completed">
+                                    <button ng-click="markAsInComplete(page.bookingIndex);" class="waves-effect waves-light blue-grey btn">Undo</button>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- </div>-->
+                   <!--     <div ng-show="loadingChanges " class="center-align">
+                            <h3 class="montserrat animated bounce infinite blue-grey-text">All Done!</h3>
+                            <h3 class="montserrat animated bounce infinite blue-grey-text">:)</h3>
+                            <p class="motserrat grey-text">(Booking Has Been Set To Completed)</p>
+                        </div>
+                        <div ng-show="loadingChangesUndo " class="center-align">
+                            <h3 class="montserrat animated bounce infinite blue-grey-text">Ok, Maybe Not!</h3>
+                            <h3 class="montserrat animated bounce infinite blue-grey-text">:/</h3>
+                            <p class="motserrat grey-text">(Booking Has Been Set To Pending)</p>
+                        </div>
+
+                    </div>
+
+
+-->
+
+                </div>
+
+            </div>
+        </div>
+        <div ng-show="intakesPaginated[0].length<1">
+            <div class="col s12" style="border:1px solid #ddd;">
+                <p class="montserrat blue-grey-text"> (No intakes Yet!)</p>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col s3 animated fadeIn center-align " style="border-left:1px solid #ddd;">
+                <i ng-click="firstPage()" class="material-icons">first_page</i>
+            </div>
+            <div class="col s6 animated fadeIn center-align " style="border-bottom:1px solid #ddd;" ng-show="messageIndex == $index">
+                <div class="row">
+                    <div class="col s6 center-align">
+                        <i ng-click="previousPage()" class="material-icons">navigate_before</i>
+                    </div>
+                    <div class="col s6 center-align">
+
+                        <i ng-click="nextPage()" class="material-icons">navigate_next</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3 animated fadeIn center-align " style="border-right:1px solid #ddd;">
+                <i ng-click="lastPage()" class="material-icons">last_page</i>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+<div class = "col s1">
+</div>
+</div>

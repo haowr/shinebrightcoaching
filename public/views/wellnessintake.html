@@ -1,0 +1,389 @@
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+
+<div ng-show="noWellnessIntake"class = "row">
+  <div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+
+<div class = "row" ng-show="loadingIntake">
+  <div class = "col s12 center-align">
+    <p class = "atypewriter animated swing"style="font-size:30px;">Thanks! :)</p>
+
+<i class="fa fa-spinner fa-spin fa-3x fa-fw " style="font-size:30px;"></i>
+  </div>
+</div>
+<div class="row" ng-show="!loadingIntake">
+    <form class="col s12">
+        <div class="row">
+    
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="first_name" ng-model="wIntakeInfo.name" type="text" name="name"class="validate">
+          <label for="first_name">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="last_name" type="text" ng-model="wIntakeInfo.address" name="address" class="validate">
+          <label for="last_name">Address</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" ng-model="wIntakeInfo.email" name = "email"class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+         <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="phonenumber" ng-model="wIntakeInfo.phonenumber" name = "phonenumber"class="validate">
+          <label for="email">Phone number</label>
+        </div>
+      </div>
+         <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.occupation"name = "occupation" class="validate">
+          <label for="email">Occupation</label>
+        </div>
+      </div>
+      <div class = "row">
+
+       <div class="input-field col s12">
+          <textarea id="textarea1" type="text" class="materialize-textarea" ng-model="wIntakeInfo.whatisgoingwell" name="whatisgoinwell"></textarea>
+          <label for="textarea1">What Is Going Well?</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="number"ng-model="wIntakeInfo.age" name="age"class="validate">
+          <label for="email">Age</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.height" name = "height" class="validate">
+          <label for="email">Height</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.weight" name="weight"class="validate">
+          <label for="email">Weight</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.weightoneyearago" name="weightoneyearago" class="validate">
+          <label for="email">Weight One Year Ago</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.healthproblems" name ="healthproblems"class="validate">
+          <label for="email">History Of Family Health Problems</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="number" ng-model="wIntakeInfo.stresslevel"name = "stresslevel"class="validate">
+          <label for="email">Please Rate Your Stress Levels On A Scale Of One To Ten</label>
+        </div>
+
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">How Would You Rate The Pace Of Your Life? *</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.pace" name="pace" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="low">Low</option>
+                                                <option value="moderate">Moderate</option>
+                                                <option value="high">High</option>
+                                			</select>
+
+    </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.healthconcerns" name = "healthconcerns"class="validate">
+          <label for="email">What Are Your Major Health Concerns?</label>
+        </div>
+      </div>
+            <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Do You Exercise Regularly?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.exerciseregular" name="exerciseregular" required>
+                                				<option value="" disabled selected></option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.share"name="share" class="validate">
+          <label for="email">If Yes Please Share?</label>
+        </div>
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Do You Experience Any Troubles With Digestion?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.digestion" name="digestion" required>
+                                				<option value="" disabled selected></option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.digestionshare" name="digestionshare"class="validate">
+          <label for="email">If Yes Please Share?</label>
+        </div>
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Are You Able To Sleep For 7-8hrs Uninterrupted?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.sleep" name="sleep" required>
+                                				<option value="" disabled selected></option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" ng-model="wIntakeInfo.keepsyouup" name="keepsyouup" type="text" class="validate">
+          <label for="email">If No, What Keeps You Up?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" ng-model="wIntakeInfo.water" name = "water"type="text" class="validate">
+         
+          <label for="email">How Much Water Do You Drink A Day?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" ng-model="wIntakeInfo.eatstressed"name="eatstressed" type="text" class="validate">
+          
+          <label for="email">Do You Eat When You Are Stressed?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text " ng-model="wIntakeInfo.eatwhenbored" name="eatwhenbored" class="validate">
+          <label for="email">Do you eat when you are bored?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.portioncontrol" name = "portioncontrol" class="validate">
+          <label for="email">Do You Have Problems With Portion Control?</label>
+        </div>
+      </div>
+       <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Do You Have Any Addictions?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.addictions" name="addictions" >
+                                				<option value="" disabled selected></option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.addictionsshare" name="addictionshare"class="validate">
+          <label for="email">If Yes Please Shave With Me?</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.chronicpain" name = "chronicpain" class="validate">
+          <label for="email">Do You Have Any Chronic Pain Conditions?</label>
+        </div>
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">How Are Your Energy Levels?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.energy" name="energy" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Low">Low</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="High">High</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" name="meditation"ng-model="wIntakeInfo.meditation"class="validate">
+          <label for="email">Do You Practice Any Form Of Meditation?</label>
+        </div>
+      </div>
+      
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Are You Physically Active?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.active" name="active" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.exercisetype"name ="exercisetype" class="validate">
+          <label for="email">What type of exercise do you enjoy?</label>
+        </div>
+      </div>
+       <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Have You Tried Any Health Programs Or Dieting In The Past?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.healthprograms" name="healthprograms" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+ 
+    </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email"  ng-model="wIntakeInfo.healthshare" name = "healthshare"type="text" class="validate">
+          <label for="email">If Yes Please Share With Me?</label>
+        </div>
+        
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Do You Eat Breakfast Every Day?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.breakfast" name="breakfast" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                			</select>
+
+    </div>
+    
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"ng-model="wIntakeInfo.majorhealth" name = "majorhealth"class="validate">
+          <label for="email">What Are Your Major Health Concerns?</label>
+        </div>
+
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"  ng-model="wIntakeInfo.changesliked" name="changesliked"class="validate">
+          <label for="email">What Changes Would You Like To See In Three Months Time?</label>
+        </div>
+        
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text"  ng-model="wIntakeInfo.challenges" name="challenges"class="validate">
+          <label for="email">What Challenges Are You Having With Living A Health Lifestyle?</label>
+        </div>
+        
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" class="validate"ng-model="wIntakeInfo.important" name ="important">
+          <label for="email">Is There Anything Important About Your Life That You Would Like To Share?</label>
+        </div>
+        
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">How Organized Are Your Spaces(Car, Home, etc.)?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.organization" name="organization" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Organized">Organized</option>
+                                                <option value="Somewhat Organized">Somewhat Organized</option>
+                                                <option value="Disorganized">Disorganized</option>
+
+                                			</select>
+
+    </div>
+   
+      </div>
+      <div class = "row">
+
+        <div class="col s12">
+      <label for="Sex">Relationship Status?</label>
+      <select class="error browser-default" id="sex"ng-model="wIntakeInfo.relationship" name="relationship" required>
+                                				<option value="" disabled selected>Sex</option>
+                                				<option value="Single">Single</option>
+                                                <option value="Relationship">Relationship</option>
+                                                <option value="Other">Other</option>
+
+                                			</select>
+
+    </div>
+    
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.operate"name="operate" class="validate">
+          <label for="email">What Tips Would You Give About How You Operate?</label>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" ng-model="wIntakeInfo.bestwaycoach" name="bestwaycoach" class="validate">
+          <label for="email">What is the best way for me to coach you most effectively?</label>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" class="validate"ng-model="wIntakeInfo.whatyouwant"name="whatyouwant">
+          <label for="email">What do you most want to get from the coaching relationship?</label>
+        </div>
+        
+      </div>
+      
+      </div>
+      <div class = "row">
+        <div class = "input-field col s12 center-align">
+               <button ng-click="submitwIntake()"class="waves-effect waves-light blue-grey btn">Submit</button>
+
+        </div>
+    </form>
+     <div ng-show="allFieldsMustBeFilledIn" class = "col s12 red lighten-4 center-align animated shake">
+          <span class = "montserrat"> All Fields Must Be Filled In</span>
+        </div>
+  </div>
+</div>
