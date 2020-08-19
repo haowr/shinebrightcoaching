@@ -262,15 +262,9 @@ a{
 */
 body, html{
 
- 
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    font-weight:400;
-    line-height:1.8em;
-    color:#666;
-    background-image:url('../../../../../Images/ShineBrightScheduleBackground.jpg')
-
-
+    background-image:url('../../../../../Images/ShineBrightScheduleBackground.jpg');
+     background-size:fill;
+     background-repeat:no-repeat;
 }
 #title{
 
