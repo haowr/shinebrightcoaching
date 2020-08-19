@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="qlc" ng-controller="mainCtrl" >
+<html ng-app="qlc" ng-controller="mainCtrl"  style="background-image:url('../css/ShineBrightScheduleBackground.jpg');
+background-size:fill;
+background-repeat:no-repeat;">
 
 <head>
   <title ng-bind="title">Shine Bright Coaching</title>
   <base href="/">
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
@@ -12,6 +15,7 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/nouislider.min.css">
   <!--Import Google Icon Font-->
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Jura|Montserrat|Playfair+Display+SC|Pontano+Sans|Quicksand|Spectral+SC"rel="stylesheet">
@@ -82,21 +86,19 @@
     </div>
   </nav>
   <ul class="side-nav " id="mobile-demo">
-<li ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
+
+        <li ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/packages">Packages</a></li>
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/testimonials">Testimonials</a></li>
-
         <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/register">Register</a></li>
         <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
         <li ng-show="loggedIn && userClass == 'employee'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
-                <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
-
+        <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
         <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
         <li ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/viewintake">Intake Form</a></li>
         <li ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="/viewwellnessintake">Add/View Wellness Intake</a></li>
         <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/about">About</a></li>
-
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
 
 
@@ -106,7 +108,10 @@
 
 
 </div>
-<div ng-view ></div>
+<div ng-view style="background-image:url('../css/ShineBrightScheduleBackground.jpg');
+background-size:cover;
+background-repeat:no-repeat;">
+</div>
 
 <div id="modal1" class="modal">
   <div class="modal-content">

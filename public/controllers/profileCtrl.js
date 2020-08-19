@@ -21,7 +21,7 @@
         $scope.scheduleSDOrCiPageOpen = false;
         $scope.bookings = []
         $scope.currentBooking =0;
-
+        $scope.checkUp8Selected = true;
         $scope.currentDate = ""
         $scope.clientName = ""
         $scope.clientEmail = ""
@@ -68,6 +68,58 @@
             //console.log("clicked")
             $('#modal1').modal('open');
         }
+        $scope.discovery8Selected = false;
+
+        $scope.selectAppointmentType=function(type){
+
+            if(type == 'checkup'){
+
+                if(!$scope.checkUp8Selected){
+                    
+                    $scope.discovery8Selected = false;
+                    $scope.session8Selected = false;
+                    $scope.checkUp8Selected = true;
+                    $scope.audio.play()
+    
+                }else{
+    
+                    $scope.checkUp8Selected = false;
+    
+                }
+
+            }
+            if(type == 'discovery'){
+
+                if(!$scope.discovery8Selected){
+
+                    $scope.checkUp8Selected = false;
+                    $scope.session8Selected = false;
+                    $scope.discovery8Selected = true;
+                    $scope.audio.play()
+
+
+                }else{
+
+                    $scope.discovery8Selected = false;
+
+                }
+
+            }
+            if(type=="session"){
+
+                if(!$scope.session8Selected){
+
+                    $scope.checkUp8Selected = false;
+                    $scope.discovery8Selected = false;
+                    $scope.session8Selected = true;
+                    $scope.audio.play()
+
+                }
+
+            }
+
+        }
+
         $scope.idForProfileLink = $window.localStorage.getItem('_id')
        // if( $routeParams.userid){
            $scope.clicked = false;
@@ -356,7 +408,7 @@
         
         $scope.dateCondensed = ""
         $scope.newDateInfo = []
-        $scope.audio = new Audio("../audio/fool.mp3")
+        $scope.audio = new Audio("../audio/shinebrightclick.wav")
        // $scope.e = document.createEvent('TouchEvent');
         $scope.bookDiscovery9to10tzero = true;
         $scope.bookDiscovery9to10ten = true;

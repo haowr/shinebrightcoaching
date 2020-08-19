@@ -2,9 +2,7 @@
      display: flex;
      min-height: 100vh;
      flex-direction: column;
-     background-image:url(../../../../../Images/ShineBrightScheduleBackground.jpg);
-     background-size:cover;
-     background-repeat:no-repeat;
+
  }
  main {
      flex: 1 0 auto;
@@ -262,11 +260,10 @@ a{
     height: 400px !important;
 }
 */
-body, html{
-
-    background-image:url('../../../../../Images/ShineBrightScheduleBackground.jpg');
-     background-size:fill;
-     background-repeat:no-repeat;
+html{
+    background-image:url('./ShineBrightScheduleBackground.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
 }
 #title{
 
