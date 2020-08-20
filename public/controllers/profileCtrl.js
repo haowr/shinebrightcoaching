@@ -74,6 +74,8 @@
         $scope.discovery8Selected4 = false;
         $scope.discovery8Selected5 = false;
         $scope.discovery8Selected6 = false;
+        $scope.discovery8Selected7 = false;
+        $scope.discovery8Selected8 = false;
 
         $scope.session8Selected = false;
         $scope.session8Selected2 = false;
@@ -81,15 +83,31 @@
         $scope.session8Selected4 = false;
         $scope.session8Selected5 = false;
         $scope.session8Selected6 = false;
+        $scope.session8Selected7 = false;
+        $scope.session8Selected8 = false;
     
         $scope.checkUp8Selected2 = true;
         $scope.checkUp8Selected3 = true;
         $scope.checkUp8Selected4 = true;
         $scope.checkUp8Selected5 = true;
         $scope.checkUp8Selected6 = true;
+        $scope.checkUp8Selected7 = true;
+        $scope.checkUp8Selected8 = true;
 
-        $scope.selectAppointmentType=function(type,column){
+        $scope.appointmentTypeAvailable = true;
 
+        $scope.selectAppointmentType=function(type,column,color){
+
+            if(color == 'green' || color == 'yellow'){
+
+                $scope.appointmentTypeAvailable = true;
+
+            }else{
+
+                $scope.appointmentTypeAvailable = false;
+
+            }
+            
             if(type == 'checkup'){
 
                 if(column == '1'){
@@ -33771,13 +33789,6 @@
             $scope.scheduledJobPageOpen = false;
             $scope.scheduleSDOrCiPageOpen = false;
             $scope.bookeCheckup = true;
-
-
-
-            //console.log($scope.dateInfo[slot])
-            //console.log($scope.dateInfo)
-
-            
 
 
         }

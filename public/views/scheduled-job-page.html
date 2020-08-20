@@ -434,43 +434,67 @@
             <p class="montserrat" style="font-size:25px;">8:50am ?</p>
 
           </div>
-          <div class = "col s4" ng-click="selectAppointmentType('checkup','5')">
+          <div class = "col s4" ng-click="selectAppointmentType('checkup','5','green')">
 
             <div ng-show="checkUpAvailable8 && !checkUp8Selected4" class = "animated fadeIn" >
             
               <!--<span class = " red-text">Checkup Available</span>-->
               <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px; border:2px solid transparent;">assignment_turned_in</i>
 
-          </div>
-          <div ng-show="checkUpAvailable8 && checkUp8Selected4" class = "animated fadeIn" style="border:2px solid grey;">
-            <!--<span class = " red-text">Checkup Available</span>-->
-            <i class="material-icons green-text  animated pulse infinite fast" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+            </div>
 
-        </div>
+            <div ng-show="checkUpAvailable8 && checkUp8Selected4" class = "animated fadeIn" style="border:2px solid grey;">
+
+              <!--<span class = " red-text">Checkup Available</span>-->
+              <i class="material-icons green-text  animated pulse infinite fast" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+
           </div>
-          <div class = "col s4" ng-click="selectAppointmentType('discovery','5')">
+
+          <div class = "col s4" ng-click="selectAppointmentType('discovery','5','green')">
+
             <div ng-show="discoveryAvailable8 && !discovery8Selected4" class = "animated fadeIn">
+
                 <!--<span class = " red-text">Discovery Available</span>-->
                 <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+
             </div>
+
             <div ng-show="discoveryAvailable8 && discovery8Selected4" class = "animated fadeIn" style="border:2px solid grey;">
+
               <!--<span class = " red-text">Discovery Available</span>-->
               <i class="material-icons green-text " style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+
+            </div>
+
           </div>
-          </div>
-          <div class = "col s4" ng-click="selectAppointmentType('session','5')">
+
+          <div class = "col s4" ng-click="selectAppointmentType('session','5','green')">
+
             <div ng-show="sessionAvailable8 && !session8Selected4" class = "animated fadeIn">
+
                 <!--<span class = " red-text">Discovery Available</span>-->
                 <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+
             </div>
+
             <div ng-show="sessionAvailable8 && session8Selected4" class = "animated fadeIn" style="border:2px solid grey;">
+
               <!--<span class = " red-text">Discovery Available</span>-->
               <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+
+            </div>
+
           </div>
-          </div>
+
           <div class = "row"></div>
         <div class = "col s12 center-align">
-          <button ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn"style="border:2px solid black;">Open</button>
+
+          <button ng-show="!appointmentTypeAvailable" ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn disabled"style="border:2px solid black;">Open</button>
+          
+          <button ng-show="appointmentTypeAvailable" ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn"style="border:2px solid black;">Open</button>
+
 
         </div>
 
@@ -764,45 +788,68 @@
             <p class="montserrat" style="font-size:25px;">8:50am </p>
 
           </div>
-          <div class = "col s4" ng-click="selectAppointmentType('checkup','8')">
-            
+          
+          <div class = "col s4" ng-click="selectAppointmentType('checkup','8','green')">
+
             <div ng-show="checkUpAvailable8 && !checkUp8Selected8" class = "animated fadeIn" >
             
               <!--<span class = " red-text">Checkup Available</span>-->
               <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px; border:2px solid transparent;">assignment_turned_in</i>
 
-          </div>
-          <div ng-show="checkUpAvailable8 && checkUp8Selected8" class = "animated fadeIn" style="border:2px solid grey;">
-            <!--<span class = " red-text">Checkup Available</span>-->
-            <i class="material-icons green-text  animated pulse infinite fast" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+            </div>
 
-        </div>
+            <div ng-show="checkUpAvailable8 && checkUp8Selected8" class = "animated fadeIn" style="border:2px solid grey;">
+
+              <!--<span class = " red-text">Checkup Available</span>-->
+              <i class="material-icons green-text  animated pulse infinite fast" style="font-size: 40px; padding-top:10px;">assignment_turned_in</i>
+
+            </div>
+
           </div>
-          <div class = "col s4" ng-click="selectAppointmentType('discovery','8')">
+
+          <div class = "col s4" ng-click="selectAppointmentType('discovery','8','green')">
+
             <div ng-show="discoveryAvailable8 && !discovery8Selected8" class = "animated fadeIn">
+
                 <!--<span class = " red-text">Discovery Available</span>-->
                 <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+
             </div>
             <div ng-show="discoveryAvailable8 && discovery8Selected8" class = "animated fadeIn" style="border:2px solid grey;">
-              <!--<span class = " red-text">Discovery Available</span>-->
-              <i class="material-icons green-text " style="font-size: 40px; padding-top:10px;">free_breakfast</i>
-          </div>
-          </div>
-          <div class = "col s4" ng-click="selectAppointmentType('session','8')">
-            <div ng-show="sessionAvailable8 && !session8Selected8" class = "animated fadeIn">
-                <!--<span class = " red-text">Discovery Available</span>-->
-                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
-            </div>
-            <div ng-show="sessionAvailable8 && session8Selected8" class = "animated fadeIn" style="border:2px solid grey;">
-              <!--<span class = " red-text">Discovery Available</span>-->
-              <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
-          </div>
-          </div>
-          <div class = "row"></div>
-        <div class = "col s12 center-align">
-          <button ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn"style="border:2px solid black;">Open</button>
 
-        </div>
+              <!--<span class = " red-text">Discovery Available</span>-->
+              <i class="material-icons green-text  animated pulse infinite fast " style="font-size: 40px; padding-top:10px;">free_breakfast</i>
+
+            </div>
+
+          </div>
+
+          <div class = "col s4" ng-click="selectAppointmentType('session','8','green')">
+
+            <div ng-show="sessionAvailable8 && !session8Selected8" class = "animated fadeIn">
+
+                <i class="material-icons green-text text-lighten-2" style="font-size: 40px; padding-top:10px;">hearing</i>
+
+            </div>
+
+            <div ng-show="sessionAvailable8 && session8Selected8" class = "animated fadeIn" style="border:2px solid grey;">
+
+              <i class="material-icons green-text text-lighten-2 animated pulse infinite fast" style="font-size: 40px; padding-top:10px;">hearing</i>
+
+            </div>
+
+          </div>
+
+          <div class = "row"></div>
+
+            <div class = "col s12 center-align">
+
+              <button ng-show="!appointmentTypeAvailable" ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn disabled"style="border:2px solid black;">Open</button>
+              
+              <button ng-show="appointmentTypeAvailable" ng-click="openBookingPage('eight')" type="submit"class="waves-effect waves-light blue-grey btn"style="border:2px solid black;">Open</button>
+
+
+            </div>
 
         
 
