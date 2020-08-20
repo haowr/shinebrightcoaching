@@ -107,7 +107,7 @@
                 $scope.appointmentTypeAvailable = false;
 
             }
-            
+
             if(type == 'checkup'){
 
                 if(column == '1'){
@@ -428,6 +428,16 @@
 
         }
 
+        $scope.discovery8AMSelected = false;
+        $scope.selectTime(time) = function(){
+
+            if(time == "8:00"){
+
+                $scope.discovery8AMSelected = true;
+
+            }
+
+        }
         $scope.idForProfileLink = $window.localStorage.getItem('_id')
        // if( $routeParams.userid){
            $scope.clicked = false;
