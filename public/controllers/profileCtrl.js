@@ -96,7 +96,13 @@
 
         $scope.appointmentTypeAvailable = true;
 
+        $scope.appointmentType = "";
+
         $scope.selectAppointmentType=function(type,column,color){
+
+            $scope.appointmentType = type;
+            console.log("Type", type)
+            console.log("Appointment Type", $scope.appointmentType)
 
             if(color == 'green' || color == 'yellow'){
 
@@ -213,6 +219,7 @@
                 
 
             }
+
             if(type == 'discovery'){
 
                 if(column == '1'){
@@ -318,6 +325,7 @@
                 
 
             }
+
             if(type == 'session'){
 
                 if(column == '1'){
@@ -424,99 +432,243 @@
 
             }
             
-        
+        }
+
+        $scope.openBookingPage = function (slot) {
+            
+
+            $scope.slot = slot;
+            $scope.hour = slot;
+            $scope.bookingPageOpen = true;
+            $scope.scheduledJobPageOpen = false;
+            $scope.scheduleSDOrCiPageOpen = false;
+            $scope.bookeCheckup = true;
+            $scope.globalDateInformation = {};
+
+            console.log("Appointment Type", $scope.appointmentType)
+
+            User.getDate($scope.id).then(function (data) {
+
+                console.log("Date Data For Open Booking Page...")
+                console.log(data)
+                console.log(data.data.date[$scope.hour].state)
+                $scope.globalDateInformation = data.data.date;
+                console.log("Appointment Type", $scope.appointmentType)
+
+                if($scope.appointmentType == "discovery"){
+
+                    console.log("I'm here")
+                    if($scope.hour == "eight"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery8 = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery8   = false;
+                            $scope.bookDiscovery18  = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery18          = false;
+                            $scope.bookDiscovery28          = false;
+
+                        }
+
+                    }
+
+                }
+
+            })
 
         }
 
-        $scope.discovery8AMSelected = false;
+        $scope.discovery800AMSelected = false;
         $scope.discovery810AMSelected = false;
         $scope.discovery820AMSelected = false;
         $scope.discovery830AMSelected = false;
         $scope.discovery840AMSelected = false;
         $scope.discovery850AMSelected = false;
 
-        $scope.selectTime = function(time){
+        $scope.discovery800AMIsBooked = false;
+        $scope.discovery810AMIsBooked = false;
+        $scope.discovery820AMIsBooked = false;
+        $scope.discovery830AMIsBooked = false;
+        $scope.discovery840AMIsBooked = false;
+        $scope.discovery850AMIsBooked = false;
 
-            if(time == "8:00"){
+        $scope.selectTime = function(time, booked){
 
-                $scope.discovery810AMSelected = false;
-                $scope.discovery820AMSelected = false;
-                $scope.discovery830AMSelected = false;
-                $scope.discovery840AMSelected = false;
-                $scope.discovery850AMSelected = false;
-                $scope.discovery8AMSelected = true;
-                $scope.discoveryData.time = "8:00am"
+            console.log("Global Date Information")
+            console.log($scope.globalDateInformation)
+            console.log("Current Hour")
+            console.log($scope.hour)
 
-            }
+            $scope.discovery800AMIsBooked = false;
+            $scope.discovery810AMIsBooked = false;
+            $scope.discovery820AMIsBooked = false;
+            $scope.discovery830AMIsBooked = false;
+            $scope.discovery840AMIsBooked = false;
+            $scope.discovery850AMIsBooked = false;
+
             if(time == "8:10"){
 
-                $scope.discovery810AMSelected = true;
-                $scope.discovery820AMSelected = false;
-                $scope.discovery830AMSelected = false;
-                $scope.discovery840AMSelected = false;
-                $scope.discovery850AMSelected = false;
-                $scope.discovery8AMSelected = false;
-                $scope.discoveryData.time = "8:10am"
+                if(!booked){
+
+                    $scope.discovery810AMSelected = true;
+                    $scope.discovery820AMSelected = false;
+                    $scope.discovery830AMSelected = false;
+                    $scope.discovery840AMSelected = false;
+                    $scope.discovery850AMSelected = false;
+                    $scope.discovery800AMSelected = false;
+                    $scope.audio.play();
+                    $scope.discoveryData.time = "8:10am"
+                    
+
+                }else{
+
+                    $scope.discovery810AMIsBooked = true;
+
+                }
 
             }
             if(time == "8:20"){
 
-                $scope.discovery810AMSelected = false;
-                $scope.discovery820AMSelected = true;
-                $scope.discovery830AMSelected = false;
-                $scope.discovery840AMSelected = false;
-                $scope.discovery850AMSelected = false;
-                $scope.discovery8AMSelected = false;
-                $scope.discoveryData.time = "8:20am"
+                if(!booked){
+
+                    $scope.discovery810AMSelected = false;
+                    $scope.discovery820AMSelected = true;
+                    $scope.discovery830AMSelected = false;
+                    $scope.discovery840AMSelected = false;
+                    $scope.discovery850AMSelected = false;
+                    $scope.discovery800AMSelected = false;
+                    $scope.audio.play();
+                    $scope.discoveryData.time = "8:20am"
+
+                }else{
+
+                    $scope.discovery820AMIsBooked = true;
+
+                }
 
             }
-            if(time == "8:30"){
+            if(time == "8:30" ){
 
-                $scope.discovery810AMSelected = false;
-                $scope.discovery820AMSelected = false;
-                $scope.discovery830AMSelected = true;
-                $scope.discovery840AMSelected = false;
-                $scope.discovery850AMSelected = false;
-                $scope.discovery8AMSelected = false;
-                $scope.discoveryData.time = "8:30am"
+                if(!booked){
+
+                    $scope.discovery810AMSelected = false;
+                    $scope.discovery820AMSelected = false;
+                    $scope.discovery830AMSelected = true;
+                    $scope.discovery840AMSelected = false;
+                    $scope.discovery850AMSelected = false;
+                    $scope.discovery800AMSelected = false;
+                    $scope.audio.play();
+                    $scope.discoveryData.time = "8:30am"
+
+                }else{
+
+                    $scope.discovery830AMIsBooked = true;
+
+                }
 
             }
             if(time == "8:40"){
 
-                $scope.discovery810AMSelected = false;
-                $scope.discovery820AMSelected = false;
-                $scope.discovery830AMSelected = false;
-                $scope.discovery840AMSelected = true;
-                $scope.discovery850AMSelected = false;
-                $scope.discovery8AMSelected = false;
-                $scope.discoveryData.time = "8:40am"
+                if(!booked){
+
+                    $scope.discovery810AMSelected = false;
+                    $scope.discovery820AMSelected = false;
+                    $scope.discovery830AMSelected = false;
+                    $scope.discovery840AMSelected = true;
+                    $scope.discovery850AMSelected = false;
+                    $scope.discovery800AMSelected = false;
+                    $scope.audio.play();
+                    $scope.discoveryData.time = "8:40am"
+
+                }else{
+
+                    $scope.discovery840AMIsBooked = true;
+
+                }
 
             }
             if(time == "8:50"){
 
-                $scope.discovery810AMSelected = false;
-                $scope.discovery820AMSelected = false;
-                $scope.discovery830AMSelected = false;
-                $scope.discovery840AMSelected = false;
-                $scope.discovery850AMSelected = true;
-                $scope.discovery8AMSelected = false;
-                $scope.discoveryData.time = "8:50am"
+                if(!booked){
 
+                    $scope.discovery810AMSelected = false;
+                    $scope.discovery820AMSelected = false;
+                    $scope.discovery830AMSelected = false;
+                    $scope.discovery840AMSelected = false;
+                    $scope.discovery850AMSelected = true;
+                    $scope.discovery800AMSelected = false;
+                    $scope.audio.play();
+                    $scope.discoveryData.time = "8:50am"
+
+                }else{
+
+                    $scope.discovery850AMIsBooked = true;
+
+                }
+
+
+            }
+            if(time == "8:00"){
+
+                    if(!booked){
+
+                        $scope.discovery810AMSelected = false;
+                        $scope.discovery820AMSelected = false;
+                        $scope.discovery830AMSelected = false;
+                        $scope.discovery840AMSelected = false;
+                        $scope.discovery850AMSelected = false;
+                        $scope.discovery800AMSelected = true;
+                        $scope.audio.play();
+                        $scope.discoveryData.time = "8:00am"
+    
+                    }else{
+    
+                        console.log("Log")
+                        $scope.discovery800AMIsBooked= true;
+    
+                    }
+    
             }
 
         }
 
         $scope.loadingBooking = false;
+        $scope.loadingBooking1 = false;
+        $scope.loadingBooking2 = false;
+        $scope.loadingBooking3 = false;
+        $scope.loadingBooking4 = false;
+        $scope.loadingBooking5 = false;
+
+        $scope.discovery800AMNoRoom = false;
+        $scope.discovery810AMNoRoom = false;
+        $scope.discovery820AMNoRoom = false;
+        $scope.discovery830AmNoRoom = false;
+        $scope.discovery840AMNoRoom = false;
+        $scope.discovery850AMNoRoom = false;
 
         $scope.submitDiscovery = function(hour){
 
             console.log("$SCOPE.DISCOVERYDATA", $scope.discoveryData)
+
+            $scope.shinebrightloading.play();
 
             if ($scope.discoveryData.time == "8:00am" || $scope.discoveryData.time == "9:00am" ||
                 $scope.discoveryData.time == "10:00am" || $scope.discoveryData.time == "11:00am" ||
                 $scope.discoveryData.time == "12:00pm" || $scope.discoveryData.time == "1:00pm" ||
                 $scope.discoveryData.time == "2:00pm" || $scope.discoveryData.time == "3:00pm") {
 
+                    
                     $scope.dateInfo[0] = 2;
                     $scope.dateInfo[1] = 2;
                     $scope.dateInfo[2] = 2;
@@ -548,6 +700,7 @@
                             $scope.discovery850AMSelected = false;
                             $scope.discovery8AMSelected = false;
                             $scope.dateDataForUser.date = $scope.currentDate;
+
                             $timeout(function(){
 
                                 if(data.data.date[hour].state[0] === 2){
@@ -562,71 +715,616 @@
 
                                             $scope.bookDiscovery28 = false;
 
+                                            $timeout(function(){
+
+                                                $scope.loadingBooking = false;
+                                                $scope.shinebrightsuccess.play()
+
+                                            },500)
+
                                         },500)
 
                                     },500)
     
-    
                                 }
-                                $scope.loadingBooking = false;
-                                console.log("DID IT RUN?", $scope.loadingBooking)
-                                
+           
                             },1000)
-                           
-
-
-                            /*
-                            if ($scope.discoveryData.time == "8:10am"){
-                                $scope.dateDataForUser.time = "8:10am - 8:40am"
+                   
+                        })
     
+                    })
+
+                }
+
+            if ($scope.discoveryData.time == "8:10am" || $scope.discoveryData.time == "9:10am" ||
+                $scope.discoveryData.time == "10:10am" || $scope.discoveryData.time == "11:10am" ||
+                $scope.discoveryData.time == "12:10pm" || $scope.discoveryData.time == "1:10pm" ||
+                $scope.discoveryData.time == "2:10pm" || $scope.discoveryData.time == "3:10pm") {
+
+                $scope.dateInfo[1]      = 2;
+                $scope.dateInfo[2]      = 2
+                $scope.dateInfo[3]      = 2
+                $scope.dateData.hour    = hour;
+                $scope.dateData.id      = $scope.id
+                $scope.bookDiscovery    = false;
+                $scope.loadingBooking1   = true;
+
+                User.getDate($scope.id).then(function (data) {
+                   
+                    data.data.date[hour].state[1] = 2
+                    data.data.date[hour].state[2] = 2
+                    data.data.date[hour].state[3] = 2
+
+                    $scope.dateData.dateInfo = data.data.date[hour].state
+
+                    if(data.data.date[hour].state[4] === 2 ){
+
+                        $scope.discovery810AMNoRoom = true;
+                        $scope.shinebrighterror.play()
+                        console.log("NO ROOM TO BOOOK", hour)
+
+                    }else{
+
+                        User.updateDate($scope.dateData).then(function (data) {
+                        
+                            $scope.dateDataForUser.date = $scope.currentDate;
+
+                            $timeout(function(){
+
+                                if(data.data.date[hour].state[1] === 2){
+
+                                    $scope.bookDiscovery8 = false;
+
+                                    $timeout(function(){
+
+                                        $scope.bookDiscovery18 = false;
+
+                                        $timeout(function(){
+
+                                            $scope.bookDiscovery28 = false;
+
+                                            $timeout(function(){
+
+                                                $scope.bookDiscovery38 = false;
+
+                                                $timeout(function(){
+
+                                                    $scope.loadingBooking1 = false;
+                                                    $scope.shinebrightsuccess.play()
+
+                                                },500)
+
+                                            },500)
+
+                                        },500)
+
+                                    },500)
+
+
+                                }
+           
+                            },1000)
+
+                            if ($scope.discoveryData.time == "8:10am"){
+
+                                $scope.dateDataForUser.time = "8:10am - 8:40am"
+
                             }
                             if ($scope.discoveryData.time == "9:10am"){
+
                                 $scope.dateDataForUser.time = "9:10am - 9:40am"
                                 
                             }
                             if ($scope.discoveryData.time == "10:10am"){
+
                                 $scope.dateDataForUser.time = "10:10am - 10:40am"
                                 
                             }
                             if ($scope.discoveryData.time == "11:10am"){
+
                                 $scope.dateDataForUser.time = "11:10am - 11:40am"
                                 
                             }
                             if ($scope.discoveryData.time == "12:10am"){
+
                                 $scope.dateDataForUser.time = "12:10am - 12:40am"
                                 
                             }
                             if ($scope.discoveryData.time == "1:00pm"){
+
                                 $scope.dateDataForUser.time = "1:00pm - 1:40pm"
                                 
                             }
                             if ($scope.discoveryData.time == "2:00pm"){
+
                                 $scope.dateDataForUser.time = "2:00pm - 2:40pm"
                                 
                             }
                             if ($scope.discoveryData.time == "3:00pm"){
+
                                 $scope.dateDataForUser.time = "3:00pm - 3:40pm"
                                 
                             }
-                            */
+                    
+                        })
+
+                    }
+
+                })
+
+            }
+            if ($scope.discoveryData.time == "8:20am"   || $scope.discoveryData.time == "9:20am"    ||
+                $scope.discoveryData.time == "10:20am"  || $scope.discoveryData.time == "11:20am"   ||
+                $scope.discoveryData.time == "12:20pm"  || $scope.discoveryData.time == "1:20pm"    ||
+                $scope.discoveryData.time == "2:20pm"   || $scope.discoveryData.time == "3:20pm") {
+
+                $scope.dateInfo[0] = 2;
+                $scope.dateInfo[1] = 2
+                $scope.dateInfo[2] = 2
+
+                $scope.dateData.hour = hour;
+                console.log("HOUR", hour)
+                $scope.dateData.id = $scope.id
+
+                $scope.bookDiscovery = false;
+                $scope.loadingBooking2 = true;
+
+                User.getDate($scope.id).then(function (data) {
+                    
+                    if(data.data.date[hour].state[3] === 2 ){
+
+                        $scope.discovery820AMNoRoom = true;
+                        $scope.shinebrighterror.play()
+                        console.log("NO ROOM TO BOOOK",hour)
+                        
+
+                    }else{
+
+                        data.data.date[hour].state[2] = 2
+                        data.data.date[hour].state[3] = 2
+                        data.data.date[hour].state[4] = 2
+
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+
+                        User.updateDate($scope.dateData).then(function (data) {
+                        
+                            $scope.dateDataForUser.date = $scope.currentDate;
+
+                            $timeout(function(){
+
+                                if(data.data.date[hour].state[2] === 2){
+
+                                    $scope.bookDiscovery8 = false;
+
+                                    $timeout(function(){
+
+                                        $scope.bookDiscovery18 = false;
+
+                                        $timeout(function(){
+
+                                            $scope.bookDiscovery28 = false;
+
+                                            $timeout(function(){
+
+                                                $scope.bookDiscovery38 = false;
+
+                                                $timeout(function(){
+
+                                                    $scope.bookDiscovery48 = false;
+
+                                                    $timeout(function(){
+
+                                                        $scope.loadingBooking2 = false;
+                                                        $scope.shinebrightsuccess.play()
+
+                                                    },500)
+
+                                                },500)
+
+                                            },500)
+
+                                        },500)
+
+                                    },500)
 
 
+                                }
+                  
+                            },1000)
+                        
+                        })
 
+                    }
+                    
+                })
+
+            }
+            if ($scope.discoveryData.time == "8:30am" || $scope.discoveryData.time == "9:30am" ||
+                $scope.discoveryData.time == "10:30am" || $scope.discoveryData.time == "11:30am" ||
+                $scope.discoveryData.time == "12:30pm" || $scope.discoveryData.time == "1:30pm" ||
+                $scope.discoveryData.time == "2:30pm" || $scope.discoveryData.time == "3:30pm") {
+
+                $scope.dateInfo[0] = 2;
+                $scope.dateInfo[1] = 2
+                $scope.dateInfo[2] = 2
+
+                $scope.dateData.hour = hour;
+                $scope.dateData.id = $scope.id
+
+                $scope.bookDiscovery = false;
+                $scope.loadingBooking3 = true;
+
+                User.getDate($scope.id).then(function (data) {
+          
+                    
+                    data.data.date[hour].state[3] = 2
+                    data.data.date[hour].state[4] = 2
+                    data.data.date[hour].state[5] = 2
+                    $scope.dateData.dateInfo = data.data.date[hour].state
+
+                    User.updateDate($scope.dateData).then(function (data) {
+                        
+                        
+                        $scope.dateDataForUser.date = $scope.currentDate;
+
+                       $timeout(function(){
+
+                            if(data.data.date[hour].state[3] === 2){
+
+                                $scope.bookDiscovery18 = false;
+
+                                    $timeout(function(){
+
+                                        $scope.bookDiscovery28 = false;
+
+                                        $timeout(function(){
+
+                                            $scope.bookDiscovery38 = false;
+
+                                            $timeout(function(){
+
+                                                $scope.bookDiscovery48 = false;
+    
+                                                $timeout(function(){
+    
+                                                    $scope.bookDiscovery58 = false;
+
+                                                    $timeout(function(){
+
+                                                        $scope.loadingBooking3 = false;
+                                                        $scope.shinebrightsuccess.play()
+
+                                                    },500)
+    
+                                                },500)
+    
+                                            },500)
+
+                                        },500)
+
+                                    },500)
+
+                                }
+          
+                        },1000)
+                      
+                    })
+                })
+            }
+            if ($scope.discoveryData.time == "8:40am" || $scope.discoveryData.time == "9:40am" ||
+                $scope.discoveryData.time == "10:40am" || $scope.discoveryData.time == "11:40am" ||
+                $scope.discoveryData.time == "12:40pm" || $scope.discoveryData.time == "1:40pm" ||
+                $scope.discoveryData.time == "2:40pm" || $scope.discoveryData.time == "3:40pm") {
+
+                $scope.dateInfo[0] = 2;
+                $scope.dateInfo[1] = 2;
+                $scope.dateInfo[2] = 2;
+
+                $scope.dateData.hour = hour;
+                $scope.dateData.id = $scope.id
+
+                $scope.bookDiscovery = false;
+                $scope.loadingBooking4 = true;
+
+                User.getDate($scope.id).then(function (data) {
+              
+                    console.log("DATE DATA",data)
+                    data.data.date[hour].state[4] = 2
+                    data.data.date[hour].state[5] = 2
+
+                    if (hour == 'eight' && data.data.date['nine'].state[0] === 0) {
+
+                        $scope.hourPlusOne = 'nine'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            
+                            $scope.dateDataForUser.date = $scope.currentDate;
+
+                            $timeout(function(){
+
+                                if(data.data.date[hour].state[4] === 2){
+
+                                    $scope.bookDiscovery18 = false;
+
+                                    $timeout(function(){
+
+                                        $scope.bookDiscovery28 = false;
+
+                                        $timeout(function(){
+
+                                            $scope.bookDiscovery38 = false;
+
+                                            $timeout(function(){
+
+                                                $scope.bookDiscovery48 = false;
+
+                                                $timeout(function(){
+
+                                                    $scope.bookDiscovery58 = false;
+
+                                                    $timeout(function(){
+
+                                                        $scope.loadingBooking4 = false;
+                                                        $scope.shinebrightsuccess.play()
+
+                                                    },500)
+
+                                                },500)
+
+                                            },500)
+
+                                        },500)
+
+                                    },500)
+
+
+                                }
+                                
+                            },1000)
+
+                        })
+                    }
+                    
+
+                })
+
+
+            }
+            if ($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am" ||
+                $scope.discoveryData.time == "10:50am" || $scope.discoveryData.time == "11:50am" ||
+                $scope.discoveryData.time == "12:50pm" || $scope.discoveryData.time == "1:50pm" ||
+                $scope.discoveryData.time == "2:50pm" || $scope.discoveryData.time == "3:50pm") {
+
+                $scope.dateInfo[0]      = 2;
+                $scope.dateInfo[1]      = 2
+                $scope.dateInfo[2]      = 2
+              
+                $scope.dateData.hour    = hour;
+                $scope.dateData.id      = $scope.id
+
+                $scope.bookDiscovery    = false;
+                $scope.loadingBooking5  = true;
+
+                User.getDate($scope.id).then(function (data) {
+                    
+                    
+                    data.data.date[hour].state[5] = 2
+                    
+                    if (hour == 'eight' 
+                        && 
+                        data.data.date['nine'].state[0] == 0 
+                        &&
+                        data.data.date['nine'].state[1] == 0) {
+
+                        $scope.hourPlusOne = 'nine'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                            
+                            $timeout(function(){
+
+                                if(data.data.date[hour].state[5] === 2){
+    
+                                    $scope.bookDiscovery38 = false;
+    
+                                    $timeout(function(){
+    
+                                        $scope.bookDiscovery48 = false;
+    
+                                        $timeout(function(){
+    
+                                            $scope.bookDiscovery58 = false;
+
+                                            $timeout(function(){
+
+                                                $scope.loadingBooking5 = false;
+                                                $scope.shinebrightsuccess.play()
+
+                                            },500)
+    
+                                        },500)
+    
+                                    },500)
+    
+    
+                                }
+                                
+                            },1000)
+
+                        })
+                    }
+                    if (hour == 'nine') {
+                        $scope.hourPlusOne = 'ten'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                        if ($scope.discoveryData.time == "9:50am"){
+                            $scope.dateDataForUser.time = "9:50am - 10:20am"
+                            
+                        }
+                        
                             $scope.audio.play();
                             $scope.playAudio();
                             $scope.e.initTouchEvent(function () {
-    
+
                             })
                         })
-    
-                        
+                    }
+                    if (hour == 'ten') {
+                        $scope.hourPlusOne = 'eleven'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                       if ($scope.discoveryData.time == "10:50am"){
+                            $scope.dateDataForUser.time = "10:50am - 11:20am"
+                            
+                        }
                        
-                    })
+                            $scope.audio.play();
+                            $scope.playAudio();
+                            $scope.e.initTouchEvent(function () {
 
+                            })
+                        })
+                    }
+                    if (hour == 'eleven') {
+                        $scope.hourPlusOne = 'twelve'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                         if ($scope.discoveryData.time == "11:50am"){
+                            $scope.dateDataForUser.time = "11:50am - 12:10pm"
+                            
+                        }
+                        
+                            $scope.audio.play();
+                            $scope.playAudio();
+                            $scope.e.initTouchEvent(function () {
 
-                }
+                            })
+                        })
+                    }
+                    if (hour == 'twelve') {
+                        $scope.hourPlusOne = 'one'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                        if ($scope.discoveryData.time == "12:50am"){
+                            $scope.dateDataForUser.time = "12:50am - 1:20pm"
+                            
+                        }
+                        
+                            $scope.audio.play();
+                            $scope.playAudio();
+                            $scope.e.initTouchEvent(function () {
+
+                            })
+                        })
+                    }
+                    if (hour == 'one') {
+                        $scope.hourPlusOne = 'two'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                        if ($scope.discoveryData.time == "1:50pm"){
+                            $scope.dateDataForUser.time = "1:50pm - 2:20pm"
+                            
+                        }
+                        
+                            $scope.audio.play();
+                            $scope.playAudio();
+                            $scope.e.initTouchEvent(function () {
+
+                            })
+                        })
+                    }
+                    if (hour == 'two') {
+                        $scope.hourPlusOne = 'three'
+                        data.data.date[$scope.hourPlusOne].state[0] = 2
+                        data.data.date[$scope.hourPlusOne].state[1] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        User.updateDateNextHour($scope.dateData).then(function (data) {
+                            //console.log(data)
+                            //console.log(data.data.date[hour].state)
+                            $scope.dateDataForUser.date = $scope.currentDate;
+                       if ($scope.discoveryData.time == "2:50pm"){
+                            $scope.dateDataForUser.time = "2:50pm - 3:20pm"
+                            
+                        }
+                       
+                            $scope.audio.play();
+                            $scope.playAudio();
+                            $scope.e.initTouchEvent(function () {
+
+                            })
+                        })
+                    }
+                    if (hour == 'three') {
+                        $scope.hourPlusOne = 'nine'
+                        data.data.date[$scope.hourPlusOne].state[2] = 2
+                        $scope.dateData.dateInfo = data.data.date[hour].state
+                        $scope.dateData.nexthour = $scope.hourPlusOne
+                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
+                        /* User.updateDateNextHour($scope.dateData).then(function (data) {
+                             //console.log(data)
+                             //console.log(data.data.date[hour].state)
+                             $scope.audio.play();
+                             $scope.playAudio();
+                             $scope.e.initTouchEvent(function () {
+ 
+                             })
+                         })*/
+                    }
+
+                })
+            }
 
         }
+
         $scope.submitDiscovery2 = function (hour) {
             //console.log($scope.discoveryData)
             console.log("$scope.discoveryData", $scope.discoveryData)
@@ -1776,6 +2474,10 @@
         $scope.dateCondensed = ""
         $scope.newDateInfo = []
         $scope.audio = new Audio("../audio/shinebrightclick.wav")
+        $scope.shinebrighterror = new Audio("../audio/shinebrighterror.wav");
+        $scope.shinebrightloading = new Audio('../audio/shinebrightloading.wav');
+        $scope.shinebrightsuccess = new Audio('../audio/shinebrightsuccess.wav');
+
        // $scope.e = document.createEvent('TouchEvent');
         $scope.bookDiscovery9to10tzero = true;
         $scope.bookDiscovery9to10ten = true;
@@ -33977,16 +34679,7 @@
              })
 
         }
-        $scope.openBookingPage = function (slot) {
-            //console.log(slot)
-            $scope.slot = slot;
-            $scope.bookingPageOpen = true;
-            $scope.scheduledJobPageOpen = false;
-            $scope.scheduleSDOrCiPageOpen = false;
-            $scope.bookeCheckup = true;
 
-
-        }
         $scope.discoveryFullyAvailable8 = false;
         $scope.discoveryFullyAvailable9 = false;
         $scope.discoveryNotAvailable8 = false;

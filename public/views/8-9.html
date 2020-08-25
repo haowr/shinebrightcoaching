@@ -10,7 +10,7 @@
 
         <div class="col s4 center-align">
 
-            <span class='montserrat' style="font-size:30px;color:black;"> {{currentDate}}</span>
+            <span class='montserrat underline' style="font-size:30px;color:black;"> {{currentDate}}</span>
 
         </div>
 
@@ -26,50 +26,75 @@
 
         <div class = "col s12 center-align">
 
-            <h4 class = "montserrat">Discovery</h4>
+            <h4 class = "montserrat animated pulse infinite">Discovery</h4>
+            <div class = "col s2"></div>
+            <div class = "col s8">
+
+                <p class  = "montserrat" style= "font-size: 20px;" >Sit down, stay awhile! Our "Discovery" option, is a 30 minute session with Leah, and allowing more
+                    time to get to the root of the issue.
+                </p>
+
+            </div>
+            <div class = "col s2"></div>
 
             <div class = "row">
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery8" ng-click="selectTime('8:00')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery8" ng-click="selectTime('8:00',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:20AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:20AM</p>
+                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:00AM</p>
+                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:00AM</p>
 
+                        <div ng-show="!discovery800AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery8AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                        
+                                <div class = "col s12">
+        
+                                        <div ng-show="discovery800AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                </div>
 
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery8AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery800AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey; "></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
-
-
-                            </div>
-                        </div>
+                                <br>
+                                <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
                         
+                                <div ng-show="discovery800AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                    <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                </div>
+        
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -83,7 +108,8 @@
                         <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:00AM</p>
 
 
-                        <div ng-show="discovery8AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery800AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
@@ -97,7 +123,7 @@
 
                             </div>
                         </div>
-                        <div ng-show="!discovery8AMSelected" class = "row animated fadeIn">
+                        <div ng-show="!discovery800AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid white;"></div>
                             <div class = "col s3"></div>
@@ -117,59 +143,91 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery18" ng-click="selectTime('8:10')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery18" ng-click="selectTime('8:10',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
-
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:10AM</p>
                         <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:10AM</p>
 
+                        <div ng-show="!discovery810AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery810AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+            
+                                <div ng-show="!discovery810AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery810AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+                            
+
                         </div>
-                        <div ng-show="!discovery810AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery810AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <br>
+            
+                                <div ng-show="discovery810AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery810AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+                            
+
                         </div>
                         
-
                     </div>
 
                     <div ng-show="bookDiscovery18" ng-click="selectTime('8:10')" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:10AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:10AM</p>
+                        <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:10AM</p>
+                        <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">8:10AM</p>
 
 
-                        <div ng-show="discovery820AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery810AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
@@ -177,21 +235,29 @@
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
                                 
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
- 
+                                <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-                            </div> 
+
+                            </div>
                         </div>
-                        <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
+
+                        <div ng-show="!discovery810AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid white;"></div>
                             <div class = "col s3"></div>
+
+                            <div ng-show="discovery810AMNoRoom" class = "col s12 red lighten-4" >
+        
+                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+
+                            </div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
+                                <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
 
                             </div>
@@ -204,343 +270,493 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery28" ng-click="selectTime('8:20')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery28" ng-click="selectTime('8:20',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
-
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:20AM</p>
                         <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:20AM</p>
 
+                        <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery820AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+            
+                                <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery820AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery820AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <br>
+            
+                                <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery820AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
                         
-
                     </div>
 
                     <div ng-show="bookDiscovery28" ng-click="selectTime('8:20')" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:20AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:20AM</p>
+                        <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:20AM</p>
+                        <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">8:20AM</p>
 
 
                         <div ng-show="discovery820AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
+                                <i ng-show="loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                
+                                <i ng-show="!loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+
+                                <div ng-show="discovery820AMNoRoom" class = "col s12 red lighten-4" >
+        
+                                    <p class = "montserrat animated shake" style="font-size:27px"> At Least 30 Mins Required To Book A Discovery...</p>
+    
+                                </div>
 
                             </div>
+                            
                         </div>
+
                         <div ng-show="!discovery820AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid white;"></div>
                             <div class = "col s3"></div>
+
+                            <div ng-show="discovery820AMNoRoom" class = "col s12 red lighten-4" >
+        
+                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+
+                            </div>
+
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <i ng-show="loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
+                                <i ng-show="!loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
 
                             </div>
                         </div>
                         
-
                     </div>
 
                 </a>
-                
-                <a class="black-text" href="#" onclick="return false">
-                
-                    <div ng-show="!bookDiscovery38" ng-click="selectTime('8:30')" class = "col s4 center-align animated fadeIn" >
+
+            </div>
+
+            <div class = "row">
+
+                <a class="black-text" href="#" onclick="return false" >
+
+                    <div ng-show="!bookDiscovery38" ng-click="selectTime('8:30',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:30AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:30AM</p>
+                        <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:30AM</p>
+                        <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">8:30AM</p>
 
+                        <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery830AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+            
+                                <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery830AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery830AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <br>
+                                <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
+                                <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
+
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery830AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
                         
-
                     </div>
 
                     <div ng-show="bookDiscovery38" ng-click="selectTime('8:30')" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:30AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:30AM</p>
+                            <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:30AM</p>
+                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">8:30AM</p>
 
+                            <div ng-show="discovery830AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery830AMSelected" class = "row animated fadeIn">
-                            <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid grey;"></div>
-                            <div class = "col s3"></div>
-                            <div class = "col s12">
+                                <div class = "col s3"></div>
+                                <div class = "col s6" style="border:1px solid grey;"></div>
+                                <div class = "col s3"></div>
+                                <div class = "col s12">
 
-                                <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                    <br>
+                                    <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                    
+                                    <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+    
 
-
+                                </div> 
                             </div>
-                        </div>
-                        <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
-                            <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
-                            <div class = "col s3"></div>
-                            <div class = "col s12">
+                            <div ng-show="!discovery830AMSelected" class = "row animated fadeIn">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <div class = "col s3"></div>
+                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s3"></div>
+                                <div class = "row"></div>
+                                <div class = "col s12">
+
+                                    <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
+                                    <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
 
+                                </div>
                             </div>
-                        </div>
                         
-
                     </div>
 
                 </a>
+                
+                <a class="black-text" href="#" onclick="return false" >
 
-                <a class="black-text" href="#" onclick="return false">
-
-                    <div ng-show="!bookDiscovery48" ng-click="selectTime('8:40')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery48" ng-click="selectTime('8:40',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:40AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:40AM</p>
+                        <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:40AM</p>
+                        <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">8:40AM</p>
 
+                        <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery840AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+            
+                                <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery840AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery840AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <br>
+                                <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
+                                <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
+
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery840AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
                         
-
                     </div>
 
                     <div ng-show="bookDiscovery48" ng-click="selectTime('8:40')" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:40AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:40AM</p>
+                            <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:40AM</p>
+                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">8:40AM</p>
 
+                            <div ng-show="discovery840AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery840AMSelected" class = "row animated fadeIn">
-                            <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid grey;"></div>
-                            <div class = "col s3"></div>
-                            <div class = "col s12">
+                                <div class = "col s3"></div>
+                                <div class = "col s6" style="border:1px solid grey;"></div>
+                                <div class = "col s3"></div>
+                                <div class = "col s12">
 
-                                <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                    <br>
+                                    <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                    
+                                    <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+    
 
-
+                                </div> 
                             </div>
-                        </div>
-                        <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
-                            <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
-                            <div class = "col s3"></div>
-                            <div class = "col s12">
+                            <div ng-show="!discovery840AMSelected" class = "row animated fadeIn">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <div class = "col s3"></div>
+                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s3"></div>
+                                <div class = "row"></div>
+                                <div class = "col s12">
+
+                                    <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
+                                    <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
 
+                                </div>
                             </div>
-                        </div>
                         
-
                     </div>
-                
+
                 </a>
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery58" ng-click="selectTime('8:50')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery58" ng-click="selectTime('8:50',true)" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:50AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:50AM</p>
+                        <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:50AM</p>
+                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">8:50AM</p>
 
+                        <div ng-show="!discovery850AMSelected" class = "row animated fadeIn">
 
-                        <div ng-show="discovery850AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+            
+                                <div ng-show="!discovery850AMSelected" class = "row animated fadeIn">
 
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery850AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery850AMSelected" class = "row animated fadeIn">
+                        <div ng-show="discovery850AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                <br>
+                                <i ng-show="loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
+                                <div ng-show="!discovery850AMSelected" class = "row animated fadeIn">
+
+                                    <div class = "col s3"></div>
+                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s3"></div>
+                                    
+                                    <div class = "col s12">
+        
+                                        <div ng-show="discovery850AMIsBooked" class = "col s12 red lighten-4" >
+        
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+        
+                                        </div>
+        
+                                    </div>
+
+                                </div>
 
                             </div>
+
                         </div>
                         
-
                     </div>
 
                     <div ng-show="bookDiscovery58" ng-click="selectTime('8:50')" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
-
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:50AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">8:50AM</p>
+                        <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">8:50AM</p>
+                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">8:50AM</p>
 
 
                         <div ng-show="discovery850AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
                                 <br>
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
-
+                                <i ng-show="loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                <i ng-show="!loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
                             </div>
+
                         </div>
-                        <div ng-show="!discovery850AMSelected" class = "row animated fadeIn">
-                            <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
-                            <div class = "col s3"></div>
-                            <div class = "col s12">
 
-                                <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
-                                <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                        <div ng-show="discovery850AMNoRoom" class = "col s12 red lighten-4" >
+        
+                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
 
-
-                            </div>
                         </div>
-                        
+
+                        <div class = "col s12">
+
+                                <i ng-show="loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
+                                <i ng-show="!loadingBooking5" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+
+
+                        </div>
 
                     </div>
 
@@ -548,96 +764,13 @@
    
                 <div class = "col s12 center-align">
 
-                    <button ng-click="submitDiscovery('eight')" type="submit"class="waves-effect waves-light blue-grey btn "style="border:2px solid black;">Open</button>
+                    <button ng-click="submitDiscovery('eight')" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Submit</button>
 
                 </div>
 
             </div>
 
         </div>
-    </div>
-    <div class="col s3">
-        <p class="montserrat"> Discovery</p>
-    </div>
-    <div class="col s9">
-        
-        <label for="Sex">Available Hours *</label>
-        <select class="error browser-default animated" id="sex" ng-model="discoveryData.time" ng-class="{'shake':shakeOn}" name="time" required>
-            <option value="" disabled selected>Hours</option>
-            <option ng-show="bookDiscovery8" value="8:00am">8:00am</option>
-            <option ng-show="bookDiscovery18" value="8:10am">8:10am</option>
-            <option ng-show="bookDiscovery28" value="8:20am">8:20am</option>
-            <option ng-show="bookDiscovery38" value="8:30am">8:30am</option>
-            <option ng-show="bookDiscovery48" value="8:40am">8:40am</option>      
-            <option ng-show="bookDiscovery58" value="8:50am">8:50am</option>
-           
-        </select>
-        
-
-
-
-    
-    </div>
-            <div class = "col s3">
-  </div>
-        <div class = "col s9 ">
-             <a ng-click="submitDiscovery('eight')" class="waves-effect waves-light btn">Submit</a>
-
-    </div>
-      </div>
-
-    </div>
-
-    <div >
-
-        <div class="col s3">
-            <p class="montserrat"> Check-Up</p>
-        </div>
-        <div class="col s9">
-
-            <label for="Sex">Available Hours *</label>
-            <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="checkUpData.time" name="time" required>
-                <option value="" disabled selected>Hours</option>
-                <option ng-show="bookCheckUp8" value="8:00am">8:00am</option>
-                <option ng-show="bookCheckUp18" value="8:10am">8:10am</option>
-                <option ng-show="bookCheckUp28" value="8:20am">8:20am</option>
-                <option ng-show="bookCheckUp38" value="8:30am">8:30am</option>
-                <option ng-show="bookCheckUp48" value="8:40am">8:40am</option>                          
-                <option ng-show="bookCheckUp58" value="8:50am">8:50am</option>
-            </select>
-        </div>
-          <div class = "col s3">
-  </div>
-        <div class = "col s9 ">
-             <a ng-click="submitCheckUp('eight')" class="waves-effect waves-light btn">Submit</a>
-
-    </div>
-        <div class="col s3">
-            <p class="montserrat"> Session</p>
-        </div>
-        <div class="col s9">
-
-            <label for="Sex">Available Hours *</label>
-            <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="sessionData.time" name="time" required>
-                <option value="" disabled selected>Hours</option>
-                <option ng-show="bookSession8" value="8:20am">8:00am</option>
-                <option ng-show="bookSession18" value="8:30am">8:10am</option>
-                <option ng-show="bookSession28" value="8:40am">8:20am</option>
-                <option ng-show="bookSession38" value="8:40am">8:30am</option>
-                <option ng-show="bookSession48" value="8:40am">8:40am</option>                          
-                <option ng-show="bookSession58" value="8:50am">8:50am</option>
-            </select>
-        </div>
-
-    </div>
-
-  
-   
-
-    <div class = "col s3">
-  </div>
-        <div class = "col s9 ">
-             <a ng-click="submitSession('eight')" class="waves-effect waves-light btn">Submit</a>
 
     </div>
 
