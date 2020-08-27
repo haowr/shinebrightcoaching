@@ -93,6 +93,158 @@
         $scope.checkUp8Selected6 = true;
         $scope.checkUp8Selected7 = true;
         $scope.checkUp8Selected8 = true;
+    
+
+        $scope.checkUpTitle80       = true;
+        $scope.discoveryTitle80     = false;
+        $scope.sessionTitle80       = false;
+        $scope.checkUpTitle81       = true;
+        $scope.checkUpTitle82       = true;
+        $scope.checkUpTitle83       = true;
+        $scope.checkUpTitle84       = true;
+        $scope.checkUpTitle85       = true;
+        $scope.checkUpTitle86       = true;
+        $scope.checkUpTitle87       = true;
+        $scope.checkUpTitle88       = true;
+        $scope.checkUpTitle90       = false;
+        $scope.checkUpTitle91       = true;
+        $scope.checkUpTitle92       = true;
+        $scope.checkUpTitle93       = true;
+        $scope.checkUpTitle94       = true;
+        $scope.checkUpTitle95       = true;
+        $scope.checkUpTitle96       = true;
+        $scope.checkUpTitle97       = true;
+        $scope.checkUpTitle98       = true;
+        $scope.checkUpTitle100       = false;
+        $scope.checkUpTitle101       = true;
+        $scope.checkUpTitle102       = true;
+        $scope.checkUpTitle103       = true;
+        $scope.checkUpTitle104       = true;
+        $scope.checkUpTitle105       = true;
+        $scope.checkUpTitle106       = true;
+        $scope.checkUpTitle107       = true;
+        $scope.checkUpTitle108       = true;
+        $scope.checkUpTitle110       = false;
+        $scope.checkUpTitle111       = true;
+        $scope.checkUpTitle112       = true;
+        $scope.checkUpTitle113       = true;
+        $scope.checkUpTitle114       = true;
+        $scope.checkUpTitle115       = true;
+        $scope.checkUpTitle116       = true;
+        $scope.checkUpTitle117       = true;
+        $scope.checkUpTitle118       = true;
+        $scope.checkUpTitle120       = false;
+        $scope.checkUpTitle121       = true;
+        $scope.checkUpTitle122       = true;
+        $scope.checkUpTitle123       = true;
+        $scope.checkUpTitle124       = true;
+        $scope.checkUpTitle125       = true;
+        $scope.checkUpTitle126       = true;
+        $scope.checkUpTitle127       = true;
+        $scope.checkUpTitle128       = true;
+        $scope.checkUpTitle10        = true;
+        $scope.checkUpTitle11        = true;
+        $scope.checkUpTitle12        = true;
+        $scope.checkUpTitle13        = true;
+        $scope.checkUpTitle14        = true;
+        $scope.checkUpTitle15        = true;
+        $scope.checkUpTitle16        = true;
+        $scope.checkUpTitle17        = true;
+        $scope.checkUpTitle18        = true;
+        $scope.checkUpTitle20        = true;
+        $scope.checkUpTitle21        = true;
+        $scope.checkUpTitle22        = true;
+        $scope.checkUpTitle23        = true;
+        $scope.checkUpTitle24        = true;
+        $scope.checkUpTitle25        = true;
+        $scope.checkUpTitle26        = true;
+        $scope.checkUpTitle27        = true;
+        $scope.checkUpTitle28        = true;
+        $scope.checkUpTitle30        = true;
+        $scope.checkUpTitle31        = true;
+        $scope.checkUpTitle32        = true;
+        $scope.checkUpTitle33        = true;
+        $scope.checkUpTitle34        = true;
+        $scope.checkUpTitle35        = true;
+        $scope.checkUpTitle36        = true;
+        $scope.checkUpTitle37        = true;
+        $scope.checkUpTitle38        = true;
+        
+        $scope.discoveryTitle80     = false;
+        $scope.discoveryTitle81     = false;
+        $scope.discoveryTitle82     = false;
+        $scope.discoveryTitle83     = false;
+        $scope.discoverytTitle84    = false;
+        $scope.discoveryTitle85     = false;
+        $scope.discoverytTitle86    = false;
+        $scope.discoveryTitle87     = false;
+        $scope.discoveryTitle88     = false;
+        $scope.sessionTitle81       = false;
+        $scope.sessionTitle82       = false;
+        $scope.sessionTitle83       = false;
+        $scope.sessionTitle84       = false;
+        $scope.sessionTitle85       = false;
+        $scope.sessionTitle86       = false;
+        $scope.sessionTitle87       = false;
+        $scope.sessionTitle88       = false;
+        $scope.sessionTitle90       = false;
+        $scope.sessionTitle91       = false;
+        $scope.sessionTitle92       = false;
+        $scope.sessionTitle93       = false;
+        $scope.sessionTitle94       = false;
+        $scope.sessionTitle95       = false;
+        $scope.sessionTitle96       = false;
+        $scope.sessionTitle97       = false;
+        $scope.sessionTitle100       = false;
+        $scope.sessionTitle101       = false;
+        $scope.sessionTitle102       = false;
+        $scope.sessionTitle103       = false;
+        $scope.sessionTitle104       = false;
+        $scope.sessionTitle105       = false;
+        $scope.sessionTitle106       = false;
+        $scope.sessionTitle107       = false;        
+        $scope.sessionTitle110       = false;
+        $scope.sessionTitle111       = false;
+        $scope.sessionTitle112       = false;
+        $scope.sessionTitle113       = false;
+        $scope.sessionTitle114       = false;
+        $scope.sessionTitle115       = false;
+        $scope.sessionTitle116       = false;
+        $scope.sessionTitle117       = false;
+        $scope.sessionTitle120       = false;
+        $scope.sessionTitle121       = false;
+        $scope.sessionTitle122       = false;
+        $scope.sessionTitle123       = false;
+        $scope.sessionTitle124       = false;
+        $scope.sessionTitle125       = false;
+        $scope.sessionTitle126       = false;
+        $scope.sessionTitle127       = false;
+        $scope.sessionTitle10       = false;
+        $scope.sessionTitle11       = false;
+        $scope.sessionTitle12       = false;
+        $scope.sessionTitle13       = false;
+        $scope.sessionTitle14       = false;
+        $scope.sessionTitle15       = false;
+        $scope.sessionTitle16       = false;
+        $scope.sessionTitle17       = false;
+        $scope.sessionTitle20       = false;
+        $scope.sessionTitle21       = false;
+        $scope.sessionTitle22       = false;
+        $scope.sessionTitle23       = false;
+        $scope.sessionTitle24       = false;
+        $scope.sessionTitle25       = false;
+        $scope.sessionTitle26       = false;
+        $scope.sessionTitle27       = false;
+        $scope.sessionTitle30       = false;
+        $scope.sessionTitle31       = false;
+        $scope.sessionTitle32       = false;
+        $scope.sessionTitle33       = false;
+        $scope.sessionTitle34       = false;
+        $scope.sessionTitle35       = false;
+        $scope.sessionTitle36       = false;
+        $scope.sessionTitle37       = false;
+
+       
 
         $scope.appointmentTypeAvailable = true;
 
@@ -116,13 +268,25 @@
 
             if(type == 'checkup'){
 
+                $scope.sessionPageOpen      = false;
+                $scope.discoveryPageOpen    = false;
+                $scope.checkUpPageOpen      = true;
+                $scope.checkUpTitle9        = true;
+                
+                console.log("Check Up Page Open",   $scope.checkUpPageOpen)
+                console.log("Discovery Page Open",  $scope.discoveryPageOpen)
+                console.log("Session Page Open",    $scope.sessionPageOpen)
+                
                 if(column == '1'){
 
                     if(!$scope.checkUp8Selected){
                     
-                        $scope.discovery8Selected = false;
-                        $scope.session8Selected = false;
-                        $scope.checkUp8Selected = true;
+                        $scope.discovery8Selected   = false;
+                        $scope.session8Selected     = false;
+                        $scope.checkUp8Selected     = true;
+                        $scope.sessionTitle80        = false;
+                        $scope.discoveryTitle80      = false;
+                        $scope.checkUpTitle80        = true;
                         $scope.audio.play()
         
                     }
@@ -131,11 +295,14 @@
  
                 if(column == '2'){
 
-                    if(!$scope.checkUp8Selected2){
+                    if(!$scope.checkUp9Selected2){
                     
-                        $scope.discovery8Selected2 = false;
-                        $scope.session8Selected2 = false;
-                        $scope.checkUp8Selected2 = true;
+                        $scope.discovery9Selected2  = false;
+                        $scope.session9Selected2    = false;
+                        $scope.checkUp9Selected2    = true;
+                        $scope.sessionTitle91       = false;
+                        $scope.discoveryTitle91     = false;
+                        $scope.checkUpTitle91       = true;
                         $scope.audio.play()
         
                     }
@@ -144,91 +311,121 @@
 
                 if(column == '3'){
 
-                    if(!$scope.checkUp8Selected2){
+                    if(!$scope.checkUp10Selected3){
                     
-                        $scope.discovery8Selected3 = false;
-                        $scope.session8Selected3 = false;
-                        $scope.checkUp8Selected3 = true;
+                        $scope.discovery10Selected3   = false;
+                        $scope.session10Selected3     = false;
+                        $scope.checkUp10Selected3     = true;
+                        $scope.checkUpTitle102       = true;
+                        $scope.discoveryTitle102     = false;
+                        $scope.sessionTitle102       = false;
                         $scope.audio.play()
         
                     }
 
                 }
+
                 if(column == '4'){
 
-                    if(!$scope.checkUp8Selected4){
+                    if(!$scope.checkUp11Selected4){
                     
-                        $scope.discovery8Selected4 = false;
-                        $scope.session8Selected4 = false;
-                        $scope.checkUp8Selected4 = true;
+                        $scope.discovery11Selected4   = false;
+                        $scope.session11Selected4     = false;
+                        $scope.checkUp11Selected4     = true;
+                        $scope.checkUpTitle113       = true;
+                        $scope.discoveryTitle113     = false;
+                        $scope.sessionTitle113       = false;
+
                         $scope.audio.play()
         
                     }
 
                 }
+
                 if(column == '5'){
 
-                    if(!$scope.checkUp8Selected5){
+                    if(!$scope.checkUp12Selected5){
                     
-                        $scope.discovery8Selected5 = false;
-                        $scope.session8Selected5 = false;
-                        $scope.checkUp8Selected5 = true;
+                        $scope.discovery12Selected5  = false;
+                        $scope.session12Selected5    = false;
+                        $scope.checkUp12Selected5    = true;
+                        $scope.sessionTitle124       = false;
+                        $scope.discoveryTitle124     = false;
+                        $scope.checkUpTitle124       = true;
                         $scope.audio.play()
         
                     }
 
                 }
+
                 if(column == '6'){
 
-                    if(!$scope.checkUp8Selected6){
+                    if(!$scope.checkUp1Selected6){
                     
-                        $scope.discovery8Selected6 = false;
-                        $scope.session8Selected6 = false;
-                        $scope.checkUp8Selected6 = true;
+                        $scope.discovery1Selected6  = false;
+                        $scope.session1Selected6    = false;
+                        $scope.checkUp1Selected6    = true;
+                        $scope.sessionTitle15       = false;
+                        $scope.discoveryTitle15     = false;
+                        $scope.checkUpTitle15       = true;
                         $scope.audio.play()
         
                     }
 
                 }
+
                 if(column == '7'){
 
-                    if(!$scope.checkUp8Selected7){
+                    if(!$scope.checkUp2Selected7){
                     
-                        $scope.discovery8Selected7 = false;
-                        $scope.session8Selected7 = false;
-                        $scope.checkUp8Selected7 = true;
+                        $scope.discovery2Selected7      = false;
+                        $scope.session2Selected7        = false;
+                        $scope.checkUp2Selected7        = true;
+                        $scope.sessionTitle26           = false;
+                        $scope.discoveryTitle26         = false;
+                        $scope.checkUpTitle26           = true;
                         $scope.audio.play()
         
                     }
 
                 }
+
                 if(column == '8'){
 
-                    if(!$scope.checkUp8Selected8){
+                    if(!$scope.checkUp3Selected8){
                     
-                        $scope.discovery8Selected8 = false;
-                        $scope.session8Selected8 = false;
-                        $scope.checkUp8Selected8 = true;
+                        $scope.discovery3Selected8  = false;
+                        $scope.session3Selected8    = false;
+                        $scope.checkUp3Selected8    = true;
+                        $scope.sessionTitle37       = false;
+                        $scope.discoveryTitle37     = false;
+                        $scope.checkUpTitle37       = true;
                         $scope.audio.play()
         
                     }
 
                 }
-
-                
-                
 
             }
 
             if(type == 'discovery'){
 
+                $scope.sessionPageOpen      = false;
+                $scope.checkUpPageOpen      = false;
+                $scope.discoveryPageOpen    = true;
+                
+
                 if(column == '1'){
 
                     if(!$scope.discovery8Selected){
                     
-                        $scope.checkUp8Selected = false;
-                        $scope.session8Selected = false;
-                        $scope.discovery8Selected = true
+                        $scope.checkUp8Selected     = false;
+                        $scope.session8Selected     = false;
+                        $scope.discovery8Selected   = true
+                        $scope.sessionTitle80       = false;
+                        $scope.checkUpTitle80       = false;
+                        $scope.discoveryTitle80     = true;
+
                         $scope.audio.play()
         
                     }
@@ -237,11 +434,14 @@
  
                 if(column == '2'){
 
-                    if(!$scope.discovery8Selected2){
+                    if(!$scope.discovery9Selected2){
                     
-                        $scope.checkUp8Selected2 = false;
-                        $scope.session8Selected2 = false;
-                        $scope.discovery8Selected2 = true;
+                        $scope.checkUp9Selected2    = false;
+                        $scope.session9Selected2    = false;
+                        $scope.discovery9Selected2  = true;
+                        $scope.sessionTitle91       = false;
+                        $scope.checkUpTitle91       = false;
+                        $scope.discoveryTitle91     = true;
                         $scope.audio.play()
         
                     }
@@ -250,11 +450,14 @@
 
                 if(column == '3'){
 
-                    if(!$scope.discovery8Selected2){
+                    if(!$scope.discovery10Selected3){
                     
-                        $scope.checkUp8Selected3 = false;
-                        $scope.session8Selected3 = false;
-                        $scope.discovery8Selected3 = true;
+                        $scope.checkUp10Selected3    = false;
+                        $scope.session10Selected3    = false;
+                        $scope.discovery10Selected3  = true;
+                        $scope.sessionTitle102      = false;
+                        $scope.checkUpTitle102      = false;
+                        $scope.discoveryTitle102    = true;
                         $scope.audio.play()
         
                     }
@@ -262,11 +465,14 @@
                 }
                 if(column == '4'){
 
-                    if(!$scope.discovery8Selected4){
+                    if(!$scope.discovery11Selected4){
                     
-                        $scope.checkUp8Selected4 = false;
-                        $scope.session8Selected4 = false;
-                        $scope.discovery8Selected4 = true;
+                        $scope.checkUp11Selected4    = false;
+                        $scope.session11Selected4    = false;
+                        $scope.discovery11Selected4  = true;
+                        $scope.sessionTitle113      = false;
+                        $scope.checkUpTitle113      = false;
+                        $scope.discoveryTitle113    = true;
                         $scope.audio.play()
         
                     }
@@ -274,11 +480,14 @@
                 }
                 if(column == '5'){
 
-                    if(!$scope.discovery8Selected5){
+                    if(!$scope.discovery12Selected5){
                     
-                        $scope.checkUp8Selected5 = false;
-                        $scope.session8Selected5 = false;
-                        $scope.discovery8Selected5 = true;
+                        $scope.checkUp12Selected5    = false;
+                        $scope.session12Selected5    = false;
+                        $scope.discovery12Selected5  = true;
+                        $scope.sessionTitle124       = false;
+                        $scope.checkUpTitle124       = false;
+                        $scope.discoveryTitle124     = true;
                         $scope.audio.play()
         
                     }
@@ -286,11 +495,14 @@
                 }
                 if(column == '6'){
 
-                    if(!$scope.discovery8Selected6){
+                    if(!$scope.discovery1Selected6){
                     
-                        $scope.checkUp8Selected6 = false;
-                        $scope.session8Selected6 = false;
-                        $scope.discovery8Selected6 = true;
+                        $scope.checkUp1Selected6    = false;
+                        $scope.session1Selected6    = false;
+                        $scope.discovery1Selected6  = true;
+                        $scope.sessionTitle15       = false;
+                        $scope.checkUpTitle15       = false;
+                        $scope.discoveryTitle15     = true;
                         $scope.audio.play()
         
                     }
@@ -298,11 +510,14 @@
                 }
                 if(column == '7'){
 
-                    if(!$scope.discovery8Selected7){
+                    if(!$scope.discovery2Selected7){
                     
-                        $scope.checkUp8Selected7 = false;
-                        $scope.session8Selected7 = false;
-                        $scope.discovery8Selected7 = true;
+                        $scope.checkUp2Selected7    = false;
+                        $scope.session2Selected7    = false;
+                        $scope.discovery2Selected7  = true;
+                        $scope.sessionTitle26       = false;
+                        $scope.checkUpTitle26       = false;
+                        $scope.discoveryTitle26    = true;
                         $scope.audio.play()
         
                     }
@@ -310,11 +525,14 @@
                 }
                 if(column == '8'){
 
-                    if(!$scope.discovery8Selected8){
+                    if(!$scope.discovery3Selected8){
                     
-                        $scope.checkUp8Selected8 = false;
-                        $scope.session8Selected8 = false;
-                        $scope.discovery8Selected8 = true;
+                        $scope.checkUp3Selected8    = false;
+                        $scope.session3Selected8    = false;
+                        $scope.discovery3Selected8  = true;
+                        $scope.checkUpTitle37       = false;
+                        $scope.sessionTitle37       = false;
+                        $scope.discoveryTitle37     = true;
                         $scope.audio.play()
         
                     }
@@ -328,13 +546,20 @@
 
             if(type == 'session'){
 
+                $scope.discoveryPageOpen    = false;
+                $scope.checkUpPageOpen      = false;
+                $scope.sessionPageOpen      = true;
+
                 if(column == '1'){
 
                     if(!$scope.session8Selected){
                     
-                        $scope.checkUp8Selected = false;
-                        $scope.discovery8Selected = false;
-                        $scope.session8Selected = true
+                        $scope.checkUp8Selected     = false;
+                        $scope.discovery8Selected   = false;
+                        $scope.session8Selected     = true
+                        $scope.checkUpTitle80       = false;
+                        $scope.discoveryTitle80     = false;
+                        $scope.sessionTitle80       = true;
                         $scope.audio.play()
         
                     }
@@ -343,11 +568,14 @@
  
                 if(column == '2'){
 
-                    if(!$scope.session8Selected2){
+                    if(!$scope.session9Selected2){
                     
-                        $scope.checkUp8Selected2 = false;
-                        $scope.discovery8Selected3 = false;
-                        $scope.session8Selected2 = true;
+                        $scope.checkUp9Selected2    = false;
+                        $scope.discovery9Selected2  = false;
+                        $scope.session9Selected2    = true;
+                        $scope.sessionTitle91       = true;
+                        $scope.discoveryTitle91     = false;
+                        $scope.checkUpTitle91       = false;
                         $scope.audio.play()
         
                     }
@@ -356,11 +584,14 @@
 
                 if(column == '3'){
 
-                    if(!$scope.session8Selected2){
+                    if(!$scope.session10Selected3){
                     
-                        $scope.checkUp8Selected3 = false;
-                        $scope.discovery8Selected3 = false;
-                        $scope.session8Selected3 = true;
+                        $scope.checkUp10Selected3     = false;
+                        $scope.discovery10Selected3   = false;
+                        $scope.session10Selected3     = true;
+                        $scope.checkUpTitle102       = false;
+                        $scope.discoveryTitle102     = false;
+                        $scope.sessionTitle102       = true;
                         $scope.audio.play()
         
                     }
@@ -368,11 +599,14 @@
                 }
                 if(column == '4'){
 
-                    if(!$scope.session8Selected4){
+                    if(!$scope.session11Selected4){
                     
-                        $scope.checkUp8Selected4 = false;
-                        $scope.discovery8Selected4 = false;
-                        $scope.session8Selected4 = true;
+                        $scope.checkUp11Selected4    = false;
+                        $scope.discovery11Selected4  = false;
+                        $scope.session11Selected4    = true;
+                        $scope.discoveryTitle113    = false;
+                        $scope.checkUpTitle113      = false;
+                        $scope.sessionTitle113      = true;
                         $scope.audio.play()
         
                     }
@@ -380,11 +614,14 @@
                 }
                 if(column == '5'){
 
-                    if(!$scope.session8Selected5){
+                    if(!$scope.session12Selected5){
                     
-                        $scope.checkUp8Selected5 = false;
-                        $scope.discovery8Selected5 = false;
-                        $scope.session8Selected5 = true;
+                        $scope.checkUp12Selected5    = false;
+                        $scope.discovery12Selected5  = false;
+                        $scope.session12Selected5    = true;
+                        $scope.discoveryTitle124    = false;
+                        $scope.checkUpTitle124      = false;
+                        $scope.sessionTitle124      = true;
                         $scope.audio.play()
         
                     }
@@ -392,11 +629,14 @@
                 }
                 if(column == '6'){
 
-                    if(!$scope.session8Selected6){
+                    if(!$scope.session1Selected6){
                     
-                        $scope.checkUp8Selected6 = false;
-                        $scope.discovery8Selected6 = false;
-                        $scope.session8Selected6 = true;
+                        $scope.checkUp1Selected6    = false;
+                        $scope.discovery1Selected6  = false;
+                        $scope.session1Selected6    = true;
+                        $scope.discoveryTitle15     = false;
+                        $scope.checkUpTitle15       = false;
+                        $scope.sessionTitle15       = true;
                         $scope.audio.play()
         
                     }
@@ -404,11 +644,14 @@
                 }
                 if(column == '7'){
 
-                    if(!$scope.session8Selected7){
+                    if(!$scope.session2Selected7){
                     
-                        $scope.checkUp8Selected7 = false;
-                        $scope.discovery8Selected7 = false;
-                        $scope.session8Selected7 = true;
+                        $scope.checkUp2Selected7    = false;
+                        $scope.discovery2Selected7  = false;
+                        $scope.session2Selected7    = true;
+                        $scope.discoveryTitle26     = false;
+                        $scope.checkUpTitle26       = false;
+                        $scope.sessionTitle26       = true;
                         $scope.audio.play()
         
                     }
@@ -416,11 +659,14 @@
                 }
                 if(column == '8'){
 
-                    if(!$scope.session8Selected8){
+                    if(!$scope.session3Selected8){
                     
-                        $scope.checkUp8Selected8 = false;
-                        $scope.discovery8Selected8 = false;
-                        $scope.session8Selected8 = true;
+                        $scope.checkUp3Selected8    = false;
+                        $scope.discovery3Selected8  = false;
+                        $scope.session3Selected8    = true;
+                        $scope.discoveryTitle37     = false;
+                        $scope.checkUpTitle37       = false;
+                        $scope.sessionTitle37       = true;
                         $scope.audio.play()
         
                     }
@@ -434,9 +680,12 @@
             
         }
 
+        $scope.discoveryPageOpen    = false;
+        $scope.sessionPageOpen      = false;
+        $scope.checkUpPageOpen      = false;
+
         $scope.openBookingPage = function (slot) {
             
-
             $scope.slot = slot;
             $scope.hour = slot;
             $scope.bookingPageOpen = true;
@@ -444,6 +693,10 @@
             $scope.scheduleSDOrCiPageOpen = false;
             $scope.bookeCheckup = true;
             $scope.globalDateInformation = {};
+
+            console.log("Check Up Page Open",   $scope.checkUpPageOpen)
+            console.log("Discovery Page Open",  $scope.discoveryPageOpen)
+            console.log("Session Page Open",    $scope.sessionPageOpen)
 
             console.log("Appointment Type", $scope.appointmentType)
 
@@ -457,12 +710,14 @@
 
                 if($scope.appointmentType == "discovery"){
 
-                    console.log("I'm here")
+
                     if($scope.hour == "eight"){
 
                         if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
 
-                            $scope.bookDiscovery8 = false;
+                            $scope.bookDiscovery8   = false;
+                            $scope.bookSession8     = false;
+                            $scope.bookCheckUp8     = false;
 
                         }
                         
@@ -470,6 +725,10 @@
 
                             $scope.bookDiscovery8   = false;
                             $scope.bookDiscovery18  = false;
+                            $scope.bookSession8     = false;
+                            $scope.bookSession18    = false;
+                            $scope.bookCheckUp8     = false;
+                            $scope.bookCheckUp18    = false;
 
                         }
 
@@ -478,6 +737,312 @@
                             $scope.discovery800AMSelected   = false;
                             $scope.bookDiscovery18          = false;
                             $scope.bookDiscovery28          = false;
+                            $scope.bookSession18            = false;
+                            $scope.bookSession28            = false;
+                            $scope.bookCheckUp18            = false;
+                            $scope.bookCheckUp28            = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "nine"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery9   = false;
+                            $scope.bookSession9     = false;
+                            $scope.bookCheckUp9     = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery9   = false;
+                            $scope.bookDiscovery19  = false;
+                            $scope.bookCheckUp9     = false;
+                            $scope.bookCheckUp19    = false;
+                            $scope.bookSession9     = false;
+                            $scope.bookSession19    = false;
+                        
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery19          = false;
+                            $scope.bookDiscovery29          = false;
+                            $scope.bookSession19            = false;
+                            $scope.bookDiscovery29          = false;
+                            $scope.bookCheckUp19            = false;
+                            $scope.bookCheckUp29            = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "ten"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery10  = false;
+                            $scope.bookSession10    = false;
+                            $scope.bookCheckUp10    = false;
+
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery10   = false;
+                            $scope.bookDiscovery210  = false;
+                            $scope.bookSession10     = false;
+                            $scope.bookSession210    = false;
+                            $scope.bookCheckUp10     = false;
+                            $scope.bookCheckUp210    = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery210         = false;
+                            $scope.bookDiscovery310         = false;
+                            $scope.bookSession210           = false;
+                            $scope.bookSession310           = false;
+                            $scope.bookCheckUp210           = false;
+                            $scope.bookCheckUp310           = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "eleven"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery11  = false;
+                            $scope.bookSession11    = false;
+                            $scope.bookCheckUp11    = false;
+
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery11   = false;
+                            $scope.bookDiscovery211  = false;
+                            $scope.bookSession11     = false;
+                            $scope.bookSession211    = false;
+                            $scope.bookCheckUp11     = false;
+                            $scope.bookCheckUp211    = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery211          = false;
+                            $scope.bookDiscovery311          = false;
+                            $scope.bookSession211           = false;
+                            $scope.bookSession311           = false;
+                            $scope.bookCheckUp211           = false;
+                            $scope.bookCheckUp311           = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "twelve"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery12  = false;
+                            $scope.bookSession12    = false;
+                            $scope.bookCheckUp12    = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery12   = false;
+                            $scope.bookDiscovery212  = false;
+                            $scope.bookSession12     = false;
+                            $scope.bookSession212    = false;
+                            $scope.bookCheckUp12     = false;
+                            $scope.bookCheckUp212    = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery12AM             = false;
+                            $scope.bookDiscovery212          = false;
+                            $scope.bookDiscovery312          = false;
+                            $scope.bookSession212            = false;
+                            $scope.bookSession312            = false;
+                            $scope.bookCheckUp212            = false;
+                            $scope.bookCheckUp312            = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "one"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery1 = false;
+                            $scope.bookSession1     = false;
+                            $scope.bookCheckUp1     = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery1   = false;
+                            $scope.bookDiscovery21  = false;
+                            $scope.bookSession1 = false;
+                            $scope.bookSession21 = false;
+                            $scope.bookCheckUp1 = false;
+                            $scope.bookCheckUp21 = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery21          = false;
+                            $scope.bookDiscovery31          = false;
+                            $scope.bookSession21            = false;
+                            $scope.bookSession31            = false;
+                            $scope.bookCheckUp21            = false;
+                            $scope.bookCheckUp31            = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "two"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery2 = false;
+                            $scope.bookSession2 = false;
+                            $scope.bookCheckUp2 = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery2   = false;
+                            $scope.bookDiscovery22  = false;
+                            $scope.bookSession2     = false;
+                            $scope.bookSession22    = false;
+                            $scope.bookCheckUp2     = false;
+                            $scope.bookCheckUp22     = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery22          = false;
+                            $scope.bookDiscovery32          = false;
+                            $scope.bookSession22            = false;
+                            $scope.bookSession32            = false;
+                            $scope.bookCheckUp22            = false;
+                            $scope.bookCheckUp32            = false;
+
+                        }
+
+                    }
+                    if($scope.hour == "three"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookDiscovery3 = false;
+                            $scope.bookSession3 = false;
+                            $scope.bookCheckUp3 = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookDiscovery3   = false;
+                            $scope.bookDiscovery32  = false;
+                            $scope.bookSession3     = false;
+                            $scope.bookSession32    = false;
+                            $scope.bookCheckUp3     = false;
+                            $scope.bookCheckUp32    = false;
+                            
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookDiscovery32          = false;
+                            $scope.bookDiscovery33          = false;
+                            $scope.bookSesssion32           = false;
+                            $scope.bookSession33            = false;
+                            $scope.bookCheckUp23            = false;
+                            $scope.bookCheckUp33            = false;
+
+                        }
+
+                    }
+
+                }
+
+                if($scope.appointmentType == "checkup"){
+
+
+                    if($scope.hour == "eight"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookCheckUp8 = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookCheckUp8   = false;
+                            $scope.bookCheckUp18  = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookCheckUp18          = false;
+                            $scope.bookCheckUp28          = false;
+
+                        }
+
+                    }
+
+                }
+
+                if($scope.appointmentType == "session"){
+
+
+                    if($scope.hour == "eight"){
+
+                        if($scope.globalDateInformation[$scope.hour].state[1]   == 2){
+
+                            $scope.bookSession8 = false;
+
+                        }
+                        
+                        if($scope.globalDateInformation[$scope.hour].state[2]   == 2){
+
+                            $scope.bookSession8   = false;
+                            $scope.bookSession18  = false;
+
+                        }
+
+                        if(data.data.date[$scope.hour].state[3] === 2){
+
+                            $scope.discovery800AMSelected   = false;
+                            $scope.bookSession18          = false;
+                            $scope.bookSession28          = false;
 
                         }
 
@@ -34682,164 +35247,168 @@
 
         $scope.discoveryFullyAvailable8 = false;
         $scope.discoveryFullyAvailable9 = false;
-        $scope.discoveryNotAvailable8 = false;
-        $scope.discoveryNotAvailable9 = false;
-        $scope.discoveryAlmostFull8 = false;
-        $scope.sessionAlmostFull8 = false;
-        $scope.sessionAlmostFull9 = false;
-        $scope.discoveryAlmostFull9 = false;
-        $scope.checkUpFullyAvailable = false;
+        $scope.discoveryNotAvailable8   = false;
+        $scope.discoveryNotAvailable9   = false;
+        $scope.discoveryAlmostFull8     = false;
+        $scope.sessionAlmostFull8       = false;
+        $scope.sessionAlmostFull9       = false;
+        $scope.discoveryAlmostFull9     = false;
+        $scope.checkUpFullyAvailable    = false;
+
         $scope.exitScheduledJobPage = function () {
+
             $scope.scheduledJobPageOpen = false;
-            $scope.currentDate = null;
-            $scope.bookeCheckup = true;
-            $scope.bookDiscovery8 = false
-            $scope.bookDiscovery9 = false;
-            $scope.bookDiscovery18 = false;
-            $scope.bookDiscovery19 = false;
-            $scope.bookDiscovery28 = false;
-            $scope.bookDiscovery29 = false;
-            $scope.bookDiscovery39 = false;
-            $scope.bookDiscovery49 = false;
-            $scope.bookDiscovery59 = false;
-            $scope.bookDiscovery10 = false;
-            $scope.bookDiscovery110 = false;
-            $scope.bookDiscovery210 = false;
-            $scope.bookDiscovery310 = false;
-            $scope.bookDiscovery410 = false;
-            $scope.bookDiscovery510 = false;
-            $scope.bookDiscovery11 = false;
-            $scope.bookDiscovery111 = false;
-            $scope.bookDiscovery211 = false;
-            $scope.bookDiscovery311 = false;
-            $scope.bookDiscovery411 = false;
-            $scope.bookDiscovery511 = false;
-            $scope.bookDiscovery12 = false;
-            $scope.bookDiscovery112 = false;
-            $scope.bookDiscovery212 = false;
-            $scope.bookDiscovery312 = false;
-            $scope.bookDiscovery412 = false;
-            $scope.bookDiscovery512 = false;
-            $scope.bookDiscovery1 = false;
-            $scope.bookDiscovery11 = false;
-            $scope.bookDiscovery21 = false;
-            $scope.bookDiscovery31 = false;
-            $scope.bookDiscovery41 = false;
-            $scope.bookDiscovery51 = false;
-            $scope.bookDiscovery2 = false;
-            $scope.bookDiscovery102 = false;
-            $scope.bookDiscovery22 = false;
-            $scope.bookDiscovery32 = false;
-            $scope.bookDiscovery42 = false;
-            $scope.bookDiscovery52 = false;
-            $scope.bookDiscovery3 = false;
-            $scope.bookDiscovery13 = false;
-            $scope.bookDiscovery23 = false;
-            $scope.bookDiscovery33 = false;
-            $scope.bookDiscovery43 = false;
-            $scope.bookDiscovery53 = false;
-            $scope.bookDiscovery38 = false;
-            $scope.bookDiscovery48 = false;
-            $scope.bookDiscovery58 = false;
+            console.log("CLICKED.")
+            $scope.currentDate          = null;
+            $scope.bookeCheckup         = true;
+            $scope.bookDiscovery8       = false
+            $scope.bookDiscovery9       = false;
+            $scope.bookDiscovery18      = false;
+            $scope.bookDiscovery19      = false;
+            $scope.bookDiscovery28      = false;
+            $scope.bookDiscovery29      = false;
+            $scope.bookDiscovery39      = false;
+            $scope.bookDiscovery49      = false;
+            $scope.bookDiscovery59      = false;
+            $scope.bookDiscovery10      = false;
+            $scope.bookDiscovery110     = false;
+            $scope.bookDiscovery210     = false;
+            $scope.bookDiscovery310     = false;
+            $scope.bookDiscovery410     = false;
+            $scope.bookDiscovery510     = false;
+            $scope.bookDiscovery11      = false;
+            $scope.bookDiscovery111     = false;
+            $scope.bookDiscovery211     = false;
+            $scope.bookDiscovery311     = false;
+            $scope.bookDiscovery411     = false;
+            $scope.bookDiscovery511     = false;
+            $scope.bookDiscovery12      = false;
+            $scope.bookDiscovery112     = false;
+            $scope.bookDiscovery212     = false;
+            $scope.bookDiscovery312     = false;
+            $scope.bookDiscovery412     = false;
+            $scope.bookDiscovery512     = false;
+            $scope.bookDiscovery1       = false;
+            $scope.bookDiscovery11      = false;
+            $scope.bookDiscovery21      = false;
+            $scope.bookDiscovery31      = false;
+            $scope.bookDiscovery41      = false;
+            $scope.bookDiscovery51      = false;
+            $scope.bookDiscovery2       = false;
+            $scope.bookDiscovery102     = false;
+            $scope.bookDiscovery22      = false;
+            $scope.bookDiscovery32      = false;
+            $scope.bookDiscovery42      = false;
+            $scope.bookDiscovery52      = false;
+            $scope.bookDiscovery3       = false;
+            $scope.bookDiscovery13      = false;
+            $scope.bookDiscovery23      = false;
+            $scope.bookDiscovery33      = false;
+            $scope.bookDiscovery43      = false;
+            $scope.bookDiscovery53      = false;
+            $scope.bookDiscovery38      = false;
+            $scope.bookDiscovery48      = false;
+            $scope.bookDiscovery58      = false;
 
-            $scope.bookSession8 = false
-            $scope.bookSession9 = false;
-            $scope.bookSession18 = false;
-            $scope.bookSession19 = false;
-            $scope.bookSession28 = false;
-            $scope.bookSession29 = false;
-            $scope.bookSession39 = false;
-            $scope.bookSession49 = false;
-            $scope.bookSession59 = false;
-            $scope.bookSession10 = false;
-            $scope.bookSession110 = false;
-            $scope.bookSession210 = false;
-            $scope.bookSession310 = false;
-            $scope.bookSession410 = false;
-            $scope.bookSession510 = false;
-            $scope.bookSession11 = false;
-            $scope.bookSession111 = false;
-            $scope.bookSession211 = false;
-            $scope.bookSession311 = false;
-            $scope.bookSession411 = false;
-            $scope.bookSession511 = false;
-            $scope.bookSession12 = false;
-            $scope.bookSession112 = false;
-            $scope.bookSession212 = false;
-            $scope.bookSession312 = false;
-            $scope.bookSession412 = false;
-            $scope.bookSession512 = false;
-            $scope.bookSession1 = false;
-            $scope.bookSession11 = false;
-            $scope.bookSession21 = false;
-            $scope.bookSession31 = false;
-            $scope.bookSession41 = false;
-            $scope.bookSession51 = false;
-            $scope.bookSession2 = false;
-            $scope.bookSession12 = false;
-            $scope.bookSession22 = false;
-            $scope.bookSession32 = false;
-            $scope.bookSession42 = false;
-            $scope.bookSession52 = false;
-            $scope.bookSession3 = false;
-            $scope.bookSession13 = false;
-            $scope.bookSession23 = false;
-            $scope.bookSession33 = false;
-            $scope.bookSession43 = false;
-            $scope.bookSession53 = false;
-            $scope.bookSession38 = false;
-            $scope.bookSession48 = false;
-            $scope.bookSession58 = false;
+            $scope.bookSession8         = false
+            $scope.bookSession9         = false;
+            $scope.bookSession18        = false;
+            $scope.bookSession19        = false;
+            $scope.bookSession28        = false;
+            $scope.bookSession29        = false;
+            $scope.bookSession39        = false;
+            $scope.bookSession49        = false;
+            $scope.bookSession59        = false;
+            $scope.bookSession10        = false;
+            $scope.bookSession110       = false;
+            $scope.bookSession210       = false;
+            $scope.bookSession310       = false;
+            $scope.bookSession410       = false;
+            $scope.bookSession510       = false;
+            $scope.bookSession11        = false;
+            $scope.bookSession111       = false;
+            $scope.bookSession211       = false;
+            $scope.bookSession311       = false;
+            $scope.bookSession411       = false;
+            $scope.bookSession511       = false;
+            $scope.bookSession12        = false;
+            $scope.bookSession112       = false;
+            $scope.bookSession212       = false;
+            $scope.bookSession312       = false;
+            $scope.bookSession412       = false;
+            $scope.bookSession512       = false;
+            $scope.bookSession1         = false;
+            $scope.bookSession11        = false;
+            $scope.bookSession21        = false;
+            $scope.bookSession31        = false;
+            $scope.bookSession41        = false;
+            $scope.bookSession51        = false;
+            $scope.bookSession2         = false;
+            $scope.bookSession12        = false;
+            $scope.bookSession22        = false;
+            $scope.bookSession32        = false;
+            $scope.bookSession42        = false;
+            $scope.bookSession52        = false;
+            $scope.bookSession3         = false;
+            $scope.bookSession13        = false;
+            $scope.bookSession23        = false;
+            $scope.bookSession33        = false;
+            $scope.bookSession43        = false;
+            $scope.bookSession53        = false;
+            $scope.bookSession38        = false;
+            $scope.bookSession48        = false;
+            $scope.bookSession58        = false;
 
-            $scope.bookCheckUp8 = false
-            $scope.bookCheckUp9 = false;
-            $scope.bookCheckUp18 = false;
-            $scope.bookCheckUp19 = false;
-            $scope.bookCheckUp28 = false;
-            $scope.bookCheckUp29 = false;
-            $scope.bookCheckUp39 = false;
-            $scope.bookCheckUp49 = false;
-            $scope.bookCheckUp59 = false;
-            $scope.bookCheckUp10 = false;
-            $scope.bookCheckUp110 = false;
-            $scope.bookCheckUp210 = false;
-            $scope.bookCheckUp310 = false;
-            $scope.bookCheckUp410 = false;
-            $scope.bookCheckUp510 = false;
-            $scope.bookCheckUp11 = false;
-            $scope.bookCheckUp111 = false;
-            $scope.bookCheckUp211 = false;
-            $scope.bookCheckUp311 = false;
-            $scope.bookCheckUp411 = false;
-            $scope.bookCheckUp511 = false;
-            $scope.bookCheckUp12 = false;
-            $scope.bookCheckUp112 = false;
-            $scope.bookCheckUp212 = false;
-            $scope.bookCheckUp312 = false;
-            $scope.bookCheckUp412 = false;
-            $scope.bookCheckUp512 = false;
-            $scope.bookCheckUp1 = false;
-            $scope.bookCheckUp11 = false;
-            $scope.bookCheckUp21 = false;
-            $scope.bookCheckUp31 = false;
-            $scope.bookCheckUp41 = false;
-            $scope.bookCheckUp51 = false;
-            $scope.bookCheckUp2 = false;
-            $scope.bookCheckUp102 = false;
-            $scope.bookCheckUp22 = false;
-            $scope.bookCheckUp32 = false;
-            $scope.bookCheckUp42 = false;
-            $scope.bookCheckUp52 = false;
-            $scope.bookCheckUp3 = false;
-            $scope.bookCheckUp13 = false;
-            $scope.bookCheckUp23 = false;
-            $scope.bookCheckUp33 = false;
-            $scope.bookCheckUp43 = false;
-            $scope.bookCheckUp53 = false;
-            $scope.bookCheckUp38 = false;
-            $scope.bookCheckUp48 = false;
-            $scope.bookCheckUp58 = false;
+            $scope.bookCheckUp8         = false
+            $scope.bookCheckUp9         = false;
+            $scope.bookCheckUp18        = false;
+            $scope.bookCheckUp19        = false;
+            $scope.bookCheckUp28        = false;
+            $scope.bookCheckUp29        = false;
+            $scope.bookCheckUp39        = false;
+            $scope.bookCheckUp49        = false;
+            $scope.bookCheckUp59        = false;
+            $scope.bookCheckUp10        = false;
+            $scope.bookCheckUp110       = false;
+            $scope.bookCheckUp210       = false;
+            $scope.bookCheckUp310       = false;
+            $scope.bookCheckUp410       = false;
+            $scope.bookCheckUp510       = false;
+            $scope.bookCheckUp11        = false;
+            $scope.bookCheckUp111       = false;
+            $scope.bookCheckUp211       = false;
+            $scope.bookCheckUp311       = false;
+            $scope.bookCheckUp411       = false;
+            $scope.bookCheckUp511       = false;
+            $scope.bookCheckUp12        = false;
+            $scope.bookCheckUp112       = false;
+            $scope.bookCheckUp212       = false;
+            $scope.bookCheckUp312       = false;
+            $scope.bookCheckUp412       = false;
+            $scope.bookCheckUp512       = false;
+            $scope.bookCheckUp1         = false;
+            $scope.bookCheckUp11        = false;
+            $scope.bookCheckUp21        = false;
+            $scope.bookCheckUp31        = false;
+            $scope.bookCheckUp41        = false;
+            $scope.bookCheckUp51        = false;
+            $scope.bookCheckUp2         = false;
+            $scope.bookCheckUp102       = false;
+            $scope.bookCheckUp22        = false;
+            $scope.bookCheckUp32        = false;
+            $scope.bookCheckUp42        = false;
+            $scope.bookCheckUp52        = false;
+            $scope.bookCheckUp3         = false;
+            $scope.bookCheckUp13        = false;
+            $scope.bookCheckUp23        = false;
+            $scope.bookCheckUp33        = false;
+            $scope.bookCheckUp43        = false;
+            $scope.bookCheckUp53        = false;
+            $scope.bookCheckUp38        = false;
+            $scope.bookCheckUp48        = false;
+            $scope.bookCheckUp58        = false;
         }
+
         $scope.openScheduledJobPage = function (currentdate, id,datecondensed) {
             //console.log(id)
             $scope.id = id
@@ -66261,25 +66830,7 @@ $scope.messageSent = false;
             },2500)
            
         }
-        $scope.submitMessage2 = function(){
-            //console.log($scope.messageObject)
-            $scope.sendingMessage = true
-            $timeout(function(){
-                 
-           User.messageAdmin($scope.messageObject).then(function(data){
-                //console.log(data)
-                $scope.sendingMessage = false
-                $scope.messageSent = true;
-                $timeout(function(){
-                    $scope.messageSent= false;
-                      $scope.messageObject.subject = ""
-                      $scope.messageObject.body = ""
-                },2500)
 
-            })
-            },2500)
-           
-        }
        
         $scope.openInbox = function(){
             //console.log("clicked")
@@ -66709,202 +67260,76 @@ $scope.messageSent = false;
             $scope.messageObject.to = name
             $scope.messageObject.from = "Leah Kelly"
         };
-        $scope.openMessagePage = function () {
-$('html, body').animate({ scrollTop: 0 }, 'fast');
+
+
+
+        $scope.openMessagePageToCompose = function () {
+
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+
             if (!$scope.messagePageOpen) {
 
-                $scope.schedulePageOpen = false;
-                 $scope.currentIndex = null;
-                 $scope.infoPageOpen = false;
-                 $scope.adminBookingsPageOpen = false;
-            $scope.messagePageOpen = true;
-            $scope.bookedJobsPageOpened = false;
-            $scope.chartsPageOpen = false;
-            $scope.historyPageOpenProfile = false;
-            $scope.messagePageSelected = true;
-            $scope.amountPending = 0
-            $scope.messagesLoading = true;
-            $scope.usersForPagination = []
-            $scope.usersPaginated = []
-            $scope.messageForPagination = [];
-            $scope.messagesPaginated = [];
-            $scope.pageLimit = 4;
-            $scope.pageLimitUsers =4
-            if($scope.userType == 'admin'){
-               
-                User.getUser("5c007bd92275332a70bb109a").then(function(data){
-                    //console.log(data)
-                     $scope.messagesArray = data.data.user.messages
-                     User.getUsers().then(function(data){
-                        $scope.usersArray = data.data.users
-                        //console.log(data)
-                    
-                    //console.log("MESSAGES ARRAY")
-                    //console.log($scope.messagesArray)
-                     for (var i = 0; i <= $scope.usersArray.length; i++) {
+                    $scope.schedulePageOpen         = false;
+                    $scope.currentIndex             = null;
+                    $scope.infoPageOpen             = false;
+                    $scope.adminBookingsPageOpen    = false;
+                    $scope.messagePageOpen          = true;
+                    $scope.bookedJobsPageOpened     = false;
+                    $scope.chartsPageOpen           = false;
+                    $scope.historyPageOpenProfile   = false;
+                    $scope.messagePageSelected      = true;
+                    $scope.amountPending            = 0;
+                    $scope.messagesLoading          = true;
+                    $scope.usersForPagination       = []
+                    $scope.usersPaginated           = []
+                    $scope.messageForPagination     = [];
+                    $scope.messagesPaginated        = [];
+                    $scope.pageLimit                = 4;
+                    $scope.pageLimitUsers           = 4;
 
-                    var page = 0;
-                    //////console.log($scope.pageLimit, i, $scope.employees.length)
-                    //console.log($scope.employees)
-                    if (i < $scope.pageLimitUsers) {
-                        //console.log("its less")
+           
 
-                    }
-                    if (i < $scope.usersArray.length) {
-                        //console.log("yup,less")
-                    }
-
-                    if (i < $scope.pageLimitUsers && i < $scope.usersArray.length) {//5
-                        //console.log("HELLO")
-                        ////console.log($scope.employees[i])
-                        ////console.log($scope.pageLimit, i, $scope.employees.length)
-                        if ($scope.usersArray[i]) {
-                            $scope.usersArray[i].messageIndex = i
-                            $scope.usersForPagination.push($scope.usersArray[i])
-                            //console.log(i)
-                            //console.log("firstCondiation")
-                            //console.log($scope.pageArray)
-
-                        }
-
-
-
-                    } else {
-                        if (!$scope.usersLoaded) {
-
-                            //console.log("else")
-                            //console.log(i)
-                            
-                            $scope.loadingUsers = false;
-                            $scope.usersPaginated.push($scope.usersForPagination)
-                            //console.log("Users PAGINATED")
-                            //console.log($scope.usersPaginated)
-                            $scope.usersForPagination = [];
-                            if ($scope.usersArray[i] !== undefined) {
-                                $scope.usersArray[i].messageIndex = i
-                                $scope.usersForPagination.push($scope.usersArray[i])
-                            }
-                            $scope.pageLimitUsers = $scope.pageLimitUsers + 4;
-                            ////console.log($scope.pageLimit, i, $scope.employees.length)
-
-                            page++
-
-                        }
-
-                    }
-
-                }
-                    
-                    for (var i = 0; i <= $scope.messagesArray.length; i++) {
-
-                    var page = 0;
-                    //////console.log($scope.pageLimit, i, $scope.employees.length)
-                    //console.log($scope.employees)
-                    if (i < $scope.pageLimit) {
-                        //console.log("its less")
-
-                    }
-                    if (i < $scope.messagesArray.length) {
-                        //console.log("yup,less")
-                    }
-
-                    if (i < $scope.pageLimit && i < $scope.messagesArray.length) {//5
-                        //console.log("HELLO")
-                        ////console.log($scope.employees[i])
-                        ////console.log($scope.pageLimit, i, $scope.employees.length)
-                        if ($scope.messagesArray[i]) {
-                            $scope.messagesArray[i].messageIndex = i
-                            $scope.messageForPagination.push($scope.messagesArray[i])
-                            //console.log(i)
-                            //console.log("firstCondiation")
-                            //console.log($scope.pageArray)
-
-                        }
-
-
-
-                    } else {
-                        if (!$scope.usersLoaded) {
-
-                            //console.log("else")
-                            //console.log(i)
-                            
-                            $scope.loadingUsers = false;
-                            $scope.messagesPaginated.push($scope.messageForPagination)
-                            //console.log("MESSAGES PAGINATED")
-                            //console.log($scope.messagesPaginated)
-                            //console.log("PAGELIMIT")
-                            //console.log($scope.pageLimit)
-                            $scope.messageForPagination = [];
-                            if ($scope.messagesArray[i] !== undefined) {
-                                $scope.messagesArray[i].messageIndex = i
-                                $scope.messageForPagination.push($scope.messagesArray[i])
-                            }
-                            $scope.pageLimit = $scope.pageLimit + 4;
-                            ////console.log($scope.pageLimit, i, $scope.employees.length)
-
-                            page++
-
-                        }
-
-                    }
-
-                }
-                
-                })
-                    
-                   
-                })
-            }else{
             User.getMessages($scope.idForProfileLink).then(function (data) {
-                //console.log(data)
+
                 $scope.messagesArray = data.data.messages;
-               // $scope.messagesLoading = false;
+
                 for (var i = 0; i <= $scope.messagesArray.length; i++) {
 
                     var page = 0;
-                    //////console.log($scope.pageLimit, i, $scope.employees.length)
-                    //console.log($scope.employees)
+                
                     if (i < $scope.pageLimit) {
-                        //console.log("its less")
 
                     }
                     if (i < $scope.messagesArray.length) {
-                        //console.log("yup,less")
+
                     }
 
-                    if (i < $scope.pageLimit && i < $scope.messagesArray.length) {//5
-                        //console.log("HELLO")
-                        ////console.log($scope.employees[i])
-                        ////console.log($scope.pageLimit, i, $scope.employees.length)
+                    if (i < $scope.pageLimit && i < $scope.messagesArray.length) {
+                     
                         if ($scope.messagesArray[i]) {
+
                             $scope.messagesArray[i].messageIndex = i
                             $scope.messageForPagination.push($scope.messagesArray[i])
-                            //console.log(i)
-                            //console.log("firstCondiation")
-                            //console.log($scope.pageArray)
-
+                         
                         }
 
-
-
                     } else {
+
                         if (!$scope.usersLoaded) {
 
-                            //console.log("else")
-                            //console.log(i)
-                            
                             $scope.loadingUsers = false;
+                            $scope.composeMessagePageOpen = true;
                             $scope.messagesPaginated.push($scope.messageForPagination)
-                            //console.log($scope.messagesPaginated)
                             $scope.messageForPagination = [];
+
                             if ($scope.messagesArray[i] !== undefined) {
+
                                 $scope.messagesArray[i].messageIndex = i
                                 $scope.messageForPagination.push($scope.messagesArray[i])
-                            }
-                            $scope.pageLimit = $scope.pageLimit + 4;
-                            ////console.log($scope.pageLimit, i, $scope.employees.length)
 
+                            }
+
+                            $scope.pageLimit = $scope.pageLimit + 4;
                             page++
 
                         }
@@ -66913,28 +67338,15 @@ $('html, body').animate({ scrollTop: 0 }, 'fast');
 
                 }
             })
-            }
-               /* $scope.composeMessagePageOpen = false;
-                $scope.loadingMessages = true;
 
-                $scope.messagePageOpen = true;
-                $scope.messagePageSelected = true;
-                //$scope.fadeOutMenu = true;
-                $scope.schedulePageOpen = false;
-                $scope.timesheetPageOpen = false;
-                $scope.infoPageOpen = false;
-                $scope.messageMenuSelected = true;
 
-                $timeout(function () {
-                    $scope.loadingMessages = false;
-
-                }, 1000)
-*/
             } else {
-                // $scope.messageMenuSelected = false;
+
                 $scope.composeMessagePageOpen = false;
+
             }
         }
+        
         $scope.openInfoPage = function () {
             //console.log("cliecked")
            // if (!$scope.infoPageOpen) {
@@ -67422,148 +67834,286 @@ $('html, body').animate({ scrollTop: 0 }, 'fast');
 
 
         }
-        $scope.openSchedulePage = function () {
-          //  if (!$scope.schedulePageOpen) {
-                //$('#calendar').fullCalendar({})
-                
-                $scope.schedulePageOpen = true;
-                $scope.infoPageOpen = false;
-                $scope.bookingsPageOpen = false;
-                
 
-                //console.log($scope.month)
-                //console.log($scope.personalCalender[$scope.month])
+        
+        $scope.openMessagePage = function () {
+
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+            if (!$scope.messagePageOpen) {
+
+                    $scope.schedulePageOpen         = false;
+                    $scope.currentIndex             = null;
+                    $scope.infoPageOpen             = false;
+                    $scope.adminBookingsPageOpen    = false;
+                    $scope.messagePageOpen          = true;
+                    $scope.bookedJobsPageOpened     = false;
+                    $scope.chartsPageOpen           = false;
+                    $scope.historyPageOpenProfile   = false;
+                    $scope.messagePageSelected      = true;
+                    $scope.amountPending            = 0;
+                    $scope.messagesLoading          = true;
+                    $scope.usersForPagination       = []
+                    $scope.usersPaginated           = []
+                    $scope.messageForPagination     = [];
+                    $scope.messagesPaginated        = [];
+                    $scope.pageLimit                = 4;
+                    $scope.pageLimitUsers           = 4;
+
+           
+            User.getMessages($scope.idForProfileLink).then(function (data) {
+
+                $scope.messagesArray = data.data.messages;
+
+                for (var i = 0; i <= $scope.messagesArray.length; i++) {
+
+                    var page = 0;
+                
+                    if (i < $scope.pageLimit) {
+
+                    }
+                    if (i < $scope.messagesArray.length) {
+
+                    }
+
+                    if (i < $scope.pageLimit && i < $scope.messagesArray.length) {
+                     
+                        if ($scope.messagesArray[i]) {
+
+                            $scope.messagesArray[i].messageIndex = i
+                            $scope.messageForPagination.push($scope.messagesArray[i])
+                         
+                        }
+
+                    } else {
+
+                        if (!$scope.usersLoaded) {
+
+                            $scope.loadingUsers = false;
+                            $scope.messagesPaginated.push($scope.messageForPagination)
+                            $scope.messageForPagination = [];
+
+                            if ($scope.messagesArray[i] !== undefined) {
+
+                                $scope.messagesArray[i].messageIndex = i
+                                $scope.messageForPagination.push($scope.messagesArray[i])
+
+                            }
+
+                            $scope.pageLimit = $scope.pageLimit + 4;
+                            page++
+
+                        }
+
+                    }
+
+                }
+            })
+          
+
+            } else {
+
+                $scope.composeMessagePageOpen = false;
+
+            }
+        }
+        $scope.submitMessage2 = function(){
+
+            $scope.sendingMessage = true
+            $scope.shinebrightloading.play()
+            
+            $timeout(function(){
+                 
+                User.messageAdmin($scope.messageObject).then(function(data){
+
+                        $scope.sendingMessage   = false
+                        $scope.messageSent      = true;
+                        $scope.shinebrightsuccess.play()
+
+                        $timeout(function(){
+
+                            $scope.messageSent              = false;
+                            $scope.messageObject.subject    = ""
+                            $scope.messageObject.body       = ""
+
+                        },2500)
+
+                })
+
+            },2500)
+           
+        }
+        $scope.openSchedulePage = function () {
+  
+                $scope.schedulePageOpen = true;
+                $scope.infoPageOpen     = false;
+                $scope.messagePageOpen  = false;
+                $scope.bookingsPageOpen = false;
+
                 if($scope.personalCalender[$scope.month][1] ){
+
                     $scope.booked121 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][2] ){
+
                     $scope.booked122 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][3] ){
+
                     $scope.booked123 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][4] ){
+
                     $scope.booked124 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][5] ){
+
                     $scope.booked125 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][6] ){
+
                     $scope.booked126 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][7] ){
+
                     $scope.booked127 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][8] ){
+
                     $scope.booked128 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][9] ){
+
                     $scope.booked129 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][10] ){
+
                     $scope.booked1210 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][11] ){
+
                     $scope.booked1211 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][12] ){
+
                     $scope.booked1212 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][13] ){
+
                     $scope.booked1213 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][14] ){
+
                     $scope.booked1214 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][15] ){
+
                     $scope.booked1215 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][16] ){
+
                     $scope.booked1216 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][17] ){
+
                     $scope.booked1217 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][18] ){
+
                     $scope.booked1218 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][19] ){
+
                     $scope.booked1219 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][20] ){
+
                     $scope.booked1220 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][21] ){
+
                     $scope.booked1221 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][22] ){
+                    
                     $scope.booked1222 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][23] ){
+
                     $scope.booked1223 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][24] ){
+
                     $scope.booked1224 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][25] ){
+
                     $scope.booked1225 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][26] ){
+
                     $scope.booked1226 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][27] ){
+
                     $scope.booked1227 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][28] ){
+
                     $scope.booked1228= true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][29] ){
+
                     $scope.booked1229 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][30] ){
+
                     $scope.booked1230 = true;
-                    //console.log("hero")
+
                 }
                 if($scope.personalCalender[$scope.month][31] ){
+
                     $scope.booked1231 = true;
-                    //console.log("hero")
+
                 }
 
                 $scope.infoPageOpen = false;
                 $scope.timesheetPageOpen = false;
                 $scope.messagePageOpen = false;
 
-//}
+
         }
+
+
         $scope.openTimesheetPage = function () {
             if (!$scope.timesheetPageOpen) {
                 $scope.timesheetPageOpen = true;

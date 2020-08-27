@@ -111,14 +111,40 @@ background-repeat:no-repeat;">
 <div ng-view >
 </div>
 
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Hey! :)</h4>
-    <p>Unfortunately i'm all booked up for this hour. Let's try for another?</p>
+<div id="modal1" class="modal" style="border:2px solid black;">
+
+  <div class = "row"></div>
+  <div class = "row"></div>
+
+  <div class = "row">
+
+    <div class = 'col s12 center-align red lighten-4'>
+
+      <div class = "row"></div>
+
+      <h4 class="montserrat underline animated shake slow">Demo Mode.</h4>
+
+      <div class = "row">
+
+        <div class = "col s2"></div>
+        <div class = "col s8 center-align" style="border:2px solid black;">
+
+            <p class = "montserrat" style="font-size:30px;">
+              Currently Running In Demo Mode, Only Hours 8 AM, and 9 AM Available...
+            </p>
+        </div>
+        <div class = "col s2"> </div>
+
+      </div>
+     
+    <div class="modal-footer red lighten-4">
+      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat white">Ok</a>
+    </div>
+    </div>
+
   </div>
-  <div class="modal-footer">
-    <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
+ 
+
 </div>
 
 <!-- Modal Trigger -->

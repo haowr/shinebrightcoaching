@@ -1,46 +1,61 @@
-<div class="col s12 hide-on-small-only" ng-show="!heyLeah">
+<div class="row hide-on-small-only" ng-show="!heyLeah">
 
 
+    <div class = "row"></div>
+    <h4 class = "montserrat animated pulse ">Hey {{clientName}}!</h4>
+    <div class = "col s2"></div>
+    <div class = "col s8">
 
-    <div class="col s3 center-align ">
-        <p class="montserrat white-text">Activity</p>
-    </div>
-    <div class="col s3 center-align ">
-        <p class="montserrat white-text">Activity</p>
-    </div>
-    <div class="col s3 center-align ">
-        <p class="montserrat white-text">Activity</p>
-    </div>
-    <div class="col s3 center-align ">
-        <p class="montserrat white-text">Activity</p>
-    </div>
-    <div class="col s6 left-align">
-        <span class="montserrat ">Name:</span>
-        <p class="montserrat grey-text">{{clientName}}</p>
-        <span class="montserrat">Email:</span>
-        <p class="montserrat">{{clientEmail}}</p>
+        <p class  = "montserrat" style= "font-size: 20px;" > 
+            When you're feeling down, have a question, or just need someone to talk to...
+            Send me a message, and i'll get back to you as soon as i can. I'm here for you! :)
+        </p>
+
+        <div class = "col s12" style="border:2px solid black;"></div>
 
     </div>
+    <div class = "col s2"></div>
     <div class="col s6 left-align">
 
-        <div style="height:200px; border:1px solid #ddd;">
+        <p class="montserrat black-text " style="font-size:30px;">Name:         
+            <span class="montserrat black-text"     style="font-size:23px;">{{clientName}}</span>
+        </p>
+        <p class="montserrat black-text " style="font-size:30px;">Email:         
+            <span class="montserrat black-text"     style="font-size:23px;">{{clientEmail}}</span>
+        </p>
+
+    </div>
+    <div class="col s6 left-align">
+        <div class="row"></div>
+        <div class = "row"></div>
+        <div class="col s12" style="height:200px; border:2px solid black;">
             <div class="row">
-                <div class="col s12" style="border-bottom:1px solid #ddd;">
-                    <div class="center-align">
-                        <i class="material-icons grey-text">schedule
-                        </i><span style="font-size:10px">({{bookings.length}})</span>
+                <div class="col s12" style="border-bottom:1px solid rgb(98, 98, 98);">
+                    <div class="col s12 center-align">
+
+                        <i class="material-icons black-text" style="font-size:40px;">schedule</i>
+
+                    </div>
+                    <div class="col s12 center-align">
+
+                        <span class="black-text" style="font-size:25px">({{bookings.length}})</span>
+                        
                     </div>
                 </div>
 
                 <div ng-show="!pendingBookings">
                     <div class="row">
                     </div>
-                    <div class="col s2">
+                    <a href="#" onclick="return false;">
+                        <div class="col s2">
 
-                        <div class="left-align">
-                            <i ng-click="changeBooking()" class="material-icons grey-text animated flash">chevron_left</i>
+                            <div class="left-align">
+                                <i ng-click="changeBooking()" 
+                                class="material-icons black-text animated flash" 
+                                style="font-size:40px">chevron_left</i>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="col s8" style="border:1px solid #ddd;" ng-click="openBookingsPage()">
 
                         <div class="center-align">
@@ -49,32 +64,41 @@
                             <span class="montserrat grey-text">{{bookings[currentBooking].time}}</span>
 
                         </div>
-                    </div>
-                    <div class="col s2">
-                        <div class="right-align">
-                            <i class="material-icons grey-text animated flash">chevron_right</i>
+                        <div class="center-align" ng-show="bookings.length <1">
+
+
+
+                            <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
+        
+                            <div ng-show="loadingAmountPending">
+                                <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                            </div>
+                            <div ng-show="!loadingAmountPending">
+                                <i class="material-icons">clear</i>
+                            </div>
+                            
                         </div>
-
                     </div>
+                    <a href="#" onclick="return false;">
+
+                        <div class="col s2">
+                            
+                            <div class="right-align">
+                                <i class="material-icons black-text animated flash"
+                                style="font-size:40px;">chevron_right</i>
+                            </div>
+
+                        </div>
+                        
+                    </a>
                 </div>
-                <div class="center-align" ng-show="bookings.length <1">
-
-
-
-                    <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
-
-                    <div ng-show="loadingAmountPending">
-                        <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-                    </div>
-                    <div ng-show="!loadingAmountPending">
-                        <i class="material-icons">clear</i>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
 
     <div ng-show="messageArray.length >0">
+
         <div class="col s12 left-align">
             <p class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})</p>
 
@@ -83,7 +107,7 @@
 
 
         <div class="col s12 left-align">
-            <div style="height:200px; border:1px solid #ddd;" ng-click="openMessagePage()">
+            <div style="height:200px; border:2px solid black;" >
 
                 <div style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
                 </div>
@@ -102,21 +126,45 @@
 
     <div ng-show="messageArray.length ==0">
         <div class="col s12 left-align">
-            <p class="montserrat grey-text ">No Messages Yet! (0 of 0)</p>
+            <p class="montserrat black-text" style="font-size:25px;">No Messages Yet! (0 of 0)</p>
 
         </div>
 
 
 
         <div class="col s12 left-align">
-            <div style="height:200px; border:1px solid grey;" ng-click="openMessagePage()">
+            <div style="height:200px; border:2px solid black;" ng-click="openMessagePage()">
 
+                <div class="row">
+                </div>
                 <div class="row">
                 </div>
                 <div class="row">
                     <div class="col s2">
                     </div>
                     <div class="col s8 " style="height:100px; border:1px solid #ddd" ;>
+
+                        <div class = "col s6 left-align">
+                            
+                            <a href="#" class="black-text" onclick="return false;"
+                               ng-click="openMessagePageToCompose()">
+                            
+                            <p class = "montserrat" style="font-size:30px">COMPOSE</p>
+
+                            </a>
+
+                        </div>
+                        <div class = "col s6 right-align">
+
+                            <a href="#" class="black-text" onclick="return false;"
+                               ng-click="openMessagePage()">
+                            
+                            <p class = "montserrat" style="font-size:30px">INBOX</p>
+
+                            </a>
+
+                        </div>
+
                     </div>
                     <div class="col s2">
                     </div>

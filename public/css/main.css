@@ -9,6 +9,9 @@
      background-size:100;
      background-repeat:no-repeat;
  }
+ .borderblack{
+     border:2px solid black;
+ }
  @font-face {
     font-family: 'atypewriter'; /*a name to be used later*/
     src: url('./american_typewriter.woff'); /*URL to font*/
@@ -36,15 +39,26 @@ a{
 }
 /* label focus color */
  .input-field input:focus + label {
-   color: #607d8b !important;
+   color: black !important;
    height:30%;
    border-radius:0px 0px 0px 0px;
  }
  /* label underline focus color */
  .row .input-field input:focus {
-   border-bottom: 1px solid #607d8b !important;
-   box-shadow: 0 1px 0 0 #607d8b !important
+   border-bottom: 1px solid black !important;
+   box-shadow: 0 1px 0 0 black !important
  }
+ /* label focus color */
+ .input-field textarea:focus + label {
+    color: black !important;
+    height:30%;
+    border-radius:0px 0px 0px 0px;
+  }
+  /* label underline focus color */
+  .row .input-field textarea:focus {
+    border-bottom: 1px solid black !important;
+    box-shadow: 0 1px 0 0 black !important
+  }
 .railway{
     font-family: 'Raleway', sans-serif;
 }
