@@ -24,7 +24,7 @@
         <div class="row"></div>
         <div class="row"></div>
 
-        <div class="col s12" style="height:200px; border:2px solid black;">
+        <div class="col s12" style=" border:2px solid black;">
             <div class="row">
                 <div class="col s12" style="border-bottom:1px solid rgb(98, 98, 98);">
                     <div class="col s12 center-align">
@@ -34,59 +34,84 @@
                     </div>
                     <div class="col s12 center-align">
 
-                        <span class="black-text" style="font-size:25px">({{bookings.length}})</span>
+                        <span class="black-text "
+                            style="font-size:25px; text-decoration:underline;">{{currentBooking + 1}}</span>
 
                     </div>
                 </div>
 
-                <div ng-show="!pendingBookings">
-                    <div class="row">
-                    </div>
-                    <a href="#" onclick="return false;">
-                        <div class="col s2">
 
-                            <div class="left-align">
-                                <i ng-click="changeBooking()" class="material-icons black-text animated flash"
-                                    style="font-size:40px">chevron_left</i>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="col s8" style="border:1px solid #ddd;" ng-click="openBookingsPage()">
-
-                        <div class="center-align">
-                            <p class="montserrat grey-text">{{bookings[currentBooking].date}}</p>
-
-                            <span class="montserrat grey-text">{{bookings[currentBooking].time}}</span>
-
-                        </div>
-                        <div class="center-align" ng-show="bookings.length <1">
-
-
-
-                            <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
-
-                            <div ng-show="loadingAmountPending">
-                                <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-                            </div>
-                            <div ng-show="!loadingAmountPending">
-                                <i class="material-icons">clear</i>
-                            </div>
-
-                        </div>
-                    </div>
-                    <a href="#" onclick="return false;">
-
-                        <div class="col s2">
-
-                            <div class="right-align">
-                                <i class="material-icons black-text animated flash"
-                                    style="font-size:40px;">chevron_right</i>
-                            </div>
-
-                        </div>
-
-                    </a>
+                <div class="row">
                 </div>
+                <a href="#" onclick="return false;">
+                    <div class="col s2">
+
+                        <div class="left-align">
+                            <i ng-click="changeBooking()" class="material-icons black-text animated flash"
+                                style="font-size:40px">chevron_left</i>
+                        </div>
+                    </div>
+                </a>
+                <div class="col s8" style="border:1px solid #ddd;" ng-click="openBookingsPage()">
+
+
+                    <div ng-show="loadingClientBookings" class="row center-align">
+
+                        <div class="row"></div>
+
+                        <div class="col s12 center-align">
+
+                            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div ng-show="!loadingClientBookings" class="row center-align">
+
+                        <div class='col s12'>
+
+                            <p class="montserrat animated fadeIn" style="font-size:20px;">
+                                {{currentUserBookingsArray[currentBooking].appointmentType}}</p>
+
+                            <p class="montserrat animated fadeIn" style="font-size:20px;">
+                                {{currentUserBookingsArray[currentBooking].date}}</p>
+
+                            <span class="montserrat animated fadeIn black-text"
+                                style="font-size:20px;">{{bookings[currentBooking].time}}</span>
+
+                        </div>
+
+                    </div>
+                    <div class="center-align" ng-show="bookings.length <1 && !loadingClientBookings">
+
+
+
+                        <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
+
+                        <div ng-show="loadingAmountPending">
+                            <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                        </div>
+                        <div ng-show="!loadingAmountPending">
+                            <i class="material-icons">clear</i>
+                        </div>
+
+                    </div>
+
+                </div>
+                <a href="#" onclick="return false;">
+
+                    <div class="col s2">
+
+                        <div class="right-align">
+                            <i class="material-icons black-text animated flash"
+                                style="font-size:40px;">chevron_right</i>
+                        </div>
+
+                    </div>
+
+                </a>
 
             </div>
         </div>

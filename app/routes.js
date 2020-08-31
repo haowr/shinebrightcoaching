@@ -159,7 +159,34 @@ module.exports = function (app) {
                 }
             } )
         })
+
+
         app.post('/users/addbooking', function(req,res){
+
+            console.log("REQ.BODY")
+            console.log(req.body)
+       
+            
+            User.findOneAndUpdate({_id:req.body.id}, {$push: {bookings:req.body} }, {new:true}, function(err,user){
+
+                if(err) throw err;
+
+                if(!user){
+
+                    res.json( { success: false, message: "User not found" } )
+
+                }else{
+
+                    res.json( { success: true, message: "Booking Added To User Successfully...", user: user } )
+                }
+            
+            })
+          
+        })
+
+        
+        app.post('/users/addbookingfgfg', function(req,res){
+
             console.log("REQ.BODY")
             console.log(req.body)
             console.log(req.body.month)
@@ -184,6 +211,7 @@ module.exports = function (app) {
                 if(!user){
                     res.json({success: false,message:"User not found"})
                 }else{
+
                     User.findOne({_id:"5c007bd92275332a70bb109a"},(err,user)=>{
 
                         if(err)throw err;
@@ -218,9 +246,10 @@ module.exports = function (app) {
 
             })
                 }
-            })
+            }) 
 
         })
+
     app.post('/months/updatedatenexthour', function (req, res) {
 
         Date.findOne({ _id: req.body.id }, function (err, date) {
