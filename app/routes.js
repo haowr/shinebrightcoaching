@@ -161,7 +161,7 @@ module.exports = function (app) {
         })
 
 
-        app.post('/users/addbooking', function(req,res){
+    app.post('/users/addbooking', function(req,res){
 
             console.log("REQ.BODY")
             console.log(req.body)
@@ -182,10 +182,77 @@ module.exports = function (app) {
             
             })
           
+    
+       
+    })
+
+    app.post('/users/markbookingascompleted', function(req,res){
+
+        console.log("REQUEST BODY")
+        console.log(req.body)
+        User.findOne({_id: req.body.id}, function(err,user){
+
+            if(err)throw err;
+            if(!user){
+                res.json({success: false, message: "User not found..."})
+            }else{
+
+                console.log("user")
+                console.log(user.bookings[req.body.currentbooking])
+                user.bookings[req.body.currentbooking].completed = true;
+                User.findOneAndUpdate({_id:req.body.id}, {$set:{bookings: user.bookings}}, {new:true},function(err,user){
+
+                    if(err)throw err;
+                    if(!user){
+                        res.json({success: false, message: "User not found.."})
+                    }else{
+                        res.json({success: true, message: "User Bookings Successfully Updated...", user:user})
+                    }
+                })
+
+            }
+
         })
 
+    })
+    app.post('/users/markbookingasnotcompleted', function(req,res){
+
+        console.log("REQUEST BODY")
+        console.log(req.body)
         
-        app.post('/users/addbookingfgfg', function(req,res){
+        User.findOne({_id: req.body.id}, function(err,user){
+
+            if(err)throw err;
+            if(!user){
+                res.json({success: false, message: "User not found..."})
+            }else{
+
+                console.log("user")
+                console.log(user.bookings[req.body.currentbooking])
+                user.bookings[req.body.currentbooking].completed = false;
+
+                User.findOneAndUpdate({_id:req.body.id}, {$set:{bookings: user.bookings}}, {new:true},function(err,user){
+
+                    if(err)throw err;
+
+                    if(!user){
+
+                        res.json({success: false, message: "User not found.."})
+
+                    }else{
+
+                        res.json({success: true, message: "User Bookings Successfully Updated...", user: user})
+
+                    }
+                })
+
+            }
+
+        })
+
+    })
+    
+    app.post('/users/addbookingfgfg', function(req,res){
 
             console.log("REQ.BODY")
             console.log(req.body)
@@ -248,7 +315,7 @@ module.exports = function (app) {
                 }
             }) 
 
-        })
+    })
 
     app.post('/months/updatedatenexthour', function (req, res) {
 

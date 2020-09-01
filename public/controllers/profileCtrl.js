@@ -946,7 +946,53 @@
         $scope.closePendingBookingsPage = function () {
             $scope.pendingBookings = false;
         }
+        $scope.bookingInfo = {
 
+            id: $scope.idFromLocalStorage
+
+        }
+
+        $scope.markAsCompleted = function(currentbooking){
+
+            $scope.loadingBookingStatus         = true;
+            $scope.bookingInfo.currentbooking   = currentbooking
+
+            User.markBookingAsCompleted($scope.bookingInfo).then(function(data){
+
+                console.log(data)
+
+                $scope.currentUserBookingsArray = data.data.user.bookings
+
+                $timeout(function(){
+
+                    $scope.loadingBookingStatus = false;
+
+                },1000)
+    
+            })
+
+        }
+        $scope.markAsNotCompleted = function(currentbooking){
+
+
+            $scope.loadingBookingStatus         = true;
+            $scope.bookingInfo.currentbooking   = currentbooking
+            console.log("nog")
+
+            User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
+
+                console.log(data)
+                $scope.currentUserBookingsArray = data.data.user.bookings
+                $timeout(function(){
+
+                    $scope.loadingBookingStatus = false;
+
+                },1000)
+    
+            })
+            
+        }
+      
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
 
@@ -18676,7 +18722,7 @@
                             $scope.dateDataForUser.time = "8:20am - 8:30am"
 
                         }
-                        
+
                         if ($scope.checkUpData.time == "9:20am") {
 
                             $scope.dateDataForUser.time = "9:20am - 9:30am"

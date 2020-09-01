@@ -1,9 +1,11 @@
 <div class="row hide-on-small-only" ng-show="!heyLeah">
 
-
     <div class="row"></div>
+
     <h4 class="montserrat animated pulse ">Hey {{clientName}}!</h4>
+
     <div class="col s2"></div>
+
     <div class="col s8">
 
         <p class="montserrat" style="font-size: 20px;">
@@ -16,97 +18,282 @@
     </div>
     <div class="col s2"></div>
 
+    <div class = "col s3"></div>
 
-    <div class="col s3"></div>
+    <div class = "col s6 center-align">
 
-    <div class="col s6 center-align">
+        <div class = "row"></div>
+        <div class = "row"></div>
 
-        <div class="row"></div>
-        <div class="row"></div>
+        <div class = "col s12" 
+             style = "border:2px solid black;">
 
-        <div class="col s12" style=" border:2px solid black;">
             <div class="row">
-                <div class="col s12" style="border-bottom:1px solid rgb(98, 98, 98);">
-                    <div class="col s12 center-align">
 
-                        <i class="material-icons black-text" style="font-size:40px;">schedule</i>
+                <div class = "col s12" 
+                     style = "border-bottom:1px solid rgb(98, 98, 98);">
+                    
+                    <div class = "col s12 center-align">
+
+                        <i class = "material-icons black-text" 
+                           style = "font-size:40px;">
+                           schedule
+                        </i>
 
                     </div>
-                    <div class="col s12 center-align">
+                    <div class = "col s12 center-align">
 
-                        <span class="black-text "
-                            style="font-size:25px; text-decoration:underline;">{{currentBooking + 1}}</span>
+                        <span class = "black-text "
+                              style = "font-size:25px; text-decoration:underline;">
+                              {{currentBooking + 1}}
+                        </span>
 
                     </div>
+
                 </div>
 
 
-                <div class="row">
-                </div>
+                <div class="row"></div>
+
                 <a href="#" onclick="return false;">
+
                     <div class="col s2">
 
                         <div class="left-align">
-                            <i ng-click="changeBooking()" class="material-icons black-text animated flash"
-                                style="font-size:40px">chevron_left</i>
+
+                            <i ng-click = "changeBooking()" 
+                               class    = "material-icons black-text animated flash"
+                               style    = "font-size:40px">
+                               chevron_left
+                            </i>
+
                         </div>
+
                     </div>
+
                 </a>
-                <div class="col s8" style="border:1px solid #ddd;" ng-click="openBookingsPage()">
+
+                <a href="#"
+                   class="black-text" 
+                   onclick="return false;">
+
+                    <div ng-show  = "currentUserBookingsArray[currentBooking].completed"
+                        ng-click = "markAsNotCompleted(currentBooking)" 
+                        ng-class = "{'grey':currentUserBookingsArray[currentBooking].completed,'lighten-4': currentUserBookingsArray[currentBooking].completed}" 
+                        class    = "col s8 animated fadeIn" 
+                        style    = "border:2px solid grey;">
+
+                        <div ng-show = "loadingClientBookings || loadingBookingStatus" 
+                            class="row center-align">
+
+                            <div class="row"></div>
+
+                            <div class="col s12 center-align">
+
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show = "!loadingClientBookings && !loadingBookingStatus" 
+                            class="row center-align">
 
 
-                    <div ng-show="loadingClientBookings" class="row center-align">
+                            <div class="row">
 
-                        <div class="row"></div>
+                                <div class="col s4"></div>
+                                <div class="col s4"></div>
+                                <div class="col s4">
 
-                        <div class="col s12 center-align">
+                                    <i ng-show="currentUserBookingsArray[currentBooking].completed"
+                                        class="material-icons green-text"
+                                        style="font-size:35px; text-decoration:underline;">done</i>
+                                    <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                        style="font-size:35px; text-decoration:underline;">priority_high</i>
 
-                            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                </div>
+
+                                <div class='col s12'>
+
+                                    <p class="montserrat animated fadeIn" style="font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                    </p>
+
+                                    <p class="montserrat animated fadeIn" style="font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].date}}
+
+                                    </p>
+
+                                    <span class="montserrat animated fadeIn black-text underline" style="font-size:20px;">
+                                        {{bookings[currentBooking].time}}
+                                    </span>
+
+                                    <div class="row"></div>
+                                    <div class="col s12 center-align">
+
+                                        <p class="montserrat" style="font-size:20px;">( Click To Mark As Completed )</p>
+
+                                    </div>
+                                    <div class="col s6">
+                                        <!--
+                                        <button ng-show="!currentUserBookingsArray[currentBooking].completed" ng-click="markAsCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Complete</button>
+                                        <button ng-show="currentUserBookingsArray[currentBooking].completed" ng-click="markAsNotCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Pending</button>
+                                    -->
+                                    </div>
+                                    <div class="col s6">
+                                        <!--
+                                        <button ng-click="submitCheckUp('eight')" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">Delete</button>
+                                    -->
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+                            <div class="center-align" ng-show="bookings.length <1 && !loadingClientBookings">
+
+
+
+                                <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
+
+                                <div ng-show="loadingAmountPending">
+                                    <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                                </div>
+                                <div ng-show="!loadingAmountPending">
+                                    <i class="material-icons">clear</i>
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
 
+                </a>
 
-                    <div ng-show="!loadingClientBookings" class="row center-align">
+                <a href="#"
+                   class="black-text" 
+                   onclick="return false;">
 
-                        <div class='col s12'>
+                    <div ng-show  = "!currentUserBookingsArray[currentBooking].completed"
+                        ng-click = "markAsCompleted(currentBooking)" 
+                        class="col s8 animated fadeIn white" 
+                        style="border:2px solid grey;">
 
-                            <p class="montserrat animated fadeIn" style="font-size:20px;">
-                                {{currentUserBookingsArray[currentBooking].appointmentType}}</p>
 
-                            <p class="montserrat animated fadeIn" style="font-size:20px;">
-                                {{currentUserBookingsArray[currentBooking].date}}</p>
+                        <div ng-show="loadingClientBookings || loadingBookingStatus" 
+                            class="row center-align">
 
-                            <span class="montserrat animated fadeIn black-text"
-                                style="font-size:20px;">{{bookings[currentBooking].time}}</span>
+                            <div class="row"></div>
+
+                            <div class="col s12 center-align">
+
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div ng-show="!loadingClientBookings && !loadingBookingStatus" class="row center-align">
+
+
+                            <div class="row">
+
+                                <div class="col s4"></div>
+                                <div class="col s4"></div>
+                                <div class="col s4">
+
+                                    <i ng-show="currentUserBookingsArray[currentBooking].completed"
+                                        class="material-icons green-text"
+                                        style="font-size:35px; text-decoration:underline;">done</i>
+                                    <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                        style="font-size:35px; text-decoration:underline;">priority_high</i>
+
+                                </div>
+
+                                <div class='col s12'>
+
+                                    <p class="montserrat animated fadeIn" style="font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                    </p>
+
+                                    <p class="montserrat animated fadeIn" style="font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].date}}
+
+                                    </p>
+
+                                    <span class="montserrat animated fadeIn black-text underline" style="font-size:20px;">
+                                        {{bookings[currentBooking].time}}
+                                    </span>
+
+                                    <div class="row"></div>
+                                    <div class="col s12 center-align">
+
+                                        <p class="montserrat" style="font-size:20px;">( Click To Mark As Completed )</p>
+
+                                    </div>
+                                    <div class="col s6">
+                                        <!--
+                                        <button ng-show="!currentUserBookingsArray[currentBooking].completed" ng-click="markAsCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Complete</button>
+                                        <button ng-show="currentUserBookingsArray[currentBooking].completed" ng-click="markAsNotCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Pending</button>
+                                    -->
+                                    </div>
+                                    <div class="col s6">
+                                        <!--
+                                        <button ng-click="submitCheckUp('eight')" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">Delete</button>
+                                    -->
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+                            <div class="center-align" ng-show="bookings.length <1 && !loadingClientBookings">
+
+
+
+                                <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
+
+                                <div ng-show="loadingAmountPending">
+                                    <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                                </div>
+                                <div ng-show="!loadingAmountPending">
+                                    <i class="material-icons">clear</i>
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
-                    <div class="center-align" ng-show="bookings.length <1 && !loadingClientBookings">
 
+                </a>
 
+                <a href = "#"
+                   class = "black-text" 
+                   onclick = "return false;">
 
-                        <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
+                    <div class = "col s2">
 
-                        <div ng-show="loadingAmountPending">
-                            <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-                        </div>
-                        <div ng-show="!loadingAmountPending">
-                            <i class="material-icons">clear</i>
-                        </div>
+                        <div class = "right-align">
 
-                    </div>
+                            <i class = "material-icons black-text animated flash"
+                                style = "font-size:40px;">
+                                chevron_right
+                            </i>
 
-                </div>
-                <a href="#" onclick="return false;">
-
-                    <div class="col s2">
-
-                        <div class="right-align">
-                            <i class="material-icons black-text animated flash"
-                                style="font-size:40px;">chevron_right</i>
                         </div>
 
                     </div>
@@ -114,180 +301,242 @@
                 </a>
 
             </div>
+
         </div>
+
+        <div class="col s3"></div>
+
+        <div ng-show="messageArray.length >0">
+
+            <div class="col s12 left-align">
+                <p class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})</p>
+
+            </div>
+
+
+
+            <div class="col s12 left-align">
+                <div style="height:200px; border:2px solid black;">
+
+                    <div
+                        style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
+                    </div>
+
+                    <div class="row">
+                    </div>
+                    <i class="material-icons grey-text">format_quote
+                    </i><span class="montserrat grey-text">{{messageArray[messageArray.length-1].body}}</span>
+                    <i class="material-icons grey-text">format_quote
+                    </i>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-show="messageArray.length ==0">
+
+            <div class="col s12 left-align">
+
+                <p class="montserrat black-text" style="font-size:25px;">No Messages Yet! (0 of 0)</p>
+
+            </div>
+
+            <div class="col s12 left-align">
+
+                <div style="height:200px; border:2px solid black;" ng-click="openMessagePage()">
+
+                    <div class="row"></div>
+                    <div class="row"></div>
+
+                    <div class="row">
+
+                        <div class="col s2">
+                        </div>
+
+                        <div class="col s8 white " style=" border:2px solid grey" ;>
+
+                            <div class="col s6 left-align">
+
+                                <a href="#" class="black-text" onclick="return false;"
+                                    ng-click="openMessagePageToCompose()">
+
+                                    <p class="montserrat flow-text" >COMPOSE</p>
+
+                                </a>
+
+                            </div>
+                            <div class="col s6 right-align">
+
+                                <a href="#" class="black-text" onclick="return false;" ng-click="openMessagePage()">
+
+                                    <p class="montserrat flow-text" >INBOX</p>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col s2">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col 12 left-align">
+            <br>
+
+        </div>
+
+
     </div>
 
-    <div class="col s3"></div>
+    <div class="col s12 hide-on-large-only" 
+         ng-show="!heyLeah">
 
-    <div ng-show="messageArray.length >0">
+        <div class= "col s12 left-align">
 
-        <div class="col s12 left-align">
-            <p class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})</p>
+            <span class = "montserrat">
+                Name:
+            </span>
+            <p    class = "montserrat grey-text">
+                {{clientName}}
+            </p>
+            <span class = "montserrat">
+                Email:
+            </span>
+            <p    class = "montserrat">
+                {{clientEmail}}
+            </p>
 
         </div>
 
+        <div class = "col s12 left-align">
 
-
-        <div class="col s12 left-align">
-            <div style="height:200px; border:2px solid black;">
-
-                <div
-                    style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
-                </div>
+            <div style = "height:200px; border:1px solid #ddd;">
 
                 <div class="row">
+
+                    <div class="col s12" 
+                         style="border-bottom:1px solid #ddd;">
+
+                        <div      class="center-align">
+                            <i    class="material-icons grey-text">
+                                schedule
+                            </i>
+                            <span style="font-size:10px">
+                                ({{bookings.length}})
+                            </span>
+
+                        </div>
+
+                    </div>
+                    <div ng-show="!pendingBookings">
+
+                        <div class = "row"></div>
+                        <div class = "col s2">
+
+                            <div class = "left-align">
+
+                                <i  ng-click = "changeBooking()"
+                                    class = "material-icons grey-text animated flash">
+                                    chevron_left
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col s8" 
+                             style="border:1px solid #ddd;" 
+                             ng-click="openBookingsPage()">
+
+                            <div class="center-align">
+
+                                <p    class = "montserrat grey-text">
+                                    {{bookings[currentBooking].date}}
+                                </p>
+                                <span class = "montserrat grey-text">
+                                    {{bookings[currentBooking].time}}
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="col s2">
+
+                            <div class = "right-align">
+
+                                <i class = "material-icons grey-text animated flash">
+                                    chevron_right
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div ng-show="pendingBookings">
+
+                        <h3>(ಠ_ಠ)</h3>
+
+                    </div>
+
                 </div>
-                <i class="material-icons grey-text">format_quote
-                </i><span class="montserrat grey-text">{{messageArray[messageArray.length-1].body}}</span>
-                <i class="material-icons grey-text">format_quote
+
+            </div>
+
+        </div>
+
+        <div class = "col s12 left-align">
+
+            <p ng-show = "messageArray.length >0" 
+               class   = "montserrat grey-text ">
+                Recent Message(1 of
+                {{messageArray.length}})
+            </p>
+            <p ng-show = "messageArray.length ==0" 
+               class   = "montserrat grey-text ">
+               Recent Message(None Yet!)
+            </p>
+
+        </div>
+
+        <div class = "col s12 left-align" 
+             ng-show = "messageArray.length >0">
+
+            <div style = "height:200px; border:1px solid #ddd;" 
+                 ng-click = "openMessagePage()">
+
+                <div style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
+                </div>
+
+                <div class = "row"></div>
+                <i   class = "material-icons grey-text">
+                    format_quote
+                </i>
+                <span class = "montserrat grey-text">
+                    {{messageArray[messageArray.length-1].body}}
+                </span>
+                <i    class = "material-icons grey-text">
+                    format_quote
                 </i>
 
             </div>
-        </div>
-    </div>
-
-
-    <div ng-show="messageArray.length ==0">
-        <div class="col s12 left-align">
-            <p class="montserrat black-text" style="font-size:25px;">No Messages Yet! (0 of 0)</p>
 
         </div>
 
-
-
-        <div class="col s12 left-align">
-            <div style="height:200px; border:2px solid black;" ng-click="openMessagePage()">
-
-                <div class="row">
-                </div>
-                <div class="row">
-                </div>
-                <div class="row">
-                    <div class="col s2">
-                    </div>
-                    <div class="col s8 " style="height:100px; border:1px solid #ddd" ;>
-
-                        <div class="col s6 left-align">
-
-                            <a href="#" class="black-text" onclick="return false;"
-                                ng-click="openMessagePageToCompose()">
-
-                                <p class="montserrat" style="font-size:30px">COMPOSE</p>
-
-                            </a>
-
-                        </div>
-                        <div class="col s6 right-align">
-
-                            <a href="#" class="black-text" onclick="return false;" ng-click="openMessagePage()">
-
-                                <p class="montserrat" style="font-size:30px">INBOX</p>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-                    <div class="col s2">
-                    </div>
-
-
-                </div>
-
-            </div>
+        <div class = "col 12 left-align">
+            <br>
         </div>
-    </div>
-    <div class="col 12 left-align">
-        <br>
 
     </div>
-
-
-</div>
-
-<div class="col s12 hide-on-large-only" ng-show="!heyLeah">
-
-
-
-
-    <div class="col s12 left-align">
-        <span class="montserrat ">Name:</span>
-        <p class="montserrat grey-text">{{clientName}}</p>
-        <span class="montserrat">Email:</span>
-        <p class="montserrat">{{clientEmail}}</p>
-
-    </div>
-    <div class="col s12 left-align">
-
-        <div style="height:200px; border:1px solid #ddd;">
-            <div class="row">
-                <div class="col s12" style="border-bottom:1px solid #ddd;">
-                    <div class="center-align">
-                        <i class="material-icons grey-text">schedule
-                        </i><span style="font-size:10px">({{bookings.length}})</span>
-                    </div>
-                </div>
-                <div ng-show="!pendingBookings">
-                    <div class="row">
-                    </div>
-                    <div class="col s2">
-
-                        <div class="left-align">
-                            <i ng-click="changeBooking()"
-                                class="material-icons grey-text animated flash">chevron_left</i>
-                        </div>
-                    </div>
-                    <div class="col s8" style="border:1px solid #ddd;" ng-click="openBookingsPage()">
-
-                        <div class="center-align">
-                            <p class="montserrat grey-text">{{bookings[currentBooking].date}}</p>
-
-                            <span class="montserrat grey-text">{{bookings[currentBooking].time}}</span>
-
-                        </div>
-                    </div>
-                    <div class="col s2">
-                        <div class="right-align">
-                            <i class="material-icons grey-text animated flash">chevron_right</i>
-                        </div>
-
-                    </div>
-                </div>
-                <div ng-show="pendingBookings">
-                    <h3>(ಠ_ಠ)</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 left-align">
-        <p ng-show="messageArray.length >0" class="montserrat grey-text ">Recent Message(1 of {{messageArray.length}})
-        </p>
-        <p ng-show="messageArray.length ==0" class="montserrat grey-text ">Recent Message(None Yet!)</p>
-
-    </div>
-
-
-
-    <div class="col s12 left-align" ng-show="messageArray.length >0">
-        <div style="height:200px; border:1px solid #ddd;" ng-click="openMessagePage()">
-
-            <div
-                style="border-radius:100px; background-image:url('./img/leahsmall.jpg'); border:2px solid white; width:100px; height:100px;">
-            </div>
-
-            <div class="row">
-            </div>
-            <i class="material-icons grey-text">format_quote
-            </i><span class="montserrat grey-text">{{messageArray[messageArray.length-1].body}}</span>
-            <i class="material-icons grey-text">format_quote
-            </i>
-
-        </div>
-    </div>
-    <div class="col 12 left-align">
-        <br>
-
-    </div>
-
 
 </div>

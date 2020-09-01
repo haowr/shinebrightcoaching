@@ -30,6 +30,16 @@ angular.module('userServices', []).config(function () {
         userFactory.addBooking = function (dateInfo) {
             return $http.post("/api/users/addbooking", dateInfo)
         }
+        userFactory.markBookingAsCompleted = function(bookingInfo){
+
+            return $http.post('/api/users/markbookingascompleted',bookingInfo)
+
+        }
+        userFactory.markBookingAsNotCompleted = function(bookingInfo){
+
+            return $http.post('/api/users/markbookingasnotcompleted',bookingInfo)
+
+        }
         userFactory.changeMessageToRead = function (id, index) {
             return $http.put('/api/users/changemessagetoread/' + id + "/" + index)
         }
