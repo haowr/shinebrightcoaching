@@ -61,7 +61,7 @@
 
                         <div class="left-align">
 
-                            <i ng-click = "changeBooking()" 
+                            <i ng-click = "changeBookingLeft()" 
                                class    = "material-icons black-text animated flash"
                                style    = "font-size:40px">
                                chevron_left
@@ -138,11 +138,10 @@
                                         <p class="montserrat" style="font-size:20px;">( Click To Mark As Completed )</p>
 
                                     </div>
-                                    <div class="col s6">
-                                        <!--
-                                        <button ng-show="!currentUserBookingsArray[currentBooking].completed" ng-click="markAsCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Complete</button>
-                                        <button ng-show="currentUserBookingsArray[currentBooking].completed" ng-click="markAsNotCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Pending</button>
-                                    -->
+                                    <div class="col s12 right-align">
+
+                                        <button ng-click="markAsNotCompleted(currentBooking)" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">DELETE</button>
+                                    
                                     </div>
                                     <div class="col s6">
                                         <!--
@@ -242,17 +241,12 @@
                                         <p class="montserrat" style="font-size:20px;">( Click To Mark As Completed )</p>
 
                                     </div>
-                                    <div class="col s6">
-                                        <!--
-                                        <button ng-show="!currentUserBookingsArray[currentBooking].completed" ng-click="markAsCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Complete</button>
-                                        <button ng-show="currentUserBookingsArray[currentBooking].completed" ng-click="markAsNotCompleted(currentBooking)" type="submit" class="waves-effect waves-light blue-grey btn " style="border:2px solid black;">Pending</button>
-                                    -->
+                                    <div class="col s12 right-align">
+
+                                        <button ng-click="deleteBooking(currentBooking)" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">DELETE</button>
+
                                     </div>
-                                    <div class="col s6">
-                                        <!--
-                                        <button ng-click="submitCheckUp('eight')" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">Delete</button>
-                                    -->
-                                    </div>
+                             
 
 
 
@@ -289,7 +283,8 @@
 
                         <div class = "right-align">
 
-                            <i class = "material-icons black-text animated flash"
+                            <i  ng-click = "changeBookingRight()"
+                                class = "material-icons black-text animated flash"
                                 style = "font-size:40px;">
                                 chevron_right
                             </i>

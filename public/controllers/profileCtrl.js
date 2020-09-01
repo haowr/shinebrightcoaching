@@ -13646,7 +13646,7 @@
 
 
 
-        $scope.changeBooking = function () {
+        $scope.changeBookingLeft = function () {
 
             $scope.shinebrighttap.play()
 
@@ -13657,6 +13657,22 @@
             } else {
 
                 $scope.currentBooking = $scope.bookings.length - 1
+
+            }
+
+        }
+
+        $scope.changeBookingRight = function () {
+
+            $scope.shinebrighttap.play()
+
+            if ($scope.currentBooking < $scope.bookings.length -1 ) {
+
+                $scope.currentBooking = $scope.currentBooking + 1
+
+            } else {
+
+                $scope.currentBooking = 0
 
             }
 
@@ -13763,6 +13779,29 @@
                 },1000)
     
             })
+
+        }
+
+        $scope.deleteBooking = function(currentbooking){
+
+            $scope.loadingBookingDeletion       = true;
+            $scope.bookingInfo.currentbooking   = currentbooking
+            console.log("bookinginfo")
+            console.log($scope.bookingInfo)
+            /*
+            User.deleteBooking($scope.bookingInfo).then(function(data){
+
+                console.log(data)
+
+                $scope.currentUserBookingsArray = data.data.user.bookings
+
+                $timeout(function(){
+
+                    $scope.loadingBookingDeletion = false;
+
+                },1000)
+    
+            })*/
 
         }
 
