@@ -18,871 +18,6 @@
 
         }
 
-        $scope.openModal = function () {
-
-            $('#modal1').modal('open');
-            
-        }
-        $scope.submitDiscovery2 = function (hour) {
-            //console.log($scope.discoveryData)
-            console.log("$scope.discoveryData", $scope.discoveryData)
-
-            if ($scope.discoveryData.time == "8:00am" || $scope.discoveryData.time == "9:00am" ||
-                $scope.discoveryData.time == "10:00am" || $scope.discoveryData.time == "11:00am" ||
-                $scope.discoveryData.time == "12:00pm" || $scope.discoveryData.time == "1:00pm" ||
-                $scope.discoveryData.time == "2:00pm" || $scope.discoveryData.time == "3:00pm") {
-                $scope.dateInfo[0] = 2;
-                $scope.dateInfo[1] = 2
-                $scope.dateInfo[2] = 2
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-
-                    console.log("GET DATE", data)
-                    data.data.date[hour].state[0] = 2
-                    data.data.date[hour].state[1] = 2
-                    data.data.date[hour].state[2] = 2
-                    $scope.dateData.dateInfo = data.data.date[hour].state
-                    console.log("dateData", $scope.dateData)
-
-
-                    User.updateDate($scope.dateData).then(function (data) {
-
-                        //console.log(data)
-                        //console.log(data.data.date[hour].state)
-                        $scope.dateDataForUser.date = $scope.currentDate;
-                        $scope.dateDataForUser.id = $window.localStorage._id
-                        $scope.dateDataForUser.clientname = $scope.clientName
-                        $scope.dateDataForUser.clientphonenumber = $scope.clientPhone
-                        $scope.dateDataForUser.clientemail = $scope.clientEmail
-                        $scope.dateDataForUser.datecondensed = $scope.dateCondensed
-                        $scope.dateDataForUser.month = "88";
-
-                        if ($scope.discoveryData.time == "8:00am") {
-
-                            $scope.dateDataForUser.time = "8:00am - 8:30am"
-
-                        }
-                        if ($scope.discoveryData.time == "9:00am") {
-
-                            $scope.dateDataForUser.time = "9:00am - 9:30am"
-
-                        }
-                        if ($scope.discoveryData.time == "10:00am") {
-
-                            $scope.dateDataForUser.time = "10:00am - 10:30am"
-
-                        }
-                        if ($scope.discoveryData.time == "11:00am") {
-
-                            $scope.dateDataForUser.time = "11:00am - 11:30am"
-
-                        }
-                        if ($scope.discoveryData.time == "12:00am") {
-
-                            $scope.dateDataForUser.time = "12:00am - 12:30am"
-
-                        }
-                        if ($scope.discoveryData.time == "1:10pm") {
-
-                            $scope.dateDataForUser.time = "1:10pm - 1:30pm"
-
-                        }
-                        if ($scope.discoveryData.time == "2:10pm") {
-
-                            $scope.dateDataForUser.time = "2:10pm - 2:30pm"
-
-                        }
-                        if ($scope.discoveryData.time == "3:10pm") {
-
-                            $scope.dateDataForUser.time = "3:10pm - 3:30pm"
-
-                        }
-
-                        //$scope.dateDataForUser.time = 
-                        User.addBooking($scope.dateDataForUser).then(function (data) {
-
-                            console.log("DATA")
-                            console.log(data)
-
-                            if (data.data.user.calender["88"][1]) {
-
-                                $scope.booked121 = true;
-
-                            }
-                            if (data.data.user.calender["88"][2]) {
-
-                                $scope.booked122 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][3]) {
-
-                                $scope.booked123 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][4]) {
-
-                                $scope.booked124 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][5]) {
-
-                                $scope.booked125 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][6]) {
-
-                                $scope.booked126 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][7]) {
-
-                                $scope.booked127 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][8]) {
-
-                                $scope.booked128 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][9]) {
-
-                                $scope.booked129 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][10]) {
-
-                                $scope.booked1210 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][11]) {
-
-                                $scope.booked1211 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][12]) {
-
-                                $scope.booked1212 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][13]) {
-
-                                $scope.booked1213 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][14]) {
-
-                                $scope.booked1214 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][15]) {
-
-                                $scope.booked1215 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][16]) {
-
-                                $scope.booked1216 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][17]) {
-
-                                $scope.booked1217 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][18]) {
-
-                                $scope.booked1218 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][19]) {
-
-                                $scope.booked1219 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][20]) {
-
-                                $scope.booked1220 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][21]) {
-
-                                $scope.booked1221 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][22]) {
-
-                                $scope.booked1222 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][23]) {
-
-                                $scope.booked1223 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][24]) {
-
-                                $scope.booked1224 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][25]) {
-
-                                $scope.booked1225 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][26]) {
-
-                                $scope.booked1226 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][27]) {
-
-                                $scope.booked1227 = true;
-                                console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][28]) {
-
-                                $scope.booked1228 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][29]) {
-
-                                $scope.booked1229 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][30]) {
-
-                                $scope.booked1230 = true;
-                                //console.log("hero")
-                            }
-                            if (data.data.user.calender["88"][31]) {
-
-                                $scope.booked1231 = true;
-                                //console.log("hero")
-                            }
-
-                        })
-                        $scope.audio.play();
-                        $scope.playAudio();
-                        $scope.e.initTouchEvent(function () {
-
-                        })
-                    })
-                })
-            }
-            if ($scope.discoveryData.time == "8:10am" || $scope.discoveryData.time == "9:10am" ||
-                $scope.discoveryData.time == "10:10am" || $scope.discoveryData.time == "11:10am" ||
-                $scope.discoveryData.time == "12:10pm" || $scope.discoveryData.time == "1:10pm" ||
-                $scope.discoveryData.time == "2:10pm" || $scope.discoveryData.time == "3:10pm") {
-                $scope.dateInfo[1] = 2;
-                $scope.dateInfo[2] = 2
-                $scope.dateInfo[3] = 2
-                //console.log($scope.slot)
-                //console.log($scope.dateInfo)
-                //console.log($scope.id)
-                //console.log("hour", hour)
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-                    //console.log(data)
-                    //console.log(data.data.date[hour].state)
-                    data.data.date[hour].state[1] = 2
-                    data.data.date[hour].state[2] = 2
-                    data.data.date[hour].state[3] = 2
-                    $scope.dateData.dateInfo = data.data.date[hour].state
-                    User.updateDate($scope.dateData).then(function (data) {
-                        //console.log(data)
-                        //console.log(data.data.date[hour].state)
-                        $scope.dateDataForUser.date = $scope.currentDate;
-                        if ($scope.discoveryData.time == "8:10am") {
-                            $scope.dateDataForUser.time = "8:10am - 8:40am"
-
-                        }
-                        if ($scope.discoveryData.time == "9:10am") {
-                            $scope.dateDataForUser.time = "9:10am - 9:40am"
-
-                        }
-                        if ($scope.discoveryData.time == "10:10am") {
-                            $scope.dateDataForUser.time = "10:10am - 10:40am"
-
-                        }
-                        if ($scope.discoveryData.time == "11:10am") {
-                            $scope.dateDataForUser.time = "11:10am - 11:40am"
-
-                        }
-                        if ($scope.discoveryData.time == "12:10am") {
-                            $scope.dateDataForUser.time = "12:10am - 12:40am"
-
-                        }
-                        if ($scope.discoveryData.time == "1:00pm") {
-                            $scope.dateDataForUser.time = "1:00pm - 1:40pm"
-
-                        }
-                        if ($scope.discoveryData.time == "2:00pm") {
-                            $scope.dateDataForUser.time = "2:00pm - 2:40pm"
-
-                        }
-                        if ($scope.discoveryData.time == "3:00pm") {
-                            $scope.dateDataForUser.time = "3:00pm - 3:40pm"
-
-                        }
-                        $scope.audio.play();
-                        $scope.playAudio();
-                        $scope.e.initTouchEvent(function () {
-
-                        })
-                    })
-                })
-            }
-            if ($scope.discoveryData.time == "8:20am" || $scope.discoveryData.time == "9:20am" ||
-                $scope.discoveryData.time == "10:20am" || $scope.discoveryData.time == "11:20am" ||
-                $scope.discoveryData.time == "12:20pm" || $scope.discoveryData.time == "1:20pm" ||
-                $scope.discoveryData.time == "2:20pm" || $scope.discoveryData.time == "3:20pm") {
-                $scope.dateInfo[0] = 2;
-                $scope.dateInfo[1] = 2
-                $scope.dateInfo[2] = 2
-                //console.log($scope.slot)
-                //console.log($scope.dateInfo)
-                //console.log($scope.id)
-                //console.log("hour", hour)
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-                    //console.log(data)
-                    //console.log(data.data.date[hour].state)
-                    data.data.date[hour].state[2] = 2
-                    data.data.date[hour].state[3] = 2
-                    data.data.date[hour].state[4] = 2
-                    $scope.dateData.dateInfo = data.data.date[hour].state
-                    User.updateDate($scope.dateData).then(function (data) {
-                        //console.log(data)
-                        //console.log(data.data.date[hour].state)
-                        $scope.dateDataForUser.date = $scope.currentDate;
-                        if ($scope.discoveryData.time == "8:20am") {
-                            $scope.dateDataForUser.time = "8:20am - 8:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "9:20am") {
-                            $scope.dateDataForUser.time = "9:20am - 9:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "10:20am") {
-                            $scope.dateDataForUser.time = "10:20am - 10:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "11:20am") {
-                            $scope.dateDataForUser.time = "11:20am - 11:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "12:20am") {
-                            $scope.dateDataForUser.time = "12:20am - 12:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "1:20pm") {
-                            $scope.dateDataForUser.time = "1:20pm - 1:50pm"
-
-                        }
-                        if ($scope.discoveryData.time == "2:20pm") {
-                            $scope.dateDataForUser.time = "2:20pm - 2:50pm"
-
-                        }
-                        if ($scope.discoveryData.time == "3:20pm") {
-                            $scope.dateDataForUser.time = "3:20pm - 3:50pm"
-
-                        }
-                        $scope.audio.play();
-                        $scope.playAudio();
-                        $scope.e.initTouchEvent(function () {
-
-                        })
-                    })
-                })
-            }
-            if ($scope.discoveryData.time == "8:30am" || $scope.discoveryData.time == "9:30am" ||
-                $scope.discoveryData.time == "10:30am" || $scope.discoveryData.time == "11:30am" ||
-                $scope.discoveryData.time == "12:30pm" || $scope.discoveryData.time == "1:30pm" ||
-                $scope.discoveryData.time == "2:30pm" || $scope.discoveryData.time == "3:30pm") {
-                $scope.dateInfo[0] = 2;
-                $scope.dateInfo[1] = 2
-                $scope.dateInfo[2] = 2
-                //console.log($scope.slot)
-                //console.log($scope.dateInfo)
-                //console.log($scope.id)
-                //console.log("hour", hour)
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-                    //console.log(data)
-                    //console.log(data.data.date[hour].state)
-                    data.data.date[hour].state[3] = 2
-                    data.data.date[hour].state[4] = 2
-                    data.data.date[hour].state[5] = 2
-                    $scope.dateData.dateInfo = data.data.date[hour].state
-                    User.updateDate($scope.dateData).then(function (data) {
-                        //console.log(data)
-                        //console.log(data.data.date[hour].state)
-                        $scope.dateDataForUser.date = $scope.currentDate;
-                        if ($scope.discoveryData.time == "8:30am") {
-                            $scope.dateDataForUser.time = "8:30am - 8:50pm"
-
-                        }
-                        if ($scope.discoveryData.time == "9:30am") {
-                            $scope.dateDataForUser.time = "9:30am - 9:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "10:30am") {
-                            $scope.dateDataForUser.time = "10:30am - 10:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "11:30am") {
-                            $scope.dateDataForUser.time = "11:30am - 11:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "12:30am") {
-                            $scope.dateDataForUser.time = "12:30am - 12:50am"
-
-                        }
-                        if ($scope.discoveryData.time == "1:30pm") {
-                            $scope.dateDataForUser.time = "1:30pm - 1:50pm"
-
-                        }
-                        if ($scope.discoveryData.time == "2:30pm") {
-                            $scope.dateDataForUser.time = "2:30pm - 2:50pm"
-
-                        }
-                        if ($scope.discoveryData.time == "3:30pm") {
-                            $scope.dateDataForUser.time = "3:00pm - 3:30pm"
-
-                        }
-                        $scope.audio.play();
-                        $scope.playAudio();
-                        $scope.e.initTouchEvent(function () {
-
-                        })
-                    })
-                })
-            }
-            if ($scope.discoveryData.time == "8:40am" || $scope.discoveryData.time == "9:40am" ||
-                $scope.discoveryData.time == "10:40am" || $scope.discoveryData.time == "11:40am" ||
-                $scope.discoveryData.time == "12:40pm" || $scope.discoveryData.time == "1:40pm" ||
-                $scope.discoveryData.time == "2:40pm" || $scope.discoveryData.time == "3:40pm") {
-                $scope.dateInfo[0] = 2;
-                $scope.dateInfo[1] = 2
-                $scope.dateInfo[2] = 2
-                //console.log($scope.slot)
-                //console.log($scope.dateInfo)
-                //console.log($scope.id)
-                //console.log("hour", hour)
-                //console.log("8:40")
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-                    //console.log(data)
-                    //console.log(data.data.date[hour].state)
-                    data.data.date[hour].state[4] = 2
-                    data.data.date[hour].state[5] = 2
-                    if (hour == 'eight') {
-                        $scope.hourPlusOne = 'nine'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "8:40am") {
-                                $scope.dateDataForUser.time = "8:40am - 9:10am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'nine') {
-                        $scope.hourPlusOne = 'ten'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "9:40am") {
-                                $scope.dateDataForUser.time = "9:40am - 10:10am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'ten') {
-                        $scope.hourPlusOne = 'eleven'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2                            $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "10:40am") {
-                                $scope.dateDataForUser.time = "10:40am - 11:10am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'eleven') {
-                        $scope.hourPlusOne = 'twelve'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "11:40am") {
-                                $scope.dateDataForUser.time = "11:40am - 12:10am"
-
-                            }
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'twelve') {
-                        $scope.hourPlusOne = 'one'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "12:40am") {
-                                $scope.dateDataForUser.time = "12:40am - 1:10pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'one') {
-                        $scope.hourPlusOne = 'two'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "1:40pm") {
-                                $scope.dateDataForUser.time = "1:40pm - 2:10pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'two') {
-                        $scope.hourPlusOne = 'three'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        //data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "2:40pm") {
-                                $scope.dateDataForUser.time = "2:40pm - 3:10pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'three') {
-                        $scope.hourPlusOne = 'nine'
-                        data.data.date[$scope.hourPlusOne].state[2] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        /* User.updateDateNextHour($scope.dateData).then(function (data) {
-                             //console.log(data)
-                             //console.log(data.data.date[hour].state)
-                             $scope.audio.play();
-                             $scope.playAudio();
-                             $scope.e.initTouchEvent(function () {
- 
-                             })
-                         })*/
-                    }
-
-                })
-            }
-            if ($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am" ||
-                $scope.discoveryData.time == "10:50am" || $scope.discoveryData.time == "11:50am" ||
-                $scope.discoveryData.time == "12:50pm" || $scope.discoveryData.time == "1:50pm" ||
-                $scope.discoveryData.time == "2:50pm" || $scope.discoveryData.time == "3:50pm") {
-                $scope.dateInfo[0] = 2;
-                $scope.dateInfo[1] = 2
-                $scope.dateInfo[2] = 2
-                //console.log($scope.slot)
-                //console.log($scope.dateInfo)
-                //console.log($scope.id)
-                //console.log("hour", hour)
-                //console.log("_:50")
-                $scope.dateData.hour = hour;
-                $scope.dateData.id = $scope.id
-
-                $scope.bookDiscovery = false;
-                $scope.shakeOn = true;
-                // $scope.audio.play();
-                User.getDate($scope.id).then(function (data) {
-                    //console.log(data)
-                    //console.log(data.data.date[hour].state)
-                    data.data.date[hour].state[5] = 2
-                    if (hour == 'eight') {
-                        $scope.hourPlusOne = 'nine'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "8:50am") {
-                                $scope.dateDataForUser.time = "8:50am - 9:20am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'nine') {
-                        $scope.hourPlusOne = 'ten'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "9:50am") {
-                                $scope.dateDataForUser.time = "9:50am - 10:20am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'ten') {
-                        $scope.hourPlusOne = 'eleven'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "10:50am") {
-                                $scope.dateDataForUser.time = "10:50am - 11:20am"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'eleven') {
-                        $scope.hourPlusOne = 'twelve'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "11:50am") {
-                                $scope.dateDataForUser.time = "11:50am - 12:10pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'twelve') {
-                        $scope.hourPlusOne = 'one'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "12:50am") {
-                                $scope.dateDataForUser.time = "12:50am - 1:20pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'one') {
-                        $scope.hourPlusOne = 'two'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "1:50pm") {
-                                $scope.dateDataForUser.time = "1:50pm - 2:20pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'two') {
-                        $scope.hourPlusOne = 'three'
-                        data.data.date[$scope.hourPlusOne].state[0] = 2
-                        data.data.date[$scope.hourPlusOne].state[1] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        User.updateDateNextHour($scope.dateData).then(function (data) {
-                            //console.log(data)
-                            //console.log(data.data.date[hour].state)
-                            $scope.dateDataForUser.date = $scope.currentDate;
-                            if ($scope.discoveryData.time == "2:50pm") {
-                                $scope.dateDataForUser.time = "2:50pm - 3:20pm"
-
-                            }
-
-                            $scope.audio.play();
-                            $scope.playAudio();
-                            $scope.e.initTouchEvent(function () {
-
-                            })
-                        })
-                    }
-                    if (hour == 'three') {
-                        $scope.hourPlusOne = 'nine'
-                        data.data.date[$scope.hourPlusOne].state[2] = 2
-                        $scope.dateData.dateInfo = data.data.date[hour].state
-                        $scope.dateData.nexthour = $scope.hourPlusOne
-                        $scope.dateData.dateInfoNextHour = data.data.date[$scope.hourPlusOne].state
-                        /* User.updateDateNextHour($scope.dateData).then(function (data) {
-                             //console.log(data)
-                             //console.log(data.data.date[hour].state)
-                             $scope.audio.play();
-                             $scope.playAudio();
-                             $scope.e.initTouchEvent(function () {
- 
-                             })
-                         })*/
-                    }
-
-                })
-            }
-        }
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
 
@@ -1087,34 +222,8 @@
             }
 
         })
-        $scope.exitBookingsPage = function () {
+ 
 
-            $scope.bookingsPageOpen = false;
-
-        }
-        $scope.openScheduleSDOrCiPage = function (slot) {
-            //console.log("clicked")
-            $scope.slot = slot;
-            if (!$scope.scheduleSDOrCiPageOpen) {
-                $scope.scheduledJobPageOpen = false;
-                $scope.scheduleSDOrCiPageOpen = true;
-                if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
-
-                    //$scope.
-                    //if(slot == 2){
-                    $scope.bookDiscovery = true;
-                    $scope.bookCheckup = true
-                    //console.log("9:40am available")
-                    //console.log("9:30am available")
-                    //console.log($scope.slot)
-
-                    // }
-
-                }
-
-            }
-        }
-   
         $scope.bookingPageOpen = false;
         $scope.timeData = {}
         $scope.discoveryData = {
@@ -13957,171 +13066,7 @@
             }
 
         }
-        $scope.openMessagePageToCompose = function () {
 
-            $('html, body').animate({ scrollTop: 0 }, 'fast');
-
-            if (!$scope.messagePageOpen) {
-
-                $scope.schedulePageOpen = false;
-                $scope.currentIndex = null;
-                $scope.infoPageOpen = false;
-                $scope.adminBookingsPageOpen = false;
-                $scope.messagePageOpen = true;
-                $scope.bookedJobsPageOpened = false;
-                $scope.chartsPageOpen = false;
-                $scope.historyPageOpenProfile = false;
-                $scope.messagePageSelected = true;
-                $scope.amountPending = 0;
-                $scope.messagesLoading = true;
-                $scope.usersForPagination = []
-                $scope.usersPaginated = []
-                $scope.messageForPagination = [];
-                $scope.messagesPaginated = [];
-                $scope.pageLimit = 4;
-                $scope.pageLimitUsers = 4;
-
-
-
-                User.getMessages($scope.idFromLocalStorage).then(function (data) {
-
-                    $scope.messagesArray = data.data.messages;
-
-                    for (var i = 0; i <= $scope.messagesArray.length; i++) {
-
-                        var page = 0;
-
-                        if (i < $scope.pageLimit) {
-
-                        }
-                        if (i < $scope.messagesArray.length) {
-
-                        }
-
-                        if (i < $scope.pageLimit && i < $scope.messagesArray.length) {
-
-                            if ($scope.messagesArray[i]) {
-
-                                $scope.messagesArray[i].messageIndex = i
-                                $scope.messageForPagination.push($scope.messagesArray[i])
-
-                            }
-
-                        } else {
-
-                            if (!$scope.usersLoaded) {
-
-                                $scope.loadingUsers = false;
-                                $scope.composeMessagePageOpen = true;
-                                $scope.messagesPaginated.push($scope.messageForPagination)
-                                $scope.messageForPagination = [];
-
-                                if ($scope.messagesArray[i] !== undefined) {
-
-                                    $scope.messagesArray[i].messageIndex = i
-                                    $scope.messageForPagination.push($scope.messagesArray[i])
-
-                                }
-
-                                $scope.pageLimit = $scope.pageLimit + 4;
-                                page++
-
-                            }
-
-                        }
-
-                    }
-                })
-
-
-            } else {
-
-                $scope.composeMessagePageOpen = false;
-
-            }
-        }
-        $scope.openBookingsPage = function () {
-            //console.log("clicked")
-            // $scope.schedulePageOpen = false;
-            $scope.bookingsPageOpen = true;
-            $scope.infoPageOpen = false;
-            $scope.currentIndex = null;
-
-            // $scope.adminBookingsPageOpen = true;
-            $scope.infoPageOpen = false;
-            $scope.messagePageOpen = false;
-            $scope.amountPending = 0;
-            //$scope.bookedJobsPageOpened = false;
-            $scope.chartsPageOpen = false;
-            $scope.historyPageOpenProfile = false;
-            $scope.messagePageSelected = true;
-            $scope.messagesLoading = true;
-            $scope.bookingsForPagination = [];
-            $scope.bookingsPaginated = []
-
-            $scope.pageLimit = 4;
-            User.getUser($scope.idFromLocalStorage).then(function (data) {
-                //console.log(data)
-                //$scope.messagesArray = data.data.users;
-                $scope.allBookingsArray = data.data.user.bookings
-                //console.log($scope.allBookingsArray)
-                // $scope.messagesLoading = false;
-                for (var i = 0; i <= $scope.allBookingsArray.length; i++) {
-
-                    var page = 0;
-                    //////console.log($scope.pageLimit, i, $scope.employees.length)
-
-                    if (i < $scope.pageLimit) {
-                        //console.log("its less")
-
-                    }
-                    if (i < $scope.allBookingsArray.length) {
-                        //console.log("yup,less")
-                    }
-
-                    if (i < $scope.pageLimit && i < $scope.allBookingsArray.length) {//5
-                        //console.log("HELLO")
-                        ////console.log($scope.employees[i])
-                        ////console.log($scope.pageLimit, i, $scope.employees.length)
-                        if ($scope.allBookingsArray[i]) {
-                            $scope.allBookingsArray[i].bookingIndex = i
-                            $scope.bookingsForPagination.push($scope.allBookingsArray[i])
-                            //console.log(i)
-                            //console.log("firstCondiation")
-                            //console.log($scope.pageArray)
-
-                        }
-
-
-
-                    } else {
-                        if (!$scope.usersLoaded) {
-
-                            //console.log("else")
-                            //console.log(i)
-
-                            $scope.loadingUsers = false;
-                            $scope.bookingsPaginated.push($scope.bookingsForPagination)
-                            //console.log($scope.bookingsPaginated)
-                            $scope.bookingsForPagination = [];
-                            if ($scope.allBookingsArray[i] !== undefined) {
-                                $scope.allBookingsArray[i].bookingIndex = i
-                                $scope.bookingsForPagination.push($scope.allBookingsArray[i])
-                            }
-                            $scope.pageLimit = $scope.pageLimit + 4;
-                            ////console.log($scope.pageLimit, i, $scope.employees.length)
-
-                            page++
-
-                        }
-
-                    }
-
-                }
-            })
-
-
-        }
 
         $scope.audio                = new Audio("../audio/shinebrightclick.wav")
         $scope.shinebrighterror     = new Audio("../audio/shinebrighterror.wav");
@@ -15770,13 +14715,48 @@
 
         $scope.openBookingPage = function (slot) {
 
-            $scope.slot = slot;
-            $scope.hour = slot;
-            $scope.bookingPageOpen = true;
-            $scope.scheduledJobPageOpen = false;
-            $scope.scheduleSDOrCiPageOpen = false;
-            $scope.bookeCheckup = true;
-            $scope.globalDateInformation = {};
+            $scope.slot                     = slot;
+            $scope.hour                     = slot;
+            $scope.bookingPageOpen          = true;
+            $scope.scheduledJobPageOpen     = false;
+            $scope.scheduleSDOrCiPageOpen   = false;
+            $scope.discovery800AMIsBooked   = false;
+            $scope.discovery810AMIsBooked   = false;
+            $scope.discovery820AMIsBooked   = false;
+            $scope.discovery830AMIsBooked   = false;
+            $scope.discovery840AMIsBooked   = false;
+            $scope.discovery850AMIsBooked   = false;
+            $scope.session800AMIsBooked     = false;
+            $scope.session810AMIsBooked     = false;
+            $scope.session820AMIsBooked     = false;
+            $scope.session830AMIsBooked     = false;
+            $scope.session840AMIsBooked     = false;
+            $scope.session850AMIsBooked     = false;
+            $scope.checkUp800AMIsBooked     = false;
+            $scope.checkUp810AMIsBooked     = false;
+            $scope.checkUp820AMIsBooked     = false;
+            $scope.checkUp830AMIsBooked     = false;
+            $scope.checkUp840AMIsBooked     = false;
+            $scope.checkUp850AMIsBooked     = false;
+            $scope.discovery900AMIsBooked   = false;
+            $scope.discovery910AMIsBooked   = false;
+            $scope.discovery920AMIsBooked   = false;
+            $scope.discovery930AMIsBooked   = false;
+            $scope.discovery940AMIsBooked   = false;
+            $scope.discovery950AMIsBooked   = false;
+            $scope.session900AMIsBooked     = false;
+            $scope.session910AMIsBooked     = false;
+            $scope.session920AMIsBooked     = false;
+            $scope.session930AMIsBooked     = false;
+            $scope.session940AMIsBooked     = false;
+            $scope.session950AMIsBooked     = false;
+            $scope.checkUp900AMIsBooked     = false;
+            $scope.checkUp910AMIsBooked     = false;
+            $scope.checkUp920AMIsBooked     = false;
+            $scope.checkUp930AMIsBooked     = false;
+            $scope.checkUp940AMIsBooked     = false;
+            $scope.checkUp950AMIsBooked     = false;
+            $scope.globalDateInformation    = {};
 
             console.log("Check Up Page Open", $scope.checkUpPageOpen)
             console.log("Discovery Page Open", $scope.discoveryPageOpen)
@@ -15866,7 +14846,7 @@
 
                         if ($scope.globalDateInformation[$scope.hour].state[2] == 2) {
 
-                            $scope.bookDiscovery9 = false;
+                            $scope.bookDiscovery9  = false;
                             $scope.bookDiscovery19 = false;
                             $scope.bookDiscovery29 = false;
 
@@ -16985,6 +15965,89 @@
 
         }
 
+        $scope.openMessagePageToCompose = function () {
+
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+            if (!$scope.messagePageOpen) {
+
+                $scope.schedulePageOpen         = false;
+                $scope.currentIndex             = null;
+                $scope.infoPageOpen             = false;
+                $scope.adminBookingsPageOpen    = false;
+                $scope.messagePageOpen          = true;
+                $scope.bookedJobsPageOpened     = false;
+                $scope.chartsPageOpen           = false;
+                $scope.historyPageOpenProfile   = false;
+                $scope.messagePageSelected      = true;
+                $scope.amountPending            = 0;
+                $scope.messagesLoading          = true;
+                $scope.usersForPagination       = []
+                $scope.usersPaginated           = []
+                $scope.messageForPagination     = [];
+                $scope.messagesPaginated        = [];
+                $scope.pageLimit                = 4;
+                $scope.pageLimitUsers           = 4;
+
+                User.getMessages($scope.idFromLocalStorage).then(function (data) {
+
+                    $scope.messagesArray = data.data.messages;
+
+                    for (var i = 0; i <= $scope.messagesArray.length; i++) {
+
+                        var page = 0;
+
+                        if (i < $scope.pageLimit) {
+
+                        }
+
+                        if (i < $scope.messagesArray.length) {
+
+                        }
+
+                        if (i < $scope.pageLimit && i < $scope.messagesArray.length) {
+
+                            if ($scope.messagesArray[i]) {
+
+                                $scope.messagesArray[i].messageIndex = i
+                                $scope.messageForPagination.push($scope.messagesArray[i])
+
+                            }
+
+                        } else {
+
+                            if (!$scope.usersLoaded) {
+
+                                $scope.loadingUsers             = false;
+                                $scope.composeMessagePageOpen   = true;
+                                $scope.messagesPaginated.push($scope.messageForPagination)
+                                $scope.messageForPagination     = [];
+
+                                if ($scope.messagesArray[i] !== undefined) {
+
+                                    $scope.messagesArray[i].messageIndex = i
+                                    $scope.messageForPagination.push($scope.messagesArray[i])
+
+                                }
+
+                                $scope.pageLimit = $scope.pageLimit + 4;
+                                page++
+
+                            }
+
+                        }
+
+                    }
+                })
+
+            } else {
+
+                $scope.composeMessagePageOpen = false;
+
+            }
+
+        }
+
         $scope.openSchedulePage = function () {
 
             $scope.schedulePageOpen             = true;
@@ -17174,36 +16237,28 @@
             $scope.bookingsPageOpen             = false;
             $scope.adminBookingsPageOpen        = false;
             $scope.loadingAmountPending         = true;
-            $scope.loadingClientBookings = true;
+            $scope.loadingClientBookings        = true;
             
-      
-
             $scope.audio.play()
-
            
-                User.getUser($scope.idFromLocalStorage).then(function (data) {
+            User.getUser($scope.idFromLocalStorage).then(function (data) {
 
+                $scope.clientName               = data.data.user.name
+                $scope.clientEmail              = data.data.user.email
+                $scope.clientPhone              = data.data.user.phonenumber
+                $scope.personalCalender         = data.data.user.calender
+                $scope.bookings                 = data.data.user.bookings
+                $scope.currentUserBookingsArray = data.data.user.bookings
+                $scope.messageArray             = data.data.user.messages
+                $scope.allBookingsArray         = []
+                $scope.currentBooking           = data.data.user.bookings.length - 1
+                $scope.userType                 = data.data.user.userclass
 
-                    //console.log($routeParams.userid)
-                    //console.log(data)
-                    $scope.clientName = data.data.user.name
-                    $scope.clientEmail = data.data.user.email
-                    $scope.clientPhone = data.data.user.phonenumber
-                    $scope.personalCalender = data.data.user.calender
-                    $scope.bookings = data.data.user.bookings
-                    $scope.messageArray = data.data.user.messages
-                    $scope.allBookingsArray = []
-                    $scope.currentBooking = data.data.user.bookings.length - 1
-                    $scope.userType = data.data.user.userclass
-                    $scope.randomNumber = ~~(Math.random() * 3)
-                    $scope.entrance1 = false;
-                    $scope.entrance3 = false;
-                    $scope.entrance2 = false;
-                    $timeout(function(){
+                $timeout(function(){
                 
-                        $scope.loadingClientBookings = false;
+                    $scope.loadingClientBookings = false;
         
-                    },2000)
+                },2000)
                         if (data.data.user.calender[$scope.month][1]) {
                             $scope.booked121 = true;
                             //console.log("hero")
@@ -17328,14 +16383,9 @@
                             $scope.booked1231 = true;
                             //console.log("hero")
                         }
-                        // SET BOOKED STAR ICONS //
-                    
-                
-                })
+      
+            })
 
-        
-
-            //}
         }
 
         $scope.submitDiscovery = function (hour) {
@@ -19326,7 +18376,8 @@
                         
                         $scope.dateDataForUser.appointmentType = "Session!"
                         $scope.dateDataForUser.id = $scope.idFromLocalStorage;
-
+                        console.log("Date Data For User")
+                        console.log($scope.dateDataForUser)
                         User.addBooking($scope.dateDataForUser).then(function (data) {
 
                             console.log("DATA")
@@ -21627,6 +20678,12 @@
 
             }
 
+        }
+
+        $scope.openModal = function () {
+
+            $('#modal1').modal('open');
+            
         }
 
     })
