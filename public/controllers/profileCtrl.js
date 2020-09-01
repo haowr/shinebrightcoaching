@@ -13763,6 +13763,8 @@
 
         $scope.markAsCompleted = function(currentbooking){
 
+            $scope.shinebrightloading.play()
+
             $scope.loadingBookingStatus         = true;
             $scope.bookingInfo.currentbooking   = currentbooking
 
@@ -13775,6 +13777,8 @@
                 $timeout(function(){
 
                     $scope.loadingBookingStatus = false;
+                    
+                    $scope.shinebrightsuccess.play()
 
                 },1000)
     
@@ -13807,18 +13811,21 @@
 
         $scope.markAsNotCompleted = function(currentbooking){
 
+            $scope.shinebrightloading.play()
 
             $scope.loadingBookingStatus         = true;
             $scope.bookingInfo.currentbooking   = currentbooking
-            console.log("nog")
 
             User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
 
-                console.log(data)
+
                 $scope.currentUserBookingsArray = data.data.user.bookings
+
                 $timeout(function(){
 
                     $scope.loadingBookingStatus = false;
+
+                    $scope.shinebrightsuccess.play()
 
                 },1000)
     
