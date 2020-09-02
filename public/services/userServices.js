@@ -70,96 +70,10 @@ angular.module('userServices', []).config(function () {
             return $http.get('/api/users')
 
         }
-        userFactory.markTimeSheetAsDisputed = function (timesheet) {
-            return $http.post('/api/users/marktimesheetasdisputed', timesheet)
-        }
-        userFactory.markTimeSheetAsApproved = function (timesheet) {
-            return $http.post('/api/users/marktimesheetasapproved', timesheet)
-        }
-        userFactory.requestJob = function (jobData) {
-            return $http.post('/api/users/requestjob', jobData)
-        }
-        userFactory.getRequestedJobs = function (client) {
-            return $http.put('/api/users/getrequestedjobs/' + client)
-        }
-        userFactory.getApprovedJobs = function (name) {
-            return $http.put('/api/users/getapprovedjobs/' + name)
-        }
-        userFactory.addJob = function (jobData) {
-            return $http.post('/api/users/addjob', jobData)
-        }
-        userFactory.removeJob = function (jobData) {
-            return $http.post('/api/users/removejob', jobData)
-        }
-        userFactory.findUser = function (name) {
-            console.log(name)
-            return $http.put('/api/users/finduser/' + name)
-        }
-        userFactory.removeUser = function (name) {
-            return $http.put('/api/users/removeuser/' + name)
-        }
-        userFactory.addDelinquentTimeSheet = function (jobDetail) {
-            return $http.post('/api/users/adddelinquenttimesheet', jobDetail)
-        }
-        userFactory.checkAndAddDelinquentTimeSheet = function (usersArray) {
-            return $http.post('/api/users/checkandadddelinquenttimesheet', usersArray)
-        }
-        userFactory.addPayPeriodToPayPeriodHistory = function (payperiod) {
-            console.log(payperiod)
-            return $http.post('/api/users/addpayperiodtopayperiodhistory', payperiod)
-        }
-        userFactory.addJobToCurrentPayPeriod = function (job) {
-            return $http.post('/api/users/addjobtocurrentpayperiod', job)
-        }
-        userFactory.addLocation = function (locationData) {
-            return $http.post('/api/users/addlocation', locationData)
-        }
-        userFactory.getLocations = function (username) {
-            return $http.put('/api/users/getlocations/' + username)
-        }
-        userFactory.getSupervisors = function (username) {
-            return $http.put('/api/users/getsupervisors/' + username)
-        }
-        userFactory.changeRequestedJobToApproved = function (jobData) {
-            return $http.post('/api/users/changerequestedjobtoapproved', jobData)
-        }
-        userFactory.changeRequestedJobToDisApproved = function (jobData) {
-            return $http.post('/api/users/changerequestedjobtodisapproved', jobData)
-        }
-        userFactory.removeLocation = function (locationData) {
-            return $http.post('/api/users/removelocation', locationData)
-        }
-        userFactory.removeRequestedJob = function (jobData) {
-            return $http.post('/api/users/removerequestedjob', jobData)
-        }
-        userFactory.removeSupervisor = function (supervisorData) {
-            return $http.post('/api/users/removesupervisor', supervisorData)
-        }
-        userFactory.addSupervisor = function (supervisorData) {
-            return $http.post('/api/users/addsupervisor', supervisorData)
-        }
-        userFactory.changeUserPayPeriod = function (details) {
-            console.log(details)
+        userFactory.deleteBooking = function(bookingData) {
 
-            return $http.post('/api/users/changeuserpayperiod', details)
-        }
-        userFactory.addHoursToClientSubmittedTimeSheets = function (jobDetails) {
-            return $http.post('/api/users/addhourstoclientsubmittedtimesheets', jobDetails)
-        }
-        userFactory.removeRequestedJob = function (jobDetails) {
-            return $http.post('/api/users/removerequestedjob', jobDetails)
-        }
-        userFactory.addHoursToPayPeriod = function (hoursDetails) {
-            return $http.post('/api/users/addhourstopayperiod', hoursDetails)
-        }
-        userFactory.changeDisputedTimeSheetToResolved = function (jobDetails) {
-            return $http.post("/api/users/changedisputedtimesheettoresolved", jobDetails)
-        }
-        userFactory.changeDisputedTimeSheetToUnResolved = function (jobDetails) {
-            return $http.post("/api/users/changedisputedtimesheettounresolved", jobDetails)
-        }
-        userFactory.addApprovedJobsToJobCountArray = function (countData) {
-            return $http.post('/api/users/addapprovedjobstojobcountarray', countData)
+            return $http.post('/api/users/deletebooking', bookingData)
+            
         }
         userFactory.getAdmin = function () {
             return $http.get('/api/users/getadmin')

@@ -13104,7 +13104,7 @@
 
         $scope.discoveryPageOpen    = false;
         $scope.sessionPageOpen      = false;
-        $scope.checkUpPageOpen      = false;
+        $scope.checkUpPageOpen      = true;
         $scope.checkUpAvailable10   = true;
         $scope.sessionAvailable10   = true;
         $scope.discoveryAvailable10 = true;
@@ -13130,6 +13130,7 @@
         $scope.loadingBooking3      = false;
         $scope.loadingBooking4      = false;
         $scope.loadingBooking5      = false;
+        $scope.loadingBookingDeletion = false;
         $scope.loadingClientBookings= true;
 
         $timeout(function(){
@@ -13666,15 +13667,23 @@
 
             $scope.shinebrighttap.play()
 
-            if ($scope.currentBooking < $scope.bookings.length -1 ) {
+            User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                $scope.currentBooking = $scope.currentBooking + 1
+                $scope.currentUserBookingsArray     = data.data.user.bookings;
+                console.log($scope.currentUserBookingsArray.length)
+                $scope.currentBooking               = data.data.user.bookings.length - 1;
 
-            } else {
+                if ($scope.currentBooking < $scope.bookings.length -1 ) {
 
-                $scope.currentBooking = 0
+                    $scope.currentBooking = $scope.currentBooking + 1;
 
-            }
+                } else {
+
+                    $scope.currentBooking = 0;
+
+                }    
+            
+            })
 
         }
 
@@ -13761,43 +13770,65 @@
             }
         }
 
-        $scope.markAsCompleted = function(currentbooking){
+        $scope.markAsCompleted = function(currentbooking){ 
 
             $scope.shinebrightloading.play()
 
-            $scope.loadingBookingStatus         = true;
-            $scope.bookingInfo.currentbooking   = currentbooking
+            if(currentbooking <= -1){
 
-            User.markBookingAsCompleted($scope.bookingInfo).then(function(data){
+            }else{
+                
+                $scope.shinebrightloading.play()
 
-                console.log(data)
 
-                $scope.currentUserBookingsArray = data.data.user.bookings
+                User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                $timeout(function(){
-
-                    $scope.loadingBookingStatus = false;
-                    
-                    $scope.shinebrightsuccess.play()
-
-                },1000)
+                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
+                    $scope.bookingInfo.currentbooking   = currentbooking;
+                    $scope.currentBooking               = currentbooking;
     
-            })
+                    User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
+    
+    
+                        $scope.currentUserBookingsArray = data.data.user.bookings
+    
+                        $timeout(function(){
+    
+                            $scope.loadingBookingStatus = false;
+    
+                            $scope.shinebrightsuccess.play()
+    
+                        },1000)
+        
+                    })
+    
+                })
+
+
+            }
+
+            
+           
 
         }
 
         $scope.deleteBooking = function(currentbooking){
 
             $scope.loadingBookingDeletion       = true;
-            $scope.bookingInfo.currentbooking   = currentbooking
+
+            User.getUser($scope.idFromLocalStorage).then(function (data) {
+
+            $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
             console.log("bookinginfo")
             console.log($scope.bookingInfo)
-            /*
+
+            
             User.deleteBooking($scope.bookingInfo).then(function(data){
 
                 console.log(data)
 
                 $scope.currentUserBookingsArray = data.data.user.bookings
+                $scope.currentBooking           = $scope.currentBooking - 1
 
                 $timeout(function(){
 
@@ -13805,31 +13836,51 @@
 
                 },1000)
     
-            })*/
+            })
+
+        })
 
         }
 
         $scope.markAsNotCompleted = function(currentbooking){
 
-            $scope.shinebrightloading.play()
 
             $scope.loadingBookingStatus         = true;
-            $scope.bookingInfo.currentbooking   = currentbooking
 
-            User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
+            if(currentbooking <= -1){
+
+            }else{
+
+                $scope.shinebrightloading.play()
 
 
-                $scope.currentUserBookingsArray = data.data.user.bookings
+                User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                $timeout(function(){
-
-                    $scope.loadingBookingStatus = false;
-
-                    $scope.shinebrightsuccess.play()
-
-                },1000)
+                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
+                    $scope.bookingInfo.currentbooking   = currentbooking;
+                    $scope.currentBooking               = currentbooking;
     
-            })
+                    User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
+    
+    
+                        $scope.currentUserBookingsArray = data.data.user.bookings
+    
+                        $timeout(function(){
+    
+                            $scope.loadingBookingStatus = false;
+    
+                            $scope.shinebrightsuccess.play()
+    
+                        },1000)
+        
+                    })
+    
+                })
+
+
+            }
+
+            
             
         }
 
@@ -13901,6 +13952,13 @@
                         $scope.sessionAvailable8 = true;
                         $scope.discoveryAvailable8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $socpe.discoveryFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
+
 
                         console.log(820)
 
@@ -13912,6 +13970,12 @@
                         $scope.sessionAlmostFull8 = true;
                         $scope.discoveryAvailable8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionFull8 = false;;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
 
                         console.log(820)
 
@@ -13923,6 +13987,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -13934,6 +14004,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -13945,6 +14021,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+
 
                         console.log(820)
 
@@ -13956,6 +14039,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAvailable8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -13967,6 +14056,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAvaialble8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
+                        
 
                         console.log(820)
 
@@ -13980,6 +14076,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
+
 
                         console.log(820)
 
@@ -13991,6 +14094,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+
 
                         console.log(820)
 
@@ -14002,6 +14112,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -14013,6 +14129,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmsotFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpAvailable8 = false;
 
                         console.log(820)
 
@@ -14025,6 +14147,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        
 
                         console.log(820)
 
@@ -14037,6 +14166,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+
 
                         console.log(820)
 
@@ -14049,6 +14184,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.chjeckUpFull8 = false;
 
                         console.log(820)
 
@@ -14060,6 +14201,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -14073,6 +14220,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sesionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAvailable8 = false;
 
                         console.log(820)
 
@@ -14084,6 +14237,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
 
                         console.log(820)
 
@@ -14095,6 +14254,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAvailable8 = false;
 
                         console.log(820)
 
@@ -14107,6 +14272,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailable8  = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAvailable8 = false;
 
                         console.log(820)
 
@@ -14118,6 +14289,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailble8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
 
                         console.log(820)
 
@@ -14129,6 +14306,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
 
                         console.log(820)
 
@@ -14141,6 +14324,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAvaialable8 = false; 
 
                         console.log(820)
 
@@ -14152,6 +14341,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
 
                         console.log(820)
 
@@ -14164,6 +14359,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sesionAvailable8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.checkUpFull8 =false;
+                        $scope.checkUpAlmostFull8 = false;
 
                         console.log(820)
 
@@ -14175,6 +14376,13 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.checkUpAlmostFull8 = false;
+                        $scope.checkUpFull8 = false;
+                        
 
                         console.log(820)
 
@@ -14186,6 +14394,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14198,6 +14412,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAvailable= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14209,6 +14429,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14220,6 +14446,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryAlmostFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14232,6 +14464,12 @@
                         $scope.sessionAlmostFull8 = true;
                         $scope.discoveryAvailable8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14243,6 +14481,12 @@
                         $scope.sessionAlmostFull8 = true;
                         $scope.discoveryAlvailable8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryFull8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14254,6 +14498,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14265,6 +14515,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14277,6 +14533,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
                     }
@@ -14287,6 +14549,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14299,6 +14567,12 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAvailable8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
@@ -14311,11 +14585,151 @@
                         $scope.sessionFull8 = true;
                         $scope.discoveryFull8 = true;
                         $scope.checkUpAlmostFull8 = true;
+                        $scope.sessionAlmostFull8 = false;
+                        $scope.sessionAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.checkUpAlmostFull8= false;
+                        $scope.checkUpFull8= false;
 
                         console.log(820)
 
                     }
 
+                    if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
+                    && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+        
+        
+                    $scope.sessionFull8 = true;
+                    $scope.discoveryFull8 = true;
+                    $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+        
+        
+                    console.log(820)
+        
+                }
+                if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+    
+    
+                $scope.sessionFull8 = true;
+                $scope.discoveryFull8 = true;
+                $scope.checkUpAvailable8 = true;
+                $scope.sessionAlmostFull8 = false;
+                $scope.sessionAvailable8 = false;
+                $scope.discoveryAlmostFull8 = false;
+                $scope.discoveryAvailable8 = false;
+                $scope.checkUpAvailable8 = false;
+                $scope.checkUpFull8 = false;
+    
+    
+                console.log(820)
+    
+            }
+                
+            if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+            && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+
+
+            $scope.sessionFull8 = true;
+            $scope.discoveryFull8 = true;
+            $scope.checkUpAvailable8 = true;
+            $scope.sessionAlmostFull8 = false;
+            $scope.sessionAvailable8 = false;
+            $scope.discoveryAlmostFull8 = false;
+            $scope.discoveryAvailable8 = false;
+            $scope.checkUpAvailable8 = false;
+            $scope.checkUpFull8 = false;
+
+
+            console.log(820)
+
+        }
+        if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+        && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+
+
+        $scope.sessionFull8 = true;
+        $scope.discoveryFull8 = true;
+        $scope.checkUpAvailable8 = true;
+        $scope.sessionAlmostFull8 = false;
+        $scope.sessionAvailable8 = false;
+        $scope.discoveryAlmostFull8 = false;
+        $scope.discoveryAvailable8 = false;
+        $scope.checkUpAlmostFull8 = false;
+        $scope.checkUpFull8 = false;
+
+
+        console.log(820)
+
+    }
+           
+        
+                    console.log("Date Nine", data.data.date['nine'].state)
+        
+
+                    if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                    && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+        
+        
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+        
+        
+                    console.log(920)
+        
+                }
+                       
+                       
+                    if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                    && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+        
+        
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+        
+        
+                    console.log(920)
+        
+                }
+                    if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                    && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+        
+        
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+        
+        
+                    console.log(920)
+        
+                }
 
                     console.log("Date Nine", data.data.date['nine'].state)
 
@@ -14326,6 +14740,13 @@
                     $scope.sessionAvailable9 = true;
                     $scope.discoveryAvailable9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $socpe.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+
 
                     console.log(920)
 
@@ -14337,6 +14758,12 @@
                     $scope.sessionAlmostFull9 = true;
                     $scope.discoveryAvailable9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionFull9 = false;;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
 
                     console.log(920)
 
@@ -14348,6 +14775,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14359,6 +14792,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14370,6 +14809,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+
 
                     console.log(920)
 
@@ -14381,6 +14827,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAvailable9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14392,6 +14844,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAvaialble9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+                    
 
                     console.log(920)
 
@@ -14405,6 +14864,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+
 
                     console.log(920)
 
@@ -14416,6 +14882,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+
 
                     console.log(920)
 
@@ -14427,6 +14900,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14438,6 +14917,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmsotFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpAvailable9 = false;
 
                     console.log(920)
 
@@ -14450,6 +14935,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    
 
                     console.log(920)
 
@@ -14462,6 +14954,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+
 
                     console.log(920)
 
@@ -14474,6 +14972,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.chjeckUpFull9 = false;
 
                     console.log(920)
 
@@ -14485,6 +14989,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14498,6 +15008,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sesionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpAvailable9 = false;
 
                     console.log(920)
 
@@ -14509,6 +15025,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
 
                     console.log(920)
 
@@ -14520,6 +15042,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpAvailable9 = false;
 
                     console.log(920)
 
@@ -14532,6 +15060,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailable9  = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpAvailable9 = false;
 
                     console.log(920)
 
@@ -14543,6 +15077,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailble9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
 
                     console.log(920)
 
@@ -14554,6 +15094,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
 
                     console.log(920)
 
@@ -14566,6 +15112,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpAvaialable9 = false; 
 
                     console.log(920)
 
@@ -14577,6 +15129,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAvailable9 = false;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
 
                     console.log(920)
 
@@ -14589,6 +15147,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sesionAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpFull9 =false;
+                    $scope.checkUpAlmostFull9 = false;
 
                     console.log(920)
 
@@ -14600,6 +15164,13 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+                    
 
                     console.log(920)
 
@@ -14611,6 +15182,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14623,6 +15200,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14634,6 +15217,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14645,6 +15234,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryAlmostFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14657,6 +15252,12 @@
                     $scope.sessionAlmostFull9 = true;
                     $scope.discoveryAvailable9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14668,6 +15269,12 @@
                     $scope.sessionAlmostFull9 = true;
                     $scope.discoveryAlvailable9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14679,6 +15286,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14690,6 +15303,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14702,6 +15321,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
                 }
@@ -14712,6 +15337,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14724,6 +15355,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -14736,6 +15373,12 @@
                     $scope.sessionFull9 = true;
                     $scope.discoveryFull9 = true;
                     $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
                     console.log(920)
 
@@ -15151,7 +15794,8 @@
 
             $scope.bookingPageOpen      = false;
             $scope.scheduledJobPageOpen = true;
-            User.getDate(id).then(function (data) {
+
+            User.getDate($scope.id).then(function (data) {
 
                 $scope.dateInfo = data.data.date
 
@@ -15164,6 +15808,13 @@
                     $scope.sessionAvailable8 = true;
                     $scope.discoveryAvailable8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $socpe.discoveryFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
+
 
                     console.log(820)
 
@@ -15175,6 +15826,12 @@
                     $scope.sessionAlmostFull8 = true;
                     $scope.discoveryAvailable8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionFull8 = false;;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
 
                     console.log(820)
 
@@ -15186,6 +15843,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15197,6 +15860,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15208,6 +15877,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+
 
                     console.log(820)
 
@@ -15219,6 +15895,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAvailable8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15230,6 +15912,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAvaialble8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
+                    
 
                     console.log(820)
 
@@ -15243,6 +15932,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
+
 
                     console.log(820)
 
@@ -15254,6 +15950,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+
 
                     console.log(820)
 
@@ -15265,6 +15968,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15276,6 +15985,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmsotFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpAvailable8 = false;
 
                     console.log(820)
 
@@ -15288,6 +16003,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    
 
                     console.log(820)
 
@@ -15300,6 +16022,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+
 
                     console.log(820)
 
@@ -15312,6 +16040,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.chjeckUpFull8 = false;
 
                     console.log(820)
 
@@ -15323,6 +16057,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15336,6 +16076,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sesionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpAvailable8 = false;
 
                     console.log(820)
 
@@ -15347,6 +16093,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
 
                     console.log(820)
 
@@ -15358,6 +16110,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpAvailable8 = false;
 
                     console.log(820)
 
@@ -15370,6 +16128,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailable8  = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpAvailable8 = false;
 
                     console.log(820)
 
@@ -15381,6 +16145,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailble8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
 
                     console.log(820)
 
@@ -15392,6 +16162,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
 
                     console.log(820)
 
@@ -15404,6 +16180,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpAvaialable8 = false; 
 
                     console.log(820)
 
@@ -15415,6 +16197,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAvailable8 = false;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
 
                     console.log(820)
 
@@ -15427,6 +16215,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sesionAvailable8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.checkUpFull8 =false;
+                    $scope.checkUpAlmostFull8 = false;
 
                     console.log(820)
 
@@ -15438,6 +16232,13 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.checkUpAlmostFull8 = false;
+                    $scope.checkUpFull8 = false;
+                    
 
                     console.log(820)
 
@@ -15449,6 +16250,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15461,6 +16268,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15472,6 +16285,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15483,6 +16302,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryAlmostFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15495,6 +16320,12 @@
                     $scope.sessionAlmostFull8 = true;
                     $scope.discoveryAvailable8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15506,6 +16337,12 @@
                     $scope.sessionAlmostFull8 = true;
                     $scope.discoveryAlvailable8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryFull8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15517,6 +16354,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15528,6 +16371,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15540,6 +16389,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
                 }
@@ -15550,6 +16405,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15562,6 +16423,12 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
@@ -15574,11 +16441,151 @@
                     $scope.sessionFull8 = true;
                     $scope.discoveryFull8 = true;
                     $scope.checkUpAlmostFull8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpFull8= false;
 
                     console.log(820)
 
                 }
 
+                if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+    
+    
+                $scope.sessionFull8 = true;
+                $scope.discoveryFull8 = true;
+                $scope.checkUpAlmostFull8 = true;
+                $scope.sessionAlmostFull8 = false;
+                $scope.sessionAvailable8 = false;
+                $scope.discoveryAlmostFull8 = false;
+                $scope.discoveryAvailable8 = false;
+                $scope.checkUpAvailable8 = false;
+                $scope.checkUpFull8 = false;
+    
+    
+                console.log(820)
+    
+            }
+            if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+            && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+
+
+            $scope.sessionFull8 = true;
+            $scope.discoveryFull8 = true;
+            $scope.checkUpAvailable8 = true;
+            $scope.sessionAlmostFull8 = false;
+            $scope.sessionAvailable8 = false;
+            $scope.discoveryAlmostFull8 = false;
+            $scope.discoveryAvailable8 = false;
+            $scope.checkUpAvailable8 = false;
+            $scope.checkUpFull8 = false;
+
+
+            console.log(820)
+
+        }
+            
+        if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+        && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+
+
+        $scope.sessionFull8 = true;
+        $scope.discoveryFull8 = true;
+        $scope.checkUpAvailable8 = true;
+        $scope.sessionAlmostFull8 = false;
+        $scope.sessionAvailable8 = false;
+        $scope.discoveryAlmostFull8 = false;
+        $scope.discoveryAvailable8 = false;
+        $scope.checkUpAvailable8 = false;
+        $scope.checkUpFull8 = false;
+
+
+        console.log(820)
+
+    }
+    if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+    && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+
+
+    $scope.sessionFull8 = true;
+    $scope.discoveryFull8 = true;
+    $scope.checkUpAvailable8 = true;
+    $scope.sessionAlmostFull8 = false;
+    $scope.sessionAvailable8 = false;
+    $scope.discoveryAlmostFull8 = false;
+    $scope.discoveryAvailable8 = false;
+    $scope.checkUpAlmostFull8 = false;
+    $scope.checkUpFull8 = false;
+
+
+    console.log(820)
+
+}
+       
+    
+                console.log("Date Nine", data.data.date['nine'].state)
+    
+
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+    
+    
+                $scope.sessionFull9 = true;
+                $scope.discoveryFull9 = true;
+                $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+    
+    
+                console.log(920)
+    
+            }
+                   
+                   
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+    
+    
+                $scope.sessionFull9 = true;
+                $scope.discoveryFull9 = true;
+                $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+    
+    
+                console.log(920)
+    
+            }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+    
+    
+                $scope.sessionFull9 = true;
+                $scope.discoveryFull9 = true;
+                $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+    
+    
+                console.log(920)
+    
+            }
 
                 console.log("Date Nine", data.data.date['nine'].state)
 
@@ -15589,6 +16596,13 @@
                 $scope.sessionAvailable9 = true;
                 $scope.discoveryAvailable9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $socpe.discoveryFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+
 
                 console.log(920)
 
@@ -15600,6 +16614,12 @@
                 $scope.sessionAlmostFull9 = true;
                 $scope.discoveryAvailable9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionFull9 = false;;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
 
                 console.log(920)
 
@@ -15611,6 +16631,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15622,6 +16648,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15633,6 +16665,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+
 
                 console.log(920)
 
@@ -15644,6 +16683,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAvailable9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15655,6 +16700,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAvaialble9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+                
 
                 console.log(920)
 
@@ -15668,6 +16720,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+
 
                 console.log(920)
 
@@ -15679,6 +16738,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+
 
                 console.log(920)
 
@@ -15690,6 +16756,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15701,6 +16773,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmsotFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpAvailable9 = false;
 
                 console.log(920)
 
@@ -15713,6 +16791,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                
 
                 console.log(920)
 
@@ -15725,6 +16810,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+
 
                 console.log(920)
 
@@ -15737,6 +16828,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.chjeckUpFull9 = false;
 
                 console.log(920)
 
@@ -15748,6 +16845,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15761,6 +16864,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sesionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpAvailable9 = false;
 
                 console.log(920)
 
@@ -15772,6 +16881,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
 
                 console.log(920)
 
@@ -15783,6 +16898,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpAvailable9 = false;
 
                 console.log(920)
 
@@ -15795,6 +16916,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailable9  = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpAvailable9 = false;
 
                 console.log(920)
 
@@ -15806,6 +16933,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailble9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
 
                 console.log(920)
 
@@ -15817,6 +16950,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
 
                 console.log(920)
 
@@ -15829,6 +16968,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpAvaialable9 = false; 
 
                 console.log(920)
 
@@ -15840,6 +16985,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAvailable9 = false;
+                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
 
                 console.log(920)
 
@@ -15852,6 +17003,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sesionAvailable9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.checkUpFull9 =false;
+                $scope.checkUpAlmostFull9 = false;
 
                 console.log(920)
 
@@ -15863,6 +17020,13 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.checkUpAlmostFull9 = false;
+                $scope.checkUpFull9 = false;
+                
 
                 console.log(920)
 
@@ -15874,6 +17038,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15886,6 +17056,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAvailable= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15897,6 +17073,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15908,6 +17090,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryAlmostFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15920,6 +17108,12 @@
                 $scope.sessionAlmostFull9 = true;
                 $scope.discoveryAvailable9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15931,6 +17125,12 @@
                 $scope.sessionAlmostFull9 = true;
                 $scope.discoveryAlvailable9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryFull9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15942,6 +17142,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15953,6 +17159,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15965,6 +17177,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
             }
@@ -15975,6 +17193,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15987,6 +17211,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -15999,6 +17229,12 @@
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
+                $scope.sessionAlmostFull9 = false;
+                $scope.sessionAvailable9 = false;
+                $scope.discoveryAlmostFull9 = false;
+                $scope.discoveryAvailable9 = false;
+                $scope.checkUpAlmostFull9= false;
+                $scope.checkUpFull9= false;
 
                 console.log(920)
 
@@ -16105,6 +17341,8 @@
 
 
             $scope.audio.play()
+
+            /*
 
             if ($scope.personalCalender[$scope.month][1]) {
 
@@ -16262,6 +17500,7 @@
 
             }
 
+            */
             $scope.infoPageOpen = false;
             $scope.timesheetPageOpen = false;
             $scope.messagePageOpen = false;

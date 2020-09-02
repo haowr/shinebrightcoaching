@@ -36,6 +36,40 @@ const nexmo = new Nexmo({
 
 module.exports = function (app) {
 
+    app.post('/users/deletebooking/', function(req,res){
+        
+        User.findOne({_id:req.body.id}, function(err, user){
+
+            if(err)throw err;
+            if(!user){
+
+                res.json( {success: false, message:"User Not Found..."} )
+
+            }else{
+
+                user.bookings.splice(user.bookings[req.body.currentbooking],1)
+                User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
+
+                    if(err)throw err;
+                    if(!user){
+
+                        res.json( {success: false, message: "User not found..."} )
+
+                    }else{
+
+                        res.json( { success: false, message: "User Found And Updated...", user: user})
+
+                    }
+
+
+
+                })
+
+            }
+
+        })
+
+    })
     app.put('/users/getcurrentuser/:id', function (req, res) {
         User.findOne({ _id: req.params.id }, function (err, user) {
             if (err) throw err;
@@ -160,28 +194,41 @@ module.exports = function (app) {
 
 
     })
+    
     app.post('/users/markbookingascompleted', function (req, res) {
 
         console.log("REQUEST BODY")
         console.log(req.body)
+
         User.findOne({ _id: req.body.id }, function (err, user) {
 
             if (err) throw err;
+
             if (!user) {
+
                 res.json({ success: false, message: "User not found..." })
+                
             } else {
 
                 console.log("user")
                 console.log(user.bookings[req.body.currentbooking])
+
                 user.bookings[req.body.currentbooking].completed = true;
+
                 User.findOneAndUpdate({ _id: req.body.id }, { $set: { bookings: user.bookings } }, { new: true }, function (err, user) {
 
                     if (err) throw err;
+
                     if (!user) {
+
                         res.json({ success: false, message: "User not found.." })
+
                     } else {
+
                         res.json({ success: true, message: "User Bookings Successfully Updated...", user: user })
+
                     }
+
                 })
 
             }
