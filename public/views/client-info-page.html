@@ -45,7 +45,7 @@
 
                         <span class = "black-text "
                               style = "font-size:25px; text-decoration:underline;">
-                              {{currentBooking + 1}}
+                              {{currentBookingTitle}}
                         </span>
 
                     </div>
@@ -231,24 +231,29 @@
 
                     <div ng-show  = "!currentUserBookingsArray[currentBooking].completed"
                          ng-click = "markAsCompleted(currentBooking)" 
-                         class="col s8 animated fadeIn white" 
-                         style="border:2px solid grey;">
+                         class    = "col s8 animated fadeIn white" 
+                         style    = "border:2px solid grey;">
 
 
-                        <div ng-show="loadingClientBookings || loadingBookingStatus" 
+                        <div ng-show = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
                              class="row center-align">
 
                             <div class="row"></div>
+                            <div class="row"></div>
 
                             <div class="col s12 center-align">
-
+                                <br>
                                 <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
 
                             </div>
 
+                            <div class="row"></div>
+                            <div class="row"></div>
+
+
                         </div>
 
-                        <div ng-show="!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                        <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
                              class="row center-align">
 
 
@@ -303,20 +308,7 @@
                                 </div>
 
                             </div>
-                            <div class="center-align" ng-show="bookings.length <1 && !loadingClientBookings">
 
-
-
-                                <p class="montserrat blue-grey-text">There Are No Bookings Yet</p>
-
-                                <div ng-show="loadingAmountPending">
-                                    <i style="font-size:17px;" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-                                </div>
-                                <div ng-show="!loadingAmountPending">
-                                    <i class="material-icons">clear</i>
-                                </div>
-
-                            </div>
 
                         </div>
 
@@ -334,7 +326,10 @@
 
                                    <div class="col s12 center-align">
 
-                                       <p class="montserrat animated shake" style="font-size:20px;">( No Bookings Yet! )</p>
+                                       <p 
+                                          ng-class  = "{'shake': shake}"
+                                          class     = "montserrat animated" 
+                                          style     = "font-size:22px;">( No Bookings Yet! )</p>
 
                                    </div>
 

@@ -31,6 +31,7 @@
             $scope.currentUserBookingsArray = data.data.user.bookings
             console.log("Current User Bookings Array")
             console.log($scope.currentUserBookingsArray)
+            $scope.currentBookingTitle  = 0;
             $scope.currentBooking       = data.data.user.bookings.length - 1
             console.log("Current Booking")
             console.log($scope.currentBooking)
@@ -13649,37 +13650,61 @@
 
         $scope.changeBookingLeft = function () {
 
-            $scope.shinebrighttap.play()
+            User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-            if ($scope.currentBooking !== 0) {
+                $scope.currentUserBookingsArray     = data.data.user.bookings;
+
+            if ($scope.currentBooking > 0) {
 
                 $scope.currentBooking = $scope.currentBooking - 1
+                $scope.shinebrighttap.play()
+
 
             } else {
 
-                $scope.currentBooking = $scope.bookings.length - 1
+                $scope.shinebrighterror.play()
+                $scope.currentBooking = 0
+                $scope.shake = true;
+
+                $timeout(function(){
+
+                    $scope.shake = false;
+
+                },1000)
 
             }
 
-        }
+        })
+
+    }
 
         $scope.changeBookingRight = function () {
 
-            $scope.shinebrighttap.play()
 
             User.getUser($scope.idFromLocalStorage).then(function (data) {
 
                 $scope.currentUserBookingsArray     = data.data.user.bookings;
-                console.log($scope.currentUserBookingsArray.length)
-                $scope.currentBooking               = data.data.user.bookings.length - 1;
 
-                if ($scope.currentBooking < $scope.bookings.length -1 ) {
+                if ($scope.currentBooking < $scope.currentUserBookingsArray.length -1 ) {
 
                     $scope.currentBooking = $scope.currentBooking + 1;
+                    $scope.shinebrighttap.play()
+                    console.log("current booking")
+                    console.log($scope.currentBooking)
+                    console.log($scope.currentUserBookingsArray.length -1)
 
                 } else {
 
+                    $scope.shinebrighterror.play()
                     $scope.currentBooking = 0;
+                    $scope.shake = true;
+                    
+                    $timeout(function(){
+
+                        $scope.shake = false;
+
+                    },1000)
+
 
                 }    
             
@@ -13772,19 +13797,17 @@
 
         $scope.markAsCompleted = function(currentbooking){ 
 
-            $scope.shinebrightloading.play()
 
             if(currentbooking <= -1){
 
             }else{
-                
+
                 $scope.shinebrightloading.play()
 
 
                 User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
-                    $scope.bookingInfo.currentbooking   = currentbooking;
+                    $scope.bookingInfo.currentbooking   = currentbooking
                     $scope.currentBooking               = currentbooking;
     
                     User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
