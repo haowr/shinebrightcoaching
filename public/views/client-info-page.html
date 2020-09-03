@@ -230,13 +230,13 @@
                    onclick="return false;">
 
                     <div ng-show  = "!currentUserBookingsArray[currentBooking].completed"
-                         ng-click = "markAsCompleted(currentBooking)" 
+                         
                          class    = "col s8 animated fadeIn white" 
                          style    = "border:2px solid grey;">
 
 
-                        <div ng-show = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
-                             class="row center-align">
+                        <div ng-show    = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
+                             class      = "row center-align">
 
                             <div class="row"></div>
                             <div class="row"></div>
@@ -253,12 +253,14 @@
 
                         </div>
 
-                        <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
-                             class="row center-align">
+                        <div  
+                             ng-show    = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                             class      = "row center-align">
 
 
                             <div class="row">
 
+                                <div ng-click = "markAsCompleted(currentBooking)" >
                                 <div class="col s4"></div>
                                 <div class="col s4"></div>
                                 <div class="col s4">
@@ -295,15 +297,15 @@
                                         <p class="montserrat" style="font-size:20px;">( Click To Mark As Completed )</p>
 
                                     </div>
-                                    <div class="col s12 right-align">
 
-                                        <button ng-click="deleteBooking(currentBooking)" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">DELETE</button>
 
-                                    </div>
+                                </div>
+                                  
                              
+                                </div>
+                                <div class="col s12 right-align">
 
-
-
+                                    <button ng-click="deleteBooking(currentBooking)" type="submit" class="waves-effect waves-light red lighten-4 btn " style="border:2px solid black;">DELETE</button>
 
                                 </div>
 
@@ -312,8 +314,8 @@
 
                         </div>
 
-                        <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" 
-                             class="row center-align">
+                        <div ng-show    = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" 
+                             class   = "row center-align">
 
                            <div class="row">
 
@@ -342,9 +344,11 @@
 
                         </div>
 
+
                 </a>
 
-            </div>
+            
+        </div>
 
                 <a href = "#"
                    class = "black-text" 

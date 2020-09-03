@@ -47,7 +47,8 @@ module.exports = function (app) {
 
             }else{
 
-                user.bookings.splice(user.bookings[req.body.currentbooking],1)
+                user.bookings.splice(user.bookings[req.body.bookingposition],1)
+                
                 User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
 
                     if(err)throw err;
@@ -175,26 +176,36 @@ module.exports = function (app) {
         console.log("REQ.BODY")
         console.log(req.body)
 
+        User.findOne({ _id: req.body.id }, function(err,user){
 
-        User.findOneAndUpdate({ _id: req.body.id }, { $push: { bookings: req.body } }, { new: true }, function (err, user) {
+            if(err)throw err;
+            if(!user){
 
-            if (err) throw err;
+                res.json( { success: false, message: "User not found..." } ) 
 
-            if (!user) {
+            }else{
 
-                res.json({ success: false, message: "User not found" })
+                req.body.bookingposition = user.bookings.length;
 
-            } else {
+                User.findOneAndUpdate({ _id: req.body.id }, { $push: { bookings: req.body } }, { new: true }, function (err, user) {
 
-                res.json({ success: true, message: "Booking Added To User Successfully...", user: user })
+                    if (err) throw err;
+        
+                    if (!user) {
+        
+                        res.json({ success: false, message: "User not found" })
+        
+                    } else {
+        
+                        res.json({ success: true, message: "Booking Added To User Successfully...", user: user })
+                    }
+        
+                })
             }
-
         })
 
-
-
     })
-    
+
     app.post('/users/markbookingascompleted', function (req, res) {
 
         console.log("REQUEST BODY")
