@@ -43,26 +43,9 @@
 		return {
 
 			restrict: 'E',
-			scope: true,
-
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
+		
 			templateUrl: '../views/client-info-page.html',
 			controller: function () {
-				this.shino = true;
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
 
 			},
 			controllerAs: "bookingpage"
@@ -74,27 +57,10 @@
 		return {
 
 			restrict: 'E',
-			scope: true,
 
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
 			templateUrl: '../views/admin-message-page.html',
 			controller: function () {
-				this.shino = true;
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
-
+	
 			},
 			controllerAs: "bookingpage"
 		}
@@ -105,27 +71,10 @@
 		return {
 
 			restrict: 'E',
-			scope: true,
-
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
+		
 			templateUrl: '../views/pages/adminbookingpage.html',
 			controller: function () {
-				this.shino = true;
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
-
+		
 			},
 			controllerAs: "bookingpage"
 		}
@@ -136,27 +85,10 @@
 		return {
 
 			restrict: 'E',
-			scope: true,
-
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
+		
 			templateUrl: '../views/pages/bookingpage.html',
 			controller: function () {
-				this.shino = true;
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
-
+		
 			},
 			controllerAs: "bookingpage"
 		}
@@ -167,202 +99,16 @@
 		return {
 
 			restrict: 'E',
-			scope: true,
-
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
+			
 			templateUrl: '../views/8-9.html',
 			controller: function () {
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
-
 			},
 			controllerAs: "eighttonine"
 		}
 	});
 
-	app.directive('elevenToTwelve',function(){
+		
 
-
-		return{
-
-			restrict: 'E',
-			scope:true,
-			
-			   link: function(scope, element, attrs, ngModel){
-				scope.time = ""
-				console.log(scope)
-     
-     
-    },
-			templateUrl:'../views/11-12.html',
-					controller: function() {
-        this.discoveryData2 = {
-            type:"",
-			test:"",
-            time:""
-        }
-        this.submitBooking2 = function(){
-            console.log(this.discoveryData2)
-			console.log(scope)
-        }
-
-	},
-		controllerAs: "eleventotwelve"}});
-
-		app.directive('twelveToOne',function(){
-
-
-		return{
-
-			restrict: 'E',
-			scope:true,
-			
-			   link: function(scope, element, attrs, ngModel){
-				scope.time = ""
-				console.log(scope)
-     
-     
-    },
-			templateUrl:'../views/12-1.html',
-					controller: function() {
-        this.discoveryData2 = {
-            type:"",
-			test:"",
-            time:""
-        }
-        this.submitBooking2 = function(){
-            console.log(this.discoveryData2)
-			console.log(scope)
-        }
-
-	},
-		controllerAs: "twelvetoone"}});
-		app.directive('oneToTwo',function(){
-
-
-		return{
-
-			restrict: 'E',
-			scope:true,
-			
-			   link: function(scope, element, attrs, ngModel){
-				scope.time = ""
-				console.log(scope)
-     
-     
-    },
-			templateUrl:'../views/1-2.html',
-					controller: function() {
-        this.discoveryData2 = {
-            type:"",
-			test:"",
-            time:""
-        }
-        this.submitBooking2 = function(){
-            console.log(this.discoveryData2)
-			console.log(scope)
-        }
-
-	},
-		controllerAs: "onetotwo"}});
-		app.directive('twoToThree',function(){
-
-
-		return{
-
-			restrict: 'E',
-			scope:true,
-			
-			   link: function(scope, element, attrs, ngModel){
-				scope.time = ""
-				console.log(scope)
-     
-     
-    },
-			templateUrl:'../views/2-3.html',
-					controller: function() {
-        this.discoveryData2 = {
-            type:"",
-			test:"",
-            time:""
-        }
-        this.submitBooking2 = function(){
-            console.log(this.discoveryData2)
-			console.log(scope)
-        }
-
-	},
-		controllerAs: "twotothree"}});
-		app.directive('threeToFour',function(){
-
-
-		return{
-
-			restrict: 'E',
-			scope:true,
-			
-			   link: function(scope, element, attrs, ngModel){
-				scope.time = ""
-				console.log(scope)
-     
-     
-    },
-			templateUrl:'../views/3-4.html',
-					controller: function() {
-        this.discoveryData2 = {
-            type:"",
-			test:"",
-            time:""
-        }
-        this.submitBooking2 = function(){
-            console.log(this.discoveryData2)
-			console.log(scope)
-        }
-
-	},
-		controllerAs: "threetofour"}});
-	app.directive('tenToEleven', function () {
-
-
-		return {
-
-			restrict: 'E',
-			scope: true,
-
-			link: function (scope, element, attrs, ngModel) {
-				scope.time = ""
-				console.log(scope)
-
-
-			},
-			templateUrl: '../views/10-11.html',
-			controller: function () {
-				this.discoveryData2 = {
-					type: "",
-					test: "",
-					time: ""
-				}
-				this.submitBooking2 = function () {
-					console.log(this.discoveryData2)
-					console.log(scope)
-				}
-
-			},
-			controllerAs: "tentoeleven"
-		}
-	});
 
 	app.directive('nineToTen', function () {
 

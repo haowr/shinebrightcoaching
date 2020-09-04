@@ -68,7 +68,7 @@
           
 
         </div>
-        
+
     </div>
 
     <div class = "row">
@@ -96,8 +96,20 @@
         <div ng-show="bookingsPageOpen">
             <booking-page></booking-page>
         </div>
+
+        <div ng-show="bookingPageOpen">
+            <div ng-show="slot == 'eight'">
+                <eight-to-nine></eight-to-nine>
+            </div>
+            <div ng-show="slot == 'nine'">
+                <nine-to-ten></nine-to-ten>
+            </div>
+          
+            
+        </div>
     
     </div>
+
 
     <div class = "col s2"></div>
 

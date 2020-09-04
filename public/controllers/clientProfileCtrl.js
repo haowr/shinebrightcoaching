@@ -8,13 +8,19 @@
 
     app.controller('clientProfileCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope, $window) {
 
-        $scope.idFromLocalStorage = $window.localStorage.getItem('_id')
-
-        $scope.clientName                   = "";
+        $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
+        $scope.clientName                   = $window.localStorage.getItem('name');
         $scope.currentBookingTitle          = "";
+        $scope.currentBooking               = "";
         $scope.infoPageOpen                 = true;
         $scope.bookingsPageOpen             = false;
         $scope.scheduledJobPageOpen         = false;
+        $scope.loadingBookingStatus         = false;
+        $scope.bookingInfo = {
+
+            id: $scope.idFromLocalStorage
+
+        }
 
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
@@ -138,21 +144,21 @@
 
         $scope.markAsCompleted = function(currentbooking){ 
 
+                console.log(currentbooking)
+                $scope.currentBooking = currentbooking;
 
                 if(currentbooking <= -1){
 
                 }else{
 
+                    $scope.loadingBookingStatus = true;
                     $scope.shinebrightloading.play()
-
 
                     User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                        $scope.bookingInfo.currentbooking   = currentbooking
-                        $scope.currentBooking               = currentbooking;
-        
-                        User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
-        
+                        $scope.bookingInfo.currentbooking   = $scope.currentBooking;
+
+                        User.markBookingAsCompleted($scope.bookingInfo).then(function(data){
         
                             $scope.currentUserBookingsArray = data.data.user.bookings
         
@@ -168,11 +174,7 @@
         
                     })
 
-
-                }
-
-                
-            
+                }  
 
         }
 

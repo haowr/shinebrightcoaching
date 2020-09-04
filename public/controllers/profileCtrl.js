@@ -53,24 +53,7 @@
             $scope.amountPending        = 0;
         
 
-            User.getUsers().then(function (data) {
-
-                console.log(data.data.users)
-                for (var i = 0; i < data.data.users.length; i++) {
-
-                    for (var k = 0; k < data.data.users[i].bookings.length; k++) {
-
-                        $scope.allBookingsArray.push(data.data.users[i].bookings[k])
-
-                        if (!data.data.users[i].bookings[k].completed) {
-                            $scope.pendingBookings = true;
-                            $scope.amountPending++
-
-                        }
-                    }
-                }
-
-            })
+        
             
             if ($scope.userType == 'admin') {
 

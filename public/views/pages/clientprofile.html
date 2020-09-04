@@ -1,254 +1,86 @@
+<div class="row "></div>
+<div class="row "></div>
+<div class="row "></div>
+<div class="row "></div>
+<div class="row "></div>
+<div class="row "></div>
 
-    <div class="row "></div>
-    <div class="row "></div>
-    <div class="row "></div>
-    <div class="row "></div>
-    <div class="row "></div>
-    <div class="row "></div>
+<div class="row  center-align">
+    <div>
 
-    <div class="row  center-align" >
-        <div>
+        <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
 
-            <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
-     
-                <br>
-                <br>
-                <div class = "col s2"></div>
-                <div class = "col s8 right-align">
-     
-                 <a ng-href="/clientprofile">
-                     
-     
-                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
-     
-                 </a>
-     
-                </div>
-                <div class = "col s2"></div>
-     
-     
-                 
-             </div>
-             
-             <div class=" col s4 animated center-align"  ng-class="{fadeOut:fadeOutMenu}">
-     
-                 <br>
-                 <br>
-                  <a href="/schedule">
-     
-                      <i class = "material-icons black-text" style="font-size:60px;" >schedule</i>
-     
-                  </a>
-             
-     
-             </div>
-     
-             <div class=" col s4 animated center-align "  ng-class="{fadeOut:fadeOutMenu}">
-     
-                 <br>
-                 <br>
-                 <div class = "col s2"></div>
-                 <div class = "col s8 left-align">
-     
-                  <a href="/messages">
-     
-                      <i class = "material-icons black-text" style="font-size:60px;" >email</i>
-     
-                  </a>
-     
-                 </div>
-     
-                 <div class = "col s2"></div>
-               
-     
-             </div>
-             
-         </div>
+            <br>
+            <br>
+            <div class="col s2"></div>
+            <div class="col s8 right-align">
 
-           <div class = "row">
-               <div class = "col s2"></div>
-                <div  class ="col s8" style="border:4px solid black;">
+                <a ng-href="/clientprofile">
 
-                </div>
-                <div class = "col s2"></div>
 
-                </div>
+                    <i class="material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
 
-       <!-- <div ng-show="adminBookingsPageOpen" >
-            <admin-bookings-page></admin-bookings-page>
+                </a>
 
-        </div>-->
-        <div ng-show="infoPageOpen" >
-            <client-info-page></client-info-page>
+            </div>
+            <div class="col s2"></div>
+
+
 
         </div>
-        <div ng-show="schedulePageOpen" class="col s12 animated fadeIn">
-            <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
-            <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen">
-                <schedule-page></schedule-page>
-            </div>
 
-            <div ng-show="scheduledJobPageOpen">
+        <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
 
-                <scheduled-job-page></scheduled-job-page>
+            <br>
+            <br>
+            <a href="/schedule">
 
-            </div>
-            <div ng-show="bookingsPageOpen">
+                <i class="material-icons black-text" style="font-size:60px;">schedule</i>
 
-                <booking-page></booking-page>
-           
-            </div>
-            </div>
+            </a>
 
-
-
-            <div ng-show="bookingPageOpen">
-
-                <div ng-show="slot == 'eight'">
-
-                    <eight-to-nine></eight-to-nine>
-
-                </div>
-                
-                <div ng-show="slot == 'nine'">
-                    <nine-to-ten></nine-to-ten>
-                </div>
-                <div ng-show="slot == 'ten'">
-                    <ten-to-eleven></ten-to-eleven>
-                </div>
-                <div ng-show="slot == 'eleven'">
-                    <eleven-to-twelve></eleven-to-twelve>
-                </div>
-                <div ng-show="slot == 'twelve'">
-                    <twelve-to-one></twleve-to-one>
-                </div>
-                <div ng-show="slot == 'one'">
-                    <one-to-two></one-to-two>
-                </div>
-                <div ng-show="slot == 'two'">
-                    <two-to-three></two-to-three>
-                </div>
-                <div ng-show="slot == 'three'">
-                    <three-to-four></three-to-four>
-                </div>
-                
-            </div>
-            
-           <!-- <div ng-show="scheduleSDOrCiPageOpen">
-                <div ng-show="slot == 3">
-                    <ten-to-eleven></ten-to-eleven>
-                </div>-->
-
-                <!-- <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>-->
-            </div>
-        <div ng-show="timesheetPageOpen" class="col s12 animated fadeIn" style="height:59px;">
-
-            <timesheet-page></timesheet-page>
 
         </div>
-        <div ng-show="messagePageOpen" class="animated fadeIn center-align" >
 
-            <div ng-show="!composeMessagePageOpen  && !loadingMessages">
+        <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
 
-                <message-page></message-page>
+            <br>
+            <br>
+            <div class="col s2"></div>
+            <div class="col s8 left-align">
+
+                <a href="/messages">
+
+                    <i class="material-icons black-text" style="font-size:60px;">email</i>
+
+                </a>
 
             </div>
-            <div ng-show="!composeMessagePageOpen && loadingMessages">
-                <br>
-                <br>
-                <br>
-                <br>
-                <i class="fa fa-spin fa-circle-o-notch" style="font-size:40px;" aria-hidden="true"></i>
 
-            </div>
-            <div ng-show="composeMessagePageOpen &&!loadingMessages">
+            <div class="col s2"></div>
 
-                <compose-message-page></compose-message-page>
-            </div>
 
         </div>
 
     </div>
 
-   <!-- <div class="row hide-on-small-only">
-        <div class="col s2" style="border-right:2px solid white;">
-            <div>
-                <div class="animated" ng-class="{fadeOut:fadeOutMenu}">
-                    <a href="#">
-                        <p class="montserrat grey-text" ng-click="openInfoPage()">Info</p>
-                    </a>
-                </div>
-                <div class="animated" ng-class="{fadeOut:fadeOutMenu}">
-
-                    <a href="#">
-                        <p class="montserrat grey-text" ng-click="openSchedulePage()">Schedule</p>
-                    </a>
-                </div>
-                <div class="animated " ng-class="{fadeOut:fadeOutMenu}">
-
-                    <a href="#" class="animated">
-                        <p class="montserrat grey-text" ng-click="openTimesheetPage()">Timesheets</p>
-                    </a>
-                </div>
-                <div class="animated " ng-class="{fadeOut:fadeOutMenu}">
-
-                    <a href="#">
-                        <p class="montserrat grey-text" ng-click="selectMessageMenu()">Messages</p>
-                    </a>
-                    <div class="col s1">
-                    </div>
-                    <div ng-show="messageMenuSelected" class="col s11 blue-grey lighten-1">
-                        <a href="#">
-                            <p class="montserrat white-text" ng-click="openMessagePage()" style="font-size:14px;">Inbox</p>
-                        </a>
-                        <a href="#">
-                            <p class="montserrat white-text" ng-click="openComposeMessagePage()" style="font-size:14px;">Compose</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div ng-show="infoPageOpen" class="col s10 animated fadeIn">
-            <info-page></info-page>
+    <div class="row">
+        <div class="col s2"></div>
+        <div class="col s8" style="border:4px solid black;">
 
         </div>
-        <div ng-show="schedulePageOpen" class="col s10 animated fadeIn">
-            <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
-          <!--  <div ng-show="!scheduledJobPageOpen">
-                <schedule-page></schedule-page>
-            </div>
-            <div ng-show="scheduledJobPageOpen">
-                <scheduled-job-page></scheduled-job-page>
-            </div>
-        </div>
-        <div ng-show="timesheetPageOpen" class="col s10 animated fadeIn" style="height:59px;">
-
-            <timesheet-page></timesheet-page>
-
-        </div>
-        <div ng-show="messagePageOpen" class="col s10 animated fadeIn center-align" style="height:59px;">
-
-            <div ng-show="!composeMessagePageOpen  && !loadingMessages">
-
-                <message-page></message-page>
-
-            </div>
-            <div ng-show="!composeMessagePageOpen && loadingMessages">
-                <br>
-                <br>
-                <br>
-                <br>
-                <i class="fa fa-spin fa-circle-o-notch" style="font-size:40px;" aria-hidden="true"></i>
-
-            </div>
-            <div ng-show="composeMessagePageOpen &&!loadingMessages">
-
-                <compose-message-page></compose-message-page>
-            </div>
-
-        </div>-->
+        <div class="col s2"></div>
 
     </div>
+
+
+    <div ng-show="infoPageOpen">
+        <client-info-page></client-info-page>
+
+    </div>
+
+</div>
+
+</div>
 
 </div>

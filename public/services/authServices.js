@@ -10,7 +10,8 @@ angular.module('authServices', []).config(function () {
         authFactory.login = function (loginData) {
 
             return $http.post('/api/authenticate', loginData).then(function(data){
-                       AuthToken.setToken(data.data.token,data.data.timelefttoken);
+                console.log(data)
+                       AuthToken.setToken(data.data.token,data.data.timelefttoken,data.data.name);
                       // AuthToken.setToken(data.data.timelefttoken)
 
                        return data;
@@ -56,13 +57,16 @@ angular.module('authServices', []).config(function () {
 .factory('AuthToken', function ($window) {
     var authTokenFactory = {};
 
-    authTokenFactory.setToken = function (token,timelefttoken) {
+    authTokenFactory.setToken = function (token,timelefttoken,name) {
+        console.log(name)
         if (token ||timelefttoken) {
             $window.localStorage.setItem('token', token);
             $window.localStorage.setItem('timelefttoken',timelefttoken)
+            $window.localStorage.setItem('name',name)
         } else {
             $window.localStorage.removeItem('token');
             $window.localStorage.removeItem('timelefttoken');
+            $window.localStorage.removeItem('name')
         }
 
 
