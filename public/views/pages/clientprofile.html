@@ -1,4 +1,3 @@
-<div class="container" >
 
     <div class="row "></div>
     <div class="row "></div>
@@ -9,50 +8,71 @@
 
     <div class="row  center-align" >
         <div>
-            <div style="position:relative; width:100%;"></div>
 
-           <div class="col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
-               <br>
-               <br>
-                <a href="#">
-
-                    <i class = "material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
-
-                </a>
-
-            </div>
-            <div class=" col s4 animated center-align"  ng-class="{fadeOut:fadeOutMenu}">
-
+            <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+     
                 <br>
                 <br>
-                 <a href="#">
- 
-                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()">schedule</i>
- 
+                <div class = "col s2"></div>
+                <div class = "col s8 right-align">
+     
+                 <a ng-href="/clientprofile">
+                     
+     
+                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+     
                  </a>
-            
-
-            </div>
-
-            <div class=" col s4 animated center-align "  ng-class="{fadeOut:fadeOutMenu}">
-
-                <br>
-                <br>
-                 <a href="#">
- 
-                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
- 
-                 </a>
-              
-  
-            </div>
+     
+                </div>
+                <div class = "col s2"></div>
+     
+     
+                 
+             </div>
+             
+             <div class=" col s4 animated center-align"  ng-class="{fadeOut:fadeOutMenu}">
+     
+                 <br>
+                 <br>
+                  <a href="/schedule">
+     
+                      <i class = "material-icons black-text" style="font-size:60px;" >schedule</i>
+     
+                  </a>
+             
+     
+             </div>
+     
+             <div class=" col s4 animated center-align "  ng-class="{fadeOut:fadeOutMenu}">
+     
+                 <br>
+                 <br>
+                 <div class = "col s2"></div>
+                 <div class = "col s8 left-align">
+     
+                  <a href="/messages">
+     
+                      <i class = "material-icons black-text" style="font-size:60px;" >email</i>
+     
+                  </a>
+     
+                 </div>
+     
+                 <div class = "col s2"></div>
+               
+     
+             </div>
+             
+         </div>
 
            <div class = "row">
-                <div  class ="col s12" style="border:4px solid black;">
+               <div class = "col s2"></div>
+                <div  class ="col s8" style="border:4px solid black;">
 
                 </div>
+                <div class = "col s2"></div>
+
                 </div>
-        </div>
 
        <!-- <div ng-show="adminBookingsPageOpen" >
             <admin-bookings-page></admin-bookings-page>
@@ -121,7 +141,6 @@
 
                 <!-- <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>-->
             </div>
-        </div>
         <div ng-show="timesheetPageOpen" class="col s12 animated fadeIn" style="height:59px;">
 
             <timesheet-page></timesheet-page>

@@ -23,24 +23,26 @@
 
   
     </div>
+
+    
     <div class="row  center-align">
         <div>
            <div class="col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
-                <a href="#">
+                <a ng-href="profile/{{id}}">
                     <p class="montserrat grey-text underline"  style="font-size:24px;"ng-click="openInfoPage()">Home</p>
                 </a>
             </div>
             <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
 
-                <a href="#">
+                <a href="/schedule">
                     <p class="montserrat grey-text underline" style="font-size:24px;"ng-click="openAdminBookingsPage()">Bookings</p>
                 </a>
             </div>
 
             <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
 
-                <a href="#">
-                    <p class="montserrat grey-text underline"style="font-size:24px;" ng-click="openMessagePage()">Messages</p>
+                <a href="/messages">
+                    <p class="montserrat grey-text underline"style="font-size:24px;" >Messages</p>
                 </a>
                
           </div>
@@ -65,8 +67,7 @@
             </div>
             <div ng-show="bookingsPageOpen">
                 <booking-page></booking-page>
-           
-</div>
+             </div>
             </div>
 
             <div ng-show="bookingPageOpen">
@@ -103,7 +104,9 @@
                 </div>-->
 
                 <!-- <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>-->
-            </div>
+            
+            
+    </div>
         </div>
         <div ng-show="timesheetPageOpen" class="col s12 animated fadeIn" style="height:59px;">
 

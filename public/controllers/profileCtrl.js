@@ -13657,92 +13657,7 @@
 
 
 
-        $scope.changeBookingLeft = function () {
 
-            User.getUser($scope.idFromLocalStorage).then(function (data) {
-
-                $scope.currentUserBookingsArray     = data.data.user.bookings;
-
-                if ( $scope.currentBooking > 0 ) {
-
-                    $scope.currentBooking = $scope.currentBooking - 1;
-                    $scope.currentBookingTitle = $scope.currentBooking;
-                    $scope.shinebrighttap.play()
-                    console.log("current booking")
-                    console.log($scope.currentBooking)
-                    console.log($scope.currentUserBookingsArray.length -1)
-
-                } else {
-
-                    $scope.currentBooking = $scope.currentUserBookingsArray.length - 1;
-                    $scope.currentBookingTitle = $scope.currentUserBookingsArray.length - 1;
-
-
-                    if($scope.currentUserBookingsArray.length == 0){
-
-                        $scope.currentBookingTitle = 0;
-                        $scope.shake = true;
-                        $scope.shinebrighterror.play()
-
-
-                        $timeout(function(){
-    
-                            $scope.shake = false;
-    
-                        },1000)
-
-                    }
-                
-
-
-                }    
-            
-            })
-
-    }
-
-        $scope.changeBookingRight = function () {
-
-
-            User.getUser($scope.idFromLocalStorage).then(function (data) {
-
-                $scope.currentUserBookingsArray     = data.data.user.bookings;
-
-                if ( $scope.currentBooking < $scope.currentUserBookingsArray.length - 1 ) {
-
-                    $scope.currentBooking = $scope.currentBooking + 1;
-                    $scope.currentBookingTitle = $scope.currentBooking + 1;
-                    $scope.shinebrighttap.play()
-                    console.log("current booking")
-                    console.log($scope.currentBooking)
-                    console.log($scope.currentUserBookingsArray.length -1)
-
-                } else {
-
-                    $scope.currentBooking = 0;
-                    $scope.currentBookingTitle = 0;
-
-                    if($scope.currentUserBookingsArray.length == 0){
-
-                        $scope.shake = true;
-                        $scope.shinebrighterror.play()
-
-
-                        $timeout(function(){
-    
-                            $scope.shake = false;
-    
-                        },1000)
-
-                    }
-                
-
-
-                }    
-            
-            })
-
-        }
 
         $scope.openMessagePage = function () {
 
@@ -13755,6 +13670,7 @@
                 $scope.currentIndex = null;
                 $scope.infoPageOpen = false;
                 $scope.adminBookingsPageOpen = false;
+                $scope.scheduledJobPageOpen = false;
                 $scope.messagePageOpen = true;
                 $scope.bookedJobsPageOpened = false;
                 $scope.chartsPageOpen = false;
@@ -13827,137 +13743,7 @@
             }
         }
 
-        $scope.markAsCompleted = function(currentbooking){ 
 
-
-            if(currentbooking <= -1){
-
-            }else{
-
-                $scope.shinebrightloading.play()
-
-
-                User.getUser($scope.idFromLocalStorage).then(function (data) {
-
-                    $scope.bookingInfo.currentbooking   = currentbooking
-                    $scope.currentBooking               = currentbooking;
-    
-                    User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
-    
-    
-                        $scope.currentUserBookingsArray = data.data.user.bookings
-    
-                        $timeout(function(){
-    
-                            $scope.loadingBookingStatus = false;
-    
-                            $scope.shinebrightsuccess.play()
-    
-                        },1000)
-        
-                    })
-    
-                })
-
-
-            }
-
-            
-           
-
-        }
-
-        $scope.deleteBooking = function(currentbooking){
-
-            $scope.loadingBookingDeletion       = true;
-
-           
-            User.getUser($scope.idFromLocalStorage).then(function (data) {
-            
-                $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
-                console.log("bookinginfo")
-                console.log($scope.bookingInfo)
-
-                User.deleteBooking($scope.bookingInfo).then(function(data){
-
-                    console.log(data)
-
-                    $scope.currentUserBookingsArray = data.data.user.bookings
-
-                    if($scope.currentUserBookingsArray.length > 0){
-
-                        $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length
-                        $scope.currentBooking       = $scope.currentUserBookingsArray.length - 1;
-
-
-
-                    }else{
-
-                        $scope.loadingBookingDeletion = false;
-                        $scope.shake = true;
-                        $scope.currentBookingTitle  = 0;
-                        $scope.currentBooking       = 0;
-                        $scope.shinebrighterror.play()
-                        $timeout(function(){
-
-                            $scope.shake = false;
-    
-                        },1000)
-
-                        
-                        
-
-                    }
-
-            
-                })
-
-
-            })
-            
-        }
-
-        $scope.markAsNotCompleted = function(currentbooking){
-
-
-            $scope.loadingBookingStatus         = true;
-
-            if(currentbooking <= -1){
-
-            }else{
-
-                $scope.shinebrightloading.play()
-
-
-                User.getUser($scope.idFromLocalStorage).then(function (data) {
-
-                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
-                    $scope.bookingInfo.currentbooking   = currentbooking;
-                    $scope.currentBooking               = currentbooking;
-    
-                    User.markBookingAsNotCompleted($scope.bookingInfo).then(function(data){
-    
-    
-                        $scope.currentUserBookingsArray = data.data.user.bookings
-    
-                        $timeout(function(){
-    
-                            $scope.loadingBookingStatus = false;
-    
-                            $scope.shinebrightsuccess.play()
-    
-                        },1000)
-        
-                    })
-    
-                })
-
-
-            }
-
-            
-            
-        }
 
         $scope.submitMessage2 = function () {
 
@@ -17650,6 +17436,7 @@
 
             $scope.infoPageOpen                 = true;
             $scope.schedulePageOpen             = false;
+            $scope.scheduledJobPageOpen         = false;
             $scope.timesheetPageOpen            = false;
             $scope.messagePageOpen              = false;
             $scope.messageBodyCannotBeEmpty     = false;
@@ -17657,6 +17444,9 @@
             $scope.adminBookingsPageOpen        = false;
             $scope.heyLeah                      = false;
             $scope.bookingsPageOpen             = false;
+            $scope.bookingPageOpen              = false;
+            $scope.composeOpen                  = false;
+            $scope.inboxOpen                    = true;
             $scope.adminBookingsPageOpen        = false;
             $scope.loadingAmountPending         = true;
             $scope.loadingClientBookings        = true;

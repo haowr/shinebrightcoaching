@@ -50,6 +50,7 @@ background-repeat:no-repeat;">
   <script src="../js/nouislider.js"></script>
   <script type="text/javascript" src="../controllers/homeCtrl.js"></script>
   <script type="text/javascript" src="../controllers/mainCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/clientProfileCtrl.js"></script>
   <script type="text/javascript" src="../controllers/profileCtrl.js"></script>
   <script type="text/javascript" src="../controllers/registerCtrl.js"></script>
   <script type="text/javascript" src="../controllers/loginCtrl.js"></script>
@@ -126,14 +127,23 @@ background-repeat:no-repeat;">
 
       <div class = "row">
 
-        <div class = "col s2"></div>
+        <div class = "col s2">
+
+        </div>
+         
         <div class = "col s8 center-align" style="border:2px solid black;">
 
             <p class = "montserrat" style="font-size:30px;">
+
               Currently Running In Demo Mode, Only Hours 8 AM, and 9 AM Available...
+
             </p>
+
         </div>
-        <div class = "col s2"> </div>
+
+        <div class = "col s2"> 
+
+        </div>
 
       </div>
      
@@ -154,15 +164,18 @@ background-repeat:no-repeat;">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <script>
+
   $(document).ready(function () {
+
     $('.parallax').parallax();
     console.log($('.tap-target'))
+
     /*Form Validation*/
     setTimeout(function () {
 
-      //$('.tap-target').tapTarget('open');
       $('select').material_select();
       $('.carousel.carousel-slider').carousel({ fullWidth: true });
+
     }, 20000);
 
 

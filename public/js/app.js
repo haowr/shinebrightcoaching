@@ -2,7 +2,7 @@
 
 //console.log("app.js loaded");
 
-var app = angular.module('qlc',['appRoutes', 'mainController',"homeController","profileController","chart.js",'storeDirectives','intakeController', 'loginController','registerController','userServices','authServices']);
+var app = angular.module('qlc',['appRoutes', 'mainController',"homeController","profileController","chart.js",'storeDirectives','intakeController', 'loginController','registerController','userServices','authServices','clientProfileController']);
 												//,'angular-fullcalendar'																																				  
 app.config(function($compileProvider){
 

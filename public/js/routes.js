@@ -67,7 +67,7 @@
                     .when('/clientprofile', {
                 templateUrl: '../views/pages/clientprofile.html',
                 name: "QLH | SERVICES",
-                controller: "profileCtrl",
+                controller: "clientProfileCtrl",
                 controllerAs: 'profile',
                 resolve: {
                     init: function ($route) {
@@ -223,6 +223,27 @@
                 name: "HOJ | Change Password",
                 authenticated: false
             })
+            .when('/messages', {
+                templateUrl: '../views/pages/messagepage.html',
+                name: "QLH | PROFILE",
+                controller: "profileCtrl",
+                controllerAs: 'profile'
+
+            })
+            .when('/schedule', {
+                templateUrl: '../views/pages/schedulepage.html',
+                name: "QLH | PROFILE",
+                controller: "profileCtrl",
+                controllerAs: 'profile'
+
+            })
+            .when('/scheduledjobpage', {
+                templateUrl: '../views/pages/scheduledjobpage.html',
+                name: "QLH | PROFILE",
+                controller: "profileCtrl",
+                controllerAs: 'profile'
+
+            })
             .when('/profile/:userid', {
                 templateUrl: '../views/pages/profile.html',
                 name: "QLH | PROFILE",
@@ -237,28 +258,21 @@
                 controllerAs: 'profile'
 
             })
-                       .when('/schedule/:date', {
+            .when('/schedule/:date', {
                 templateUrl: '../views/pages/schedule.html',
                 name: "QLH | PROFILE",
                 controller: "profileCtrl",
                 controllerAs: 'profile'
 
             })
-                      /*       .when('/profile/:id/', {
-                templateUrl: '../views/pages/schedule.html',
-                name: "QLH | PROFILE",
-                controller: "profileCtrl",
-                controllerAs: 'profile'
-
-            })*/
-                 .when('/clienttoc', {
+            .when('/clienttoc', {
                 templateUrl: '../views/pages/clienttoc.html',
                 name: "QLH | CLIENT TOC",
                 controller: "registerCtrl",
                 controllerAs: 'register'
 
             })
-                             .when('/clientregister', {
+            .when('/clientregister', {
                 templateUrl: '../views/pages/clientregister.html',
                 name: "QLH | CLIENT REGISTRATION",
                 controller: "registerCtrl",
@@ -268,7 +282,7 @@
             .when('/clientprofile/:userid', {
                 templateUrl: '../views/pages/clientprofile.html',
                 name: "QLH | CLIENT",
-                controller: "profileCtrl",
+                controller: "clientProfileCtrl",
                 controllerAs: 'profile'
 
             })
