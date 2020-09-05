@@ -1207,20 +1207,51 @@ module.exports = function (app) {
                 Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
 
                     if(err)throw err;
+
                     if(!date){
+
                         res.json({success: false, message:"Date Not Found.."})
+
                     }else{
-                        res.json({success: true, message:"Date Found And Updated..", date:date})
+
+
+                        User.findOne( {_id: "5f3c30e99f40852b3663e127" }, function(err, user){
+
+                            if(err) throw err;
+                            if(!user){
+
+                                res.json( { success: false, message: "User not found.."} )
+
+                            }else{
+
+                                user.bookings = [];
+
+                                User.findOneAndUpdate( { _id: "5f3c30e99f40852b3663e127" }, { $set: { bookings: user.bookings } }, { new: true}, function(err, user){
+
+                                    if(err)throw err;
+
+                                    if(!user){
+                                        
+                                        res.json({success: false, message: "User not found..."})
+
+                                    }else{
+
+                                        res.json( { success: true, message: "User Found And Updated...", user: user})
+
+                                    }
+
+                                })
+
+                            }
+
+                        })
                     }
 
                 })
 
-
             }
 
-        }
-
-        )
+        })
 
     })
     app.post('/months/updatedatenexthour', function (req, res) {

@@ -179,11 +179,6 @@ background-repeat:no-repeat;">
     }, 20000);
 
 
-    /*Materialize initializations */
-
-    //This method wasn't working
-    // $('select').material_select();
-    // $('select:not([multiple])').material_select();
     console.log($('select'))
     $('.carousel.carousel-slider').carousel({ fullWidth: true });
 
@@ -196,7 +191,12 @@ background-repeat:no-repeat;">
     }
     );
 
-  })
+  
+
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+  });
+
 </script>
 
 

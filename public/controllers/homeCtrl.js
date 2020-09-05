@@ -305,6 +305,14 @@ console.log("music page open")
         
         }
 
+        $scope.openModal = function () {
+
+            $('#modal1').modal('open');
+            console.log("COgal")
+            
+        }
+        $scope.openModal();
+
         $scope.openCodingPage = function () {
             console.log("clicked")
             if (!$scope.codingPageOpen) {

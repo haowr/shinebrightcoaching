@@ -102,16 +102,7 @@
             })
         })
        
-       $scope.openCodingPage = function(){
-           //console.log("CLICKED")
-           if(!$scope.codingPageOpen){
-               $scope.codingPageOpen = true;
-               $scope.shineHomeOpen = false;
-           }else{
-                
-           }
-       }
-
+     
     })
 
 }());
