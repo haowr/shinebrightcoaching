@@ -75,6 +75,11 @@ angular.module('userServices', []).config(function () {
             return $http.post('/api/users/deletebooking', bookingData)
             
         }
+        userFactory.clearDatabase = function(fillerdata){
+            
+            return $http.post('/api/users/cleardatabase', fillerdata)
+
+        }
         userFactory.getAdmin = function () {
             return $http.get('/api/users/getadmin')
         }

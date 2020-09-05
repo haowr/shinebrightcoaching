@@ -182,49 +182,50 @@
 
                 $scope.loadingBookingDeletion       = true;
 
-            
                 User.getUser($scope.idFromLocalStorage).then(function (data) {
                 
-                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1
-                    console.log("bookinginfo")
-                    console.log($scope.bookingInfo)
+                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1;
+                    $scope.bookingInfo.appointmentType  = $scope.currentUserBookingsArray[currentbooking].appointmentType;
+                    $scope.bookingInfo.hour             = $scope.currentUserBookingsArray[currentbooking].hour;
+                    $scope.bookingInfo.slot             = $scope.currentUserBookingsArray[currentbooking].slot;
+                    $scope.bookingInfo.time             = $scope.currentUserBookingsArray[currentbooking].time;
+                    $scope.bookingInfo.date             = $scope.currentUserBookingsArray[currentbooking].date;
 
+             
                     User.deleteBooking($scope.bookingInfo).then(function(data){
 
                         console.log(data)
 
-                        $scope.currentUserBookingsArray = data.data.user.bookings
+                        User.getUser($scope.idFromLocalStorage).then(function(data){
+
+                            $scope.currentUserBookingsArray = data.data.user.bookings
 
                         if($scope.currentUserBookingsArray.length > 0){
 
-                            $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length
-                            $scope.currentBooking       = $scope.currentUserBookingsArray.length - 1;
-
-
+                            $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length;
+                            $scope.currentBooking           = $scope.currentUserBookingsArray.length - 1;
 
                         }else{
 
-                            $scope.loadingBookingDeletion = false;
-                            $scope.shake = true;
-                            $scope.currentBookingTitle  = 0;
-                            $scope.currentBooking       = 0;
+                            $scope.loadingBookingDeletion   = false;
+                            $scope.shake                    = true;
+                            $scope.currentBookingTitle      = 0;
+                            $scope.currentBooking           = 0;
                             $scope.shinebrighterror.play()
+
                             $timeout(function(){
 
                                 $scope.shake = false;
         
                             },1000)
 
-                            
-                            
-
                         }
 
-                
                     })
 
-
                 })
+
+            })
                 
         }
 
@@ -268,6 +269,20 @@
 
                 
                 
+        }
+
+        $scope.openMessagePage = function () {
+
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            $scope.audio.play()
+
+        }
+        
+        $scope.openSchedulePage = function () {
+
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            $scope.audio.play()
+
         }
 
     })

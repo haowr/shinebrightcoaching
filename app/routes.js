@@ -36,7 +36,48 @@ const nexmo = new Nexmo({
 
 module.exports = function (app) {
 
+    app.post('/users/addbooking', function (req, res) {
+
+        console.log("REQ.BODY")
+        console.log(req.body)
+
+        User.findOne({ _id: req.body.id }, function(err,user){
+
+            if(err)throw err;
+
+            if(!user){
+
+                res.json( { success: false, message: "User not found..." } ) 
+
+            }else{
+
+                req.body.bookingposition    = user.bookings.length;
+                req.body.completed          = false;
+                user.calender["88"]["22"]   = true;
+
+                User.findOneAndUpdate( { _id: req.body.id }, { $push: { bookings: req.body }, $set: { calender: user.calender} }, { new: true }, function (err, user) {
+
+                    if (err) throw err;
+        
+                    if (!user) {
+        
+                        res.json( { success: false, message: "User not found" } )
+        
+                    } else {
+        
+                        res.json( { success: true, message: "Booking Added To User Successfully...", user: user } )
+
+                    }
+        
+                })
+            }
+        })
+
+    })
+
     app.post('/users/deletebooking/', function(req,res){
+
+        console.log(req.body)
         
         User.findOne({_id:req.body.id}, function(err, user){
 
@@ -47,24 +88,924 @@ module.exports = function (app) {
 
             }else{
 
-                user.bookings.splice(user.bookings[req.body.bookingposition],1)
+                if(!user.bookings[req.body.currentbooking].completed){
+
+                    user.bookings.splice(user.bookings[req.body.currentbooking], 1)
+
+                    User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
+
+                        if(err)throw err;
+
+                        if(!user){
+
+                            res.json( {success: false, message: "User not found..."} )
+
+                        }else{
+
+                            Date.findOne({ _id: "5bf4f0a4b8f53129ecbc13a0" } , function(err, date){
+  
+                                
+                                if(req.body.appointmentType == "Check-Up!"){
+        
+                                    if (req.body.time == "8:00am - 8:10am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
                 
-                User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+        
+                                    }
 
-                    if(err)throw err;
-                    if(!user){
+                                    if (req.body.time == "9:00am - 9:10am") {
+                
+                                        date[req.body.hour].state[req.body.slot] = 0;
 
-                        res.json( {success: false, message: "User not found..."} )
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+        
+                                    }
+        
+                                    if (req.body.time == "8:10am - 8:20am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
 
-                    }else{
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
 
-                        res.json( { success: false, message: "User Found And Updated...", user: user})
+                                    if (req.body.time == "9:10am - 9:20am") {
+                
+                                        date[req.body.hour].state[req.body.slot] = 0;
 
-                    }
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:20am - 8:30am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
 
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
 
+                                    if (req.body.time == "9:20am - 9:30am") {
+                
+                                        date[req.body.hour].state[req.body.slot] = 0;
 
-                })
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:30am - 8:40am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+
+                                    if (req.body.time == "9:30am - 9:40am") {
+                
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:40am - 8:50am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+
+                                    if (req.body.time == "8:40am - 8:50am") {
+                
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:50am - 9:00am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+
+                                    if (req.body.time == "9:50am - 10:00am") {
+        
+                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                }
+        
+                                if(req.body.appointmentType == "Session!"){
+        
+                                    if (req.body.time == "8:00am - 8:50am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+                                        date[req.body.hour].state[req.body.slot +3] = 0;
+                                        date[req.body.hour].state[req.body.slot +4] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+
+                                    if (req.body.time == "9:00am - 9:50") {
+                
+                                        date[req.body.hour].state[req.body.slot]     = 0;
+                                        date[req.body.hour].state[req.body.slot +1]  = 0;
+                                        date[req.body.hour].state[req.body.slot +2]  = 0;
+                                        date[req.body.hour].state[req.body.slot +3]  = 0;
+                                        date[req.body.hour].state[req.body.slot +4]  = 0;   
+                                        
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:10am - 9:00am") {
+        
+                                        date[req.body.hour].state[req.body.slot]     = 0;
+                                        date[req.body.hour].state[req.body.slot +1]  = 0;
+                                        date[req.body.hour].state[req.body.slot +2]  = 0;
+                                        date[req.body.hour].state[req.body.slot +3]  = 0;
+                                        date[req.body.hour].state[req.body.slot +4]  = 0;  
+                                        
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:10am - 10:00am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+                                        date[req.body.hour].state[req.body.slot +3] = 0;
+                                        date[req.body.hour].state[req.body.slot +4] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:20am - 9:10am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+                                        date[req.body.hour].state[req.body.slot +3] = 0;
+                                        date['nine'].state[req.body.slot]  = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:20am - 10:10am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+                                        date[req.body.hour].state[req.body.slot +3] = 0;
+                                        date['ten'].state[req.body.slot]  = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:30am - 9:20am") {
+        
+                                        date[req.body.hour].state[req.body.slot]      = 0;
+                                        date[req.body.hour].state[req.body.slot +1]   = 0;
+                                        date[req.body.hour].state[req.body.slot +2]   = 0;
+                                        date['nine'].state[req.body.slot]    = 0;
+                                        date['nine'].state[req.body.slot +1] = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:30am - 10:20am") {
+                
+                                        date[req.body.hour].state[req.body.slot]      = 0;
+                                        date[req.body.hour].state[req.body.slot +1]   = 0;
+                                        date[req.body.hour].state[req.body.slot +2]   = 0;
+                                        date['ten'].state[req.body.slot]    = 0;
+                                        date['ten'].state[req.body.slot +1] = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:40am - 9:30am") {
+        
+                                        date[req.body.hour].state[req.body.slot]      = 0;
+                                        date[req.body.hour].state[req.body.slot +1]   = 0;
+                                        date['nine'].state[req.body.slot]    = 0;
+                                        date['nine'].state[req.body.slot +1] = 0;
+                                        date['nine'].state[req.body.slot +2] = 0;    
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:40am - 10:30am") {
+                
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date[req.body.hour].state[req.body.slot +1]     = 0;
+                                        date['ten'].state[req.body.slot]                = 0;
+                                        date['ten'].state[req.body.slot +1]             = 0;
+                                        date['ten'].state[req.body.slot +2]             = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:50am - 9:40am") {
+        
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date['nine'].state[req.body.slot]               = 0;
+                                        date['nine'].state[req.body.slot +1]            = 0;
+                                        date['nine'].state[req.body.slot +2]            = 0;
+                                        date['nine'].state[req.body.slot +3]            = 0; 
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:50am - 10:40am") {
+        
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date['ten'].state[req.body.slot]                = 0;
+                                        date['ten'].state[req.body.slot +1]             = 0;
+                                        date['ten'].state[req.body.slot +2]             = 0;
+                                        date['ten'].state[req.body.slot +3]             = 0;        
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                }
+        
+                                if(req.body.appointmentType == "Discovery!"){
+        
+                                    if (req.body.time == "8:00am - 8:30am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+                                    if (req.body.time == "9:00am - 9:30am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                
+                                    }
+        
+                                    if (req.body.time == "8:10am - 8:40am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+                                    if (req.body.time == "9:10am - 9:40am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:20am - 8:50am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+                                    if (req.body.time == "9:20am - 9:50am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0;  
+                                        
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:30am - 9:00am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0; 
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+                                    if (req.body.time == "9:30am - 10:00am") {
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date[req.body.hour].state[req.body.slot +2] = 0; 
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+                                    if (req.body.time == "8:40am - 9:10am") {
+        
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date['nine'].state[req.body.slot]  = 0;    
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:40am - 10:10am") {
+                
+                
+                                        date[req.body.hour].state[req.body.slot]    = 0;
+                                        date[req.body.hour].state[req.body.slot +1] = 0;
+                                        date['ten'].state[req.body.slot]            = 0; 
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+                                                       
+                                    }
+        
+                                    if (req.body.time == "8:50am - 9:20am") {
+        
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date['nine'].state[req.body.slot]               = 0;
+                                        date['nine'].state[req.body.slot +1]            = 0;  
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+
+                                    if (req.body.time == "9:50am - 10:20am") {
+        
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date['ten'].state[req.body.slot]                = 0;
+                                        date['ten'].state[req.body.slot +1]             = 0;   
+
+                                        Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+        
+                                            if(err)throw err;
+        
+                                            if(!date){
+        
+                                                res.json({success: false, message:"Date Not Found.."})
+        
+                                            }else{
+                
+                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                
+                                            }
+                        
+                                        })
+
+                                    }
+        
+        
+        
+                                }
+        
+                            })
+
+                        }
+
+                    })
+                    
+                }else{
+
+                    user.bookings.splice(user.bookings[req.body.currentbooking],1)
+                
+                    User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
+
+                        if(err)throw err;
+                        if(!user){
+
+                            res.json( {success: false, message: "User not found..."} )
+
+                        }else{
+
+                            res.json( { success: false, message: "User Found And Updated...", user: user})
+
+                        }
+
+                    })
+
+                }
 
             }
 
@@ -171,41 +1112,7 @@ module.exports = function (app) {
             }
         })
     })
-    app.post('/users/addbooking', function (req, res) {
-
-        console.log("REQ.BODY")
-        console.log(req.body)
-
-        User.findOne({ _id: req.body.id }, function(err,user){
-
-            if(err)throw err;
-            if(!user){
-
-                res.json( { success: false, message: "User not found..." } ) 
-
-            }else{
-
-                req.body.bookingposition = user.bookings.length;
-
-                User.findOneAndUpdate({ _id: req.body.id }, { $push: { bookings: req.body } }, { new: true }, function (err, user) {
-
-                    if (err) throw err;
-        
-                    if (!user) {
-        
-                        res.json({ success: false, message: "User not found" })
-        
-                    } else {
-        
-                        res.json({ success: true, message: "Booking Added To User Successfully...", user: user })
-                    }
-        
-                })
-            }
-        })
-
-    })
-
+  
     app.post('/users/markbookingascompleted', function (req, res) {
 
         console.log("REQUEST BODY")
@@ -283,6 +1190,39 @@ module.exports = function (app) {
         })
 
     })
+    app.post('/user/cleardatabase', function(req,res){
+
+        Date.findOne({_id:"5bf4f0a4b8f53129ecbc13a0"}, function(err,date){
+
+            if(err)throw err;
+            if(!date){
+
+                res.json({message: "Date Not Found..."})
+
+            }else{
+
+                date['eight'].state = [0,0,0,0,0,0];
+                date['nine'].state  = [0,0,0,0,0,0];
+
+                Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
+
+                    if(err)throw err;
+                    if(!date){
+                        res.json({success: false, message:"Date Not Found.."})
+                    }else{
+                        res.json({success: true, message:"Date Found And Updated..", date:date})
+                    }
+
+                })
+
+
+            }
+
+        }
+
+        )
+
+    })
     app.post('/months/updatedatenexthour', function (req, res) {
 
         Date.findOne({ _id: req.body.id }, function (err, date) {
@@ -324,84 +1264,6 @@ module.exports = function (app) {
                     })
 
                 }
-                if (req.body.hour == 'ten') {
-
-                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { ten: date[req.body.hour], eleven: date[req.body.nexthour] } }, { new: true }, function (err, date) {
-
-                        if (err) throw err;
-                        if (!date) {
-                            res.json({ success: false, message: "Date not found..." })
-                        } else {
-                            res.json({ success: true, message: "Date Found And Updated...", date: date })
-                        }
-
-
-                    })
-
-                }
-                if (req.body.hour == 'eleven') {
-
-                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { eleven: date[req.body.hour], twelve: date[req.body.nexthour] } }, { new: true }, function (err, date) {
-
-                        if (err) throw err;
-                        if (!date) {
-                            res.json({ success: false, message: "Date not found..." })
-                        } else {
-                            res.json({ success: true, message: "Date Found And Updated...", date: date })
-                        }
-
-
-                    })
-
-                }
-                if (req.body.hour == 'twelve') {
-
-                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { twelve: date[req.body.hour], one: date[req.body.nexthour] } }, { new: true }, function (err, date) {
-
-                        if (err) throw err;
-                        if (!date) {
-                            res.json({ success: false, message: "Date not found..." })
-                        } else {
-                            res.json({ success: true, message: "Date Found And Updated...", date: date })
-                        }
-
-
-                    })
-
-                }
-                if (req.body.hour == 'one') {
-
-                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { one: date[req.body.hour], two: date[req.body.nexthour] } }, { new: true }, function (err, date) {
-
-                        if (err) throw err;
-                        if (!date) {
-                            res.json({ success: false, message: "Date not found..." })
-                        } else {
-                            res.json({ success: true, message: "Date Found And Updated...", date: date })
-                        }
-
-
-                    })
-
-                }
-                if (req.body.hour == 'two') {
-
-                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { two: date[req.body.hour], three: date[req.body.nexthour] } }, { new: true }, function (err, date) {
-
-                        if (err) throw err;
-                        if (!date) {
-                            res.json({ success: false, message: "Date not found..." })
-                        } else {
-                            res.json({ success: true, message: "Date Found And Updated...", date: date })
-                        }
-
-
-                    })
-
-                }
-
-
-
 
             }
 

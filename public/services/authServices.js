@@ -1,3 +1,4 @@
+
 angular.module('authServices', []).config(function () {
 
     console.log("authService")
@@ -21,6 +22,7 @@ angular.module('authServices', []).config(function () {
 //Auth.Logout();
  authFactory.logout = function(){
     AuthToken.setToken();
+    return $http.post('api/user/cleardatabase')
     
  };
  
