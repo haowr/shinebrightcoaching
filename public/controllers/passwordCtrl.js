@@ -7,19 +7,8 @@
     })
 
     app.controller('passwordCtrl', function ($scope, Auth,User, $timeout, $location, $rootScope) {
-               $rootScope.$on('$routeChangeStart', function () {
-
-            console.log(Auth.isLoggedIn())
-            console.log(AuthToken.getToken())
-            $rootScope.loggedIn = Auth.isLoggedIn()
-            Auth.getUser().then(function (data) {
-                console.log(data)
-                $rootScope.payPeriod = data.data.payperiod;
-                $rootScope.userClassy = $rootScope.userClass
-
-                console.log($rootScope.userClass)
-            })
-        })
+            
+      
 
         $scope.resetData = {
             username:null
