@@ -1,9 +1,10 @@
 (function () {
 
     var app = angular.module('clientProfileController', ['authServices','userServices'])
+    
     app.config(function () {
 
-        console.log("Password Controller Loaded")
+        
     })
 
     app.controller('clientProfileCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope, $window) {
@@ -138,13 +139,12 @@
                     
                     }    
                 
-                })
+            })
 
         }
 
         $scope.markAsCompleted = function(currentbooking){ 
 
-                console.log(currentbooking)
                 $scope.currentBooking = currentbooking;
 
                 if(currentbooking <= -1){
@@ -232,7 +232,7 @@
         $scope.markAsNotCompleted = function(currentbooking){
 
 
-                $scope.loadingBookingStatus         = true;
+                $scope.loadingBookingStatus = true;
 
                 if(currentbooking <= -1){
 
