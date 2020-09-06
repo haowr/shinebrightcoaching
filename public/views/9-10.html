@@ -1,16 +1,29 @@
 <div class = "row"></div>
 
-    <div class="row">
+    <div class = "row">
 
         <div class = "col s4 left-align">
 
-            <a href="#" style="color:black;" class="underline"><i class = "material-icons" style="font-size:42px;" ng-click="exitBookingPage()">keyboard_return</i></a>
+            <a  href  = "#" 
+                style = "color:black;" 
+                class = "underline">
+
+                <i  class    = "material-icons" 
+                    style    = "font-size:42px;" 
+                    ng-click = "exitBookingPage()">
+                    keyboard_return
+                </i>
+
+            </a>
         
         </div>
 
-        <div class="col s4 center-align">
+        <div class = "col s4 center-align">
 
-            <span class='montserrat underline' style="font-size:30px;color:black;"> {{currentDate}}</span>
+            <span   class = 'montserrat underline' 
+                    style = "font-size:30px;color:black;"> 
+                    {{currentDate}}
+            </span>
 
         </div>
 
@@ -20,16 +33,23 @@
         
     </div>
 
-    <div ng-show="checkUpPageOpen" class = "row">
+    <div    ng-show = "checkUpPageOpen" 
+            class   = "row">
 
             <div class = "col s12 center-align">
     
-                <h4 class = "montserrat animated pulse ">Check-Up</h4>
-                <div class = "col s2"></div>
-                <div class = "col s8">
+                <h4     class = "montserrat animated pulse ">
+                        Check-Up
+                </h4>
+                <div    class = "col s2"></div>
+                <div    class = "col s8">
     
-                    <p class  = "montserrat" style= "font-size: 20px;" >Sit down, stay awhile! Our "Discovery" option, is a 30 minute session with Leah, and allowing more
+                    <p  class = "montserrat" 
+                        style= "font-size: 20px;">
+                        
+                        Sit down, stay awhile! Our "Discovery" option, is a 30 minute session with Leah, and allowing more
                         time to get to the root of the issue.
+
                     </p>
     
                 </div>
@@ -37,33 +57,66 @@
     
                 <div class = "row">
     
-                    <a class="black-text" href="#" onclick="return false" >
+                    <a  class   = "black-text" 
+                        href    = "#" 
+                        onclick = "return false" >
     
-                        <div ng-show="!bookCheckUp9" ng-click="selectTime('9:00',true)" class = "col s4 center-align animated fadeIn" >
+                        <div    ng-show  = "!bookCheckUp9" 
+                                ng-click = "selectTime('9:00',true)" 
+                                class    = "col s4 center-align animated fadeIn" >
     
-                            <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
+                                <i  class = "material-icons red-text" 
+                                    style = "font-size:40px;padding-top:10px;">
+                                    
+                                    schedule
+                                
+                                </i>
     
-                            <div class = "col s12" style="border:1px solid #000000;"></div>
+                            <div class = "col s12" 
+                                 style = "border:1px solid #000000;">
+                            </div>
     
-                            <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p  ng-show = "loadingBooking" 
+                                class   = "montserrat animated pulse infinite fast" 
+                                style   = "font-size:30px;">
+                                9:00AM
+                            </p>
+                            <p  ng-show = "!loadingBooking" 
+                                class   = "montserrat " 
+                                style   = "font-size:30px;">
+                                9:00AM
+                            </p>
     
-                            <div ng-show="!checkUp900AMSelected" class = "row animated fadeIn">
+                            <div ng-show = "!checkUp900AMSelected" 
+                                 class   = "row animated fadeIn">
     
-                                <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid grey;"></div>
-                                <div class = "col s3"></div>
-                                <div class = "col s12">
+                                <div    class = "col s3"></div>
+
+                                <div    class = "col s6" 
+                                        style = "border:1px solid grey;">
+                                </div>
+                                <div    class = "col s3"></div>
+
+                                <div    class = "col s12">
     
                                     <br>
-                                    <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                    <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                    <i  ng-show = "loadingBooking" 
+                                        class   = "fa fa-circle-o-notch fa-spin fa-3x fa-fw" 
+                                        style   = "font-size:35px;"></i>
+
+                                    <i  ng-show = "!loadingBooking" 
+                                        class   = "fa fa-circle-o-notch fa-spin fa-3x fa-fw" 
+                                        style   = "font-size:35px; color:transparent"></i>
                             
-                                    <div class = "col s12">
+                                    <div    class  = "col s12">
             
-                                            <div ng-show="checkUp900AMIsBooked" class = "col s12 red lighten-4" >
+                                            <div    ng-show = "checkUp900AMIsBooked" 
+                                                    class   = "col s12 red lighten-4">
             
-                                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
+                                                <p  class   = "montserrat animated shake" 
+                                                    style   = "font-size:27px"> 
+                                                    We're Sorry, This Slot Has Been Filled!
+                                                </p>
             
                                             </div>
             
@@ -73,14 +126,17 @@
                                 </div>
     
                             </div>
+                            
                             <div ng-show="checkUp900AMSelected" class = "row animated fadeIn">
     
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey; "></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
+
                                     <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
                                     <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
                             
@@ -111,30 +167,32 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
                                     <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                    
                                     <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
     
-    
                                 </div>
+
                             </div>
+
                             <div ng-show="!checkUp900AMSelected" class = "row animated fadeIn">
+
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid white;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
     
-    
                                 </div>
+
                             </div>
                             
-    
                         </div>
     
                     </a>
@@ -155,6 +213,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -171,7 +230,6 @@
     
                                 </div>
                                 
-    
                             </div>
 
                             <div ng-show="checkUp910AMSelected" class = "row animated fadeIn">
@@ -179,6 +237,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                         <div class = "col s12">
@@ -193,7 +252,6 @@
 
                                 </div>
                                 
-    
                             </div>
                             
                         </div>
@@ -213,15 +271,15 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
-    
+
                                     <br>
                                     <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                    
                                     <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
     
-    
                                 </div>
+
                             </div>
     
                             <div ng-show="!checkUp910AMSelected" class = "row animated fadeIn">
@@ -235,15 +293,15 @@
                                     <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
     
                                 </div>
+
                                 <div class = "col s12">
     
                                     <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
     
-    
                                 </div>
+
                             </div>
-                            
     
                         </div>
     
@@ -265,6 +323,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -282,11 +341,13 @@
                                 </div>
     
                             </div>
+
                             <div ng-show="checkUp920AMSelected" class = "row animated fadeIn">
     
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -360,6 +421,7 @@
     
     
                                 </div>
+
                             </div>
                             
                         </div>
@@ -386,6 +448,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -411,11 +474,13 @@
                                 </div>
     
                             </div>
+
                             <div ng-show="checkUp930AMSelected" class = "row animated fadeIn">
     
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -460,6 +525,7 @@
                                     <div class = "col s3"></div>
                                     <div class = "col s6" style="border:1px solid grey;"></div>
                                     <div class = "col s3"></div>
+
                                     <div class = "col s12">
     
                                         <br>
@@ -469,20 +535,24 @@
         
     
                                     </div> 
+
                                 </div>
+
                                 <div ng-show="!checkUp930AMSelected" class = "row animated fadeIn">
     
                                     <div class = "col s3"></div>
                                     <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
+
                                     <div class = "row"></div>
+
                                     <div class = "col s12">
     
                                         <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                         <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
-    
-    
+
                                     </div>
+
                                 </div>
                             
                         </div>
@@ -505,29 +575,16 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
-                                <div class = "col s12">
-    
-                                    <br>
-                
-                                    <div ng-show="!checkUp940AMSelected" class = "row animated fadeIn">
-    
-                                        <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
-                                        <div class = "col s3"></div>
-                                        
-                                        <div class = "col s12">
+                                
+                                    <div class = "col s12">
             
-                                            <div ng-show="checkUp940AMIsBooked" class = "col s12 red lighten-4" >
+                                        <div ng-show="checkUp940AMIsBooked" class = "col s12 red lighten-4" >
             
-                                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
-            
-                                            </div>
+                                             <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
             
                                         </div>
-    
+            
                                     </div>
-    
-                                </div>
     
                             </div>
                             <div ng-show="checkUp940AMSelected" class = "row animated fadeIn">
@@ -535,6 +592,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -579,6 +637,7 @@
                                     <div class = "col s3"></div>
                                     <div class = "col s6" style="border:1px solid grey;"></div>
                                     <div class = "col s3"></div>
+
                                     <div class = "col s12">
     
                                         <br>
@@ -586,15 +645,18 @@
                                         
                                         <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
         
-    
                                     </div> 
+
                                 </div>
+
                                 <div ng-show="!checkUp940AMSelected" class = "row animated fadeIn">
     
                                     <div class = "col s3"></div>
                                     <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
+
                                     <div class = "row"></div>
+
                                     <div class = "col s12">
     
                                         <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
@@ -602,6 +664,7 @@
     
     
                                     </div>
+
                                 </div>
                             
                         </div>
@@ -628,24 +691,12 @@
     
                                     <br>
                 
-                                    <div ng-show="!checkUp950AMSelected" class = "row animated fadeIn">
-    
-                                        <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
-                                        <div class = "col s3"></div>
-                                        
-                                        <div class = "col s12">
+                                        <div ng-show="checkUp950AMIsBooked" class = "col s12 red lighten-4" >
             
-                                            <div ng-show="checkUp950AMIsBooked" class = "col s12 red lighten-4" >
-            
-                                                <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
-            
-                                            </div>
+                                            <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
             
                                         </div>
-    
-                                    </div>
-    
+            
                                 </div>
     
                             </div>
@@ -654,6 +705,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -699,6 +751,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
     
                                     <br>
@@ -765,6 +818,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -790,6 +844,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey; "></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -823,6 +878,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -832,20 +888,22 @@
 
 
                             </div>
+
                         </div>
+
                         <div ng-show="!discovery900AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid white;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                 <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                             </div>
+
                         </div>
-                        
 
                     </div>
 
@@ -867,6 +925,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -883,13 +942,14 @@
 
                             </div>
                             
-
                         </div>
+
                         <div ng-show="discovery910AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -914,7 +974,6 @@
 
                             </div>
                             
-
                         </div>
                         
                     </div>
@@ -934,6 +993,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -941,8 +1001,8 @@
                                 
                                 <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                             </div>
+
                         </div>
 
                         <div ng-show="!discovery910AMSelected" class = "row animated fadeIn">
@@ -956,15 +1016,15 @@
                                 <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
 
                             </div>
+
                             <div class = "col s12">
 
                                 <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                 <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                             </div>
+
                         </div>
-                        
 
                     </div>
 
@@ -986,9 +1046,11 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
+
                                     <div class = "col s12">
         
                                         <div ng-show="discovery920AMIsBooked" class = "col s12 red lighten-4" >
@@ -1002,11 +1064,13 @@
                             </div>
 
                         </div>
+
                         <div ng-show="discovery920AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1086,8 +1150,8 @@
                                 <i ng-show="loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                 <i ng-show="!loadingBooking2" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                             </div>
+
                         </div>
                         
                     </div>
@@ -1114,6 +1178,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1144,6 +1209,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1188,6 +1254,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
 
                                     <br>
@@ -1197,20 +1264,24 @@
     
 
                                 </div> 
+
                             </div>
+
                             <div ng-show="!discovery930AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "row"></div>
+
                                 <div class = "col s12">
 
                                     <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                                 </div>
+
                             </div>
                         
                     </div>
@@ -1233,6 +1304,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1263,6 +1335,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1307,6 +1380,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
 
                                     <br>
@@ -1322,14 +1396,16 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "row"></div>
+
                                 <div class = "col s12">
 
                                     <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                                 </div>
+
                             </div>
                         
                     </div>
@@ -1352,6 +1428,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1382,6 +1459,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1427,6 +1505,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1464,6 +1543,7 @@
         <div class = "col s12 center-align">
 
             <h4 class = "montserrat animated pulse">Session</h4>
+
             <div class = "col s2"></div>
             <div class = "col s8">
 
@@ -1472,6 +1552,7 @@
                 </p>
 
             </div>
+
             <div class = "col s2"></div>
 
             <div class = "row">
@@ -1492,6 +1573,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1517,6 +1599,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey; "></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1550,6 +1633,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1561,9 +1645,11 @@
                             </div>
                         </div>
                         <div ng-show="!session900AMSelected" class = "row animated fadeIn">
+
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid white;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
@@ -1571,8 +1657,8 @@
 
 
                             </div>
+
                         </div>
-                        
 
                     </div>
 
@@ -1594,6 +1680,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1617,6 +1704,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1661,6 +1749,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1683,15 +1772,15 @@
                                 <p class = "montserrat animated shake" style="font-size:27px"> We're Sorry, This Slot Has Been Filled!</p>
 
                             </div>
+
                             <div class = "col s12">
 
                                 <i ng-show="loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                 <i ng-show="!loadingBooking1" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                             </div>
+
                         </div>
-                        
 
                     </div>
 
@@ -1713,6 +1802,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1727,16 +1817,16 @@
         
                                     </div>
 
-                             
-
                             </div>
 
                         </div>
+
                         <div ng-show="session920AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1818,6 +1908,7 @@
 
 
                             </div>
+
                         </div>
                         
                     </div>
@@ -1869,11 +1960,13 @@
                             </div>
 
                         </div>
+
                         <div ng-show="session930AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1918,6 +2011,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
 
                                     <br>
@@ -1927,20 +2021,24 @@
     
 
                                 </div> 
+
                             </div>
+
                             <div ng-show="!session930AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "row"></div>
+
                                 <div class = "col s12">
 
                                     <i ng-show="loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking3" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                                 </div>
+
                             </div>
                         
                     </div>
@@ -1963,6 +2061,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -1993,6 +2092,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -2037,6 +2137,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "col s12">
 
                                     <br>
@@ -2046,20 +2147,24 @@
     
 
                                 </div> 
+
                             </div>
+
                             <div ng-show="!session940AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
+
                                 <div class = "row"></div>
+
                                 <div class = "col s12">
 
                                     <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:black;"></i>
                                     <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
 
-
                                 </div>
+
                             </div>
                         
                     </div>
@@ -2082,6 +2187,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -2107,11 +2213,13 @@
                             </div>
 
                         </div>
+
                         <div ng-show="session950AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+
                             <div class = "col s12">
 
                                 <br>
@@ -2157,6 +2265,7 @@
                             <div class = "col s3"></div>
                             <div class = "col s6" style="border:1px solid grey;"></div>
                             <div class = "col s3"></div>
+                            
                             <div class = "col s12">
 
                                 <br>
