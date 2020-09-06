@@ -21,16 +21,14 @@
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
 
-            $scope.clientName           = data.data.user.name
-            $scope.clientEmail          = data.data.user.email
-            $scope.clientPhone          = data.data.user.phonenumber
-            $scope.personalCalender     = data.data.user.calender
-            $scope.bookings             = data.data.user.bookings
-            $scope.messageArray         = data.data.user.messages
-            $scope.allBookingsArray     = []
+            $scope.clientName               = data.data.user.name
+            $scope.clientEmail              = data.data.user.email
+            $scope.clientPhone              = data.data.user.phonenumber
+            $scope.personalCalender         = data.data.user.calender
+            $scope.bookings                 = data.data.user.bookings
+            $scope.messageArray             = data.data.user.messages
+            $scope.allBookingsArray         = []
             $scope.currentUserBookingsArray = data.data.user.bookings
-            console.log("Current User Bookings Array")
-            console.log($scope.currentUserBookingsArray)
 
             if($scope.currentUserBookingsArray.length > 0){
 
@@ -44,175 +42,14 @@
 
             }
 
-            $rootScope.createWellness   = data.data.user.wellness
-            $scope.userType             = data.data.user.userclass
-            $scope.randomNumber         = (Math.random() * 4)
-            $scope.entrance1            = false;
-            $scope.entrance2            = false;
-            $scope.pendingBookings      = true;
-            $scope.amountPending        = 0;
+            $rootScope.createWellness       = data.data.user.wellness
+            $scope.userType                 = data.data.user.userclass
+            $scope.randomNumber             = (Math.random() * 4)
+            $scope.entrance1                = false;
+            $scope.entrance2                = false;
+            $scope.pendingBookings          = true;
+            $scope.amountPending            = 0;
         
-
-        
-            
-            if ($scope.userType == 'admin') {
-
-                $scope.heyLeah = true;
-
-                if ($scope.randomNumber == 1) {
-
-                    $scope.entrance1 = true;
-
-                }
-                else if ($scope.randomNumber == 2) {
-
-                    $scope.entrance2 = true;
-
-                }
-                else if ($scope.randomNumber == 3) {
-
-                    $scope.entrance3 = true;
-
-                }
-                else {
-
-                    $scope.heyLeah = false;
-
-                }
-
-
-
-            } else {
-                //SET BOOKED STAR ICONS //
-
-                ////console.log("SET BOOKED STAR ICONS")
-                ////console.log(data.data.user.calender[$scope.month])
-                if (data.data.user.calender[$scope.month][1]) {
-                    $scope.booked121 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][2]) {
-                    $scope.booked122 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][3]) {
-                    $scope.booked123 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][4]) {
-                    $scope.booked124 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][5]) {
-                    $scope.booked125 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][6]) {
-                    $scope.booked126 = true;
-                    ////console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][7]) {
-                    $scope.booked127 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][8]) {
-                    $scope.booked128 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][9]) {
-                    $scope.booked129 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][10]) {
-                    $scope.booked1210 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][11]) {
-                    $scope.booked1211 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][12]) {
-                    $scope.booked1212 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][13]) {
-                    $scope.booked1213 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][14]) {
-                    $scope.booked1214 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][15]) {
-                    $scope.booked1215 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][16]) {
-                    $scope.booked1216 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][17]) {
-                    $scope.booked1217 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][18]) {
-                    $scope.booked1218 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][19]) {
-                    $scope.booked1219 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][20]) {
-                    $scope.booked1220 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][21]) {
-                    $scope.booked1221 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][22]) {
-                    $scope.booked1222 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][23]) {
-                    $scope.booked1223 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][24]) {
-                    $scope.booked1224 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][25]) {
-                    $scope.booked1225 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][26]) {
-                    $scope.booked1226 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][27]) {
-                    $scope.booked1227 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][28]) {
-                    $scope.booked1228 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][29]) {
-                    $scope.booked1229 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][30]) {
-                    $scope.booked1230 = true;
-                    //console.log("hero")
-                }
-                if (data.data.user.calender[$scope.month][31]) {
-                    $scope.booked1231 = true;
-                    //console.log("hero")
-                }
-                // SET BOOKED STAR ICONS //
-            }
 
         })
  
