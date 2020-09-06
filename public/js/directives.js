@@ -119,10 +119,7 @@
 			scope: true,
 
 			link: function (scope, element, attrs) {
-				scope.time = ""
-				console.log(scope)
-
-
+			
 			},
 			templateUrl: '../views/9-10.html',
 			controller: function () {

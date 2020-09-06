@@ -1,24 +1,14 @@
-var User = require('./models/user');
-
-var Date = require('./models/date');
-var Hogan = require('hogan.js')
-var bcrypt = require('bcrypt-nodejs');
-var fs = require('fs');
-var pdf = require('html-pdf');
-var jwt = require('jsonwebtoken');
-var secret = "negus";
-var html = fs.readFileSync('./public/views/pages/management.html', 'utf8');
-var resetpassword = fs.readFileSync('./public/views/pages/email/resetpassword.hjs', 'utf-8');
-var resetPassword = Hogan.compile(resetpassword);
-
-var options = { format: 'Letter' };
-const Nexmo = require('nexmo')
-var nodemailer = require('nodemailer');
-var sgTransport = require('nodemailer-sendgrid-transport');
-var text = require('textbelt');
-var opts = {};
-opts.region = 'intl'
-console.log(text)
+var User            = require('./models/user');
+var Date            = require('./models/date');
+var Hogan           = require('hogan.js')
+var fs              = require('fs');
+var jwt             = require('jsonwebtoken');
+var secret          = "negus";
+const Nexmo         = require('nexmo')
+var nodemailer      = require('nodemailer');
+var text            = require('textbelt');
+var opts            = {};
+opts.region         = 'intl'
 
 var client = nodemailer.createTransport({
     service: "Gmail",
@@ -32,7 +22,6 @@ const nexmo = new Nexmo({
     apiKey: "77cb479c",
     apiSecret: "v9aUDYrRVOEMYIDA"
 })
-
 
 module.exports = function (app) {
 
@@ -74,14 +63,13 @@ module.exports = function (app) {
         })
 
     })
-
     app.post('/users/deletebooking/', function(req,res){
 
-        console.log(req.body)
-        
+        console.log(req.body)        
         User.findOne({_id:req.body.id}, function(err, user){
 
             if(err)throw err;
+
             if(!user){
 
                 res.json( {success: false, message:"User Not Found..."} )
@@ -91,6 +79,7 @@ module.exports = function (app) {
                 if(!user.bookings[req.body.currentbooking].completed){
 
                     user.bookings.splice(user.bookings[req.body.currentbooking], 1)
+                    user.calender["88"]["22"] = false;
 
                     User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
 
@@ -989,7 +978,8 @@ module.exports = function (app) {
                 }else{
 
                     user.bookings.splice(user.bookings[req.body.currentbooking],1)
-                
+                    user.calender["88"]["22"] = false;
+
                     User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
 
                         if(err)throw err;

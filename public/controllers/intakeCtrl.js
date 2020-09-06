@@ -1,15 +1,13 @@
 (function () {
 
     var app = angular.module('intakeController', ['userServices', 'authServices'])
+
     app.config(function () {
 
-        console.log("Register Controller Loaded")
+
     })
 
     app.controller('intakeCtrl', function ($scope, $http, $location, User, $timeout, $rootScope, Auth, $routeParams, $window) {
-
-
-
 
         $rootScope.loggedIn = Auth.isLoggedIn()
         $scope.id = $window.localStorage.getItem('intakeId')

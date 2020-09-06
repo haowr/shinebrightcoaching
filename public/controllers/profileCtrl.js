@@ -20,7 +20,6 @@
 
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-            console.log(data)
             $scope.clientName               = data.data.user.name
             $scope.clientEmail              = data.data.user.email
             $scope.clientPhone              = data.data.user.phonenumber
@@ -4755,9 +4754,7 @@
                 $scope.messageArray             = data.data.user.messages
                 $scope.allBookingsArray         = []
                 $scope.currentUserBookingsArray = data.data.user.bookings
-                console.log("Current User Bookings Array")
-                console.log($scope.currentUserBookingsArray)
-    
+
                 if($scope.currentUserBookingsArray.length > 0){
     
                     $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length
@@ -4782,8 +4779,9 @@
            
                         
                         if (data.data.user.calender[$scope.month][22]) {
+                            
                             $scope.booked1222 = true;
-                            //console.log("hero")
+
                         }
                        
       
@@ -7354,66 +7352,49 @@
                         User.getDate($scope.id).then(function (data) {
 
 
-                            data.data.date[hour].state[0]   = 2;
-                            data.data.date[hour].state[1]   = 2;
-                            data.data.date[hour].state[2]   = 2;
-                            data.data.date[hour].state[3]   = 2;
-                            data.data.date[hour].state[4]   = 2;
+                            if (hour == 'eight') {
 
-                            $scope.dateData.dateInfo        = data.data.date[hour].state
+                                data.data.date[hour].state[0]           = 2;
+                                data.data.date[hour].state[1]           = 2;
+                                data.data.date[hour].state[2]           = 2;
+                                data.data.date[hour].state[3]           = 2;
+                                data.data.date[hour].state[4]           = 2;
 
-                            User.updateDate($scope.dateData).then(function (data) {
+                                $scope.dateData.dateInfo                = data.data.date[hour].state
 
-                                console.log("UPDATE DATE DATA", data)
+                                User.updateDate($scope.dateData).then(function (data) {
 
-                                $scope.session810AMSelected = false;
-                                $scope.session820AMSelected = false;
-                                $scope.session830AMSelected = false;
-                                $scope.session840AMSelected = false;
-                                $scope.session850AMSelected = false;
-                                $scope.session8AMSelected   = false;
-                                $scope.session910AMSelected = false;
-                                $scope.session920AMSelected = false;
-                                $scope.session930AMSelected = false;
-                                $scope.session940AMSelected = false;
-                                $scope.session950AMSelected = false;
-                                $scope.session9AMSelected   = false;
+                                    $scope.dateDataForUser.date = $scope.currentDate;
 
-                                $scope.dateDataForUser.date = $scope.currentDate;
+                                    $timeout(function () {
 
-                                $timeout(function () {
+                                        if (data.data.date[hour].state[0] === 2) {
 
-                                    if (data.data.date[hour].state[0] === 2) {
+                                            $scope.bookSession8  = false;
 
+                                            $timeout(function(){
 
-                                        $timeout(function () {
-
-                                            $scope.bookSession8 = false;
-                                            $scope.bookSession9 = false;
+                                                $scope.bookSession18 = false;
 
                                             $timeout(function () {
 
-                                                $scope.bookSession18 = false;
-                                                $scope.bookSession19 = false;
+                                                $scope.bookSession28 = false;
 
                                                 $timeout(function () {
 
-                                                    $scope.bookSession28 = false;
-                                                    $scope.bookSession29 = false;
+                                                    $scope.bookSession38 = false;
 
                                                     $timeout(function () {
 
-                                                        $scope.bookSession38 = false;
-                                                        $scope.bookSession39 = false;
+                                                        $scope.bookSession48 = false;
 
                                                         $timeout(function () {
 
-                                                            $scope.bookSession48 = false;
-                                                            $scope.bookSession49 = false;
+                                                            $scope.bookSession58 = false;
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking = false;
+                                                                $scope.loadingBooking2 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -7422,49 +7403,132 @@
 
                                                     }, 500)
 
+                                                }, 500)
+
+                                            }, 500)
+
+                                            },500)
+
+                                        }
+
+                                    }, 1000)
+
+                                    if ($scope.discoveryData.time == "8:00am") {
+
+                                        $scope.dateDataForUser.time = "8:00am - 8:50am"
+                                        $scope.dateDataForUser.hour = "eight";
+                                        $scope.dateDataForUser.slot = 0;
+
+                                    }
+
+                                    $scope.dateDataForUser.appointmentType = "Session!";
+                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    
+                                    User.addBooking($scope.dateDataForUser).then(function (data) {
+
+                                        if (data.data.user.calender["88"][22]) {
+            
+                                            $scope.booked1222 = true;
+                                            //console.log("hero")
+                                        }
+                                    
+                                    })
+                                    
+                                })
+
+                            }
+
+                            
+                            if (hour == 'nine') {
+
+                                data.data.date[hour].state[0]           = 2;
+                                data.data.date[hour].state[1]           = 2;
+                                data.data.date[hour].state[2]           = 2;
+                                data.data.date[hour].state[3]           = 2;
+                                data.data.date[hour].state[4]           = 2;
+
+                                $scope.dateData.dateInfo                = data.data.date[hour].state
+
+                                User.updateDate($scope.dateData).then(function (data) {
+
+                                    $scope.dateDataForUser.date = $scope.currentDate;
+
+                                    $timeout(function () {
+
+                                        if (data.data.date[hour].state[0] === 2) {
+
+                                            $scope.bookSession9  = false;
+
+                                            $timeout(function(){
+
+                                                $scope.bookSession19 = false;
+
+                                            $timeout(function () {
+
+                                                $scope.bookSession29 = false;
+
+                                                $timeout(function () {
+
+                                                    $scope.bookSession39 = false;
+
+                                                    $timeout(function () {
+
+                                                        $scope.bookSession49 = false;
+
+                                                        $timeout(function () {
+
+                                                            $scope.bookSession59 = false;
+
+                                                            $timeout(function () {
+
+                                                                $scope.loadingBooking2 = false;
+                                                                $scope.shinebrightsuccess.play()
+
+                                                            }, 500)
+
+                                                        }, 500)
+
+                                                    }, 500)
 
                                                 }, 500)
 
                                             }, 500)
 
-                                        }, 500)
+                                            },500)
+
+                                        }
+
+                                    }, 1000)
+
+                                    if ($scope.discoveryData.time == "9:00am") {
+
+                                        $scope.dateDataForUser.time = "9:00am - 9:50am"
+                                        $scope.dateDataForUser.hour = "nine";
+                                        $scope.dateDataForUser.slot = 0;
 
                                     }
 
-                                }, 1000)
+                                    $scope.dateDataForUser.appointmentType = "Session!";
+                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    
+                                    User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                if ($scope.sessionData.time == "8:00am") {
-
-                                    $scope.dateDataForUser.time = "8:00am - 8:50am"
-                                    $scope.dateDataForUser.hour = "eight";
-                                    $scope.dateDataForUser.slot = 0;
-
-                                }
-                                if ($scope.discoveryData.time == "9:00am") {
-
-                                    $scope.dateDataForUser.time = "9:00am - 9:50am"
-                                    $scope.dateDataForUser.hour = "nine";
-                                    $scope.dateDataForUser.slot = 0;
-
-                                }
-                                
-                                $scope.dateDataForUser.appointmentType  = "Session!"
-                                $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
-                            
-                                User.addBooking($scope.dateDataForUser).then(function (data) {
-
-                                    console.log(data)
-                                
-                                    if (data.data.user.calender["88"][22]) {
-
-                                        $scope.booked1222 = true;
-                                        //console.log("hero")
-                                    }
+                                        console.log("DATA")
+                                        console.log(data)
+            
+                                    
+                                        if (data.data.user.calender["88"][22]) {
+            
+                                            $scope.booked1222 = true;
+                                            //console.log("hero")
+                                        }
+                                    
+            
+                                    })
                                     
 
                                 })
-
-                            })
+                            }
 
                         })
 
@@ -7485,50 +7549,53 @@
                         
                         User.getDate($scope.id).then(function (data) {
 
-                            data.data.date[hour].state[1] = 2
-                            data.data.date[hour].state[2] = 2
-                            data.data.date[hour].state[3] = 2
-                            data.data.date[hour].state[4] = 2
-                            data.data.date[hour].state[5] = 2
+                            if (hour == 'eight') {
+
+                                data.data.date[hour].state[0]           = 2;
+                                data.data.date[hour].state[1]           = 2;
+                                data.data.date[hour].state[2]           = 2;
+                                data.data.date[hour].state[3]           = 2;
+                                data.data.date[hour].state[4]           = 2;
+                                data.data.date[hour].state[5]           = 2;
+                                data.data.date['nine'].state[0]         = 2;
+
+                                $scope.dateData.dateInfo                = data.data.date[hour].state
+                                $scope.dateData.nexthour                = 'nine'
+                                $scope.dateData.dateInfoNextHour        = data.data.date['nine'].state
+
+                                User.updateDateNextHour($scope.dateData).then(function (data) {
+
+                                    $scope.dateDataForUser.date = $scope.currentDate;
+
+                                    $timeout(function () {
+
+                                        if (data.data.date[hour].state[1] === 2) {
 
 
-                            $scope.dateData.dateInfo = data.data.date[hour].state
-
-                            User.updateDate($scope.dateData).then(function (data) {
-
-                                $scope.dateDataForUser.date = $scope.currentDate;
-
-                                $timeout(function () {
-
-                                    if (data.data.date[hour].state[1] === 2) {
-
-                                        $scope.bookSession18 = false;
-                                        $scope.bookSession19 = false;
-
-                                        $timeout(function () {
-
-                                            $scope.bookSession28 = false;
-                                            $scope.bookSession29 = false;
+                                            $scope.bookSession18 = false;
 
                                             $timeout(function () {
 
-                                                $scope.bookSession38 = false
-                                                $scope.bookSession39 = false;
+                                                $scope.bookSession28 = false;
 
                                                 $timeout(function () {
 
-                                                    $scope.bookSession48 = false;
-                                                    $scope.bookSession49 = false;
+                                                    $scope.bookSession38 = false;
 
                                                     $timeout(function () {
 
-                                                        $scope.bookSession58 = false;
-                                                        $scope.bookSession59 = false;
+                                                        $scope.bookSession48 = false;
 
                                                         $timeout(function () {
 
-                                                            $scope.loadingBooking1 = false;
-                                                            $scope.shinebrightsuccess.play()
+                                                            $scope.bookSession58 = false;
+
+                                                            $timeout(function () {
+
+                                                                $scope.loadingBooking2 = false;
+                                                                $scope.shinebrightsuccess.play()
+
+                                                            }, 500)
 
                                                         }, 500)
 
@@ -7538,193 +7605,125 @@
 
                                             }, 500)
 
-                                        }, 500)
+                                        }
 
+                                    }, 1000)
+
+                                    if ($scope.discoveryData.time == "8:10am") {
+
+                                        $scope.dateDataForUser.time = "8:10am - 9:00am"
+                                        $scope.dateDataForUser.hour = "eight";
+                                        $scope.dateDataForUser.slot = 1;
 
                                     }
 
-                                }, 1000)
+                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    
+                                    User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                if ($scope.sessionData.time == "8:10am") {
+                                        if (data.data.user.calender["88"][22]) {
+            
+                                            $scope.booked1222 = true;
 
-                                    $scope.dateDataForUser.time = "8:10am - 9:00am"
-                                    $scope.dateDataForUser.hour = "eight";
-                                    $scope.dateDataForUser.slot = 1;
-
-                                }
-                                if ($scope.sessionData.time == "9:10am") {
-
-                                    $scope.dateDataForUser.time = "9:10am - 10:00am"
-                                    $scope.dateDataForUser.hour = "nine";
-                                    $scope.dateDataForUser.slot = 1;
-
-                                }
+                                        }
                                 
-                                $scope.dateDataForUser.appointmentType = "Session!"
-                                $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    })
+                                
+                                })
+                                
+                            }
 
-                                User.addBooking($scope.dateDataForUser).then(function (data) {
+                            
+                            if (hour == 'nine') {
 
+                                data.data.date[hour].state[0]           = 2;
+                                data.data.date[hour].state[1]           = 2;
+                                data.data.date[hour].state[2]           = 2;
+                                data.data.date[hour].state[3]           = 2;
+                                data.data.date[hour].state[4]           = 2;
+                                data.data.date[hour].state[5]           = 2;
+                                data.data.date['ten'].state[0]          = 2;
 
-                                    if (data.data.user.calender["88"][1]) {
+                                $scope.dateData.dateInfo                = data.data.date[hour].state
+                                $scope.dateData.nexthour                = 'ten'
+                                $scope.dateData.dateInfoNextHour        = data.data.date['ten'].state
 
-                                        $scope.booked121 = true;
+                                User.updateDateNextHour($scope.dateData).then(function (data) {
+
+                                    $scope.dateDataForUser.date = $scope.currentDate;
+
+                                    $timeout(function () {
+
+                                        if (data.data.date[hour].state[1] === 2) {
+
+                                          
+                                            $scope.bookSession19 = false;
+
+                                            $timeout(function () {
+
+                                                $scope.bookSession29 = false;
+
+                                                $timeout(function () {
+
+                                                    $scope.bookSession39 = false;
+
+                                                    $timeout(function () {
+
+                                                        $scope.bookSession49 = false;
+
+                                                        $timeout(function () {
+
+                                                            $scope.bookSession59 = false;
+
+                                                            $timeout(function () {
+
+                                                                $scope.loadingBooking2 = false;
+                                                                $scope.shinebrightsuccess.play()
+
+                                                            }, 500)
+
+                                                        }, 500)
+
+                                                    }, 500)
+
+                                                }, 500)
+
+                                            }, 500)
+
+                                        }
+
+                                    }, 1000)
+
+                                    if ($scope.discoveryData.time == "9:20am") {
+
+                                        $scope.dateDataForUser.time = "9:20am - 10:10am"
+                                        $scope.dateDataForUser.hour = "nine";
+                                        $scope.dateDataForUser.slot = 2;
 
                                     }
-                                    if (data.data.user.calender["88"][2]) {
 
-                                        $scope.booked122 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][3]) {
+                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    
+                                    User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                        $scope.booked123 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][4]) {
-
-                                        $scope.booked124 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][5]) {
-
-                                        $scope.booked125 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][6]) {
-
-                                        $scope.booked126 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][7]) {
-
-                                        $scope.booked127 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][8]) {
-
-                                        $scope.booked128 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][9]) {
-
-                                        $scope.booked129 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][10]) {
-
-                                        $scope.booked1210 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][11]) {
-
-                                        $scope.booked1211 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][12]) {
-
-                                        $scope.booked1212 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][13]) {
-
-                                        $scope.booked1213 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][14]) {
-
-                                        $scope.booked1214 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][15]) {
-
-                                        $scope.booked1215 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][16]) {
-
-                                        $scope.booked1216 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][17]) {
-
-                                        $scope.booked1217 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][18]) {
-
-                                        $scope.booked1218 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][19]) {
-
-                                        $scope.booked1219 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][20]) {
-
-                                        $scope.booked1220 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][21]) {
-
-                                        $scope.booked1221 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][22]) {
-
-                                        $scope.booked1222 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][23]) {
-
-                                        $scope.booked1223 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][24]) {
-
-                                        $scope.booked1224 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][25]) {
-
-                                        $scope.booked1225 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][26]) {
-
-                                        $scope.booked1226 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][27]) {
-
-                                        $scope.booked1227 = true;
-                                        console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][28]) {
-
-                                        $scope.booked1228 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][29]) {
-
-                                        $scope.booked1229 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][30]) {
-
-                                        $scope.booked1230 = true;
-                                        //console.log("hero")
-                                    }
-                                    if (data.data.user.calender["88"][31]) {
-
-                                        $scope.booked1231 = true;
-                                        //console.log("hero")
-                                    }
+                                        console.log("DATA")
+                                        console.log(data)
+            
+                                    
+                                        if (data.data.user.calender["88"][22]) {
+            
+                                            $scope.booked1222 = true;
+                                            //console.log("hero")
+                                        }
+                                    
+            
+                                    })
+                                    
 
                                 })
-
-                            })
+                            }
 
                         })
 
@@ -7793,7 +7792,7 @@
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking4 = false;
+                                                                $scope.loadingBooking2 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -7812,18 +7811,11 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "8:40am") {
+                                    if ($scope.discoveryData.time == "8:20am") {
 
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
+                                        $scope.dateDataForUser.time = "8:20am - 9:10am"
                                         $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
-                                    if ($scope.discoveryData.time == "9:40am") {
-
-                                        $scope.dateDataForUser.time = "9:40am - 10:10am"
-                                        $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 4;
+                                        $scope.dateDataForUser.slot = 2;
 
                                     }
 
@@ -7832,21 +7824,16 @@
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                        console.log("DATA")
-                                        console.log(data)
-            
-                                    
                                         if (data.data.user.calender["88"][22]) {
             
                                             $scope.booked1222 = true;
-                                            //console.log("hero")
-                                        }
-                                    
-            
-                                    })
-                                    
 
+                                        }
+                                
+                                    })
+                                
                                 })
+
                             }
 
                             
@@ -7896,7 +7883,7 @@
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking4 = false;
+                                                                $scope.loadingBooking2 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -7915,18 +7902,11 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "8:40am") {
+                                    if ($scope.discoveryData.time == "9:20am") {
 
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
-                                        $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
-                                    if ($scope.discoveryData.time == "9:40am") {
-
-                                        $scope.dateDataForUser.time = "9:40am - 10:10am"
+                                        $scope.dateDataForUser.time = "9:20am - 10:10am"
                                         $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 4;
+                                        $scope.dateDataForUser.slot = 2;
 
                                     }
 
@@ -8020,7 +8000,7 @@
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking4 = false;
+                                                                $scope.loadingBooking3 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -8046,27 +8026,17 @@
                                         $scope.dateDataForUser.slot = 4;
 
                                     }
-                                    if ($scope.sessionData.time == "9:30am") {
-
-                                        $scope.dateDataForUser.time = "9:30am - 10:10am"
-                                        $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
-
+                 
                                     $scope.dateDataForUser.appointmentType = "Session!";
                                     $scope.dateDataForUser.id = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                        console.log("DATA")
-                                        console.log(data)
-            
                                     
                                         if (data.data.user.calender["88"][22]) {
             
                                             $scope.booked1222 = true;
-                                            //console.log("hero")
+
                                         }
                                     
             
@@ -8125,7 +8095,7 @@
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking4 = false;
+                                                                $scope.loadingBooking3 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -8144,13 +8114,6 @@
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "8:40am") {
-
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
-                                        $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
                                     if ($scope.sessionData.time == "9:40am") {
 
                                         $scope.dateDataForUser.time = "9:40am - 10:10am"
@@ -8270,17 +8233,10 @@
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "8:30am") {
+                                    if ($scope.sessionData.time == "8:40am") {
 
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
+                                        $scope.dateDataForUser.time = "8:40am - 9:30am"
                                         $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
-                                    if ($scope.sessionData.time == "9:30am") {
-
-                                        $scope.dateDataForUser.time = "9:30am - 10:10am"
-                                        $scope.dateDataForUser.hour = "nine";
                                         $scope.dateDataForUser.slot = 4;
 
                                     }
@@ -8290,21 +8246,16 @@
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                        console.log("DATA")
-                                        console.log(data)
-            
-                                    
                                         if (data.data.user.calender["88"][22]) {
             
                                             $scope.booked1222 = true;
-                                            //console.log("hero")
+
                                         }
-                                    
             
                                     })
-                                    
-
+                                
                                 })
+
                             }
 
                             
@@ -8377,13 +8328,6 @@
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "8:40am") {
-
-                                        $scope.dateDataForUser.time = "8:40am - 9:30am"
-                                        $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
                                     if ($scope.sessionData.time == "9:40am") {
 
                                         $scope.dateDataForUser.time = "9:40am - 10:30am"
@@ -8436,7 +8380,6 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
                                 data.data.date[hour].state[1]           = 2;
                                 data.data.date[hour].state[2]           = 2;
                                 data.data.date[hour].state[3]           = 2;
@@ -8458,82 +8401,74 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[3] === 2) {
+                                        if (data.data.date[hour].state[5] === 2) {
 
                                             $scope.bookSession8 = false;
 
-                                            $timeout(function(){
-
-                                            $scope.bookSession18 = false;
-
                                             $timeout(function () {
 
-                                                $scope.bookSession28 = false;
-
-                                                $timeout(function () {
-
-                                                    $scope.bookSession38 = false;
-
+                                                if (data.data.date[hour].state[5] === 2) {
+        
+                                                    $scope.bookSession18 = false;
+        
                                                     $timeout(function () {
-
-                                                        $scope.bookSession48 = false;
-
+        
+                                                        $scope.bookSession28 = false;
+        
                                                         $timeout(function () {
-
-                                                            $scope.bookSession58 = false;
-
+        
+                                                            $scope.bookSession38 = false;
+        
                                                             $timeout(function () {
-
-                                                                $scope.loadingBooking4 = false;
-                                                                $scope.shinebrightsuccess.play()
-
+        
+                                                                $scope.bookSession48 = false;
+        
+                                                                $timeout(function () {
+        
+                                                                    $scope.bookSession58 = false;
+        
+                                                                    $timeout(function () {
+        
+                                                                        $scope.loadingBooking5 = false;
+                                                                        $scope.shinebrightsuccess.play()
+        
+                                                                    }, 500)
+        
+                                                                }, 500)
+        
                                                             }, 500)
-
+        
                                                         }, 500)
-
+        
                                                     }, 500)
-
-                                                }, 500)
-
-                                            }, 500)
-
-                                        },500)
+        
+                                                }
+        
+                                            }, 1000)
 
                                         }
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "8:30am") {
+                                    if ($scope.sessionData.time == "8:50am") {
 
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
+                                        $scope.dateDataForUser.time = "8:50am - 9:40am"
                                         $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
+                                        $scope.dateDataForUser.slot = 5;
 
                                     }
-                                    if ($scope.sessionData.time == "9:30am") {
-
-                                        $scope.dateDataForUser.time = "9:30am - 10:10am"
-                                        $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
-
-                                    $scope.dateDataForUser.appointmentType = "Session!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                   
+                                    $scope.dateDataForUser.appointmentType  = "Session!";
+                                    $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
 
-                                        console.log("DATA")
-                                        console.log(data)
-            
-                                    
                                         if (data.data.user.calender["88"][22]) {
             
                                             $scope.booked1222 = true;
-                                            //console.log("hero")
+
                                         }
-                                    
-            
+                                
                                     })
                                     
 
@@ -8543,7 +8478,6 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[0]           = 2;
                                 data.data.date[hour].state[1]           = 2;
                                 data.data.date[hour].state[2]           = 2;
                                 data.data.date[hour].state[3]           = 2;
@@ -8565,11 +8499,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[4] === 2) {
-
-                                            $scope.bookSession9 = false;
-
-                                            $timeout(function(){
+                                        if (data.data.date[hour].state[5] === 2) {
 
                                             $scope.bookSession19 = false;
 
@@ -8591,7 +8521,7 @@
 
                                                             $timeout(function () {
 
-                                                                $scope.loadingBooking4 = false;
+                                                                $scope.loadingBooking5 = false;
                                                                 $scope.shinebrightsuccess.play()
 
                                                             }, 500)
@@ -8604,29 +8534,20 @@
 
                                             }, 500)
 
-                                        },500)
-
                                         }
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "8:50am") {
-
-                                        $scope.dateDataForUser.time = "8:50am - 9:40am"
-                                        $scope.dateDataForUser.hour = "eight";
-                                        $scope.dateDataForUser.slot = 4;
-
-                                    }
                                     if ($scope.sessionData.time == "9:50am") {
 
-                                        $scope.dateDataForUser.time = "9:40am - 10:40am"
+                                        $scope.dateDataForUser.time = "9:50am - 10:40am"
                                         $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 4;
+                                        $scope.dateDataForUser.slot = 5;
 
                                     }
 
-                                    $scope.dateDataForUser.appointmentType = "Session!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.appointmentType  = "Session!";
+                                    $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
 

@@ -25,7 +25,6 @@
 
         User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-            console.log(data)
             $scope.clientName                   = data.data.user.name;
             $scope.currentUserBookingsArray     = data.data.user.bookings;
             $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
@@ -198,6 +197,7 @@
 
                         User.getUser($scope.idFromLocalStorage).then(function(data){
 
+                            console.log(data)
                             $scope.currentUserBookingsArray = data.data.user.bookings
 
                         if($scope.currentUserBookingsArray.length > 0){
