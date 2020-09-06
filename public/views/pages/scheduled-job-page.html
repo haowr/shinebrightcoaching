@@ -1,8 +1,13 @@
+<div class = "hide-on-large-only">
+
+
+
+
 <div class = "col s3 right-align">
     <i class = "material-icons" ng-click="exitScheduledJobPage()">keyboard_return</i>
 </div>
 <div class="col s6 center-align">
-    <span class='montserrat underline  ' style="font-size:20px;"> {{currentDate}}</span>
+    <span class='montserrat underline  ' style="font-size:20px;"> {{currentDate}}?</span>
 </div>
 <div class = "col s3">
 </div>
@@ -864,7 +869,880 @@
 
 </div>
 
+</div>
 
+<div class = "hide-on-small-only">
+
+
+
+
+    <div class = "col s3 right-align">
+        <i class = "material-icons" ng-click="exitScheduledJobPage()">keyboard_return</i>
+    </div>
+    <div class="col s6 center-align">
+        <span class='montserrat underline  ' style="font-size:20px;"> {{currentDate}}</span>
+    </div>
+    <div class = "col s3">
+    </div>
+    
+    <div class="row">
+    </div>
+    <div class="row center-align show-on-small">
+    
+        <div class="col s3 datehover" style="border-color:#ffeb3b;">
+        
+            <div ng-click="openBookingPage('eight')">
+    
+              <div class = "row"></div>
+    
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+                </div>
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:00am </p>
+    
+              </div>
+              <div class = "col s2">
+    
+                <span class="montserrat">-</span>
+    
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:50am </p>
+    
+              </div>
+                <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+                <div ng-show="checkUpFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+    
+    
+                <div ng-show="discoveryFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+                </div>
+                <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+                </div>
+    
+                <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+                </div>
+                <div ng-show="sessionFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+                </div>
+    
+    
+                <div class="row"></div>
+    
+            </div>
+    
+        </div>
+        
+        <div class="col s3 datehover" style="border-color:#fff176;">
+            <div>
+            <div ng-click="openBookingPage('nine')">
+    
+                <div class = "row"></div>
+              
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+                </div>
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:00am </p>
+    
+              </div>
+              <div class = "col s2">
+    
+                <span class="montserrat">-</span>
+    
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:50am </p>
+    
+              </div>
+     
+                <div ng-show="checkUpAlmostFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+                <div ng-show="checkUpFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+     
+                <div ng-show="discoveryFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+                </div>
+                <div ng-show="discoveryAlmostFull9"class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+                </div>
+                <div ng-show="sessionAlmostFull9"class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+                </div>
+                <div ng-show="sessionFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+                </div>
+              
+    
+               
+                <div class = "row"></div>
+    
+            </div>
+            </div>
+          
+        </div>
+    
+        <div class="col s3 datehover" style="border-color:#fff176"ng-click="openBookingPage('ten')">
+    
+            <div class = "row"></div>
+              
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+              </div>
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:00am </p>
+    
+            </div>
+            <div class = "col s2">
+    
+              <span class="montserrat">-</span>
+    
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:50am </p>
+    
+            </div>
+    
+            <div ng-show="checkUpAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+            <div ng-show="checkUpFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+        
+            <div ng-show="discoveryFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="discoveryAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="sessionAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+            </div>
+            <div ng-show="sessionFull10"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+            </div>
+      
+    
+            <div class="row">
+            </div>
+    
+        </div>
+    
+        <div class="col s3 datehover"style="border-color: #fff176;" ng-click="openBookingPage('eleven')">
+    
+            <div class = "row"></div>
+              
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+              </div>
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:00am </p>
+    
+            </div>
+            <div class = "col s2">
+    
+              <span class="montserrat">-</span>
+    
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:50am </p>
+    
+            </div>
+            <div ng-show="checkUpAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+            <div ng-show="checkUpFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+    
+        
+            <div ng-show="discoveryFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="discoveryAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+    
+            <div ng-show="sessionAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+            </div>
+            <div ng-show="sessionFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+            </div>
+     
+    
+           
+            <div class="row"></div>
+    
+        </div>
+    
+    
+    </div>
+    <div class="row center-align show-on-small">
+    
+        <div class="col s3 datehover" style="border-color:#ffeb3b;">
+        
+            <div ng-click="openBookingPage('eight')">
+    
+              <div class = "row"></div>
+    
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+                </div>
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:00am </p>
+    
+              </div>
+              <div class = "col s2">
+    
+                <span class="montserrat">-</span>
+    
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:50am </p>
+    
+              </div>
+                <div ng-show="checkUpAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+                <div ng-show="checkUpFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+    
+    
+                <div ng-show="discoveryFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+                </div>
+                <div ng-show="discoveryAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+                </div>
+    
+                <div ng-show="sessionAlmostFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+                </div>
+                <div ng-show="sessionFull8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+                </div>
+    
+    
+                <div class="row"></div>
+    
+            </div>
+    
+        </div>
+        
+        <div class="col s3 datehover" style="border-color:#fff176;">
+            <div>
+            <div ng-click="openBookingPage('nine')">
+    
+                <div class = "row"></div>
+              
+              <div class = "col s4">
+                <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+                </div>
+              </div>
+              <div class = "col s4">
+                <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+                </div>
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:00am </p>
+    
+              </div>
+              <div class = "col s2">
+    
+                <span class="montserrat">-</span>
+    
+              </div>
+              <div class = "col s5">
+    
+                <p class="montserrat">8:50am </p>
+    
+              </div>
+     
+                <div ng-show="checkUpAlmostFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+                <div ng-show="checkUpFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Checkup Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+                </div>
+     
+                <div ng-show="discoveryFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+                </div>
+                <div ng-show="discoveryAlmostFull9"class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+                </div>
+                <div ng-show="sessionAlmostFull9"class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+                </div>
+                <div ng-show="sessionFull9" class = "animated fadeIn">
+                    <!--<span class = " red-text">Discovery Available</span>-->
+                    <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+                </div>
+              
+    
+               
+                <div class = "row"></div>
+    
+            </div>
+            </div>
+          
+        </div>
+    
+        <div class="col s3 datehover" style="border-color:#fff176"ng-click="openBookingPage('ten')">
+    
+            <div class = "row"></div>
+              
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+              </div>
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:00am </p>
+    
+            </div>
+            <div class = "col s2">
+    
+              <span class="montserrat">-</span>
+    
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:50am </p>
+    
+            </div>
+    
+            <div ng-show="checkUpAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+            <div ng-show="checkUpFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+        
+            <div ng-show="discoveryFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="discoveryAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="sessionAlmostFull10" class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+            </div>
+            <div ng-show="sessionFull10"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+            </div>
+      
+    
+            <div class="row">
+            </div>
+    
+        </div>
+    
+        <div class="col s3 datehover"style="border-color: #fff176;" ng-click="openBookingPage('eleven')">
+    
+            <div class = "row"></div>
+              
+            <div class = "col s4">
+              <div ng-show="checkUpAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Checkup Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">assignment_turned_in</i>
+    
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="discoveryAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size:30px;">free_breakfast</i>
+              </div>
+            </div>
+            <div class = "col s4">
+              <div ng-show="sessionAvailable8" class = "animated fadeIn">
+                  <!--<span class = " red-text">Discovery Available</span>-->
+                  <i class="material-icons green-text text-lighten-2" style="font-size: 30px;">hearing</i>
+              </div>
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:00am </p>
+    
+            </div>
+            <div class = "col s2">
+    
+              <span class="montserrat">-</span>
+    
+            </div>
+            <div class = "col s5">
+    
+              <p class="montserrat">8:50am </p>
+    
+            </div>
+            <div ng-show="checkUpAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+            <div ng-show="checkUpFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in</i>
+    
+            </div>
+    
+        
+            <div ng-show="discoveryFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+            <div ng-show="discoveryAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+    
+            </div>
+    
+            <div ng-show="sessionAlmostFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+    
+            </div>
+            <div ng-show="sessionFull11"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+    
+            </div>
+     
+    
+           
+            <div class="row"></div>
+    
+        </div>
+    
+    
+    </div>
+    
+    <div class="row center-align show-on-small">
+    
+        <div class="col s3 datehover"style="border-color:#fff176;" ng-click="openBookingPage('twelve')">
+            <div ng-show="checkUpAvailable12" class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpAlmostFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="discoveryAvailable12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryAlmostFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="sessionAvailable12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionAlmostFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionFull12"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+            </div>
+            <p class="montserrat">12:00pm </p>
+            <p class="montserrat">- </p>
+    
+            <p class="montserrat">12:50pm </p>
+    
+    
+        </div>
+        <div class="col s3 datehover"style="border-color:#fff176" ng-click="openBookingPage('one')">
+            
+            <div ng-show="checkUpAvailable1"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpAlmostFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="discoveryAvailable1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryAlmostFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="sessionAvailable1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionAlmostFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionFull1"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+            </div>
+            <p class="montserrat">1:00pm </p>
+            <p class="montserrat">- </p>
+    
+            <p class="montserrat">1:50pm </p>
+    
+        </div>
+        <div class="col s3 datehover" style="border-color:#fff176;"ng-click="openBookingPage('two')">
+            <div ng-show="checkUpAlmostFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpAvailable2"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+    
+            </div>
+            <div ng-show="checkUpFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="discoveryAvailable2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryAlmostFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="sessionAlmostFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionFull2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+    
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+            </div>
+    
+            <div ng-show="sessionAvailable2"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+    
+                <i class="material-icons green-text text-lighten-2">hearing</i>
+            </div>
+            <p class="montserrat">2:00pm </p>
+            <p class="montserrat">- </p>
+    
+            <p class="montserrat">2:50pm </p>
+    
+        </div>
+        <div class="col s3 datehover" ng-click="openBookingPage('three')" style="border-color:#fff176">
+            <div ng-show="checkUpAvailable3"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons green-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpAlmostFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="checkUpFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Checkup Available</span>-->
+                <i class="material-icons red-text text-lighten-2">assignment_turned_in
+    </i>
+    
+    
+            </div>
+            <div ng-show="discoveryAvailable3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="discoveryAlmostFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
+            </div>
+            <div ng-show="sessionAvailable3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons green-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionAlmostFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons yellow-text text-lighten-2">hearing</i>
+            </div>
+            <div ng-show="sessionFull3"class = "animated fadeIn">
+                <!--<span class = " red-text">Discovery Available</span>-->
+                <i class="material-icons red-text text-lighten-2">hearing</i>
+            </div>
+            <p class="montserrat">3:00pm </p>
+            <p class="montserrat">- </p>
+    
+            <p class="montserrat">3:50pm </p>
+        </div>
+    
+    </div>
+    
+</div>
 <script>
     $(document).ready(function () {
         // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
@@ -873,42 +1751,3 @@
 
 </script>
 
-
-<!--
-<div class = "col s12">
-    <div class = "row">
-    
-    <div class = "col s12">
-                <div class="row">
-    <form class="col s12">
-              <div class="row">
-        <div class="input-field col s6">
-          <input  id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-      </div>
-    </form>
-  </div>
-
-    </div>
-
-    </div>
-          <div style="height:200px;width:200px;">
-                        <canvas height="100" width="100" id="doughnut" class="chart chart-doughnut" chart-data="data2" chart-options="options" chart-labels="labels">
-                        </canvas>
-                    </div>
-                    <div id="test-slider"></div>
-</div>
-<canvas id="doughnut" class="chart chart-doughnut"
-  chart-data="scheduledJob.data" chart-labels="scheduledJob.labels">
-</canvas> -->
