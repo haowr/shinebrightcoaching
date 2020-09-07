@@ -1208,6 +1208,22 @@
             }
 
             if($scope.messageObject.body    !== "" &&
+               $scope.messageObject.subject  == ""){
+
+                $scope.messabeSubjectCannotBeEmpty  = true;
+                $scope.messageBodyCannotBeEmpty     = false;
+
+                
+            }
+            if( $scope.messageObject.subject   !== "" &&
+                $scope.messageObject.body       == ""){
+
+                 $scope.messageSubjectCannotBeEmpty  = false;
+                 $scope.messageBodyCannotBeEmpty     = true;
+
+            }
+
+            if($scope.messageObject.body    !== "" &&
                $scope.messageObject.subject !== ""){
                 
                 $scope.messageBodyCannotBeEmpty     = false;
