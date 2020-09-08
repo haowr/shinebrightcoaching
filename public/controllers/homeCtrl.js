@@ -14,7 +14,7 @@
             
         }
 
-        $scope.openModal();
+        //$scope.openModal();
        
     })
 

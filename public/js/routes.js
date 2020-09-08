@@ -6,8 +6,8 @@
 
         $routeProvider
             .when('/', {
-                templateUrl: '../views/pages/test.html',
-                controller: 'homeCtrl',
+                templateUrl: '../views/pages/login.html',
+                controller: 'loginCtrl',
                 name: "QLH | HOME",
                 resolve: {
                     init: function ($route) {

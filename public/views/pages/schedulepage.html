@@ -84,7 +84,10 @@
         </div>
 
         <div ng-show="bookingPageOpen">
-            <div ng-show="slot == 'eight'">
+            <div ng-show="slot == 'eight'" class = "hide-on-small-only">
+                <eight-to-nine></eight-to-nine>
+            </div>
+            <div ng-show="slot == 'eight'" class = "hide-on-med-and-up">
                 <eight-to-nine></eight-to-nine>
             </div>
             <div ng-show="slot == 'nine'">

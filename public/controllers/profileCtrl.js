@@ -804,7 +804,7 @@
         $scope.checkUpTitle86       = true;
         $scope.checkUpTitle87       = true;
         $scope.checkUpTitle88       = true;
-        $scope.checkUpTitle90       = false;
+        $scope.checkUpTitle90       = true;
         $scope.checkUpTitle91       = true;
         $scope.checkUpTitle92       = true;
         $scope.checkUpTitle93       = true;
@@ -813,7 +813,7 @@
         $scope.checkUpTitle96       = true;
         $scope.checkUpTitle97       = true;
         $scope.checkUpTitle98       = true;
-        $scope.checkUpTitle100      = false;
+        $scope.checkUpTitle100      = true;
         $scope.checkUpTitle101      = true;
         $scope.checkUpTitle102      = true;
         $scope.checkUpTitle103      = true;
@@ -868,6 +868,7 @@
         $scope.checkUpTitle37       = true;
         $scope.checkUpTitle38       = true;
 
+    
         $scope.discoveryTitle80     = false;
         $scope.discoveryTitle81     = false;
         $scope.discoveryTitle82     = false;
@@ -877,6 +878,14 @@
         $scope.discoverytTitle86    = false;
         $scope.discoveryTitle87     = false;
         $scope.discoveryTitle88     = false;
+        $scope.discoveryTitle90       = false;
+        $scope.discoveryTitle91       = false;
+        $scope.discoveryTitle92       = false;
+        $scope.discoveryTitle93       = false;
+        $scope.discoveryTitle94       = false;
+        $scope.discoveryTitle95       = false;
+        $scope.discoveryTitle96       = false;
+        $scope.discoveryTitle97       = false;
         $scope.sessionTitle81       = false;
         $scope.sessionTitle82       = false;
         $scope.sessionTitle83       = false;
