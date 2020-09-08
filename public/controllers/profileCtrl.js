@@ -9539,9 +9539,18 @@
 
         }
 
-        $scope.openModal = function () {
+        $scope.openModal = function (size) {
 
-            $('#modal1').modal('open');
+            if(size == 'small'){
+
+                $('#modal1').modal('open');
+
+
+            }else{
+
+                $('#modal1large').modal('open');
+
+            }
             
         }
 

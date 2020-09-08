@@ -76,7 +76,10 @@
             <schedule-page></schedule-page>
         </div>
 
-        <div ng-show="scheduledJobPageOpen">
+        <div ng-show="scheduledJobPageOpen" class = "hide-on-small-only">
+            <scheduled-job-page></scheduled-job-page>
+        </div>
+        <div ng-show="scheduledJobPageOpen" class = "hide-on-med-and-up">
             <scheduled-job-page></scheduled-job-page>
         </div>
         <div ng-show="bookingsPageOpen">
