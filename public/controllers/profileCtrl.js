@@ -3197,6 +3197,8 @@
 
                 console.log("Date Eight", data.data.date['eight'].state)
 
+                console.log("Date Eight", data.data.date['eight'].state)
+
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
@@ -3219,15 +3221,15 @@
                 && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
 
-                    $scope.sessionAlmostFull8 = true;
-                    $scope.discoveryAvailable8 = true;
-                    $scope.checkUpAvailable8 = true;
-                    $scope.sessionFull8 = false;;
-                    $scope.sessionAvailable8 = false;
+                    $scope.sessionFull8         = true;
+                    $scope.discoveryAvailable8  = true;
+                    $scope.checkUpAvailable8    = true;
+                    $scope.sessionAlmostFull8   = false;;
+                    $scope.sessionAvailable8    = false;
                     $scope.discoveryAlmostFull8 = false;
-                    $scope.discoveryFull8 = false;
-                    $scope.checkUpAlmostFull8 = false;
-                    $scope.checkUpFull8 = false;
+                    $scope.discoveryFull8       = false;
+                    $scope.checkUpAlmostFull8   = false;
+                    $scope.checkUpFull8         = false;
 
                     console.log(820)
 
@@ -3319,8 +3321,6 @@
                     console.log(820)
 
                 }
-
-
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3391,7 +3391,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
 
@@ -3410,7 +3409,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3428,7 +3426,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3463,8 +3460,6 @@
                     console.log(820)
 
                 }
-
-
                 if (data.data.date['eight'].state[0]    == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3516,7 +3511,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
 
@@ -3568,7 +3562,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3603,7 +3596,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
 
@@ -3656,7 +3648,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
@@ -3708,7 +3699,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
@@ -3777,7 +3767,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3811,7 +3800,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
 
@@ -3829,7 +3817,6 @@
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
                     && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 0) {
 
@@ -3841,13 +3828,12 @@
                     $scope.sessionAvailable8 = false;
                     $scope.discoveryAlmostFull8 = false;
                     $scope.discoveryAvailable8 = false;
-                    $scope.checkUpAlmostFull8= false;
+                    $scope.checkUpAvailable8= false;
                     $scope.checkUpFull8= false;
 
                     console.log(820)
 
                 }
-
                 if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 2
                 && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
     
@@ -3865,28 +3851,26 @@
     
                 console.log(820)
     
-            }
-            if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
-            && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+                }
+                if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 2 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
 
 
-            $scope.sessionFull8 = true;
-            $scope.discoveryFull8 = true;
-            $scope.checkUpAvailable8 = true;
-            $scope.sessionAlmostFull8 = false;
-            $scope.sessionAvailable8 = false;
-            $scope.discoveryAlmostFull8 = false;
-            $scope.discoveryAvailable8 = false;
-            $scope.checkUpAvailable8 = false;
-            $scope.checkUpFull8 = false;
+                    $scope.sessionFull8 = true;
+                    $scope.discoveryFull8 = true;
+                    $scope.checkUpAvailable8 = true;
+                    $scope.sessionAlmostFull8 = false;
+                    $scope.sessionAvailable8 = false;
+                    $scope.discoveryAlmostFull8 = false;
+                    $scope.discoveryAvailable8 = false;
+                    $scope.checkUpAvailable8 = false;
+                    $scope.checkUpFull8 = false;
 
+                    console.log(820)
 
-            console.log(820)
-
-        }
-            
-        if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
-        && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+                }
+                if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
 
         $scope.sessionFull8 = true;
@@ -3902,9 +3886,9 @@
 
         console.log(820)
 
-    }
-    if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
-    && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
+                }
+                if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
 
 
     $scope.sessionFull8 = true;
@@ -3920,16 +3904,52 @@
 
     console.log(820)
 
-}
+                }   
+                if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 2) {
+
+
+                $scope.sessionFull8 = true;
+                $scope.discoveryFull8 = true;
+                $scope.checkUpAvailable8 = true;
+                $scope.sessionAlmostFull8 = false;
+                $scope.sessionAvailable8 = false;
+                $scope.discoveryAlmostFull8 = false;
+                $scope.discoveryAvailable8 = false;
+                $scope.checkUpAlmostFull8 = false;
+                $scope.checkUpFull8 = false;
+
+
+                console.log(820)
+
+                }
+                if (data.data.date['eight'].state[0] == 2 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 2 && data.data.date['eight'].state[3] == 0
+                && data.data.date['eight'].state[4] == 2 && data.data.date['eight'].state[5] == 2) {
+
+
+                $scope.sessionFull8 = true;
+                $scope.discoveryFull8 = true;
+                $scope.checkUpAvailable8 = true;
+                $scope.sessionAlmostFull8 = false;
+                $scope.sessionAvailable8 = false;
+                $scope.discoveryAlmostFull8 = false;
+                $scope.discoveryAvailable8 = false;
+                $scope.checkUpAlmostFull8 = false;
+                $scope.checkUpFull8 = false;
+
+
+                console.log(820)
+
+                }
        
     
                 console.log("Date Nine", data.data.date['nine'].state)
     
 
                 if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
-                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
-    
-    
+                && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
+
+
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
@@ -3939,17 +3959,15 @@
                 $scope.discoveryAvailable9 = false;
                 $scope.checkUpAlmostFull9 = false;
                 $scope.checkUpFull9 = false;
-    
-    
+
+
                 console.log(920)
-    
-            }
-                   
-                   
-                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
-    
-    
+
+
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAvailable9 = true;
@@ -3957,34 +3975,13 @@
                 $scope.sessionAvailable9 = false;
                 $scope.discoveryAlmostFull9 = false;
                 $scope.discoveryAvailable9 = false;
-                $scope.checkUpAvailable9 = false;
+                $scope.checkUpAlmostFull9 = false;
                 $scope.checkUpFull9 = false;
-    
-    
-                console.log(920)
-    
-            }
-                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
-                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
-    
-    
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAlmostFull9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAvailable9 = false;
-                $scope.checkUpFull9 = false;
-    
-    
-                console.log(920)
-    
-            }
 
-                console.log("Date Nine", data.data.date['nine'].state)
 
+                console.log(920)
+
+                }
                 if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
@@ -4002,26 +3999,26 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
-            && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
-                $scope.sessionAlmostFull9 = true;
-                $scope.discoveryAvailable9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionFull9 = false;;
-                $scope.sessionAvailable9 = false;
+                $scope.sessionFull9         = true;
+                $scope.discoveryAvailable9  = true;
+                $scope.checkUpAvailable9    = true;
+                $scope.sessionAlmostFull9   = false;;
+                $scope.sessionAvailable9    = false;
                 $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.sessionAlmostFull9 = false;
+                $scope.discoveryFull9       = false;
+                $scope.checkUpAlmostFull9   = false;
+                $scope.checkUpFull9         = false;
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
-            && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
                 $scope.sessionFull9 = true;
@@ -4036,9 +4033,9 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
-            && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
                 $scope.sessionFull9 = true;
@@ -4053,9 +4050,9 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
-            && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
 
 
                 $scope.sessionFull9 = true;
@@ -4071,8 +4068,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 3 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 3 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4088,8 +4085,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4106,10 +4103,8 @@
 
                 console.log(920)
 
-            }
-
-
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4126,8 +4121,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4144,8 +4139,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4161,8 +4156,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4178,9 +4173,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4197,9 +4191,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4215,9 +4208,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4233,8 +4225,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4250,10 +4242,8 @@
 
                 console.log(920)
 
-            }
-
-
-            if (data.data.date['nine'].state[0]    == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0]    == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4269,8 +4259,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0]    == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0]    == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
 
 
@@ -4286,8 +4276,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
@@ -4303,9 +4293,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4321,8 +4310,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4338,8 +4327,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4355,9 +4344,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4373,8 +4361,8 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
@@ -4390,9 +4378,8 @@
 
                 console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
@@ -4408,220 +4395,232 @@
 
                 console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryAlmostFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.checkUpAlmostFull9 = false;
-                $scope.checkUpFull9 = false;
-                
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryAlmostFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.checkUpAlmostFull9 = false;
+                    $scope.checkUpFull9 = false;
+                    
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryAlmostFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryAlmostFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryAlmostFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAvailable= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryAlmostFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryAlmostFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryAlmostFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryAlmostFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryAlmostFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
-                $scope.sessionAlmostFull9 = true;
-                $scope.discoveryAvailable9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionAlmostFull9 = true;
+                    $scope.discoveryAvailable9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionAlmostFull9 = true;
-                $scope.discoveryAlvailable9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryFull9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionAlmostFull9 = true;
+                    $scope.discoveryAlvailable9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryFull9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
-            }
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                    console.log(920)
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
 
 
-                $scope.sessionFull9 = true;
-                $scope.discoveryFull9 = true;
-                $scope.checkUpAvailable9 = true;
-                $scope.sessionAlmostFull9 = false;
-                $scope.sessionAvailable9 = false;
-                $scope.discoveryAlmostFull9 = false;
-                $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAlmostFull9= false;
+                    $scope.checkUpFull9= false;
 
-                console.log(920)
+                    console.log(920)
 
-            }
-
-            if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
                 && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
 
 
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAlmostFull9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9= false;
+                    $scope.checkUpFull9= false;
+
+                    console.log(920)
+
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 2
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+    
+    
                 $scope.sessionFull9 = true;
                 $scope.discoveryFull9 = true;
                 $scope.checkUpAlmostFull9 = true;
@@ -4629,12 +4628,66 @@
                 $scope.sessionAvailable9 = false;
                 $scope.discoveryAlmostFull9 = false;
                 $scope.discoveryAvailable9 = false;
-                $scope.checkUpAlmostFull9= false;
-                $scope.checkUpFull9= false;
-
+                $scope.checkUpAvailable9 = false;
+                $scope.checkUpFull9 = false;
+    
+    
                 console.log(920)
+    
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
 
-            }
+
+                    $scope.sessionFull9 = true;
+                    $scope.discoveryFull9 = true;
+                    $scope.checkUpAvailable9 = true;
+                    $scope.sessionAlmostFull9 = false;
+                    $scope.sessionAvailable9 = false;
+                    $scope.discoveryAlmostFull9 = false;
+                    $scope.discoveryAvailable9 = false;
+                    $scope.checkUpAvailable9 = false;
+                    $scope.checkUpFull9 = false;
+
+                    console.log(920)
+
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+
+
+        $scope.sessionFull9 = true;
+        $scope.discoveryFull9 = true;
+        $scope.checkUpAvailable9 = true;
+        $scope.sessionAlmostFull9 = false;
+        $scope.sessionAvailable9 = false;
+        $scope.discoveryAlmostFull9 = false;
+        $scope.discoveryAvailable9 = false;
+        $scope.checkUpAvailable9 = false;
+        $scope.checkUpFull9 = false;
+
+
+        console.log(920)
+
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+
+
+    $scope.sessionFull9 = true;
+    $scope.discoveryFull9 = true;
+    $scope.checkUpAvailable9 = true;
+    $scope.sessionAlmostFull9 = false;
+    $scope.sessionAvailable9 = false;
+    $scope.discoveryAlmostFull9 = false;
+    $scope.discoveryAvailable9 = false;
+    $scope.checkUpAlmostFull9 = false;
+    $scope.checkUpFull9 = false;
+
+
+    console.log(920)
+
+                } 
 
 
 
