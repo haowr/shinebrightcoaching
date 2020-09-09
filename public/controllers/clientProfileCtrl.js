@@ -81,7 +81,12 @@
                         $scope.currentBookingTitle  = $scope.currentBooking;
                         $scope.shinebrighttap.play()
 
-                    } else {
+                    } 
+                    
+                    else if( $scope.currentBooking == $scope.currentUserBookingsArray.length -1) {
+
+                    
+                    }else {
 
                         $scope.currentBooking       = $scope.currentUserBookingsArray.length - 1;
                         $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length - 1;
@@ -118,7 +123,12 @@
                         $scope.currentBookingTitle  = $scope.currentBooking + 1;
                         $scope.shinebrighttap.play()
 
-                    } else {
+                    } else if( $scope.currentBooking == $scope.currentUserBookingsArray.length -1) {
+
+                    
+                    }else{
+
+
 
                         $scope.currentBooking       = 0;
                         $scope.currentBookingTitle  = 0;
@@ -135,8 +145,9 @@
                             },1000)
 
                         }
-                    
-                    }    
+
+
+                    }
                 
             })
 
