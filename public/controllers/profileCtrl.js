@@ -2842,6 +2842,7 @@
                 console.log(data)
                 console.log(data.data.date[$scope.hour].state)
                 $scope.globalDateInformation = data.data.date;
+                console.log("Global Date Information", $scope.globalDateInformation)
                 console.log("Appointment Type", $scope.appointmentType)
 
                 if ($scope.appointmentType == "discovery") {
@@ -3103,7 +3104,58 @@
                             $scope.bookSession48    = false;
                             $scope.bookSession58    = false;
 
+                       
                         }
+
+
+                        //experiment//
+                        
+                        if ($scope.globalDateInformation[$scope.hour].state[2] == 0 &&
+                            $scope.globalDateInformation[$scope.hour].state[3] == 0 && 
+                            $scope.globalDateInformation[$scope.hour].state[4] == 0 && 
+                            $scope.globalDateInformation[$scope.hour].state[5] == 0 &&  
+                            $scope.globalDateInformation['nine'].state[0]      == 0) {
+
+                                $scope.bookSession58 = true;
+                                $scope.bookSession48 = true;
+                                $scope.bookSession38 = true;
+                                $scope.bookSession28 = true;
+
+                        }
+                        if (
+                            $scope.globalDateInformation[$scope.hour].state[3] == 0 && 
+                            $scope.globalDateInformation[$scope.hour].state[4] == 0 && 
+                            $scope.globalDateInformation[$scope.hour].state[5] == 0 &&  
+                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[1]      == 0 ) {
+
+                                $scope.bookSession58 = true;
+                                $scope.bookSession48 = true;
+                                $scope.bookSession38 = true;
+
+                        }
+                        if ( 
+                            $scope.globalDateInformation[$scope.hour].state[4] == 0 && 
+                            $scope.globalDateInformation[$scope.hour].state[5] == 0 &&  
+                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[2]      == 0 ) {
+
+                                $scope.bookSession58 = true;
+                                $scope.bookSession48 = true;
+
+                        }
+                        if ($scope.globalDateInformation[$scope.hour].state[5] == 0 &&  
+                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[2]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[3]      == 0 &&
+                            $scope.globalDateInformation['nine'].state[4]      == 0 ) {
+
+                                $scope.bookSession58 = true;
+
+                        }
+
                         if ($scope.globalDateInformation['nine'].state[0] == 2) {
 
                             $scope.bookSession58 = false;
