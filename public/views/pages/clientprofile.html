@@ -181,7 +181,8 @@ background-repeat:no-repeat;">
         
             <!-- BOOKINGS SECTION -->
         
-        
+            <div class = "row">
+
             <div class = "col s12 center-align">
         
                 <div class = "row"></div>
@@ -259,8 +260,8 @@ background-repeat:no-repeat;">
                                             <i ng-show="currentUserBookingsArray[currentBooking].completed" class="material-icons green-text" 
                                                style="font-size:35px; text-decoration:underline;">done</i>
         
-                                            <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons"
-                                               style="font-size:35px; text-decoration:underline;">priority_high</i>
+                                            <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons animated pulse infinite"
+                                               style="font-size:30px; text-decoration:underline;">priority_high</i>
                                             
                                         </div>
         
@@ -394,12 +395,16 @@ background-repeat:no-repeat;">
                                         <div ng-click= "markAsCompleted(currentBooking)">
                                             
                                         <div class = "row"></div>
-                                        <div class= "col s4"></div>
-                                        <div class= "col s4"></div>
-                                        <div class= "col s4">
+                                        <div class = "col s2"></div>
+                                        <div class= "col s8 center-align"><span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
+        
+                                            {{currentUserBookingsArray[currentBooking].date}}
+    
+                                        </span></div>
+                                        <div class= "col s2">
                                         
                                             <i ng-show= "!currentUserBookingsArray[currentBooking].completed" class="material-icons"
-                                                style= "font-size:28px; text-decoration:underline;">priority_high</i>
+                                                style= "font-size:23px; text-decoration:underline;">priority_high</i>
         
                                         </div>
         
@@ -413,19 +418,16 @@ background-repeat:no-repeat;">
         
                                             <p class= "montserrat animated fadeIn" style= "font-size:20px;">
         
-                                                {{currentUserBookingsArray[currentBooking].date}}
+                                                {{currentUserBookingsArray[currentBooking].time}}
         
                                             </p>
+                                            <p class= "montserrat flow-text" >( Tap To Mark As Completed )</p>
+
         
-                                            <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
-        
-                                                {{bookings[currentBooking].time}}
-        
-                                            </span>
+                                            
         
                                         
         
-                                                <p class= "montserrat flow-text" >( Click To Mark As Completed )</p>
         
         
         
@@ -487,8 +489,11 @@ background-repeat:no-repeat;">
                 </a>
         
                 </div>
+                
+
         
             </div>
+        </div>
         
         
             <!-- BOOKINGS SECTION -->
