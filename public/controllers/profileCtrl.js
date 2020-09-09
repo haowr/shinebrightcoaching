@@ -9483,7 +9483,13 @@
 
                 if (column == '1') {
 
+                    console.log("HERE")
+
+
                     if (!$scope.checkUp8Selected) {
+
+                        console.log("HERE")
+
 
                         $scope.discovery8Selected = false;
                         $scope.session8Selected = false;
