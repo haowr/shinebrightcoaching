@@ -83,27 +83,27 @@
 
             User.getUser($scope.idFromLocalStorage).then(function (data) {
 
+                    console.log($scope.currentBooking)
                 $scope.currentUserBookingsArray     = data.data.user.bookings;
 
                     if ( $scope.currentBooking > 0 ) {
 
                         $scope.currentBooking       = $scope.currentBooking - 1;
-                        $scope.currentBookingTitle  = $scope.currentBooking;
+                        $scope.currentBookingTitle  = $scope.currentBooking +1;
                         $scope.shinebrighttap.play()
 
                     } 
                     
-                    else if( $scope.currentBooking == $scope.currentUserBookingsArray.length -1) {
-
-                    
-                    }else {
+                else {
 
                         $scope.currentBooking       = $scope.currentUserBookingsArray.length - 1;
-                        $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length - 1;
+                        $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length ;
+                        console.log("ERRE?")
 
                         if($scope.currentUserBookingsArray.length == 0){
 
                             $scope.currentBookingTitle  = 0;
+                            console.log("ERRE?")
                             $scope.shake                = true;
                             $scope.shinebrighterror.play()
 
@@ -133,15 +133,12 @@
                         $scope.currentBookingTitle  = $scope.currentBooking + 1;
                         $scope.shinebrighttap.play()
 
-                    } else if( $scope.currentBooking == $scope.currentUserBookingsArray.length -1) {
-
-                    
-                    }else{
+                    } else{
 
 
 
                         $scope.currentBooking       = 0;
-                        $scope.currentBookingTitle  = 0;
+                        $scope.currentBookingTitle  = 1;
 
                         if($scope.currentUserBookingsArray.length == 0){
 

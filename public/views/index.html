@@ -145,19 +145,19 @@ background-repeat:no-repeat;">
     </nav>
     <ul class="side-nav " id="mobile-demo2">
   
-          <li ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/packages">Packages</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/testimonials">Testimonials</a></li>
-          <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/register">Register</a></li>
+          <li ng-click="error()" ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Packages</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Testimonials</a></li>
+          <li ng-click="error()"ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Register</a></li>
           <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
           <li ng-show="loggedIn && userClass == 'employee'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
-          <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
-          <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
-          <li ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/viewintake">Intake</a></li>
-          <li ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="/viewwellnessintake">Wellness</a></li>
+          <li ng-click="error()"ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="#">Profile</a></li>
+          <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Forms</a></li>
+          <li ng-click="error()"ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Intake</a></li>
+          <li ng-click="error()"ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="#">Wellness</a></li>
           <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/about">About</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">About</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Contact</a></li>
   
   
   

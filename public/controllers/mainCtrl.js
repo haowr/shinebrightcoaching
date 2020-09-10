@@ -14,6 +14,11 @@
        $scope.fadeinwelcome         = false;
        $scope.slideinrightwelcome   = false;
        $scope.slideinleftwelcome    = true;
+       $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
+       $scope.shinebrighterror             = new Audio("../audio/shinebrighterror.wav");
+       $scope.shinebrightloading           = new Audio('../audio/shinebrightloading.wav');
+       $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
+       $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
 
        $timeout(function(){
 
@@ -27,9 +32,15 @@
 
        },2000)
 
+
        $scope.lifeCoach                 = false;
        $scope.wellnessCoach             = false;
 
+       $scope.error                 = function(){
+
+            $scope.shinebrighterror.play()
+
+       }
        $scope.openWellnessCoach     = function(){
 
            $scope.wellnessCoach         = true;
