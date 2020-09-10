@@ -1,15 +1,21 @@
 (function () {
 
 
-    var app = angular.module('profileController', ['userServices'])
+    var app = angular.module('profileController', ['userServices','authServices'])
 
     app.config(function () {
 
 
     })
 
-    app.controller('profileCtrl', function ($scope, $routeParams, $timeout, $window, $rootScope, User) {
+    app.controller('profileCtrl', function ($scope, $routeParams, $timeout, $window, $rootScope, $location, User,Auth) {
 
+        console.log(Auth.isLoggedIn())
+        if(!Auth.isLoggedIn()){
+
+            $location.path('/')
+
+        }
         $scope.idFromLocalStorage = $window.localStorage.getItem('_id')
 
         $scope.bookingInfo = {
@@ -785,12 +791,12 @@
         $scope.session8Selected8    = false;
 
         $scope.checkUp9Selected2    = true;
-        $scope.checkUp8Selected3    = true;
-        $scope.checkUp8Selected4    = true;
-        $scope.checkUp8Selected5    = true;
-        $scope.checkUp8Selected6    = true;
-        $scope.checkUp8Selected7    = true;
-        $scope.checkUp8Selected8    = true;
+        $scope.checkUp10Selected3    = true;
+        $scope.checkUp11Selected4    = true;
+        $scope.checkUp12Selected5    = true;
+        $scope.checkUp1Selected6    = true;
+        $scope.checkUp2Selected7    = true;
+        $scope.checkUp3Selected8    = true;
 
 
         $scope.checkUpTitle80       = true;

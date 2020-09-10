@@ -9,6 +9,12 @@
 
     app.controller('clientProfileCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope, $window) {
 
+        if(!Auth.isLoggedIn()){
+
+            $location.path('/')
+
+        }
+
         $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
         $scope.clientName                   = $window.localStorage.getItem('name');
         $scope.currentBookingTitle          = "";

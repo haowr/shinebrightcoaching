@@ -1,6 +1,6 @@
 (function () {
 
-    var app = angular.module("appRoutes", ['ngRoute']);
+    var app = angular.module("appRoutes", ['ngRoute','authServices']);
 
     app.config(function ($routeProvider, $locationProvider) {
 
@@ -9,10 +9,14 @@
                 templateUrl: '../views/pages/login.html',
                 controller: 'loginCtrl',
                 name: "QLH | HOME",
-                resolve: {
-                    init: function ($route) {
+                resolve : {
+                        //This function is injected with the AuthService where you'll put your authentication logic
+                        'auth' : function(Auth){
+                            console.log(Auth.isLoggedIn())
+                            return Auth.isLoggedIn();
+                        }
                     }
-                }
+                
             })
             .when('/forms', {
                 templateUrl: '../views/pages/forms.html',
@@ -243,11 +247,12 @@
 
 
     })
+   
 
-    app.run(['$rootScope', '$location', function ($rootScope, $location, $routeUpdate, $routeParams) {
+    app.run(['$rootScope', '$location','Auth', function ($rootScope, $location, $routeUpdate, $routeParams,Auth) {
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
-          
+          console.log( Auth)
 
         });
 

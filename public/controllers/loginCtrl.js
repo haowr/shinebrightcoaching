@@ -9,6 +9,9 @@
 
     app.controller('loginCtrl', function ($scope, Auth, $timeout, $location, $rootScope,$window) {
 
+        console.log(Auth.isLoggedIn())
+
+
         $rootScope.payPeriod    = false;
         $scope.successfulLogin  = false;
         $scope.failedLogin      = false;
