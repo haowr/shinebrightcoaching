@@ -242,39 +242,47 @@ background-repeat:no-repeat;">
                             <div ng-show = "currentUserBookingsArray[currentBooking].completed" ng-class = "{'grey':currentUserBookingsArray[currentBooking].completed,'lighten-4': currentUserBookingsArray[currentBooking].completed}" 
                                  class = "col s8 animated fadeIn" style = "border:2px solid grey;">
         
-                                <div ng-show = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
-                                     class="row center-align">
+                                 <div ng-show= "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" class= "row center-align">
         
-                                    <div class="row"></div>
+                                    <div class= "row"></div>
+                                    <div class= "row"></div>
         
-                                    <div class="col s12 center-align">
-        
-                                        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                    <div class= "col s12 center-align">
+                                        <br>
+                                        <i class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
         
                                     </div>
         
+                                    <div class= "row"></div>
+                                    <div class= "row"></div>
+        
+        
                                 </div>
         
-                                <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
-                                     class="row center-align">
+                                <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                                     class= "row center-align">
         
-                                    <div class="row">
+                                    <div class= "row">
         
-                                        <div class="col s4"></div>
-                                        <div class="col s4"></div>
-                                        <div class="col s4">
-        
-                                            <i ng-show="currentUserBookingsArray[currentBooking].completed" class="material-icons green-text" 
-                                               style="font-size:35px; text-decoration:underline;">done</i>
-        
-                                            <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons animated pulse infinite"
-                                               style="font-size:30px; text-decoration:underline;">priority_high</i>
+                                        <div ng-click= "markAsNotCompleted(currentBooking)">
                                             
+                                        <div class = "row"></div>
+                                        <div class = "col s2"></div>
+                                        <div class= "col s8 center-align"><span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
+        
+                                            {{currentUserBookingsArray[currentBooking].date}}
+    
+                                        </span></div>
+                                        <div class= "col s2">
+                                        
+                                            <i ng-show= "currentUserBookingsArray[currentBooking].completed" class="material-icons green-text"
+                                                style= "font-size:23px; text-decoration:underline;">check</i>
+        
                                         </div>
         
-                                        <div class='col s12' ng-click = "markAsNotCompleted(currentBooking)" >
+                                        <div class= 'col s12 center-align'>
         
-                                            <p class="montserrat animated fadeIn" style= "font-size:20px;">
+                                            <p class= "montserrat animated fadeIn" style= "font-size:20px;">
         
                                                 {{currentUserBookingsArray[currentBooking].appointmentType}}
         
@@ -282,47 +290,27 @@ background-repeat:no-repeat;">
         
                                             <p class= "montserrat animated fadeIn" style= "font-size:20px;">
         
-                                                {{currentUserBookingsArray[currentBooking].date}}
+                                                {{currentUserBookingsArray[currentBooking].time}}
         
                                             </p>
+                                            <p class= "montserrat flow-text" >( Tap To Mark As Incomplete )</p>
+
         
-                                            <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
-                                                {{bookings[currentBooking].time}}
-                                            </span>
+                                            
         
-        
-                                            <div class= "col s12 center-align">
-        
-                                                <p class= "montserrat flow-text" >( Tap To Mark As Completed )</p>
-        
-                                            </div>
-        
-                                        </div>
-        
-        
-                                            <div class= "col s12 center-align">
-        
-                                                
-                                                    <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+                                        
         
         
         
-                                            </div>            
-        
-                                    </div>
-        
-                                    <div class= "center-align" ng-show= "bookings.length <1 && !loadingClientBookings">
-        
-                                        <p class= "montserrat blue-grey-text">There Are No Bookings Yet</p>
-        
-                                        <div ng-show= "loadingAmountPending">
-        
-                                            <i style= "font-size:17px;" class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
         
                                         </div>
-                                        <div ng-show= "!loadingAmountPending">
+                                        
+                                    
+                                        </div>
         
-                                            <i class= "material-icons">clear</i>
+                                        <div class= "col s12 center-align">
+        
+                                            <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
         
                                         </div>
         
@@ -330,48 +318,33 @@ background-repeat:no-repeat;">
         
                                 </div>
         
-                                <div ng-show ="!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" 
-                                    class= "row center-align">
+                                <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" class= "row center-align">
         
                                 <div class= "row">
         
-                                
-                                    <div class= 'col s12'>
+                                    <div class= 'col s12' >
         
+                                        <div class= "row"></div>
                                         <div class= "row"></div>
         
                                         <div class= "col s12 center-align">
         
-                                            <p class= "montserrat flow-text" style= "font-size:17px;">( No Bookings Yet! )</p>
+                                            <p ng-class= "{'shake': shake}" class= "montserrat animated flow-text" >( No Bookings )</p>
+                                            
         
                                         </div>
         
                                     </div>
         
-        
-                                        <div class= "col s12 right-align">
-        
-                                            <div class= "col s6">
-        
-        
-        
-                                            </div>
-                                            <div class= "col s6">
-        
-                                                <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
-        
-        
-                                            </div>
-        
-                                        </div>            
+                                </div>
         
                                 </div>
         
                             </div>
         
-                            </div>
-        
                         </a>
+
+                        
         
                         <a href= "#" class= "black-text" onclick= "return false;">
         
@@ -445,7 +418,7 @@ background-repeat:no-repeat;">
         
                                         <div class= "col s12 center-align">
         
-                                            <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE?f</button>
+                                            <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
         
                                         </div>
         
