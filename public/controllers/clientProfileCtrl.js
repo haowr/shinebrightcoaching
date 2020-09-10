@@ -12,7 +12,11 @@
         if(!Auth.isLoggedIn()){
 
             $location.path('/')
+            $rootScope.loggedIn = false;
 
+        }else{
+
+            $rootScope.loggedIn = true;
         }
 
         $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
