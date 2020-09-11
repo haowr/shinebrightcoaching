@@ -142,7 +142,10 @@
 
                         if($scope.currentUserBookingsArray.length == 0){
 
-                            $scope.shake            = true;
+                            console.log("Should be here...")
+
+                            $scope.shake                    = true;
+                            $scope.currentBookingTitle      = 0;
                             $scope.shinebrighterror.play()
 
                             $timeout(function(){
