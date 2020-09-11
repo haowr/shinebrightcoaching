@@ -139,15 +139,7 @@
                     }
                 }
             })
-            .when('/services', {
-                templateUrl: '../views/pages/services.html',
-                name: "QLH | SERVICES",
-                resolve: {
-                    init: function ($route) {
-                        console.log("index")
-                    }
-                }
-            })
+          
             .when('/register', {
                 templateUrl: '../views/pages/register.html',
                 name: "QLH | SERVICES",
@@ -171,25 +163,6 @@
                 }
             })
 
-
-            .when('/forgotpassword', {
-                templateUrl: '../views/pages/forgotpassword.html',
-                name: "QLH | FORGOT PASSWORD",
-                controller: "passwordCtrl",
-                controllerAs: 'password',
-                resolve: {
-                    init: function ($route) {
-                        console.log("index")
-                    }
-                }
-            })
-            .when('/reset/:token', {
-                templateUrl: '../views/pages/newpassword.html',
-                controller: 'resetCtrl',
-                controllerAs: 'reset',
-                name: "HOJ | Change Password",
-                authenticated: false
-            })
             .when('/messages', {
                 templateUrl: '../views/pages/messagepage.html',
                 name: "QLH | PROFILE",
@@ -206,20 +179,6 @@
             })
             .when('/scheduledjobpage', {
                 templateUrl: '../views/pages/scheduledjobpage.html',
-                name: "QLH | PROFILE",
-                controller: "profileCtrl",
-                controllerAs: 'profile'
-
-            })
-            .when('/profile/:userid', {
-                templateUrl: '../views/pages/profile.html',
-                name: "QLH | PROFILE",
-                controller: "profileCtrl",
-                controllerAs: 'profile'
-
-            })
-            .when('/profile', {
-                templateUrl: '../views/pages/profile.html',
                 name: "QLH | PROFILE",
                 controller: "profileCtrl",
                 controllerAs: 'profile'
