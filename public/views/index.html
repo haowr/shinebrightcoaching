@@ -4,6 +4,7 @@ background-size:fill;
 background-repeat:no-repeat;">
 
 <head>
+
   <title ng-bind="title">Shine Bright Coaching</title>
   <base href="/">
 
@@ -59,34 +60,45 @@ background-repeat:no-repeat;">
   <script type="text/javascript" src="../services/authServices.js"></script>
 
 </head>
+
+<!-- DESKTOP NAV BAR -->
+
 <div class = "hide-on-small-only">
 
 <div class="navbar-fixed ">
+
   <nav class="blue-grey nav-center nav-small" style="border:1px solid black; opacity:.8;">
+
     <div class="nav-wrapper">
+
       <div data-activates="mobile-demo" class="button-collapse">
+
         <a href="#" class="animated fadeIn"><img src="../img/bannerstr.svg" style="height:200px;width:200px;"></a>
+
       </div>
+
       <ul class="right hide-on-med-and-down animated fadeIn">
 
-        <li ng-show="loggedIn ||!loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
-        <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat underline" style="font-size:25px;" href="/packages">Packages</a></li>
-        <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/testimonials">Testimonials</a></li>
-        <li ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/register">Register</a></li>
-        <li ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
-        <li ng-show="loggedIn && userClass == 'employee'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
-        <li ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
-        <li ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
-        <li ng-show="loggedIn &&intake"><a class="white-text montserrat" style="font-size:25px;" href="/viewintake">Intake Form</a></li>
-        <li ng-show="loggedIn && wellness"><a class="white-text" style="font-size:25px;" href="/viewwellnessintake">Add/View Wellness Intake</a></li>
-        <li ng-show="loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
-        <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/about">About</a></li>
-        <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
+        <li ng-click="error()" ng-show="loggedIn ||!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Home</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat underline" style="font-size:25px;" href="#">Packages</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Testimonials</a></li>
+        <li ng-click="error()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Register</a></li>
+        <li ng-click="select()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'employee'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" href="#">Forms</a></li>
+        <li ng-click="error()" ng-show="loggedIn &&intake"><a class="white-text montserrat" style="font-size:25px;" href="#">Intake Form</a></li>
+        <li ng-click="error()" ng-show="loggedIn && wellness"><a class="white-text" style="font-size:25px;" hhref="#">Add/View Wellness Intake</a></li>
+        <li ng-click="select()" ng-show="loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">About</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Contact</a></li>
 
       </ul>
 
     </div>
+
   </nav>
+
   <ul class="side-nav " id="mobile-demo">
 
         <li ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
@@ -103,15 +115,16 @@ background-repeat:no-repeat;">
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/about">About</a></li>
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
 
-
-
-
   </ul>
 
-
 </div>
 
 </div>
+
+<!-- DESKTOP NAV BAR -->
+
+<!-- MOBILE NAV BAR-->
+
 <div class= "hide-on-med-and-up" >
 
   <div class="navbar-fixed ">
@@ -121,23 +134,16 @@ background-repeat:no-repeat;">
       <div class="nav-wrapper">
         
         <div data-activates="mobile-demo2" class="button-collapse">
+
           <a href="#" class="animated fadeIn"><img src="../img/bannerstr.svg" style="height:50px;width:50px;"></a>
+
         </div>
-        <ul class="right hide-on-med-and-down animated fadeIn">
+
+        <ul class="right  animated fadeIn">
   
-          <li ng-show="loggedIn ||!loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat underline" style="font-size:25px;" href="/packages">Packages</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/testimonials">Testimonials</a></li>
-          <li ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/register">Register</a></li>
-          <li ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
-          <li ng-show="loggedIn && userClass == 'employee'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
-          <li ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
-          <li ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
-          <li ng-show="loggedIn &&intake"><a class="white-text montserrat" style="font-size:25px;" href="/viewintake">Intake Form</a></li>
-          <li ng-show="loggedIn && wellness"><a class="white-text" style="font-size:25px;" href="/viewwellnessintake">Add/View Wellness Intake</a></li>
-          <li ng-show="loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/about">About</a></li>
-          <li ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
+          <li ng-click="error()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:22px;" href="/login">Login</a></li>
+          <li ng-click="error()" ng-show="loggedIn && userClass == 'employee'"><a class="white-text montserrat" style="font-size:22px;" ng-href="/clientprofile">Profile</a></li>
+          <li ng-click="error()" ng-show="loggedIn"><a class="white-text montserrat" style="font-size:22px;" ng-click="logOut()">Logout</a></li>
   
         </ul>
   
@@ -168,6 +174,9 @@ background-repeat:no-repeat;">
   </div>
   
 </div>
+
+<!-- MOBILE NAV BAR-->
+
 
 
 <div ng-view >
@@ -262,7 +271,6 @@ background-repeat:no-repeat;">
  
 
 </div>
-
 
 <div id="modal2" class="modal" style="border:2px solid black;">
 

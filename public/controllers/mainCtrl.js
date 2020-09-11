@@ -41,6 +41,11 @@
             $scope.shinebrighterror.play()
 
        }
+       $scope.select                 = function(){
+
+        $scope.shinebrighttap.play()
+
+      }
        $scope.openWellnessCoach     = function(){
 
            $scope.wellnessCoach         = true;
