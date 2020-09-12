@@ -9,7 +9,6 @@
 
     app.controller('loginCtrl', function ($scope, Auth, $timeout, $location, $rootScope,$window) {
 
-        console.log(Auth.isLoggedIn())
 
 
         $scope.successfulLogin              = false;
