@@ -12,11 +12,12 @@
         console.log(Auth.isLoggedIn())
 
 
-        $rootScope.payPeriod    = false;
-        $scope.successfulLogin  = false;
-        $scope.failedLogin      = false;
-        $scope.loading          = false;
-        $scope.fadein           = false;
+        $scope.successfulLogin              = false;
+        $scope.failedLogin                  = false;
+        $scope.loading                      = false;
+        $scope.fadein                       = false;
+        $scope.errorMsg                     = false;
+
         $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
         $scope.shinebrighterror             = new Audio("../audio/shinebrighterror.wav");
         $scope.shinebrightloading           = new Audio('../audio/shinebrightloading.wav');
@@ -24,7 +25,6 @@
         $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
     
 
-        $scope.errorMsg         = false;
       
         $scope.openModal = function () {
 
@@ -52,7 +52,6 @@
                     $rootScope.payPeriodIcon    = true;
                     $scope.fadein               = true;
                     $scope.successfulLogin      = true;
-                    $rootScope.payPeriod        = data.data.user.payperiodnum;
 
                     $scope.shinebrightsuccess.play()
                     $window.localStorage.setItem('_id', data.data.user._id)
