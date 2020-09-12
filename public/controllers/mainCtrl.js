@@ -8,33 +8,18 @@
 
     app.controller('mainCtrl', function ($scope,  $timeout, $location,  $rootScope,   $window,Auth) {
 
-       $scope.shineHomeOpen         = true;
-       $scope.imageNumber           = 0
-       $scope.slideout              = false;
-       $scope.fadeinwelcome         = false;
-       $scope.slideinrightwelcome   = false;
-       $scope.slideinleftwelcome    = true;
-       $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
-       $scope.shinebrighterror             = new Audio("../audio/shinebrighterror.wav");
-       $scope.shinebrightloading           = new Audio('../audio/shinebrightloading.wav');
-       $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
-       $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
+       $scope.shineHomeOpen                 = true;
+       $scope.slideout                      = false;
+       $scope.fadeinwelcome                 = false;
+       $scope.slideinrightwelcome           = false;
+       $scope.slideinleftwelcome            = true;
 
-       $timeout(function(){
+       $scope.audio                         = new Audio("../audio/shinebrightclick.wav")
+       $scope.shinebrighterror              = new Audio("../audio/shinebrighterror.wav");
+       $scope.shinebrightloading            = new Audio('../audio/shinebrightloading.wav');
+       $scope.shinebrightsuccess            = new Audio('../audio/shinebrightsuccess.wav');
+       $scope.shinebrighttap                = new Audio('../audio/shinebrighttap.wav');
 
-           $scope.slideinrightwelcome   = true;
-
-       },1000)
-
-       $timeout(function(){
-
-           $scope.fadeinwelcome         = true;
-
-       },2000)
-
-
-       $scope.lifeCoach                 = false;
-       $scope.wellnessCoach             = false;
 
        $scope.error                 = function(){
 
@@ -46,44 +31,12 @@
         $scope.shinebrighttap.play()
 
       }
-       $scope.openWellnessCoach     = function(){
 
-           $scope.wellnessCoach         = true;
-
-       }
-       $scope.closeWellnessCoach    = function(){
-
-           $scope.wellnessCoach         = false;
-
-       }
-
-       $scope.openLifeCoach         = function(){
-
-           $scope.lifeCoach             = true;
-
-       }
-        $scope.closeLifeCoach       = function(){
-
-           $scope.lifeCoach             = false;
-
-       }
-       $scope.changeImageNumber     = function(){
-
-           if($scope.imageNumber < 7){
-
-                $scope.imageNumber++
-
-           }else{
-
-               $scope.imageNumber = 0
-
-            }
-          
-       }
   
         $scope.logOut = function(){
 
             Auth.logout();
+            $scope.loggedIn = false;
             $location.path('/')
             
         }
