@@ -84,8 +84,13 @@ UserSchema.methods.comparePassword = function(password){
     console.log("oy")
     console.log(password, this.password)
     console.log(typeof password)
-    var passwordPlain = password.toString()
-    return bcrypt.compareSync(password,this.password);
+    //if(password){
+
+       // var passwordPlain = password.toString()
+        return bcrypt.compareSync(password,this.password);
+
+
+ 
 
 }
 //var Model = mongoose.model('User', UserSchema);
