@@ -6134,19 +6134,18 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
                                 data.data.date[hour].state[1]           = 2;
                                 data.data.date[hour].state[2]           = 2;
                                 data.data.date[hour].state[3]           = 2;
                                 data.data.date[hour].state[4]           = 2;
                                 data.data.date[hour].state[5]           = 2;
-                                data.data.date['ten'].state[0]         = 2;
+                                //data.data.date['ten'].state[0]          = 2;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
-                                $scope.dateData.nexthour                = 'ten'
-                                $scope.dateData.dateInfoNextHour        = data.data.date['ten'].state
+                                //$scope.dateData.nexthour                = 'ten'
+                                //$scope.dateData.dateInfoNextHour        = data.data.date['ten'].state
 
-                                User.updateDateNextHour($scope.dateData).then(function (data) {
+                                User.updateDate($scope.dateData).then(function (data) {
 
                                     $scope.dateDataForUser.date = $scope.currentDate;
 
@@ -6220,19 +6219,19 @@
                             
                             if (hour == 'ten') {
 
-                                data.data.date[hour].state[0]           = 2;
+                                //data.data.date[hour].state[0]           = 2;
                                 data.data.date[hour].state[1]           = 2;
                                 data.data.date[hour].state[2]           = 2;
                                 data.data.date[hour].state[3]           = 2;
                                 data.data.date[hour].state[4]           = 2;
                                 data.data.date[hour].state[5]           = 2;
-                                data.data.date['ten'].state[0]          = 2;
+                               // data.data.date['ten'].state[0]          = 2;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
-                                $scope.dateData.nexthour                = 'ten'
-                                $scope.dateData.dateInfoNextHour        = data.data.date['ten'].state
+                                //$scope.dateData.nexthour                = 'ten'
+                                //$scope.dateData.dateInfoNextHour        = data.data.date['ten'].state
 
-                                User.updateDateNextHour($scope.dateData).then(function (data) {
+                                User.updateDate($scope.dateData).then(function (data) {
 
                                     $scope.dateDataForUser.date = $scope.currentDate;
 
