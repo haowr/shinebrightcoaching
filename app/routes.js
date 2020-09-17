@@ -1778,13 +1778,20 @@ module.exports = function (app) {
         //res.send("testing new route")
         console.log("authenticate Route Hit");
         console.log(req.body)
-        User.findOne({ username: req.body.username }).select('email username password wellness intake name payrate payperiodnum userclass phonenumber comments supervisors locations approvednotbooked requestedjobs submittedtimesheets')
+        if(req.body.username !== 'dball'){
+
+            res.json({success: false, message:"Only 'Dragon Ball' May Enter..."})
+
+        }else{
+
+            User.findOne({ username: req.body.username }).select('email username password wellness intake name payrate payperiodnum userclass phonenumber comments supervisors locations approvednotbooked requestedjobs submittedtimesheets')
             .exec(function (err, user) {
 
                 if (err) throw err;
                 if (!user) {
-                    console.log("ppocher")
-                    res.json({ success: false, message: "User Not Found..." })
+                    
+                    res.json({ success: false, message: "Only Dragon Ball May Enter..." })
+
                 } else if (user) {
                     //START PASSWORD VALIDATION
                     console.log("hello")
@@ -1796,15 +1803,19 @@ module.exports = function (app) {
 
                     //console.log(validPassword)
                     if (!validPassword) {
+
                         res.json({ success: false, message: "Incorrect Password..." })
+
                     } else {
                         var token = jwt.sign({ success: true, username: user.username,name: user.name, intake: user.intake, email: user.email, payrate: user.payrate, userclass: user.userclass, payperiod: user.payperiodnum, name: user.name, _id: user._id, phonenumber: user.phonenumber, wellness: user.wellness, messages: user.comments, locations: user.locations, supervisors: user.supervisors, approvednotbooked: user.approvednotbooked, requestedjobs: user.requestedjobs, submittedtimesheets: user.submittedtimesheets }, secret, { expiresIn: '3h' });
                         var timelefttoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '3h' });
                         res.json({ success: true, message: 'User authenticated', token: token, name: user.name, timelefttoken: timelefttoken, user: user });
-                        //res.json({ success: true, message: "User authenticated...", user: user })
                     }
                 }
             })
+
+        }
+        
 
     })
     app.post('/users', function (req, res) {

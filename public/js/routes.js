@@ -12,7 +12,7 @@
                 resolve : {
                         //This function is injected with the AuthService where you'll put your authentication logic
                         'auth' : function(Auth){
-                            console.log(Auth.isLoggedIn())
+                           // console.log(Auth.isLoggedIn())
                             return Auth.isLoggedIn();
                         }
                     }
@@ -211,7 +211,7 @@
     app.run(['$rootScope', '$location','Auth', function ($rootScope, $location, $routeUpdate, $routeParams,Auth) {
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
-          console.log( Auth)
+          //console.log( Auth)
 
         });
 
