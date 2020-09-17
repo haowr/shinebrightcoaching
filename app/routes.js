@@ -1789,28 +1789,34 @@ module.exports = function (app) {
 
                 if (err) throw err;
                 if (!user) {
-                    
+
                     res.json({ success: false, message: "Only Dragon Ball May Enter..." })
 
                 } else if (user) {
                     //START PASSWORD VALIDATION
                     console.log("hello")
-                    var validPassword = user.comparePassword(req.body.password)
+                    if(req.body.password){
 
-                    console.log("IS IT VALID?")
+                        var validPassword = user.comparePassword(req.body.password)
 
-                    console.log("validPassword", validPassword)
+                        if (!validPassword) {
 
-                    //console.log(validPassword)
-                    if (!validPassword) {
+                            res.json({ success: false, message: "Incorrect Password..." })
+    
+                        } else {
+                            var token = jwt.sign({ success: true, username: user.username,name: user.name, intake: user.intake, email: user.email, payrate: user.payrate, userclass: user.userclass, payperiod: user.payperiodnum, name: user.name, _id: user._id, phonenumber: user.phonenumber, wellness: user.wellness, messages: user.comments, locations: user.locations, supervisors: user.supervisors, approvednotbooked: user.approvednotbooked, requestedjobs: user.requestedjobs, submittedtimesheets: user.submittedtimesheets }, secret, { expiresIn: '3h' });
+                            var timelefttoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '3h' });
+                            res.json({ success: true, message: 'User authenticated', token: token, name: user.name, timelefttoken: timelefttoken, user: user });
+                        }
 
-                        res.json({ success: false, message: "Incorrect Password..." })
+                    }else{
 
-                    } else {
-                        var token = jwt.sign({ success: true, username: user.username,name: user.name, intake: user.intake, email: user.email, payrate: user.payrate, userclass: user.userclass, payperiod: user.payperiodnum, name: user.name, _id: user._id, phonenumber: user.phonenumber, wellness: user.wellness, messages: user.comments, locations: user.locations, supervisors: user.supervisors, approvednotbooked: user.approvednotbooked, requestedjobs: user.requestedjobs, submittedtimesheets: user.submittedtimesheets }, secret, { expiresIn: '3h' });
-                        var timelefttoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '3h' });
-                        res.json({ success: true, message: 'User authenticated', token: token, name: user.name, timelefttoken: timelefttoken, user: user });
+                        res.json({success: false, message: "Password Must Not Be Empty..."})
+
                     }
+
+                
+                   
                 }
             })
 
