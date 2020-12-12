@@ -83,8 +83,10 @@
 
                             $scope.fadein           = false;
                             $scope.successfulLogin  = false;
-
-                            $location.path('/clientprofile/')
+                            $rootScope.loggedIn     = true;
+                            console.log($rootScope.loggedIn)
+                            $window.location.href = "/clientprofile";
+                            //$location.path('/clientprofile/')
  
                         }, 3000)
 
@@ -94,7 +96,7 @@
 
                             $scope.fadein           = false;
                             $scope.successfulLogin  = false;
-
+                            $rootScope.loggedIn     = true;
                             $location.path('/management')
 
                         }, 3000)

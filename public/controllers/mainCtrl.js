@@ -13,6 +13,7 @@
        $scope.fadeinwelcome                 = false;
        $scope.slideinrightwelcome           = false;
        $scope.slideinleftwelcome            = true;
+       
 
        $scope.audio                         = new Audio("../audio/shinebrightclick.wav")
        $scope.shinebrighterror              = new Audio("../audio/shinebrighterror.wav");
@@ -78,7 +79,8 @@
         })
         $rootScope.$on('$routeChangeStart', function () {
 
-            $rootScope.loggedIn     = Auth.isLoggedIn()           
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+            console.log("AUth.loggedIn", Auth.isLoggedIn())       
             $rootScope.userClassy   = $rootScope.userClass
 
             Auth.getUser().then(function (data) {

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="qlc" ng-controller="mainCtrl" style="background-image:url('../css/ShineBrightScheduleBackground.jpg');
-background-size:cover;
-background-repeat:no-repeat;" >
+<html ng-app="qlc" ng-controller="mainCtrl"   >
 
 <head>
 
@@ -107,7 +105,6 @@ background-repeat:no-repeat;" >
         <li ng-show="loggedIn && userClass == 'employee'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
         <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
         <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
-        <li ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/viewintake">Intake Form</a></li>
         <li ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="/viewwellnessintake">Add/View Wellness Intake</a></li>
         <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
         <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/about">About</a></li>
@@ -158,12 +155,9 @@ background-repeat:no-repeat;" >
           <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Forms</a></li>
           <li ng-click="error()"ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Intake</a></li>
           <li ng-click="error()"ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="#">Wellness</a></li>
-          <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
+          <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout!!!!!!!!!!!!!!!!!</a></li>
           <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">About</a></li>
           <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Contact</a></li>
-  
-  
-  
   
     </ul>
   
@@ -173,8 +167,10 @@ background-repeat:no-repeat;" >
 </div>
 
 <!-- MOBILE NAV BAR-->
-
-<div class="container">
+<body style="background-image:url('../css/ShineBrightScheduleBackground.jpg');
+background-size:cover;
+">
+<div class="container" >
   <div class = "row">
   
       <div ng-view  >
@@ -182,6 +178,7 @@ background-repeat:no-repeat;" >
 
   </div>
 </div>
+</body>
 
 
 
@@ -275,14 +272,14 @@ background-repeat:no-repeat;" >
 
 </div>
 
-<div id="modal2" class="modal" style="border:2px solid black;">
+<div id="modal2" class="modal" style="border:4px solid black; border-radius:5%; width:300px;">
 
   <div class = "row"></div>
   <div class = "row"></div>
 
   <div class = "row">
 
-    <div class = 'col s12 center-align red lighten-4'>
+    <div class = 'col s12 center-align red lighten-4' style="border-top:2px solid black; border-bottom:2px solid black;">
 
       <div class = "row"></div>
 
@@ -294,7 +291,7 @@ background-repeat:no-repeat;" >
 
         </div>
          
-        <div class = "col s8 center-align" style="border:2px solid black;">
+        <div class = "col s8 center-align" style="border:2px solid white;">
 
             <p class = "montserrat flow-text">
 
@@ -315,7 +312,7 @@ background-repeat:no-repeat;" >
       </div>
      
     <div class="modal-footer red lighten-4">
-      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat white">Ok</a>
+      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat black white-text">Ok</a>
     </div>
     </div>
 
