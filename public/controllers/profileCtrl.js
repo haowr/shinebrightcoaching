@@ -5890,6 +5890,8 @@
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
 
+                                console.log("Date Date", $scope.dateData)
+
                                 User.updateDate($scope.dateData).then(function (data) {
 
                                     $scope.dateDataForUser.date = $scope.currentDate;

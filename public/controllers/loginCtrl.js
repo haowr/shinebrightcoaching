@@ -35,7 +35,7 @@
 
         $scope.loginUser = function (loginData, valid) {
 
-        
+
             $scope.failedLogin      = false;
             $scope.fadein           = true;
             $scope.succesfulLogin   = false;
@@ -44,6 +44,7 @@
             $scope.shinebrightloading.play()
 
             Auth.login(this.loginData).then(function (data) {
+                console.log("SUCCESS")
 
                 if (data.data.success) {
 
@@ -55,7 +56,6 @@
                     $scope.shinebrightsuccess.play()
                     $window.localStorage.setItem('_id', data.data.user._id)
                     $window.localStorage.setItem('intakeId', data.data.user._id)
-
 
                     if ( data.data.user.userclass == "admin" ) {
 

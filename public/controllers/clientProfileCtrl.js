@@ -223,6 +223,8 @@
 
                         if($scope.currentUserBookingsArray.length > 0){
 
+                            $scope.loadingBookingDeletion   = false;
+                            $scope.shake                    = true;
                             $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length;
                             $scope.currentBooking           = $scope.currentUserBookingsArray.length - 1;
 

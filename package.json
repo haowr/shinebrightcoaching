@@ -17,7 +17,8 @@
     "hogan.js": "^3.0.2",
     "html-pdf": "^2.2.0",
     "jsonwebtoken": "^8.2.1",
-    "mongoose": "^4.6.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.7.0",
     "mongoose-title-case": "0.0.4",
     "mongoose-validator": "^2.0.2",
     "nexmo": "^2.3.0",
@@ -25,7 +26,8 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^1.19.4",
     "rasterizehtml": "^1.3.0",
-    "textbelt": "0.0.4"
+    "textbelt": "0.0.4",
+    "update-mongo": "0.0.4"
   },
   "devDependencies": {
     "jest": "^22.4.3"
