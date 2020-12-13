@@ -2,11 +2,13 @@
      display: flex;
      min-height: 100vh;
      flex-direction: column;
-     background-image:url('./ShineBrightScheduleBackground.jpg');
-     background-size:cover;
-     background-repeat:no-repeat;
+  
         
-     
+     background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
  
 
  }
