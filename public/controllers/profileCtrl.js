@@ -218,6 +218,10 @@
         $scope.booked1231           = false;
         $scope.booked1226           = false;
 
+        $scope.checkUpAvailable8    = true;
+        $scope.sessionAvailable8    = true;
+        $scope.discoveryAvailable8  = true;
+
         $scope.discovery800AMNoRoom = false;
         $scope.discovery810AMNoRoom = false;
         $scope.discovery820AMNoRoom = false;
