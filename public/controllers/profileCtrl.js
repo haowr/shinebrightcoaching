@@ -5111,12 +5111,14 @@
 
                                 }
                                 if ($scope.discoveryData.time == "9:40am") {
-
+        
                                     $scope.dateDataForUser.time = "9:40am - 10:10am"
                                     $scope.dateDataForUser.hour = "nine";
                                     $scope.dateDataForUser.slot = 4;
-
+    
                                 }
+    
+         
 
                                 $scope.dateDataForUser.appointmentType  = "Discovery!";
                                 $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
@@ -5184,18 +5186,11 @@
 
                                 }, 1000)
 
-                                if ($scope.discoveryData.time == "8:50am") {
+                                if ($scope.discoveryData.time == "9:40am") {
 
-                                    $scope.dateDataForUser.time = "8:50am - 9:20am"
-                                    $scope.dateDataForUser.hour = "eight";
-                                    $scope.dateDataForUser.slot = 5;
-
-                                }
-                                if ($scope.discoveryData.time == "9:50am") {
-
-                                    $scope.dateDataForUser.time = "9:50am - 10:20am"
+                                    $scope.dateDataForUser.time = "9:40am - 10:10am"
                                     $scope.dateDataForUser.hour = "nine";
-                                    $scope.dateDataForUser.slot = 5;
+                                    $scope.dateDataForUser.slot = 4;
 
                                 }
 
@@ -5282,12 +5277,33 @@
                                     }
 
                                 }, 1000)
+                                
+                                if ($scope.discoveryData.time == "8:50am") {
+
+                                    $scope.dateDataForUser.time = "8:50am - 9:20am"
+                                    $scope.dateDataForUser.hour = "eight";
+                                    $scope.dateDataForUser.slot = 5;
+
+                                }
+
+                                $scope.dateDataForUser.appointmentType = "Discovery!";
+                                $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                
+                                User.addBooking($scope.dateDataForUser).then(function (data) {
+
+                                    if (data.data.user.calender["88"][22]) {
+        
+                                        $scope.booked1222 = true;
+
+                                    }
+                            
+                                })
 
                             })
                         }
-                        if (hour == 'nine' && data.data.date['nine'].state[0] === 0) {
+                        if (hour == 'nine' ) {
 
-                            $scope.hourPlusOne = 'nine'
+                            $scope.hourPlusOne = 'ten'
                             data.data.date[$scope.hourPlusOne].state[0] = 2
 
                             $scope.dateData.dateInfo            = data.data.date[hour].state
@@ -5297,10 +5313,11 @@
                             User.updateDateNextHour($scope.dateData).then(function (data) {
 
                                 $scope.dateDataForUser.date = $scope.currentDate;
+                                console.log("NINER")
 
                                 $timeout(function () {
 
-                                    if (data.data.date[hour].state[4] === 2) {
+                                    if (data.data.date[hour].state[5] === 2) {
 
                                         $scope.bookDiscovery39 = false;
 
@@ -5327,6 +5344,26 @@
                                     }
 
                                 }, 1000)
+                                if ($scope.discoveryData.time == "9:50am") {
+
+                                    $scope.dateDataForUser.time = "9:50am - 10:20am"
+                                    $scope.dateDataForUser.hour = "nine";
+                                    $scope.dateDataForUser.slot = 5;
+
+                                }
+
+                                $scope.dateDataForUser.appointmentType = "Discovery!";
+                                $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                
+                                User.addBooking($scope.dateDataForUser).then(function (data) {
+
+                                    if (data.data.user.calender["88"][22]) {
+        
+                                        $scope.booked1222 = true;
+
+                                    }
+                            
+                                })
 
                             })
                         }
@@ -5943,7 +5980,7 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "8:00am") {
+                                    if ($scope.sessionData.time == "8:00am") {
 
                                         $scope.dateDataForUser.time = "8:00am - 8:50am"
                                         $scope.dateDataForUser.hour = "eight";
@@ -6026,7 +6063,7 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "9:00am") {
+                                    if ($scope.sessionData.time == "9:00am") {
 
                                         $scope.dateDataForUser.time = "9:00am - 9:50am"
                                         $scope.dateDataForUser.hour = "nine";
@@ -6134,7 +6171,7 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "8:10am") {
+                                    if ($scope.sessionData.time == "8:10am") {
 
                                         $scope.dateDataForUser.time = "8:10am - 9:00am"
                                         $scope.dateDataForUser.hour = "eight";
@@ -6226,11 +6263,11 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "9:20am") {
+                                    if ($scope.sessionData.time == "9:10am") {
 
-                                        $scope.dateDataForUser.time = "9:20am - 10:10am"
+                                        $scope.dateDataForUser.time = "9:10am - 10:00am"
                                         $scope.dateDataForUser.hour = "nine";
-                                        $scope.dateDataForUser.slot = 2;
+                                        $scope.dateDataForUser.slot = 1;
 
                                     }
 
@@ -6337,7 +6374,7 @@
 
                                     }, 1000)
 
-                                    if ($scope.discoveryData.time == "8:20am") {
+                                    if ($scope.sessionData.time == "8:20am") {
 
                                         $scope.dateDataForUser.time = "8:20am - 9:10am"
                                         $scope.dateDataForUser.hour = "eight";
@@ -6543,7 +6580,7 @@
 
                                     if ($scope.sessionData.time == "8:30am") {
 
-                                        $scope.dateDataForUser.time = "8:40am - 9:10am"
+                                        $scope.dateDataForUser.time = "8:30am - 9:20am"
                                         $scope.dateDataForUser.hour = "eight";
                                         $scope.dateDataForUser.slot = 4;
 
@@ -6636,9 +6673,9 @@
 
                                     }, 1000)
 
-                                    if ($scope.sessionData.time == "9:40am") {
+                                    if ($scope.sessionData.time == "9:30am") {
 
-                                        $scope.dateDataForUser.time = "9:40am - 10:10am"
+                                        $scope.dateDataForUser.time = "9:30am - 10:20am"
                                         $scope.dateDataForUser.hour = "nine";
                                         $scope.dateDataForUser.slot = 4;
 
