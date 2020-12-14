@@ -7226,6 +7226,7 @@
                     $scope.discovery830AMIsBooked   = true;
                     $scope.session830AMIsBooked     = true;
                     $scope.checkUp830AMIsBooked     = true;
+                    $scope.shinebrighterror.play()
 
                 }
 
