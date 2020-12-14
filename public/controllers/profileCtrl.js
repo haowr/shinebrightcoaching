@@ -7190,6 +7190,8 @@
                     $scope.discovery820AMIsBooked   = true;
                     $scope.session820AMIsBooked     = true;
                     $scope.checkUp820AMIsBooked     = true;
+                    $scope.shinebrighterror.play()
+
 
                 }
 
@@ -7266,6 +7268,7 @@
                     $scope.discovery840AMIsBooked   = true;
                     $scope.session840AMIsBooked     = true;
                     $scope.checkUp840AMIsBooked     = true;
+                    $scope.shinebrighterror.play()
 
                 }
 
@@ -7304,6 +7307,8 @@
                     $scope.discovery850AMIsBooked   = true;
                     $scope.session850AMIsBooked     = true;
                     $scope.checkUp850AMIsBooked     = true;
+                    $scope.shinebrighterror.play()
+
 
                 }
 
@@ -7342,7 +7347,7 @@
                     $scope.discovery800AMIsBooked   = true;
                     $scope.session800AMIsBooked     = true;
                     $scope.checkUp800AMIsBooked     = true;
-
+                    $scope.shinebrighterror.play()
                 }
 
             }

@@ -48,7 +48,7 @@
     
                         <div ng-show="!bookCheckUp8" ng-click="selectTime('8:00',true)" class = "col s4 center-align animated fadeIn" >
     
-                            <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
+                            <i class = "material-icons red-text animated" ng-class="{'shake':checkUp800AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
@@ -225,7 +225,7 @@
     
                         <div ng-show="!bookCheckUp28" ng-click="selectTime('8:20',true)" class = "col s4 center-align animated fadeIn" >
     
-                            <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
+                            <i class = "material-icons red-text animated" ng-class="{'shake':checkUp820AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
@@ -245,21 +245,7 @@
                                 <div class = "col s3"></div>
                                 <div class = "col s6" style="border:1px solid grey;"></div>
                                 <div class = "col s3"></div>
-                                <div class = "col s12">
-    
-                                    <br>
-        
-                                        <div class = "col s12">
-            
-                                            <div ng-show="checkUp820AMIsBooked" class = "col s12 red lighten-4" >
-            
-                                                <p class = "montserrat animated shake flow-text" > We're Sorry, This Slot Has Been Filled!</p>
-            
-                                            </div>
-            
-                                        </div>
-    
-                                </div>
+                   
     
                             </div>
                             
