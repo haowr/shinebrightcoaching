@@ -6177,6 +6177,10 @@
 
                                         if (data.data.date[hour].state[1] === 3) {
 
+
+                                            $scope.bookSession9 = false;
+
+                                            $timeout(function(){
                                           
                                             $scope.bookSession19 = false;
 
@@ -6211,6 +6215,8 @@
 
                                             }, 500)
 
+                                        },500)
+                                        
                                         }
 
                                     }, 1000)
