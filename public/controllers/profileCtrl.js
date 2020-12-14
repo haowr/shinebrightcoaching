@@ -5853,7 +5853,7 @@
 
         }else{
 
-            $scope.shienbrighterror.play()
+            $scope.shinebrighterror.play()
 
         }
 
