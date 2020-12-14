@@ -57,7 +57,6 @@
 
         })
         
-  
 
         $scope.audio                = new Audio("../audio/shinebrightclick.wav")
         $scope.shinebrighterror     = new Audio("../audio/shinebrighterror.wav");
@@ -1183,6 +1182,7 @@
                 User.getDate(id).then(function (data) {
 
                     $scope.dateInfo = data.data.date
+                    console.log($scope.dateInfo)
 
                     if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 0
                         && data.data.date['eight'].state[4] == 0 && data.data.date['eight'].state[5] == 0) {
