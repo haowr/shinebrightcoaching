@@ -5871,11 +5871,11 @@
                         $scope.sessionData.time == "2:00pm" || $scope.sessionData.time == "3:00pm") {
 
 
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2;
-                        $scope.dateInfo[2]      = 2;
-                        $scope.dateInfo[3]      = 2;
-                        $scope.dateInfo[4]      = 2;
+                        $scope.dateInfo[0]      = 3;
+                        $scope.dateInfo[1]      = 3;
+                        $scope.dateInfo[2]      = 3;
+                        $scope.dateInfo[3]      = 3;
+                        $scope.dateInfo[4]      = 3;
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = $scope.id;
 
@@ -5886,11 +5886,11 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
 
@@ -5902,7 +5902,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[0] === 2) {
+                                        if (data.data.date[hour].state[0] === 3) {
 
                                             $scope.bookSession8  = false;
 
@@ -5971,11 +5971,11 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
 
@@ -5985,7 +5985,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[0] === 2) {
+                                        if (data.data.date[hour].state[0] === 3) {
 
                                             $scope.bookSession9  = false;
 
@@ -6072,11 +6072,11 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
                                 //data.data.date['nine'].state[0]          = 2;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
@@ -6089,7 +6089,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[1] === 2) {
+                                        if (data.data.date[hour].state[1] === 3) {
 
 
                                             $scope.bookSession18 = false;
@@ -6158,11 +6158,11 @@
                             if (hour == 'nine') {
 
                                 //data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
                                // data.data.date['nine'].state[0]          = 2;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
@@ -6175,7 +6175,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[1] === 2) {
+                                        if (data.data.date[hour].state[1] === 3) {
 
                                           
                                             $scope.bookSession19 = false;
@@ -6262,13 +6262,13 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]         = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]         = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
                                 $scope.dateData.nexthour                = 'nine'
@@ -6280,7 +6280,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[4] === 2) {
+                                        if (data.data.date[hour].state[4] === 3) {
 
 
                                             $scope.bookSession8 = false;
@@ -6354,13 +6354,13 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]          = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]          = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
                                 $scope.dateData.nexthour                = 'nine'
@@ -6372,7 +6372,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[4] === 2) {
+                                        if (data.data.date[hour].state[4] === 3) {
 
                                             $scope.bookSession9 = false;
 
@@ -6465,14 +6465,14 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]         = 2;
-                                data.data.date['nine'].state[1]         = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]         = 3;
+                                data.data.date['nine'].state[1]         = 3;
 
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
@@ -6485,7 +6485,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[3] === 2) {
+                                        if (data.data.date[hour].state[3] === 3) {
 
                                             $scope.bookSession8 = false;
 
@@ -6560,14 +6560,14 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]          = 2;
-                                data.data.date['nine'].state[1]          = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]          = 3;
+                                data.data.date['nine'].state[1]          = 3;
 
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state
@@ -6580,7 +6580,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[4] === 2) {
+                                        if (data.data.date[hour].state[4] === 3) {
 
                                             $scope.bookSession9 = false;
 
@@ -6671,15 +6671,15 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]         = 2;
-                                data.data.date['nine'].state[1]         = 2;
-                                data.data.date['nine'].state[2]         = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]         = 3;
+                                data.data.date['nine'].state[1]         = 3;
+                                data.data.date['nine'].state[2]         = 3;
 
 
 
@@ -6693,7 +6693,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[3] === 2) {
+                                        if (data.data.date[hour].state[3] === 3) {
 
                                             $scope.bookSession8 = false;
 
@@ -6766,15 +6766,15 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[0]           = 2;
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]          = 2;
-                                data.data.date['nine'].state[1]          = 2;
-                                data.data.date['nine'].state[2]          = 2;
+                                data.data.date[hour].state[0]           = 3;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]          = 3;
+                                data.data.date['nine'].state[1]          = 3;
+                                data.data.date['nine'].state[2]          = 3;
 
 
 
@@ -6788,7 +6788,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[4] === 2) {
+                                        if (data.data.date[hour].state[4] === 3) {
 
                                             $scope.bookSession9 = false;
 
@@ -6880,16 +6880,16 @@
 
                             if (hour == 'eight') {
 
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]         = 2;
-                                data.data.date['nine'].state[1]         = 2;
-                                data.data.date['nine'].state[2]         = 2;
-                                data.data.date['nine'].state[3]         = 2;
-                                data.data.date['nine'].state[4]         = 2;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]         = 3;
+                                data.data.date['nine'].state[1]         = 3;
+                                data.data.date['nine'].state[2]         = 3;
+                                data.data.date['nine'].state[3]         = 3;
+                                data.data.date['nine'].state[4]         = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state;
                                 $scope.dateData.nexthour                = 'nine';
@@ -6901,13 +6901,13 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[5] === 2) {
+                                        if (data.data.date[hour].state[5] === 3) {
 
                                             $scope.bookSession8 = false;
 
                                             $timeout(function () {
 
-                                                if (data.data.date[hour].state[5] === 2) {
+                                                if (data.data.date[hour].state[5] === 3) {
         
                                                     $scope.bookSession18 = false;
         
@@ -6978,16 +6978,16 @@
                             
                             if (hour == 'nine') {
 
-                                data.data.date[hour].state[1]           = 2;
-                                data.data.date[hour].state[2]           = 2;
-                                data.data.date[hour].state[3]           = 2;
-                                data.data.date[hour].state[4]           = 2;
-                                data.data.date[hour].state[5]           = 2;
-                                data.data.date['nine'].state[0]          = 2;
-                                data.data.date['nine'].state[1]          = 2;
-                                data.data.date['nine'].state[2]          = 2;
-                                data.data.date['nine'].state[3]          = 2;
-                                data.data.date['nine'].state[4]          = 2;
+                                data.data.date[hour].state[1]           = 3;
+                                data.data.date[hour].state[2]           = 3;
+                                data.data.date[hour].state[3]           = 3;
+                                data.data.date[hour].state[4]           = 3;
+                                data.data.date[hour].state[5]           = 3;
+                                data.data.date['nine'].state[0]          = 3;
+                                data.data.date['nine'].state[1]          = 3;
+                                data.data.date['nine'].state[2]          = 3;
+                                data.data.date['nine'].state[3]          = 3;
+                                data.data.date['nine'].state[4]          = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state;
                                 $scope.dateData.nexthour                = 'nine';
@@ -6999,7 +6999,7 @@
 
                                     $timeout(function () {
 
-                                        if (data.data.date[hour].state[5] === 2) {
+                                        if (data.data.date[hour].state[5] === 3) {
 
                                             $scope.bookSession19 = false;
 

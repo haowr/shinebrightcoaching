@@ -65,7 +65,9 @@ module.exports = function (app) {
     })
     app.post('/users/deletebooking/', function(req,res){
 
-        console.log(req.body)        
+        console.log("LGALD")
+        console.log(req.body)
+
         User.findOne({_id:req.body.id}, function(err, user){
 
             if(err)throw err;
@@ -75,14 +77,14 @@ module.exports = function (app) {
                 res.json( {success: false, message:"User Not Found..."} )
 
             }else{
-
+                console.log(user)
                 if(!user.bookings[req.body.currentbooking].completed){
-
+                    console.log(user.bookings)
                     user.bookings.splice(user.bookings[req.body.currentbooking], 1)
                     user.calender["88"]["22"] = false;
 
                     User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
-
+                        console.log("EDFLSKJDLKFJKSLDJFLSDJLFJKLSDJFSD")
                         if(err)throw err;
 
                         if(!user){
@@ -417,6 +419,13 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:10am - 9:00am") {
+
+                                        if(date[req.body.hour].state[0] === 3 
+                                            ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                        
+                                         }
         
                                         date[req.body.hour].state[req.body.slot]     = 0;
                                         date[req.body.hour].state[req.body.slot +1]  = 0;
@@ -443,6 +452,13 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:10am - 10:00am") {
+
+                                        if(date[req.body.hour].state[0] === 3 
+                                        ){
+ 
+                                             date[req.body.hour].state[0] = 0
+ 
+                                         }
                 
                                         date[req.body.hour].state[req.body.slot]    = 0;
                                         date[req.body.hour].state[req.body.slot +1] = 0;
@@ -469,6 +485,17 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:20am - 9:10am") {
+
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                            date[req.body.hour].state[1] === 3 
+                                         
+                                            ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                           
+ 
+                                         }
         
                                         date[req.body.hour].state[req.body.slot]    = 0;
                                         date[req.body.hour].state[req.body.slot +1] = 0;
@@ -495,7 +522,18 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:20am - 10:10am") {
-                
+
+                                        
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                           date[req.body.hour].state[1] === 3 
+                                        )   
+                                        {
+
+                                            date[req.body.hour].state[0] = 0
+                                            date[req.body.hour].state[1] = 0
+                                  
+
+                                        }
                                         date[req.body.hour].state[req.body.slot]    = 0;
                                         date[req.body.hour].state[req.body.slot +1] = 0;
                                         date[req.body.hour].state[req.body.slot +2] = 0;
@@ -521,6 +559,19 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:30am - 9:20am") {
+
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                            date[req.body.hour].state[1] === 3 ||
+                                            date[req.body.hour].state[2] === 3 
+                         
+                                            ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                             date[req.body.hour].state[2] = 0
+                        
+ 
+                                         }
         
                                         date[req.body.hour].state[req.body.slot]      = 0;
                                         date[req.body.hour].state[req.body.slot +1]   = 0;
@@ -547,6 +598,18 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:30am - 10:20am") {
+
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                            date[req.body.hour].state[1] === 3 ||
+                                            date[req.body.hour].state[2] === 3 
+                                
+                                            ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                             date[req.body.hour].state[2] = 0
+ 
+                                         }
                 
                                         date[req.body.hour].state[req.body.slot]      = 0;
                                         date[req.body.hour].state[req.body.slot +1]   = 0;
@@ -573,6 +636,20 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:40am - 9:30am") {
+
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                            date[req.body.hour].state[1] === 3 ||
+                                            date[req.body.hour].state[2] === 3 ||
+                                            date[req.body.hour].state[3] === 3 
+                                             ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                             date[req.body.hour].state[2] = 0
+                                             date[req.body.hour].state[3] = 0
+               
+ 
+                                         }
         
                                         date[req.body.hour].state[req.body.slot]      = 0;
                                         date[req.body.hour].state[req.body.slot +1]   = 0;
@@ -599,7 +676,21 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:40am - 10:30am") {
-                
+                                        
+                                        console.log("here")
+                                        if(date[req.body.hour].state[0]  === 3 ||
+                                            date[req.body.hour].state[1] === 3 ||
+                                            date[req.body.hour].state[2] === 3 ||
+                                            date[req.body.hour].state[3] === 3 
+                                            ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                             date[req.body.hour].state[2] = 0
+                                             date[req.body.hour].state[3] = 0
+ 
+                                         }
+                     
                                         date[req.body.hour].state[req.body.slot]        = 0;
                                         date[req.body.hour].state[req.body.slot +1]     = 0;
                                         date['ten'].state[req.body.slot]                = 0;
@@ -625,6 +716,20 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:50am - 9:40am") {
+
+                                        if( date[req.body.hour].state[0]  === 3 ||
+                                            date[req.body.hour].state[1]  === 3 ||
+                                            date[req.body.hour].state[2]  === 3 ||
+                                            date[req.body.hour].state[3]  === 3 ||
+                                            date[req.body.hour].state[4]  === 3 ){
+ 
+                                             date[req.body.hour].state[0] = 0
+                                             date[req.body.hour].state[1] = 0
+                                             date[req.body.hour].state[2] = 0
+                                             date[req.body.hour].state[3] = 0
+                                             date[req.body.hour].state[4] = 0
+ 
+                                         }
         
                                         date[req.body.hour].state[req.body.slot]        = 0;
                                         date['nine'].state[req.body.slot]               = 0;
@@ -651,7 +756,21 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:50am - 10:40am") {
-        
+
+                                        if(date[req.body.hour].state[0] === 3 ||
+                                           date[req.body.hour].state[1] === 3 ||
+                                           date[req.body.hour].state[2] === 3 ||
+                                           date[req.body.hour].state[3] === 3 ||
+                                           date[req.body.hour].state[4] === 3 ){
+
+                                            date[req.body.hour].state[0] = 0
+                                            date[req.body.hour].state[1] = 0
+                                            date[req.body.hour].state[2] = 0
+                                            date[req.body.hour].state[3] = 0
+                                            date[req.body.hour].state[4] = 0
+
+                                        }
+                                        date[req.body.hour].state[0]                    = 0
                                         date[req.body.hour].state[req.body.slot]        = 0;
                                         date['ten'].state[req.body.slot]                = 0;
                                         date['ten'].state[req.body.slot +1]             = 0;
