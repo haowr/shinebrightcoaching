@@ -6094,7 +6094,7 @@
                                             $scope.bookSession8 = false;
 
                                             $timeout(function(){
-                                                
+
                                             $scope.bookSession18 = false;
 
                                             $timeout(function () {
@@ -6142,7 +6142,7 @@
 
                                     }
 
-                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.appointmentType = "Session!";
                                     $scope.dateDataForUser.id = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
@@ -6234,7 +6234,7 @@
 
                                     }
 
-                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.appointmentType = "Session!";
                                     $scope.dateDataForUser.id = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
@@ -6345,7 +6345,7 @@
 
                                     }
 
-                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.appointmentType = "Session!";
                                     $scope.dateDataForUser.id = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
@@ -6436,7 +6436,7 @@
 
                                     }
 
-                                    $scope.dateDataForUser.appointmentType = "Discovery!";
+                                    $scope.dateDataForUser.appointmentType = "Session!";
                                     $scope.dateDataForUser.id = $scope.idFromLocalStorage;
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
