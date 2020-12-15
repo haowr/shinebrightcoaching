@@ -2154,6 +2154,34 @@
                             $scope.checkUpAvailable9    = false;
     
                         }
+                        if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                        && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+    
+                            $scope.sessionFull9         = false;
+                            $scope.discoveryFull9       = false;
+                            $scope.checkUpAlmostFull9   = false;
+                            $scope.sessionAlmostFull9   = true;
+                            $scope.sessionAvailable9    = false;
+                            $scope.discoveryAlmostFull9 = true;
+                            $scope.discoveryAvailable9  = false;
+                            $scope.checkUpFull9         = false;
+                            $scope.checkUpAvailable9    = true;
+    
+                        }
+                        if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2
+                        && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 0) {
+    
+                            $scope.sessionFull9         = false;
+                            $scope.discoveryFull9       = false;
+                            $scope.checkUpAlmostFull9   = true;
+                            $scope.sessionAlmostFull9   = true;
+                            $scope.sessionAvailable9    = false;
+                            $scope.discoveryAlmostFull9 = true;
+                            $scope.discoveryAvailable9  = false;
+                            $scope.checkUpFull9         = false;
+                            $scope.checkUpAvailable9    = false;
+    
+                        }
                         if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
     
@@ -5207,6 +5235,57 @@
 
 
                 } 
+
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+
+                    $scope.sessionFull9             = true;
+                    $scope.discoveryFull9           = true;
+                    $scope.checkUpFull9             = false;
+                    $scope.sessionAlmostFull9       = false;
+                    $scope.sessionAvailable9        = false;
+                    $scope.discoveryAlmostFull9     = false;
+                    $scope.discoveryAvailable9      = false;
+                    $scope.checkUpAlmostFull9       = false;
+                    $scope.checkUpAvailable9        = true;
+                    console.log("i")
+
+
+                }
+                if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 2) {
+
+                    $scope.sessionFull9             = false;
+                    $scope.discoveryFull9           = false;
+                    $scope.checkUpFull9             = false;
+                    $scope.sessionAlmostFull9       = true;
+                    $scope.sessionAvailable9        = false;
+                    $scope.discoveryAlmostFull9     = false;
+                    $scope.discoveryAvailable9      = true;
+                    $scope.checkUpAlmostFull9       = false;
+                    $scope.checkUpAvailable9        = true;
+                    console.log("i")
+
+
+                }
+                if (data.data.date['nine'].state[0] == 2 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+                && data.data.date['nine'].state[4] == 2 && data.data.date['nine'].state[5] == 2) {
+
+                    $scope.sessionFull9             = true;
+                    $scope.discoveryFull9           = true;
+                    $scope.checkUpFull9             = false;
+                    $scope.sessionAlmostFull9       = false;
+                    $scope.sessionAvailable9        = false;
+                    $scope.discoveryAlmostFull9     = false;
+                    $scope.discoveryAvailable9      = false;
+                    $scope.checkUpAlmostFull9       = true;
+                    $scope.checkUpAvailable9        = false;
+                    console.log("i")
+
+
+                }
+
+
                 if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 2 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 0
                 && data.data.date['nine'].state[4] == 3 && data.data.date['nine'].state[5] == 3) {
 
@@ -9788,7 +9867,7 @@
 
                         if (hour == 'nine' && data.data.date['nine'].state[0] === 0) {
 
-                            $scope.hourPlusOne                          = 'nine'
+                            $scope.hourPlusOne                          = 'ten'
                             data.data.date[$scope.hourPlusOne].state[0] = 2
 
                             $scope.dateData.dateInfo            = data.data.date[hour].state
@@ -11680,15 +11759,15 @@
                                 data.data.date[hour].state[3]           = 3;
                                 data.data.date[hour].state[4]           = 3;
                                 data.data.date[hour].state[5]           = 3;
-                                data.data.date['nine'].state[0]          = 3;
-                                data.data.date['nine'].state[1]          = 3;
-                                data.data.date['nine'].state[2]          = 3;
-                                data.data.date['nine'].state[3]          = 3;
-                                data.data.date['nine'].state[4]          = 3;
+                                data.data.date['ten'].state[0]          = 3;
+                                data.data.date['ten'].state[1]          = 3;
+                                data.data.date['ten'].state[2]          = 3;
+                                data.data.date['ten'].state[3]          = 3;
+                                data.data.date['ten'].state[4]          = 3;
 
                                 $scope.dateData.dateInfo                = data.data.date[hour].state;
-                                $scope.dateData.nexthour                = 'nine';
-                                $scope.dateData.dateInfoNextHour        = data.data.date['nine'].state;
+                                $scope.dateData.nexthour                = 'ten';
+                                $scope.dateData.dateInfoNextHour        = data.data.date['ten'].state;
 
                                 User.updateDateNextHour($scope.dateData).then(function (data) {
 
@@ -12088,6 +12167,7 @@
 
             }
             if (time == "9:20") {
+                console.log("here")
 
                 if (!booked) {
 
@@ -12126,6 +12206,7 @@
 
             }
             if (time == "9:30") {
+                console.log("here")
 
                 if (!booked) {
 
@@ -12163,6 +12244,7 @@
 
             }
             if (time == "9:40") {
+                console.log("here")
 
                 if (!booked) {
 
@@ -12200,7 +12282,7 @@
 
             }
             if (time == "9:50") {
-
+                console.log("here")
                 if (!booked) {
 
                     $scope.discovery910AMSelected = false;
@@ -12232,6 +12314,8 @@
                     $scope.discovery950AMIsBooked   = true;
                     $scope.session950AMIsBooked     = true;
                     $scope.checkUp950AMIsBooked     = true;
+                    console.log('HErEx',$scope.checkUp950AMSelected)
+                    
 
                 }
 
