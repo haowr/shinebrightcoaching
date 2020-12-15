@@ -153,14 +153,14 @@
     
                         </div>
     
-                        <div ng-show="bookCheckUp9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp9" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p ng-show="!loadingBooking"  ng-click="selectTime('9:00')" class = "montserrat " style="font-size:30px;">9:00AM</p>
     
     
                             <div ng-show="checkUp900AMSelected" class = "row animated fadeIn">
@@ -200,14 +200,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookCheckUp19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookCheckUp19" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:10',true)"  class = "montserrat " style="font-size:30px;">9:10AM</p>
     
                             <div ng-show="!checkUp910AMSelected" class = "row animated fadeIn">
     
@@ -257,14 +257,14 @@
                             
                         </div>
     
-                        <div ng-show="bookCheckUp19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp19"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')" class = "montserrat " style="font-size:30px;">9:10AM</p>
     
     
                             <div ng-show="checkUp910AMSelected" class = "row animated fadeIn">
@@ -310,14 +310,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookCheckUp29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookCheckUp29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:20')" class = "montserrat " style="font-size:30px;">9:20AM</p>
     
                             <div ng-show="!checkUp920AMSelected" class = "row animated fadeIn">
     
@@ -369,14 +369,14 @@
                             
                         </div>
     
-                        <div ng-show="bookCheckUp29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking2"  ng-click="selectTime('9:20')"class = "montserrat " style="font-size:30px;">9:20AM</p>
     
     
                             <div ng-show="checkUp920AMSelected" class = "row animated fadeIn">
@@ -435,14 +435,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookCheckUp39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookCheckUp39"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                            <p ng-show="!loadingBooking3" ng-click="selectTime('9:30',true)" class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                             <div ng-show="!checkUp930AMSelected" class = "row animated fadeIn">
     
@@ -512,14 +512,14 @@
                             
                         </div>
     
-                        <div ng-show="bookCheckUp39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp39"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                                <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                                <p ng-show="!loadingBooking3" ng-click="selectTime('9:30')" class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                                 <div ng-show="checkUp930AMSelected" class = "row animated fadeIn">
     
@@ -562,14 +562,14 @@
                     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookCheckUp49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookCheckUp49"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                            <p ng-show="!loadingBooking4" ng-click="selectTime('9:40',true)" class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                             <div ng-show="!checkUp940AMSelected" class = "row animated fadeIn">
     
@@ -624,14 +624,14 @@
                             
                         </div>
     
-                        <div ng-show="bookCheckUp49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp49"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                                <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                                <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')"class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                                 <div ng-show="checkUp940AMSelected" class = "row animated fadeIn">
     
@@ -674,14 +674,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookCheckUp59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookCheckUp59"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50',true)" class = "montserrat " style="font-size:30px;">9:50AM</p>
     
                             <div ng-show="!checkUp950AMSelected" class = "row animated fadeIn">
     
@@ -737,14 +737,14 @@
                             
                         </div>
     
-                        <div ng-show="bookCheckUp59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookCheckUp59"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
     
     
                             <div ng-show="checkUp950AMSelected" class = "row animated fadeIn">
@@ -805,14 +805,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery9" ng-click="selectTime('9:00',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery9"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                        <p ng-show="!loadingBooking" ng-click="selectTime('9:00',true)" class = "montserrat " style="font-size:30px;">9:00AM</p>
 
                         <div ng-show="!discovery900AMSelected" class = "row animated fadeIn">
 
@@ -864,14 +864,14 @@
 
                     </div>
 
-                    <div ng-show="bookDiscovery9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery9" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                        <p ng-show="!loadingBooking" ng-click="selectTime('9:00')"  class = "montserrat " style="font-size:30px;">9:00AM</p>
 
 
                         <div ng-show="discovery900AMSelected" class = "row animated fadeIn">
@@ -912,14 +912,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery19"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                        <p ng-show="!loadingBooking"  ng-click="selectTime('9:10',true)"class = "montserrat " style="font-size:30px;">9:10AM</p>
 
                         <div ng-show="!discovery910AMSelected" class = "row animated fadeIn">
 
@@ -979,14 +979,14 @@
                         
                     </div>
 
-                    <div ng-show="bookDiscovery19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery19" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                        <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                        <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')"  class = "montserrat " style="font-size:30px;">9:10AM</p>
 
 
                         <div ng-show="discovery910AMSelected" class = "row animated fadeIn">
@@ -1033,14 +1033,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery29" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                        <p ng-show="!loadingBooking" ng-click="selectTime('9:20',true)"  class = "montserrat " style="font-size:30px;">9:20AM</p>
 
                         <div ng-show="!discovery920AMSelected" class = "row animated fadeIn">
 
@@ -1100,14 +1100,14 @@
                         
                     </div>
 
-                    <div ng-show="bookDiscovery29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery29" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                        <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                        <p ng-show="!loadingBooking2" ng-click="selectTime('9:20')"  class = "montserrat " style="font-size:30px;">9:20AM</p>
 
 
                         <div ng-show="discovery920AMSelected" class = "row animated fadeIn">
@@ -1165,14 +1165,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery39"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                        <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                        <p ng-show="!loadingBooking3"  ng-click="selectTime('9:30',true)"class = "montserrat " style="font-size:30px;">9:30AM</p>
 
                         <div ng-show="!discovery930AMSelected" class = "row animated fadeIn">
 
@@ -1241,14 +1241,14 @@
                         
                     </div>
 
-                    <div ng-show="bookDiscovery39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery39" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                             <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                            <p ng-show="!loadingBooking3" ng-click="selectTime('9:30')"  class = "montserrat " style="font-size:30px;">9:30AM</p>
 
                             <div ng-show="discovery930AMSelected" class = "row animated fadeIn">
 
@@ -1291,14 +1291,14 @@
                 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery49"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                        <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                        <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')" class = "montserrat " style="font-size:30px;">9:40AM</p>
 
                         <div ng-show="!discovery940AMSelected" class = "row animated fadeIn">
 
@@ -1367,14 +1367,14 @@
                         
                     </div>
 
-                    <div ng-show="bookDiscovery49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery49"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                             <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                            <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')" class = "montserrat " style="font-size:30px;">9:40AM</p>
 
                             <div ng-show="discovery940AMSelected" class = "row animated fadeIn">
 
@@ -1415,14 +1415,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookDiscovery59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookDiscovery59" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                        <p ng-show="!loadingBooking5" ng-click="selectTime('9:50',true)"  class = "montserrat " style="font-size:30px;">9:50AM</p>
 
                         <div ng-show="!discovery950AMSelected" class = "row animated fadeIn">
 
@@ -1491,14 +1491,14 @@
                         
                     </div>
 
-                    <div ng-show="bookDiscovery59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookDiscovery59"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                        <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
 
 
                         <div ng-show="discovery950AMSelected" class = "row animated fadeIn">
@@ -1560,14 +1560,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession9" ng-click="selectTime('9:00',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession9"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                        <p ng-show="!loadingBooking" ng-click="selectTime('9:00',true)" class = "montserrat " style="font-size:30px;">9:00AM</p>
 
                         <div ng-show="!session900AMSelected" class = "row animated fadeIn">
 
@@ -1619,14 +1619,14 @@
 
                     </div>
 
-                    <div ng-show="bookSession9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession9" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                        <p ng-show="!loadingBooking" ng-click="selectTime('9:00')"  class = "montserrat " style="font-size:30px;">9:00AM</p>
 
 
                         <div ng-show="session900AMSelected" class = "row animated fadeIn">
@@ -1667,14 +1667,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession19"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
-                        <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                        <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
+                        <p ng-show="!loadingBooking1" ng-click="selectTime('9:10',true)" class = "montserrat " style="font-size:30px;">9:10AM</p>
 
                         <div ng-show="!session910AMSelected" class = "row animated fadeIn">
 
@@ -1735,14 +1735,14 @@
                         
                     </div>
 
-                    <div ng-show="bookSession19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession19"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                        <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                        <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')" class = "montserrat " style="font-size:30px;">9:10AM</p>
 
 
                         <div ng-show="session910AMSelected" class = "row animated fadeIn">
@@ -1789,14 +1789,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession29" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                        <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                        <p ng-show="!loadingBooking"  ng-click="selectTime('9:20',true)" class = "montserrat " style="font-size:30px;">9:20AM</p>
 
                         <div ng-show="!session920AMSelected" class = "row animated fadeIn">
 
@@ -1856,14 +1856,14 @@
                         
                     </div>
 
-                    <div ng-show="bookSession29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession29"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                        <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                        <p ng-show="!loadingBooking2" ng-click="selectTime('9:20')" class = "montserrat " style="font-size:30px;">9:20AM</p>
 
 
                         <div ng-show="session920AMSelected" class = "row animated fadeIn">
@@ -1922,14 +1922,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession39"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                        <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                        <p ng-show="!loadingBooking3" ng-click="selectTime('9:30',true)" class = "montserrat " style="font-size:30px;">9:30AM</p>
 
                         <div ng-show="!session930AMSelected" class = "row animated fadeIn">
 
@@ -1998,14 +1998,14 @@
                         
                     </div>
 
-                    <div ng-show="bookSession39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession39" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                             <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                            <p ng-show="!loadingBooking3"  ng-click="selectTime('9:30')" class = "montserrat " style="font-size:30px;">9:30AM</p>
 
                             <div ng-show="session930AMSelected" class = "row animated fadeIn">
 
@@ -2048,14 +2048,14 @@
                 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession49" nclass = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                        <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                        <p ng-show="!loadingBooking4" g-click="selectTime('9:40',true)"  class = "montserrat " style="font-size:30px;">9:40AM</p>
 
                         <div ng-show="!session940AMSelected" class = "row animated fadeIn">
 
@@ -2124,14 +2124,14 @@
                         
                     </div>
 
-                    <div ng-show="bookSession49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession49" class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                             <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                            <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')"  class = "montserrat " style="font-size:30px;">9:40AM</p>
 
                             <div ng-show="session940AMSelected" class = "row animated fadeIn">
 
@@ -2174,14 +2174,14 @@
 
                 <a class="black-text" href="#" onclick="return false" >
 
-                    <div ng-show="!bookSession59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="!bookSession59"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                        <p ng-show="!loadingBooking5" ng-click="selectTime('9:50',true)" class = "montserrat " style="font-size:30px;">9:50AM</p>
 
                         <div ng-show="!session950AMSelected" class = "row animated fadeIn">
 
@@ -2251,14 +2251,14 @@
                         
                     </div>
 
-                    <div ng-show="bookSession59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                    <div ng-show="bookSession59"  class = "col s4 center-align animated fadeIn" >
 
                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
 
                         <div class = "col s12" style="border:1px solid #000000;"></div>
 
                         <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                        <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                        <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
 
 
                         <div ng-show="session950AMSelected" class = "row animated fadeIn">
@@ -2456,14 +2456,14 @@
         
                             </div>
         
-                            <div ng-show="bookCheckUp9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp9"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                                <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                                <p ng-show="!loadingBooking"  ng-click="selectTime('9:00')"class = "montserrat " style="font-size:30px;">9:00AM</p>
         
         
                                 <div ng-show="checkUp900AMSelected" class = "row animated fadeIn">
@@ -2503,14 +2503,14 @@
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="!bookCheckUp19"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                                <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                                <p ng-show="!loadingBooking" ng-click="selectTime('9:10',true)" class = "montserrat " style="font-size:30px;">9:10AM</p>
         
                                 <div ng-show="!checkUp910AMSelected" class = "row animated fadeIn">
         
@@ -2560,14 +2560,14 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp19"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                                <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                                <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')" class = "montserrat " style="font-size:30px;">9:10AM</p>
         
         
                                 <div ng-show="checkUp910AMSelected" class = "row animated fadeIn">
@@ -2613,14 +2613,14 @@
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="!bookCheckUp29"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                                <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                                <p ng-show="!loadingBooking" ng-click="selectTime('9:20',true)" class = "montserrat " style="font-size:30px;">9:20AM</p>
         
                                 <div ng-show="!checkUp920AMSelected" class = "row animated fadeIn">
         
@@ -2672,14 +2672,14 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp29"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                                <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                                <p ng-show="!loadingBooking2"  ng-click="selectTime('9:20')"class = "montserrat " style="font-size:30px;">9:20AM</p>
         
         
                                 <div ng-show="checkUp920AMSelected" class = "row animated fadeIn">
@@ -2738,14 +2738,14 @@
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="!bookCheckUp39"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                                <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                                <p ng-show="!loadingBooking3" ng-click="selectTime('9:30',true)" class = "montserrat " style="font-size:30px;">9:30AM</p>
         
                                 <div ng-show="!checkUp930AMSelected" class = "row animated fadeIn">
         
@@ -2815,14 +2815,14 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp39"class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                     <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                                    <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                                    <p ng-show="!loadingBooking3"  ng-click="selectTime('9:30')"  class = "montserrat " style="font-size:30px;">9:30AM</p>
         
                                     <div ng-show="checkUp930AMSelected" class = "row animated fadeIn">
         
@@ -2865,14 +2865,14 @@
                         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="!bookCheckUp49"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                                <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                                <p ng-show="!loadingBooking4"  ng-click="selectTime('9:40',true)"class = "montserrat " style="font-size:30px;">9:40AM</p>
         
                                 <div ng-show="!checkUp940AMSelected" class = "row animated fadeIn">
         
@@ -2927,14 +2927,14 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp49"  class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                     <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                                    <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                                    <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')" class = "montserrat " style="font-size:30px;">9:40AM</p>
         
                                     <div ng-show="checkUp940AMSelected" class = "row animated fadeIn">
         
@@ -2977,14 +2977,14 @@
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="!bookCheckUp59" class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                                <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                                <p ng-show="!loadingBooking5" ng-click="selectTime('9:50',true)"  class = "montserrat " style="font-size:30px;">9:50AM</p>
         
                                 <div ng-show="!checkUp950AMSelected" class = "row animated fadeIn">
         
@@ -3040,14 +3040,14 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                            <div ng-show="bookCheckUp59" ≈ class = "col s4 center-align animated fadeIn" >
         
                                 <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
         
                                 <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                                <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                                <p ng-show="!loadingBooking5"ng-click="selectTime('9:10',true)" class = "montserrat " style="font-size:30px;">9:50AM</p>
         
         
                                 <div ng-show="checkUp950AMSelected" class = "row animated fadeIn">
@@ -3108,14 +3108,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery9" ng-click="selectTime('9:00',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery9" ≈class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p ng-show="!loadingBooking" √ class = "montserrat " style="font-size:30px;">9:00AM</p>
     
                             <div ng-show="!discovery900AMSelected" class = "row animated fadeIn">
     
@@ -3167,14 +3167,14 @@
     
                         </div>
     
-                        <div ng-show="bookDiscovery9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery9" ≈ class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p ng-show="!loadingBooking" √ class = "montserrat " style="font-size:30px;">9:00AM</p>
     
     
                             <div ng-show="discovery900AMSelected" class = "row animated fadeIn">
@@ -3215,14 +3215,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery19"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:10',true)" class = "montserrat " style="font-size:30px;">9:10AM</p>
     
                             <div ng-show="!discovery910AMSelected" class = "row animated fadeIn">
     
@@ -3282,14 +3282,14 @@
                             
                         </div>
     
-                        <div ng-show="bookDiscovery19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery19"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')" class = "montserrat " style="font-size:30px;">9:10AM</p>
     
     
                             <div ng-show="discovery910AMSelected" class = "row animated fadeIn">
@@ -3336,14 +3336,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking"  ng-click="selectTime('9:20',true)"class = "montserrat " style="font-size:30px;">9:20AM</p>
     
                             <div ng-show="!discovery920AMSelected" class = "row animated fadeIn">
     
@@ -3403,14 +3403,14 @@
                             
                         </div>
     
-                        <div ng-show="bookDiscovery29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking2" ng-click="selectTime('9:20')" class = "montserrat " style="font-size:30px;">9:20AM</p>
     
     
                             <div ng-show="discovery920AMSelected" class = "row animated fadeIn">
@@ -3468,14 +3468,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery39" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                            <p ng-show="!loadingBooking3" ng-click="selectTime('9:30',true)"  class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                             <div ng-show="!discovery930AMSelected" class = "row animated fadeIn">
     
@@ -3544,14 +3544,14 @@
                             
                         </div>
     
-                        <div ng-show="bookDiscovery39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery39"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                                <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                                <p ng-show="!loadingBooking3" ng-click="selectTime('9:30')" class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                                 <div ng-show="discovery930AMSelected" class = "row animated fadeIn">
     
@@ -3594,14 +3594,14 @@
                     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery49"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                            <p ng-show="!loadingBooking4" ng-click="selectTime('9:40',true)" class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                             <div ng-show="!discovery940AMSelected" class = "row animated fadeIn">
     
@@ -3670,14 +3670,14 @@
                             
                         </div>
     
-                        <div ng-show="bookDiscovery49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery49"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                                <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                                <p ng-show="!loadingBooking4" ng-click="selectTime('9:40')" class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                                 <div ng-show="discovery940AMSelected" class = "row animated fadeIn">
     
@@ -3718,14 +3718,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookDiscovery59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookDiscovery59"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50',true)"class = "montserrat " style="font-size:30px;">9:50AM</p>
     
                             <div ng-show="!discovery950AMSelected" class = "row animated fadeIn">
     
@@ -3794,14 +3794,14 @@
                             
                         </div>
     
-                        <div ng-show="bookDiscovery59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookDiscovery59" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
     
     
                             <div ng-show="discovery950AMSelected" class = "row animated fadeIn">
@@ -3863,14 +3863,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession9" ng-click="selectTime('9:00',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession9"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:00',true)" class = "montserrat " style="font-size:30px;">9:00AM</p>
     
                             <div ng-show="!session900AMSelected" class = "row animated fadeIn">
     
@@ -3881,8 +3881,8 @@
                                 <div class = "col s12">
     
                                     <br>
-                                    <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                    <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                    <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                    <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
                             
                                     <div class = "col s12">
             
@@ -3907,8 +3907,8 @@
                                 <div class = "col s12">
     
                                     <br>
-                                    <i ng-show="loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
-                                    <i ng-show="!loadingBooking4" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
+                                    <i ng-show="loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+                                    <i ng-show="!loadingBooking" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px; color:transparent"></i>
                             
                                     <div ng-show="session900AMIsBooked" class = "col s12 red lighten-4" >
             
@@ -3922,14 +3922,14 @@
     
                         </div>
     
-                        <div ng-show="bookSession9" ng-click="selectTime('9:00')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession9" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:00AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:00')" class = "montserrat " style="font-size:30px;">9:00AM</p>
     
     
                             <div ng-show="session900AMSelected" class = "row animated fadeIn">
@@ -3970,14 +3970,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession19" ng-click="selectTime('9:10',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession19"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking" ng-click="selectTime('9:10',true)" class = "montserrat " style="font-size:30px;">9:10AM</p>
     
                             <div ng-show="!session910AMSelected" class = "row animated fadeIn">
     
@@ -4038,14 +4038,14 @@
                             
                         </div>
     
-                        <div ng-show="bookSession19" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession19"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking1" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:10AM</p>
-                            <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
+                            <p ng-show="!loadingBooking1" ng-click="selectTime('9:10')" class = "montserrat " style="font-size:30px;">9:10AM</p>
     
     
                             <div ng-show="session910AMSelected" class = "row animated fadeIn">
@@ -4092,14 +4092,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession29" ng-click="selectTime('9:20',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
-                            <p ng-show="loadingBooking" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking2" ng-click="selectTime('9:20',true)" class = "montserrat " style="font-size:30px;">9:20AM</p>
     
                             <div ng-show="!session920AMSelected" class = "row animated fadeIn">
     
@@ -4159,14 +4159,14 @@
                             
                         </div>
     
-                        <div ng-show="bookSession29" ng-click="selectTime('9:20')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession29"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking2" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:20AM</p>
-                            <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <p ng-show="!loadingBooking2" ng-click="selectTime('9:20')" class = "montserrat " style="font-size:30px;">9:20AM</p>
     
     
                             <div ng-show="session920AMSelected" class = "row animated fadeIn">
@@ -4225,14 +4225,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession39" ng-click="selectTime('9:30',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession39"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                            <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                            <p ng-show="!loadingBooking3" ng-click="selectTime('9:30')" class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                             <div ng-show="!session930AMSelected" class = "row animated fadeIn">
     
@@ -4301,14 +4301,14 @@
                             
                         </div>
     
-                        <div ng-show="bookSession39" ng-click="selectTime('9:30')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession39"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking3" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:30AM</p>
-                                <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
+                                <p ng-show="!loadingBooking3" ng-click="selectTime('9:30')" class = "montserrat " style="font-size:30px;">9:30AM</p>
     
                                 <div ng-show="session930AMSelected" class = "row animated fadeIn">
     
@@ -4351,14 +4351,14 @@
                     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession49" ng-click="selectTime('9:40',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession49"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                            <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                            <p ng-show="!loadingBooking4" ng-click="selectTime('9:40',true)" class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                             <div ng-show="!session940AMSelected" class = "row animated fadeIn">
     
@@ -4427,14 +4427,14 @@
                             
                         </div>
     
-                        <div ng-show="bookSession49" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession49" class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                                 <p ng-show="loadingBooking4" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:40AM</p>
-                                <p ng-show="!loadingBooking4" class = "montserrat " style="font-size:30px;">9:40AM</p>
+                                <p ng-show="!loadingBooking4"ng-click="selectTime('9:40')"  class = "montserrat " style="font-size:30px;">9:40AM</p>
     
                                 <div ng-show="session940AMSelected" class = "row animated fadeIn">
     
@@ -4477,14 +4477,14 @@
     
                     <a class="black-text" href="#" onclick="return false" >
     
-                        <div ng-show="!bookSession59" ng-click="selectTime('9:50',true)" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="!bookSession59"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons red-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
     
                             <div ng-show="!session950AMSelected" class = "row animated fadeIn">
     
@@ -4554,14 +4554,14 @@
                             
                         </div>
     
-                        <div ng-show="bookSession59" ng-click="selectTime('9:50')" class = "col s4 center-align animated fadeIn" >
+                        <div ng-show="bookSession59"  class = "col s4 center-align animated fadeIn" >
     
                             <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
     
                             <div class = "col s12" style="border:1px solid #000000;"></div>
     
                             <p ng-show="loadingBooking5" class = "montserrat animated pulse infinite fast" style="font-size:30px;">9:50AM</p>
-                            <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
+                            <p ng-show="!loadingBooking5" ng-click="selectTime('9:50')" class = "montserrat " style="font-size:30px;">9:50AM</p>
     
     
                             <div ng-show="session950AMSelected" class = "row animated fadeIn">
