@@ -41,6 +41,7 @@ module.exports = function (app) {
             }else{
 
                 req.body.bookingposition    = user.bookings.length;
+                console.log("REQ.BODY.BOOKINGPOSITION", req.body.bookingposition)
                 req.body.completed          = false;
                 user.calender["88"]["22"]   = true;
 
@@ -79,12 +80,17 @@ module.exports = function (app) {
             }else{
                 console.log(user)
                 if(!user.bookings[req.body.currentbooking].completed){
+                    console.log("REQ.BODY.CURRETNBOOKING", req.body.currentbooking)
                     console.log(user.bookings)
                     user.bookings.splice(user.bookings[req.body.currentbooking], 1)
+                    console.log(user.bookings)
+
                     user.calender["88"]["22"] = false;
 
                     User.findOneAndUpdate( { _id: req.body.id }, { $set:{ bookings: user.bookings } }, { new: true}, function(err, user){
+
                         console.log("EDFLSKJDLKFJKSLDJFLSDJLFJKLSDJFSD")
+
                         if(err)throw err;
 
                         if(!user){
@@ -100,7 +106,9 @@ module.exports = function (app) {
         
                                     if (req.body.time == "8:00am - 8:10am") {
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("8:00am")
+
+                                        date[req.body.hour].state[0] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -122,7 +130,9 @@ module.exports = function (app) {
 
                                     if (req.body.time == "9:00am - 9:10am") {
                 
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("9:00")
+
+                                        date[req.body.hour].state[0] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -144,7 +154,9 @@ module.exports = function (app) {
         
                                     if (req.body.time == "8:10am - 8:20am") {
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("8:10am")
+
+                                        date[req.body.hour].state[1] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -166,7 +178,9 @@ module.exports = function (app) {
 
                                     if (req.body.time == "9:10am - 9:20am") {
                 
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        date[req.body.hour].state[1] = 0;
+
+                                        console.log("9:10")
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -188,7 +202,9 @@ module.exports = function (app) {
         
                                     if (req.body.time == "8:20am - 8:30am") {
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("8:20am")
+
+                                        date[req.body.hour].state[2] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -210,7 +226,9 @@ module.exports = function (app) {
 
                                     if (req.body.time == "9:20am - 9:30am") {
                 
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("9:20am")
+
+                                        date[req.body.hour].state[2] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -232,7 +250,9 @@ module.exports = function (app) {
         
                                     if (req.body.time == "8:30am - 8:40am") {
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("8:30am")
+
+                                        date[req.body.hour].state[3] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -253,8 +273,10 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:30am - 9:40am") {
-                
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        
+                                        console.log("9:30am")
+
+                                        date[req.body.hour].state[3] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -276,7 +298,9 @@ module.exports = function (app) {
         
                                     if (req.body.time == "8:40am - 8:50am") {
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        console.log("8:40am")
+
+                                        date[req.body.hour].state[4] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -297,8 +321,11 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:40am - 9:50am") {
+
+                                        console.log("9:40am")
+
                 
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        date[req.body.hour].state[4] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -310,7 +337,7 @@ module.exports = function (app) {
         
                                             }else{
                 
-                                                res.json({success: true, message:"Date Found And Updated..", date:date})
+                                                res.json({ success: true, message:"Date Found And Updated..", date:date })
                 
                                             }
                         
@@ -319,8 +346,10 @@ module.exports = function (app) {
                                     }
         
                                     if (req.body.time == "8:50am - 9:00am") {
-        
-                                        date[req.body.hour].state[req.body.slot] = 0;
+
+                                        console.log("8:50am")
+
+                                        date[req.body.hour].state[5] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -341,8 +370,10 @@ module.exports = function (app) {
                                     }
 
                                     if (req.body.time == "9:50am - 10:00am") {
+
+                                        console.log("9:50am")
         
-                                        date[req.body.hour].state[req.body.slot] = 0;
+                                        date[req.body.hour].state[5] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -365,14 +396,15 @@ module.exports = function (app) {
                                 }
         
                                 if(req.body.appointmentType == "Session!"){
-        
+                                    
+                                    
                                     if (req.body.time == "8:00am - 8:50am") {
         
-                                        date[req.body.hour].state[req.body.slot]    = 0;
-                                        date[req.body.hour].state[req.body.slot +1] = 0;
-                                        date[req.body.hour].state[req.body.slot +2] = 0;
-                                        date[req.body.hour].state[req.body.slot +3] = 0;
-                                        date[req.body.hour].state[req.body.slot +4] = 0;
+                                        date[req.body.hour].state[0] = 0;
+                                        date[req.body.hour].state[1] = 0;
+                                        date[req.body.hour].state[2] = 0;
+                                        date[req.body.hour].state[3] = 0;
+                                        date[req.body.hour].state[4] = 0;
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -392,14 +424,15 @@ module.exports = function (app) {
                 
                                     }
 
-                                    if (req.body.time == "9:00am - 9:50") {
+                                    if (req.body.time == "9:00am - 9:50am") {
                 
-                                        date[req.body.hour].state[req.body.slot]     = 0;
-                                        date[req.body.hour].state[req.body.slot +1]  = 0;
-                                        date[req.body.hour].state[req.body.slot +2]  = 0;
-                                        date[req.body.hour].state[req.body.slot +3]  = 0;
-                                        date[req.body.hour].state[req.body.slot +4]  = 0;   
+                                        date[req.body.hour].state[0]     = 0;
+                                        date[req.body.hour].state[1]  = 0;
+                                        date[req.body.hour].state[2]  = 0;
+                                        date[req.body.hour].state[3]  = 0;
+                                        date[req.body.hour].state[4]  = 0;   
                                         
+                                        console.log("HOSHI")
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
                                             if(err)throw err;

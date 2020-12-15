@@ -22,7 +22,7 @@
         $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
         $scope.clientName                   = $window.localStorage.getItem('name');
         $scope.currentBookingTitle          = "";
-        $scope.currentBooking               = "";
+        $scope.currentBooking               = 0;
         $scope.infoPageOpen                 = true;
         $scope.bookingsPageOpen             = false;
         $scope.scheduledJobPageOpen         = false;
@@ -43,6 +43,8 @@
             $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
             $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
 
+            
+
             if($scope.currentUserBookingsArray.length > 0){
 
                 $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length
@@ -58,7 +60,7 @@
             if($scope.currentUserBookingsArray.length > 0){
         
                 $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length
-                $scope.currentBooking           = $scope.currentUserBookingsArray.length -1
+                $scope.currentBooking           = 0
 
             }else{
 
@@ -75,16 +77,20 @@
                 },1000)
 
             }
+            
+            console.log("$scope.currentBooking", $scope.currentBooking)
+            console.log("$scope.currentUserBookingsArray", $scope.currentUserBookingsArray)
 
 
         })
 
         $scope.changeBookingLeft = function () {
 
+
             User.getUser($scope.idFromLocalStorage).then(function (data) {
 
-                    console.log($scope.currentBooking)
-                $scope.currentUserBookingsArray     = data.data.user.bookings;
+                    $scope.currentUserBookingsArray     = data.data.user.bookings;
+                    console.log("$scope.currentUserBookingsArray", $scope.currentUserBookingsArray)
 
                     if ( $scope.currentBooking > 0 ) {
 
@@ -99,11 +105,13 @@
                         $scope.currentBooking       = $scope.currentUserBookingsArray.length - 1;
                         $scope.currentBookingTitle  = $scope.currentUserBookingsArray.length ;
                         console.log("ERRE?")
+                        console.log($scope.currentBooking)
+
 
                         if($scope.currentUserBookingsArray.length == 0){
 
                             $scope.currentBookingTitle  = 0;
-                            console.log("ERRE?")
+                            console.log("ERRE??")
                             $scope.shake                = true;
                             $scope.shinebrighterror.play()
 
@@ -116,6 +124,9 @@
                         }
                     
                     }    
+                    console.log("$scope.currentBooking", $scope.currentBooking)
+                    console.log("currentUserBookingsArray", $scope.currentUserBookingsArray[$scope.currentBooking])
+
                 
             })
 
@@ -197,19 +208,24 @@
                 }  
 
         }
-
+        $scope.index = 0;
         $scope.deleteBooking = function(currentbooking){
 
                 $scope.loadingBookingDeletion       = true;
+                $scope.index = currentbooking 
+                console.log("INDEX", $scope.index)
+
+                
 
                 User.getUser($scope.idFromLocalStorage).then(function (data) {
                 
-                    $scope.bookingInfo.currentbooking   = data.data.user.bookings.length-1;
-                    $scope.bookingInfo.appointmentType  = $scope.currentUserBookingsArray[currentbooking].appointmentType;
-                    $scope.bookingInfo.hour             = $scope.currentUserBookingsArray[currentbooking].hour;
-                    $scope.bookingInfo.slot             = $scope.currentUserBookingsArray[currentbooking].slot;
-                    $scope.bookingInfo.time             = $scope.currentUserBookingsArray[currentbooking].time;
-                    $scope.bookingInfo.date             = $scope.currentUserBookingsArray[currentbooking].date;
+                    $scope.bookingInfo.currentbooking   = $scope.index;
+                    console.log("INDEX", $scope.index)
+                    $scope.bookingInfo.appointmentType  = $scope.currentUserBookingsArray[$scope.index].appointmentType;
+                    $scope.bookingInfo.hour             = $scope.currentUserBookingsArray[$scope.index].hour;
+                    $scope.bookingInfo.slot             = $scope.currentUserBookingsArray[$scope.index].slot;
+                    $scope.bookingInfo.time             = $scope.currentUserBookingsArray[$scope.index].time;
+                    $scope.bookingInfo.date             = $scope.currentUserBookingsArray[$scope.index].date;
 
              
                     User.deleteBooking($scope.bookingInfo).then(function(data){
@@ -225,8 +241,8 @@
 
                             $scope.loadingBookingDeletion   = false;
                             $scope.shake                    = true;
-                            $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length;
-                            $scope.currentBooking           = $scope.currentUserBookingsArray.length - 1;
+                            $scope.currentBookingTitle      = 1
+                            $scope.currentBooking           = 0;
 
                         }else{
 
