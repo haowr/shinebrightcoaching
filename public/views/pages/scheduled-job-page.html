@@ -3,23 +3,38 @@
 
 
 
-<div class = "col s3 right-align">
+    <div class = "row">
 
-    <i class = "material-icons" ng-click="exitScheduledJobPage()"style="font-size:32px;">keyboard_return</i>
+        <div class = "col s2 left-align">
 
-</div>
+            <a  href  = "#" 
+                style = "color:black;" 
+                class = "underline">
 
-<div class="col s6 center-align">
+                <i  class    = "material-icons" 
+                    style    = "font-size:42px;" 
+                    ng-click = "exitBookingPage()">
+                    keyboard_return
+                </i>
 
-    <span class='montserrat underline  ' style="font-size:20px;"> {{currentDate}}?</span>
+            </a>
+        
+        </div>
 
-</div>
+        <div class = "col s8 center-align">
 
-<div class = "col s3">
-</div>
+            <span   class = 'montserrat underline flow-text' 
+                    style = "font-size:30px;color:black;"> 
+                    {{currentDate}}
+            </span>
 
-<div class="row">
-</div>
+        </div>
+
+        <div class = "col s2">
+
+        </div>
+        
+    </div>
 <div class="row center-align show-on-small">
 
     <div class="col s3 datehover" style="border-color:#ffeb3b;">
