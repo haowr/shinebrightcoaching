@@ -4,67 +4,8 @@
 
 	//var hearto = 0;
 	//var status =0;
-	app.directive("heartAdder", function () {
-
-		return {
-
-			restrict: 'E',
-			templateUrl: '../views/directives/heart-adder.html',
-			controller: function () {
 
 
-				this.addHeart = function (id) {
-
-					if (status === 0) {
-
-						hearto++;
-						status = 1;
-					} else {
-
-						//this.status=1;
-						hearto--;
-						status = 0;
-					}
-					console.log(hearto);
-				}
-
-			},
-			controllerAs: 'heartCtrl'
-
-
-		}
-
-
-
-	});
-	app.directive('clientInfoPage', function () {
-
-
-		return {
-
-			restrict: 'E',
-		
-			templateUrl: '../views/client-info-page.html',
-			controller: function () {
-
-			},
-			controllerAs: "bookingpage"
-		}
-	});
-	app.directive('adminMessagePage', function () {
-
-
-		return {
-
-			restrict: 'E',
-
-			templateUrl: '../views/admin-message-page.html',
-			controller: function () {
-	
-			},
-			controllerAs: "bookingpage"
-		}
-	});
 	app.directive('adminBookingsPage', function () {
 
 
