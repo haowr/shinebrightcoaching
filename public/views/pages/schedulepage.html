@@ -82,49 +82,6 @@
 </div>
 
 
-        <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen">
-
-            <schedule-page></schedule-page>
-
-        </div>
-
-
-
-        <div ng-show="scheduledJobPageOpen" class = "hide-on-med-and-up" >
-
-            <scheduled-job-page></scheduled-job-page>
-
-        </div>
-        
-        <div ng-show="bookingsPageOpen">
-
-            <booking-page></booking-page>
-
-        </div>
-        
-        <div ng-show="bookingPageOpen">
-
-            <div ng-show="slot == 'eight'" class = "hide-on-small-only">
-
-                <eight-to-nine></eight-to-nine>
-
-            </div>
-
-            <div ng-show="slot == 'eight'" class = "hide-on-med-and-up">
-
-                <eight-to-nine></eight-to-nine>
-
-            </div>
-
-            <div ng-show="slot == 'nine'">
-
-                
-                <nine-to-ten></nine-to-ten>
-
-            </div>
-            
-        </div>
-    
 
 
 </div>
