@@ -9230,12 +9230,9 @@
             $scope.messageSubjectCannotBeEmpty  = false;
             $scope.messageBodyCannotBeEmpty     = false;
             $scope.bookingsPageOpen             = false;
-            $scope.infoPageOpen                 = false;
-            $scope.timesheetPageOpen            = false;
-            $scope.messagePageOpen              = false;
 
-
-            $scope.audio.play()
+            console.log("Profile...")
+           // $scope.audio.play()
 
         }
 

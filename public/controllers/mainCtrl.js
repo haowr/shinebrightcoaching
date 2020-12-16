@@ -43,7 +43,7 @@
         }
   
         Auth.getUser().then(function (data) {
-            
+            console.log("FIRSTR AUTh")
             if (data.data.success) {
 
                 $rootScope.userClass    = data.data.userclass;
@@ -80,7 +80,8 @@
         $rootScope.$on('$routeChangeStart', function () {
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
-            console.log("AUth.loggedIn", Auth.isLoggedIn())       
+            console.log("AUth.loggedIn", Auth.isLoggedIn())  
+            console.log("BLOGGIE")     
             $rootScope.userClassy   = $rootScope.userClass
 
             Auth.getUser().then(function (data) {

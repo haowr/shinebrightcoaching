@@ -4,6 +4,7 @@
     
     app.config(function () {
 
+        console.log("Client Profile Controller Loaded...")
         
     })
 
@@ -27,6 +28,13 @@
         $scope.bookingsPageOpen             = false;
         $scope.scheduledJobPageOpen         = false;
         $scope.loadingBookingStatus         = false;
+        $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
+        $scope.shinebrighterror             = new Audio("../audio/shinebrighterror.wav");
+        $scope.shinebrightloading           = new Audio('../audio/shinebrightloading.wav');
+        $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
+        $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
+
+        
         $scope.bookingInfo = {
 
             id: $scope.idFromLocalStorage
@@ -34,16 +42,10 @@
         }
 
         User.getUser($scope.idFromLocalStorage).then(function (data) {
-
+            console.log("LOADING...")
             $scope.clientName                   = data.data.user.name;
             $scope.currentUserBookingsArray     = data.data.user.bookings;
-            $scope.audio                        = new Audio("../audio/shinebrightclick.wav")
-            $scope.shinebrighterror             = new Audio("../audio/shinebrighterror.wav");
-            $scope.shinebrightloading           = new Audio('../audio/shinebrightloading.wav');
-            $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
-            $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
-
-            
+        
 
             if($scope.currentUserBookingsArray.length > 0){
 
@@ -316,6 +318,7 @@
             $scope.audio.play()
 
         }
+        /*
         
         $scope.openSchedulePage = function () {
 
@@ -323,6 +326,7 @@
             $scope.audio.play()
 
         }
+        */
 
     })
 

@@ -68,89 +68,10 @@
                     }
                 }
             })
-            .when('/packages', {
-                templateUrl: '../views/pages/packages.html',
-                name: "QLH | SERVICES",
-                controller: "mainCtrl",
-                controllerAs: 'main',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/contact', {
-                templateUrl: '../views/pages/contact.html',
-                name: "QLH | SERVICES",
-                controller: "mainCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/testimonials', {
-                templateUrl: '../views/pages/testimonials.html',
-                name: "QLH | SERVICES",
-                controller: "mainCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/viewintake', {
-                templateUrl: '../views/viewintake.html',
-                name: "QLH | SERVICES",
-                controller: "intakeCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/viewintake', {
-                templateUrl: '../views/viewintake.html',
-                name: "QLH | SERVICES",
-                controller: "intakeCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/wellnessintake', {
-                templateUrl: '../views/wellnessintake.html',
-                name: "QLH | SERVICES",
-                controller: "intakeCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                    }
-                }
-            })
-            .when('/viewwellnessintake', {
-                templateUrl: '../views/viewwellnessintake.html',
-                name: "QLH | SERVICES",
-                controller: "intakeCtrl",
-                controllerAs: 'intake',
-                resolve: {
-                    init: function ($route) {
-                        console.log("index")
-                    }
-                }
-            })
-          
-            .when('/register', {
-                templateUrl: '../views/pages/register.html',
-                name: "QLH | SERVICES",
-                controller: "registerCtrl",
-                controllerAs: 'register',
-                resolve: {
-                    init: function ($route) {
-                        console.log("index")
-                    }
-                }
-            })
+    
+    
+   
+  
             .when('/login', {
                 templateUrl: '../views/pages/login.html',
                 name: "QLH | SERVICES",
@@ -173,8 +94,8 @@
             .when('/schedule', {
                 templateUrl: '../views/pages/schedulepage.html',
                 name: "QLH | PROFILE",
-                controller: "profileCtrl",
-                controllerAs: 'profile'
+                controller: "scheduleCtrl",
+                controllerAs: 'schedule'
 
             })
             .when('/scheduledjobpage', {
