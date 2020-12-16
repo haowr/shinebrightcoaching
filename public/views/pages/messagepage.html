@@ -1,158 +1,87 @@
-<div class = "hide-on-small-only">
-   <div class = "row"></div>
-   <div class = "row"></div>
-   <div class = "row"></div>
-   <div class = "row"></div>
-   <div class = "row"></div>
-   <div class = "row"></div>
-  
 
-   <div class="row center-align" >
 
+ <div class = "row hide-on-small-only  center-align">
     <div class = "row"></div>
-
-    <div class="col s4 animated " ng-class="{fadeOut:fadeOutMenu}">
-
-    
-        <div class="col s2"></div>
-
-        <div class="col s8 " style=" box-shadow:2px 2px 2px black;border:2px solid black;">
-
-            <a ng-href="/clientprofile">
-
-
-                <i class="material-icons black-text" style="font-size:50px;" ng-click="openInfoPage()">home</i>
-
-            </a>
-
-        </div>
-        <div class="col s2"></div>
-
-
-
-    </div>
-
-    <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
-
-        <div class="col s2"></div>
-
-        <div class="col s8 " style=" border:2px solid black; box-shadow:2px 2px 2px black;">
-
-            <a href="/schedule">
-
-                <i class="material-icons black-text" style="font-size:50px;" ng-click="openSchedulePage()">schedule</i>
-
-            </a>
-
-        </div>
-        <div class="col s2"></div>
-
-
-    </div>
-
-    <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
-
-        <div class="col s2"></div>
-
-        <div class="col s8 " style=" border:2px solid black;  background-color:rgb(253, 253, 253);">
-
-            <a href="/messages">
-
-                <i class="material-icons black-text" style="font-size:50px;" ng-click="openMessagePage()">email</i>
-
-            </a>
-
-        </div>
-        <div class="col s2"></div>
-      
-
-    </div>
-
-</div>
-</div>
-<div class = "hide-on-med-and-up">
- 
-   
- 
- <div class = "row center-align">
-
+    <div class = "row"></div>
+    <div class = "row"></div>
+    <div class = "row"></div>
+    <div class = "row"></div>
     <div class="row center-align" >
 
         <div class = "row"></div>
-    
-        <div class="col s4 animated " ng-class="{fadeOut:fadeOutMenu}">
-    
-        
+        <!-- DESKTOP MENU -->
+
+
+        <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
             <div class="col s2"></div>
-    
-            <div class="col s8 " style=" box-shadow:2px 2px 2px black;border:2px solid black;">
-    
-                <a ng-href="/clientprofile">
-    
-    
-                    <i class="material-icons black-text" style="font-size:50px;" ng-click="openInfoPage()">home</i>
-    
-                </a>
-    
-            </div>
-            <div class="col s2"></div>
-    
-    
-    
+
+                <div class="col s8 right-align">
+
+                    <a ng-href="/clientprofile">
+
+                        <br>
+                        <br>
+                        <i class="material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+
+                    </a>
+
+                </div>
+
+                <div class="col s2"></div>
+
         </div>
-    
-        <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
-    
-            <div class="col s2"></div>
-    
-            <div class="col s8 " style=" box-shadow:2px 2px 2px black;border:2px solid black;">
-    
-                <a href="/schedule">
-    
-                    <i class="material-icons black-text" style="font-size:50px;" ng-click="openSchedulePage()">schedule</i>
-    
-                </a>
-    
-            </div>
-    
-            <div class="col s2"></div>
-    
+
+        <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
+            <a href="/schedule">
+
+                <i class="material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()">schedule</i>
+
+            </a>
+
         </div>
-    
-        <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
-    
+
+        <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
             <div class="col s2"></div>
-    
-            <div class="col s8 " style=" border:2px solid black; background-color:rgb(253, 253, 253);">
-    
+
+            <div class="col s8 left-align">
+
                 <a href="/messages">
-    
-                    <i class="material-icons black-text" style="font-size:50px;" ng-click="openMessagePage()">email</i>
-    
+
+                    <i class="material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
+
                 </a>
-    
+
             </div>
-    
+
             <div class="col s2"></div>
-          
+
+
         </div>
-    
-    </div>
- 
-      <div class = "row">
-         <div class = "col s2"></div>
-         <div  class ="col s8" style="border:4px solid black;">
- 
-         </div>
-         <div class = "col s2"></div>
-     </div>
+
+        <div class="row">
+            
+            <div class="col s2"></div>
+            <div class="col s8" style="border:4px solid black;"></div>
+            <div class="col s2"></div>
+
+        </div>
+
+
+    <!-- DESKTOP MENU -->
  
  
          <div class="row">
+            <div class = "col s2"></div>
  
  
- 
-                 <div class="col s12 center-align">
+                 <div class="col s8 center-align">
  
                      <div ng-show="inboxOpen" class="animated ">
  
@@ -441,6 +370,759 @@
                      </div>
  
                  </div>
+
+            <div class = "col s2"></div>
+ 
+          
+         </div>
+ 
+ 
+ 
+ </div>
+ </div>
+<div class = "row hide-on-med-and-up">
+
+  
+
+   <div class="row center-align" >
+
+    <div class = "row"></div>
+
+    <div class="col s4 animated " ng-class="{fadeOut:fadeOutMenu}">
+
+    
+        <div class="col s2"></div>
+
+        <div class="col s8 " style=" box-shadow:2px 2px 2px black;border:2px solid black;">
+
+            <a ng-href="/clientprofile">
+
+
+                <i class="material-icons black-text" style="font-size:50px;" ng-click="openInfoPage()">home</i>
+
+            </a>
+
+        </div>
+        <div class="col s2"></div>
+
+
+
+    </div>
+
+    <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
+
+        <div class="col s2"></div>
+
+        <div class="col s8 " style=" border:2px solid black; box-shadow:2px 2px 2px black;">
+
+            <a href="/schedule">
+
+                <i class="material-icons black-text" style="font-size:50px;" ng-click="openSchedulePage()">schedule</i>
+
+            </a>
+
+        </div>
+        <div class="col s2"></div>
+
+
+    </div>
+
+    <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
+
+        <div class="col s2"></div>
+
+        <div class="col s8 " style=" border:2px solid black;  background-color:rgb(253, 253, 253);">
+
+            <a href="/messages">
+
+                <i class="material-icons black-text" style="font-size:50px;" ng-click="openMessagePage()">email</i>
+
+            </a>
+
+        </div>
+        <div class="col s2"></div>
+      
+
+    </div>
+    <div class = "row"></div>
+    <div class="row">
+            
+        <div class="col s2"></div>
+        <div class="col s8" style="border:4px solid black;"></div>
+        <div class="col s2"></div>
+
+    </div>
+
+
+
+
+        <div class="col s12 center-align">
+ 
+            <div ng-show="inboxOpen" class="animated ">
+
+
+                <h4 class="montserrat animated pulse">Your Inbox!</h4>
+                
+
+                <div class="col s12">
+
+                    <p class="montserrat flow-text" >
+                        Your own, private messaging center. A place where we can communicate openly and honestly, and
+                        keep in touch even outside of our appoinments! :)
+                    </p>
+                    <div class="col s12" style="border:2px solid black"></div>
+
+
+
+                </div>
+
+
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="col s6 center-align">
+                    <a href="#"> <span ng-click="openInbox()" style="text-decoration:underline; font-size:25px;"
+                            class="montserrat black-text flow-text">Inbox</span></a>
+
+                </div>
+                <div ng-click="openCompose()" class="col s6 center-align ">
+                    <a href="#"> <span class="montserrat  black-text"
+                            style="text-decoration:underline; font-size:25px;">Compose</span></a>
+
+                </div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="col s12">
+
+                    <div class="row">
+
+
+
+                        <div >
+
+                            <div class="col s12" style="border:2px solid black; background-color: white;">
+
+                                <div class="col s2 center-align">
+
+                                    <span class="montserrat black-text truncate flow-text"
+                                        >Read/Unread</span>
+
+                                </div>
+
+                                <div class="col s2">
+
+                                    <span class="montserrat black-text truncate flow-text"
+                                        >From</span>
+
+                                </div>
+
+                                <div class="col s8">
+
+                                    <span class="montserrat black-text truncate flow-text"
+                                        >Subject</span>
+
+                                </div>
+                                <div class = "col s12" style="border-bottom:2px solid black;"></div>
+
+                                <p class="montserrat blue-grey-text flow-text" > (No Messages Yet!)
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show="messagesPaginated.length>1">
+
+                            <div ng-repeat="page in messagesPaginated[page] track by $index">
+
+                                <div class="row">
+
+                                    <div class="col s2">
+
+                                        <div ng-show="page.read">
+
+                                            <i ng-click="openMessage($index,page.messageIndex)"
+                                                class="material-icons">drafts</i>
+
+                                        </div>
+                                        <div ng-show="!page.read">
+
+                                            <i ng-click="openMessage($index,page.messageIndex)"
+                                                class="material-icons">email</i>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col s2 center-align">
+
+                                        <span ng-click="openMessage($index,page.messageIndex)"
+                                            class="montserrat grey-text">{{page.from}}</span>
+
+                                    </div>
+                                    <div class="col s8">
+
+                                        <span ng-click="openMessage($index,page.messageIndex)"
+                                            class="montserrat grey-text">{{page.subject}}</span>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col s12 animated fadeIn align-left "
+                                            style="border:1px solid #ddd;" ng-show="messageIndex == $index">
+
+                                            <p class="flow-text montserrat" style="font-size:19px;">
+                                                {{page.body}}</p>
+
+                                        </div>
+
+                                        <div class="col s12 animated fadeIn align-left "
+                                            style="border-top:1px solid #ddd;" ng-show="messageIndex == $index">
+
+                                            <i ng-click="markAsUnread($index,page.messageIndex)"
+                                                class="material-icons">undo</i>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col s2">
+
+                            <span class="montserrat grey-text">{{page.from}}</span>
+
+                        </div>
+
+                        <div class="col s8">
+
+                            <span class="montserrat grey-text">{{page.subject}}</span>
+
+                        </div>
+                    </div>
+                    <div class="col s2">
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-show="composeOpen" class="animated fadeIn">
+
+                <div ng-show="!sendingMessage &&!messageSent" class="animated fadeIn">
+
+
+                    <h4 class="montserrat animated pulse">Get In Touch!</h4>
+
+                    <div class="col s12">
+
+                        <p class="montserrat flow-text" >
+                            When you're feeling down, have a question, or just need someone to talk to...
+                            Send me a message, and i'll get back to you as soon as i can. I'm here for you! :)
+                        </p>
+
+                    </div>
+
+                    <div class="col s12" style="border:2px solid black;"></div>
+
+                    <div class="row"></div>
+                    <div class="row"></div>
+
+                    <div class="col s6 center-align">
+
+                        <a href="#"> <span ng-click="openInbox()"
+                                style="text-decoration:underline; font-size:25px;"
+                                class="montserrat black-text">Inbox</span></a>
+
+                    </div>
+
+                    <div ng-click="openCompose()" class="col s6 center-align ">
+
+                        <a href="#"> <span class="montserrat  black-text"
+                            style="text-decoration:underline; font-size:25px;">Compose</span></a>
+
+                    </div>
+
+                </div>
+
+                <div class="row"></div>
+
+                <div ng-show="!messageSent && !sendingMessage" class="col s12 animated fadeIn"
+                    style="border:2px solid black; background-color: white;">
+
+                    <div class="row"></div>
+                    <div class="row"></div>
+
+                    <div class="row">
+
+                        <div class="col s12">
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="first_name" type="text" ng-model="messageObject.subject"
+                                                name="subject" class="validate">
+                                            <label class="black-text" for="first_name">Subject</label>
+                                        </div>
+                                        <div class = "col s12">
+    
+                                            <div ng-show="messageSubjectCannotBeEmpty" class = "col s12 red lighten-4" >
+
+                                                <p class = "montserrat animated shake flow-text" style=" padding-top:6px;padding-bottom:20px;"> Message Subject Cannot Be Empty :)!</p>
+
+
+                                            </div>
+                                            <div class = "row"></div>
+            
+                                    </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <textarea id="textarea1" class="materialize-textarea"
+                                                ng-model="messageObject.body" name="body"></textarea>
+                                            <label class="black-text" for="textarea1">Message</label>
+                                        </div>
+                                        <div class = "col s12">
+    
+                                            <div ng-show="messageBodyCannotBeEmpty" class = "col s12 red lighten-4" >
+            
+                                                <p class = "montserrat animated shake flow-text" style="padding-top:6px;padding-bottom:20px;"> Message Body Cannot Be Empty :)!</p>
+                                                
+                                            </div>
+            
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="row">
+
+                                <div class=" input-field col s12 center-align">
+
+                                    <button ng-click="submitMessage2()"
+                                        class="waves-effect waves-light blue-grey btn">Send</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div ng-show="sendingMessage && !messageSent">
+
+                    <div class="row"></div>
+                    <div class="row"></div>
+
+                    <i class="material-icons animated fadeOutRight infinite" style="font-size:50px;">
+                        email
+                    </i>
+
+                    <p class="montserrat black-text" style="font-size:30px">
+                        (sending)
+                    </p>
+
+                </div>
+
+                <div class="row"></div>
+
+                <div ng-show="!sendingMessage && messageSent">
+
+                    <p class="montserrat black-text animated shake " style="font-size:40px">~(˘▾˘~)</p>
+
+                    <p class="montserrat black-text" style="font-size:30px">(Message Successfully Delivered!)
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+   
+
+    
+    <!-- MOBILE INTRO -->
+</div>
+</div>
+ 
+   
+ 
+ <div class = "row hide-on-med-and-up  center-align">
+
+    <div class="row center-align" >
+
+        <div class = "row"></div>
+        <!-- DESKTOP MENU -->
+
+
+        <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+            <div class="col s2"></div>
+
+                <div class="col s8 right-align">
+
+                    <a ng-href="/clientprofile">
+
+                        <br>
+                        <br>
+                        <i class="material-icons red-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+
+                    </a>
+
+                </div>
+
+                <div class="col s2"></div>
+
+        </div>
+
+        <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
+            <a href="/schedule">
+
+                <i class="material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()">schedule</i>
+
+            </a>
+
+        </div>
+
+        <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
+            <div class="col s2"></div>
+
+            <div class="col s8 left-align">
+
+                <a href="/messages">
+
+                    <i class="material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
+
+                </a>
+
+            </div>
+
+            <div class="col s2"></div>
+
+
+        </div>
+
+        <div class="row">
+            
+            <div class="col s2"></div>
+            <div class="col s8" style="border:4px solid black;"></div>
+            <div class="col s2"></div>
+
+        </div>
+
+
+    <!-- DESKTOP MENU -->
+ 
+ 
+         <div class="row">
+            <div class = "col s2"></div>
+ 
+ 
+                 <div class="col s8 center-align">
+ 
+                     <div ng-show="inboxOpen" class="animated ">
+ 
+ 
+                         <h4 class="montserrat animated pulse">Your Inbox!</h4>
+                         
+ 
+                         <div class="col s12">
+ 
+                             <p class="montserrat flow-text" >
+                                 Your own, private messaging center. A place where we can communicate openly and honestly, and
+                                 keep in touch even outside of our appoinments! :)
+                             </p>
+                             <div class="col s12" style="border:2px solid black"></div>
+ 
+ 
+ 
+                         </div>
+         
+ 
+                         <div class="row"></div>
+                         <div class="row"></div>
+                         <div class="col s6 center-align">
+                             <a href="#"> <span ng-click="openInbox()" style="text-decoration:underline; font-size:25px;"
+                                     class="montserrat black-text flow-text">Inbox</span></a>
+ 
+                         </div>
+                         <div ng-click="openCompose()" class="col s6 center-align ">
+                             <a href="#"> <span class="montserrat  black-text"
+                                     style="text-decoration:underline; font-size:25px;">Compose</span></a>
+ 
+                         </div>
+                         <div class="row"></div>
+                         <div class="row"></div>
+                         <div class="col s12">
+ 
+                             <div class="row">
+ 
+ 
+ 
+                                 <div >
+ 
+                                     <div class="col s12" style="border:2px solid black; background-color: white;">
+ 
+                                         <div class="col s2 center-align">
+ 
+                                             <span class="montserrat black-text truncate flow-text"
+                                                 >Read/Unread</span>
+ 
+                                         </div>
+ 
+                                         <div class="col s2">
+ 
+                                             <span class="montserrat black-text truncate flow-text"
+                                                 >From</span>
+ 
+                                         </div>
+ 
+                                         <div class="col s8">
+ 
+                                             <span class="montserrat black-text truncate flow-text"
+                                                 >Subject</span>
+ 
+                                         </div>
+                                         <div class = "col s12" style="border-bottom:2px solid black;"></div>
+
+                                         <p class="montserrat blue-grey-text flow-text" > (No Messages Yet!)
+                                         </p>
+ 
+                                     </div>
+ 
+                                 </div>
+ 
+                                 <div ng-show="messagesPaginated.length>1">
+ 
+                                     <div ng-repeat="page in messagesPaginated[page] track by $index">
+ 
+                                         <div class="row">
+ 
+                                             <div class="col s2">
+ 
+                                                 <div ng-show="page.read">
+ 
+                                                     <i ng-click="openMessage($index,page.messageIndex)"
+                                                         class="material-icons">drafts</i>
+ 
+                                                 </div>
+                                                 <div ng-show="!page.read">
+ 
+                                                     <i ng-click="openMessage($index,page.messageIndex)"
+                                                         class="material-icons">email</i>
+ 
+                                                 </div>
+ 
+                                             </div>
+                                             <div class="col s2 center-align">
+ 
+                                                 <span ng-click="openMessage($index,page.messageIndex)"
+                                                     class="montserrat grey-text">{{page.from}}</span>
+ 
+                                             </div>
+                                             <div class="col s8">
+ 
+                                                 <span ng-click="openMessage($index,page.messageIndex)"
+                                                     class="montserrat grey-text">{{page.subject}}</span>
+ 
+                                             </div>
+                                             <div class="row">
+ 
+                                                 <div class="col s12 animated fadeIn align-left "
+                                                     style="border:1px solid #ddd;" ng-show="messageIndex == $index">
+ 
+                                                     <p class="flow-text montserrat" style="font-size:19px;">
+                                                         {{page.body}}</p>
+ 
+                                                 </div>
+ 
+                                                 <div class="col s12 animated fadeIn align-left "
+                                                     style="border-top:1px solid #ddd;" ng-show="messageIndex == $index">
+ 
+                                                     <i ng-click="markAsUnread($index,page.messageIndex)"
+                                                         class="material-icons">undo</i>
+ 
+                                                 </div>
+ 
+                                             </div>
+ 
+                                         </div>
+ 
+                                     </div>
+ 
+                                 </div>
+ 
+                                 <div class="col s2">
+ 
+                                     <span class="montserrat grey-text">{{page.from}}</span>
+ 
+                                 </div>
+ 
+                                 <div class="col s8">
+ 
+                                     <span class="montserrat grey-text">{{page.subject}}</span>
+ 
+                                 </div>
+                             </div>
+                             <div class="col s2">
+                             </div>
+ 
+                         </div>
+                     </div>
+ 
+                     <div ng-show="composeOpen" class="animated fadeIn">
+ 
+                         <div ng-show="!sendingMessage &&!messageSent" class="animated fadeIn">
+ 
+ 
+                             <h4 class="montserrat animated pulse">Get In Touch!</h4>
+ 
+                             <div class="col s12">
+ 
+                                 <p class="montserrat flow-text" >
+                                     When you're feeling down, have a question, or just need someone to talk to...
+                                     Send me a message, and i'll get back to you as soon as i can. I'm here for you! :)
+                                 </p>
+ 
+                             </div>
+ 
+                             <div class="col s12" style="border:2px solid black;"></div>
+ 
+                             <div class="row"></div>
+                             <div class="row"></div>
+ 
+                             <div class="col s6 center-align">
+ 
+                                 <a href="#"> <span ng-click="openInbox()"
+                                         style="text-decoration:underline; font-size:25px;"
+                                         class="montserrat black-text">Inbox</span></a>
+ 
+                             </div>
+ 
+                             <div ng-click="openCompose()" class="col s6 center-align ">
+ 
+                                 <a href="#"> <span class="montserrat  black-text"
+                                     style="text-decoration:underline; font-size:25px;">Compose</span></a>
+ 
+                             </div>
+ 
+                         </div>
+ 
+                         <div class="row"></div>
+ 
+                         <div ng-show="!messageSent && !sendingMessage" class="col s12 animated fadeIn"
+                             style="border:2px solid black; background-color: white;">
+ 
+                             <div class="row"></div>
+                             <div class="row"></div>
+ 
+                             <div class="row">
+ 
+                                 <div class="col s12">
+                                     <div class="row">
+                                         <form class="col s12">
+                                             <div class="row">
+                                                 <div class="input-field col s12">
+                                                     <input id="first_name" type="text" ng-model="messageObject.subject"
+                                                         name="subject" class="validate">
+                                                     <label class="black-text" for="first_name">Subject</label>
+                                                 </div>
+                                                 <div class = "col s12">
+             
+                                                     <div ng-show="messageSubjectCannotBeEmpty" class = "col s12 red lighten-4" >
+ 
+                                                         <p class = "montserrat animated shake flow-text" style=" padding-top:6px;padding-bottom:20px;"> Message Subject Cannot Be Empty :)!</p>
+ 
+ 
+                                                     </div>
+                                                     <div class = "row"></div>
+                     
+                                             </div>
+ 
+                                             </div>
+                                             <div class="row">
+                                                 <div class="input-field col s12">
+                                                     <textarea id="textarea1" class="materialize-textarea"
+                                                         ng-model="messageObject.body" name="body"></textarea>
+                                                     <label class="black-text" for="textarea1">Message</label>
+                                                 </div>
+                                                 <div class = "col s12">
+             
+                                                     <div ng-show="messageBodyCannotBeEmpty" class = "col s12 red lighten-4" >
+                     
+                                                         <p class = "montserrat animated shake flow-text" style="padding-top:6px;padding-bottom:20px;"> Message Body Cannot Be Empty :)!</p>
+                                                         
+                                                     </div>
+                     
+                                             </div>
+                                             </div>
+                                         </form>
+                                     </div>
+ 
+                                     <div class="row">
+ 
+                                         <div class=" input-field col s12 center-align">
+ 
+                                             <button ng-click="submitMessage2()"
+                                                 class="waves-effect waves-light blue-grey btn">Send</button>
+ 
+                                         </div>
+ 
+                                     </div>
+ 
+                                 </div>
+ 
+                             </div>
+ 
+ 
+ 
+                         </div>
+ 
+                         <div ng-show="sendingMessage && !messageSent">
+ 
+                             <div class="row"></div>
+                             <div class="row"></div>
+ 
+                             <i class="material-icons animated fadeOutRight infinite" style="font-size:50px;">
+                                 email
+                             </i>
+ 
+                             <p class="montserrat black-text" style="font-size:30px">
+                                 (sending)
+                             </p>
+ 
+                         </div>
+ 
+                         <div class="row"></div>
+ 
+                         <div ng-show="!sendingMessage && messageSent">
+ 
+                             <p class="montserrat black-text animated shake " style="font-size:40px">~(˘▾˘~)</p>
+ 
+                             <p class="montserrat black-text" style="font-size:30px">(Message Successfully Delivered!)
+                             </p>
+ 
+                         </div>
+ 
+                     </div>
+ 
+                 </div>
+
+            <div class = "col s2"></div>
  
           
          </div>
