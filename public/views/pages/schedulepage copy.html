@@ -1,0 +1,269 @@
+<div class = 'hide-on-med-and-up' >
+
+<div class="row  center-align" >
+
+
+        
+        <div class="row center-align" >
+
+            <div class = "row"></div>
+    
+            <div class="col s4 animated " ng-class="{fadeOut:fadeOutMenu}">
+    
+            
+                <div class="col s2"></div>
+    
+                <div class="col s8 " style=" box-shadow:2px 2px 2px black;border:2px solid black;">
+    
+                    <a ng-href="/clientprofile">
+    
+    
+                        <i class="material-icons black-text" style="font-size:50px;" ng-click="openInfoPage()">home</i>
+    
+                    </a>
+    
+                </div>
+                <div class="col s2"></div>
+    
+    
+    
+            </div>
+    
+            <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
+    
+                <div class="col s2"></div>
+    
+                <div class="col s8 " style=" border:2px solid black; background-color:rgb(253, 253, 253);">
+    
+                    <a href="/schedule">
+    
+                        <i class="material-icons black-text" style="font-size:50px;" ng-click="openSchedulePage()">schedule</i>
+        
+                    </a>
+    
+                </div>
+                <div class="col s2"></div>
+    
+    
+            </div>
+    
+            <div class=" col s4 animated" ng-class="{fadeOut:fadeOutMenu}">
+    
+                <div class="col s2"></div>
+    
+                <div class="col s8 " style="box-shadow:2px 2px 2px black; border:2px solid black;">
+    
+                    <a href="/messages">
+    
+                        <i class="material-icons black-text" style="font-size:50px;" ng-click="openMessagePage()">email</i>
+    
+                    </a>
+    
+                </div>
+                <div class="col s2"></div>
+              
+    
+            </div>
+    
+        </div>
+
+        <div class = "row">
+        
+            <div class = "col s2"></div>
+            <div class ="col s8" style="border:4px solid black;"> </div>
+            <div class = "col s2"></div>
+    
+        </div>
+
+      
+
+
+        
+</div>
+
+
+        <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen">
+
+            <schedule-page></schedule-page>
+
+        </div>
+
+        <div ng-show="scheduledJobPageOpen" class = "hide-on-small-only">
+
+            <scheduled-job-page></scheduled-job-page>
+
+        </div>
+
+        <div ng-show="scheduledJobPageOpen" class = "hide-on-med-and-up" >
+
+            <scheduled-job-page></scheduled-job-page>
+
+        </div>
+        
+        <div ng-show="bookingsPageOpen">
+
+            <booking-page></booking-page>
+
+        </div>
+        
+        <div ng-show="bookingPageOpen">
+
+            <div ng-show="slot == 'eight'" class = "hide-on-small-only">
+
+                <eight-to-nine></eight-to-nine>
+
+            </div>
+
+            <div ng-show="slot == 'eight'" class = "hide-on-med-and-up">
+
+                <eight-to-nine></eight-to-nine>
+
+            </div>
+
+            <div ng-show="slot == 'nine'">
+
+                
+                <nine-to-ten></nine-to-ten>
+
+            </div>
+            
+        </div>
+    
+
+
+</div>
+
+
+<div class = 'hide-on-small-only'>
+
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+    
+    <div class="row  center-align" >
+    
+        <div>
+    
+           <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+    
+               <br>
+               <br>
+               <div class = "col s2"></div>
+               <div class = "col s8 right-align">
+    
+                <a ng-href="/clientprofile">
+                    
+    
+                    <i class = "material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+    
+                </a>
+    
+               </div>
+               <div class = "col s2"></div>
+    
+    
+                
+            </div>
+            
+            <div class=" col s4 animated center-align"  ng-class="{fadeOut:fadeOutMenu}">
+    
+                <br>
+                <br>
+                 <a href="/schedule">
+    
+                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()" >schedule</i>
+    
+                 </a>
+            
+    
+            </div>
+    
+            <div class=" col s4 animated center-align "  ng-class="{fadeOut:fadeOutMenu}">
+    
+                <br>
+                <br>
+                <div class = "col s2"></div>
+                <div class = "col s8 left-align">
+    
+                 <a href="/messages">
+    
+                     <i class = "material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
+    
+                 </a>
+    
+                </div>
+    
+                <div class = "col s2"></div>
+              
+    
+            </div>
+    
+        </div>
+    
+        <div class = "row">
+            <div class = "col s2"></div>
+            <div  class ="col s8" style="border:4px solid black;">
+    
+            </div>
+            <div class = "col s2"></div>
+        </div>
+    
+    <div class = "row">
+    
+    
+        <div class = "col s2"></div>
+    
+        <div class = "col s8">
+    
+            <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen">
+                <schedule-page></schedule-page>
+            </div>
+    
+            <div ng-show="scheduledJobPageOpen">
+                <scheduled-job-page></scheduled-job-page>
+            </div>
+            <div ng-show="bookingsPageOpen">
+                <booking-page></booking-page>
+            </div>
+    
+            <div ng-show="bookingPageOpen">
+                <div ng-show="slot == 'eight'">
+                    <eight-to-nine></eight-to-nine>
+                </div>
+                <div ng-show="slot == 'nine'">
+                    <nine-to-ten></nine-to-ten>
+                </div>
+              
+                
+            </div>
+        
+        </div>
+    
+    
+        <div class = "col s2"></div>
+    
+    
+     </div>
+    
+    </div>
+
+
+    
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>  
+    <div class = "row">
+    </div>
+    <div class = "row">
+    </div>
+</div>
