@@ -67,32 +67,7 @@
   
       </div>
   
-      <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="successfulLogin">
-        <br>
-        <div class = "col s2"></div>
-  
-        <div class="col s8 green lighten-3 ">
-    
-          <p class=" railway center-align black-text " style="font-size:18px;">Login Successful!</p>
-          <br>
-        </div>
-  
-       <div class = "col s2"></div>
-  
-      </div>
-    
-      <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="failedLogin ">
-        
-        <div class= "col s2"></div>
-  
-        <div class="col s8 red lighten-3">
-          <p class=" railway center-align black-text " style="font-size:18px;">{{errorMsg}}</p>
-          <br>
-        </div>
-  
-        <div class = "col s2"></div>
-        
-      </div>
+      
 
       <div class="row">
 
@@ -101,6 +76,32 @@
           <button type="submit" class="waves-effect waves-light green btn">Submit</button>
           <br>
 
+        </div>
+        <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="successfulLogin">
+          <br>
+          <div class = "col s2"></div>
+    
+          <div class="col s8 green lighten-3 ">
+      
+            <p class=" railway center-align black-text " style="font-size:18px;">Login Successful!</p>
+            <br>
+          </div>
+    
+         <div class = "col s2"></div>
+    
+        </div>
+      
+        <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="failedLogin ">
+          
+          <div class= "col s2"></div>
+    
+          <div class="col s8 red lighten-3">
+            <p class=" railway center-align black-text " style="font-size:18px;">{{errorMsg}}</p>
+            <br>
+          </div>
+    
+          <div class = "col s2"></div>
+          
         </div>
    
   </form>
