@@ -5302,6 +5302,8 @@ console.log(data)
 
                     }
                     if ($scope.hour == "nine") {
+                        $location.path("/datepage/discovery");
+
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 2) {
 
@@ -5653,6 +5655,8 @@ console.log(data)
                     }
 
                     if ($scope.hour == "nine") {
+                        $location.path("/datepage/session");
+
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
 

@@ -78,6 +78,26 @@
                     }
                 }
             })
+            .when('/datepage/discovery', {
+                templateUrl: '../views/pages/discovery.html',
+                name: "SB| DISCOVERY",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
+            .when('/datepage/session', {
+                templateUrl: '../views/pages/session.html',
+                name: "SB| SESSION",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
             .when('/datepage', {
                 templateUrl: '../views/pages/datepage.html',
                 name: "SB| CHECKUP",
