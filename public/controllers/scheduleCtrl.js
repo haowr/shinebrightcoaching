@@ -4503,6 +4503,441 @@
             }
         }
 
+        $scope.selectAppointmentType = function (type, column, color) {
+
+            $scope.appointmentType = type;
+    
+            if (color == 'green' || color == 'yellow') {
+
+                $scope.appointmentTypeAvailable = true;
+
+            } else {
+
+                $scope.appointmentTypeAvailable = false;
+
+            }
+
+            if (type == 'checkup') {
+
+                $scope.sessionPageOpen = false;
+                $scope.discoveryPageOpen = false;
+                $scope.checkUpPageOpen = true;
+                $scope.checkUpTitle9 = true;
+
+                if (column == '1') {
+
+                    if (!$scope.checkUp8Selected) {
+
+                        $scope.discovery8Selected   = false;
+                        $scope.session8Selected     = false;
+                        $scope.checkUp8Selected     = true;
+                        $scope.sessionTitle80       = false;
+                        $scope.discoveryTitle80     = false;
+                        $scope.checkUpTitle80       = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '2') {
+
+                    if (!$scope.checkUp9Selected2) {
+
+                        $scope.discovery9Selected2  = false;
+                        $scope.session9Selected2    = false;
+                        $scope.checkUp9Selected2    = true;
+                        $scope.sessionTitle91       = false;
+                        $scope.discoveryTitle91     = false;
+                        $scope.checkUpTitle91       = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '3') {
+
+                    if (!$scope.checkUp10Selected3) {
+
+                        $scope.discovery10Selected3 = false;
+                        $scope.session10Selected3   = false;
+                        $scope.checkUp10Selected3   = true;
+                        $scope.checkUpTitle102      = true;
+                        $scope.discoveryTitle102    = false;
+                        $scope.sessionTitle102      = false;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '4') {
+
+                    if (!$scope.checkUp11Selected4) {
+
+                        $scope.discovery11Selected4     = false;
+                        $scope.session11Selected4       = false;
+                        $scope.checkUp11Selected4       = true;
+                        $scope.checkUpTitle113          = true;
+                        $scope.discoveryTitle113        = false;
+                        $scope.sessionTitle113          = false;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '5') {
+
+                    if (!$scope.checkUp12Selected5) {
+
+                        $scope.discovery12Selected5     = false;
+                        $scope.session12Selected5       = false;
+                        $scope.checkUp12Selected5       = true;
+                        $scope.sessionTitle124          = false;
+                        $scope.discoveryTitle124        = false;
+                        $scope.checkUpTitle124          = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '6') {
+
+                    if (!$scope.checkUp1Selected6) {
+
+                        $scope.discovery1Selected6      = false;
+                        $scope.session1Selected6        = false;
+                        $scope.checkUp1Selected6        = true;
+                        $scope.sessionTitle15           = false;
+                        $scope.discoveryTitle15         = false;
+                        $scope.checkUpTitle15           = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '7') {
+
+                    if (!$scope.checkUp2Selected7) {
+
+                        $scope.discovery2Selected7      = false;
+                        $scope.session2Selected7        = false;
+                        $scope.checkUp2Selected7        = true;
+                        $scope.sessionTitle26           = false;
+                        $scope.discoveryTitle26         = false;
+                        $scope.checkUpTitle26           = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '8') {
+
+                    if (!$scope.checkUp3Selected8) {
+
+                        $scope.discovery3Selected8      = false;
+                        $scope.session3Selected8        = false;
+                        $scope.checkUp3Selected8        = true;
+                        $scope.sessionTitle37           = false;
+                        $scope.discoveryTitle37         = false;
+                        $scope.checkUpTitle37           = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+            }
+
+            if (type == 'discovery') {
+
+                $scope.sessionPageOpen      = false;
+                $scope.checkUpPageOpen      = false;
+                $scope.discoveryPageOpen    = true;
+
+
+                if (column == '1') {
+
+                    if (!$scope.discovery8Selected) {
+
+                        $scope.checkUp8Selected         = false;
+                        $scope.session8Selected         = false;
+                        $scope.discovery8Selected       = true
+                        $scope.sessionTitle80           = false;
+                        $scope.checkUpTitle80           = false;
+                        $scope.discoveryTitle80         = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '2') {
+
+                    if (!$scope.discovery9Selected2) {
+
+                        $scope.checkUp9Selected2        = false;
+                        $scope.session9Selected2        = false;
+                        $scope.discovery9Selected2      = true;
+                        $scope.sessionTitle91           = false;
+                        $scope.checkUpTitle91           = false;
+                        $scope.discoveryTitle91         = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '3') {
+
+                    if (!$scope.discovery10Selected3) {
+
+                        $scope.checkUp10Selected3       = false;
+                        $scope.session10Selected3       = false;
+                        $scope.discovery10Selected3     = true;
+                        $scope.sessionTitle102          = false;
+                        $scope.checkUpTitle102          = false;
+                        $scope.discoveryTitle102        = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '4') {
+
+                    if (!$scope.discovery11Selected4) {
+
+                        $scope.checkUp11Selected4       = false;
+                        $scope.session11Selected4       = false;
+                        $scope.discovery11Selected4     = true;
+                        $scope.sessionTitle113          = false;
+                        $scope.checkUpTitle113          = false;
+                        $scope.discoveryTitle113        = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '5') {
+
+                    if (!$scope.discovery12Selected5) {
+
+                        $scope.checkUp12Selected5   = false;
+                        $scope.session12Selected5   = false;
+                        $scope.discovery12Selected5 = true;
+                        $scope.sessionTitle124      = false;
+                        $scope.checkUpTitle124      = false;
+                        $scope.discoveryTitle124    = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '6') {
+
+                    if (!$scope.discovery1Selected6) {
+
+                        $scope.checkUp1Selected6    = false;
+                        $scope.session1Selected6    = false;
+                        $scope.discovery1Selected6  = true;
+                        $scope.sessionTitle15       = false;
+                        $scope.checkUpTitle15       = false;
+                        $scope.discoveryTitle15     = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '7') {
+
+                    if (!$scope.discovery2Selected7) {
+
+                        $scope.checkUp2Selected7    = false;
+                        $scope.session2Selected7    = false;
+                        $scope.discovery2Selected7  = true;
+                        $scope.sessionTitle26       = false;
+                        $scope.checkUpTitle26       = false;
+                        $scope.discoveryTitle26     = true;
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '8') {
+
+                    if (!$scope.discovery3Selected8) {
+
+                        $scope.checkUp3Selected8    = false;
+                        $scope.session3Selected8    = false;
+                        $scope.discovery3Selected8  = true;
+                        $scope.checkUpTitle37       = false;
+                        $scope.sessionTitle37       = false;
+                        $scope.discoveryTitle37     = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+
+
+
+            }
+
+            if (type == 'session') {
+
+                $scope.discoveryPageOpen    = false;
+                $scope.checkUpPageOpen      = false;
+                $scope.sessionPageOpen      = true;
+
+                if (column == '1') {
+
+                    if (!$scope.session8Selected) {
+
+                        $scope.checkUp8Selected     = false;
+                        $scope.discovery8Selected   = false;
+                        $scope.session8Selected     = true
+                        $scope.checkUpTitle80       = false;
+                        $scope.discoveryTitle80     = false;
+                        $scope.sessionTitle80       = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '2') {
+
+                    if (!$scope.session9Selected2) {
+
+                        $scope.checkUp9Selected2    = false;
+                        $scope.discovery9Selected2  = false;
+                        $scope.session9Selected2    = true;
+                        $scope.sessionTitle91       = true;
+                        $scope.discoveryTitle91     = false;
+                        $scope.checkUpTitle91       = false;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+                if (column == '3') {
+
+                    if (!$scope.session10Selected3) {
+
+                        $scope.checkUp10Selected3   = false;
+                        $scope.discovery10Selected3 = false;
+                        $scope.session10Selected3   = true;
+                        $scope.checkUpTitle102      = false;
+                        $scope.discoveryTitle102    = false;
+                        $scope.sessionTitle102      = true; 
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '4') {
+
+                    if (!$scope.session11Selected4) {
+
+                        $scope.checkUp11Selected4   = false;
+                        $scope.discovery11Selected4 = false;
+                        $scope.session11Selected4   = true;
+                        $scope.discoveryTitle113    = false;
+                        $scope.checkUpTitle113      = false;
+                        $scope.sessionTitle113      = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '5') {
+
+                    if (!$scope.session12Selected5) {
+
+                        $scope.checkUp12Selected5   = false;
+                        $scope.discovery12Selected5 = false;
+                        $scope.session12Selected5   = true;
+                        $scope.discoveryTitle124    = false;
+                        $scope.checkUpTitle124      = false;
+                        $scope.sessionTitle124      = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '6') {
+
+                    if (!$scope.session1Selected6) {
+
+                        $scope.checkUp1Selected6    = false;
+                        $scope.discovery1Selected6  = false;
+                        $scope.session1Selected6    = true;
+                        $scope.discoveryTitle15     = false;
+                        $scope.checkUpTitle15       = false;
+                        $scope.sessionTitle15       = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '7') {
+
+                    if (!$scope.session2Selected7) {
+
+                        $scope.checkUp2Selected7        = false;
+                        $scope.discovery2Selected7      = false;
+                        $scope.session2Selected7        = true;
+                        $scope.discoveryTitle26         = false;
+                        $scope.checkUpTitle26           = false;
+                        $scope.sessionTitle26           = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+                if (column == '8') {
+
+                    if (!$scope.session3Selected8) {
+
+                        $scope.checkUp3Selected8        = false;
+                        $scope.discovery3Selected8      = false;
+                        $scope.session3Selected8        = true;
+                        $scope.discoveryTitle37         = false;
+                        $scope.checkUpTitle37           = false;
+                        $scope.sessionTitle37           = true;
+
+                        $scope.audio.play()
+
+                    }
+
+                }
+
+            }
+
+        }
+
     })
 
 }());
