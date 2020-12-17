@@ -34,6 +34,28 @@
         $scope.shinebrightsuccess           = new Audio('../audio/shinebrightsuccess.wav');
         $scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
 
+        $scope.discoveryPageOpen    = false;
+        $scope.sessionPageOpen      = false;
+        $scope.checkUpPageOpen      = true;
+        $scope.checkUpAvailable10   = true;
+        $scope.sessionAvailable10   = true;
+        $scope.discoveryAvailable10 = true;
+        $scope.checkUpAvailable11   = true;
+        $scope.sessionAvailable11   = true;
+        $scope.discoveryAvailable11 = true;
+        $scope.checkUpAvailable12   = true;
+        $scope.sessionAvailable12   = true;
+        $scope.discoveryAvailable12 = true;
+        $scope.checkUpAvailable1    = true;
+        $scope.sessionAvailable1    = true;
+        $scope.discoveryAvailable1  = true;
+        $scope.checkUpAvailable2    = true;
+        $scope.sessionAvailable2    = true;
+        $scope.discoveryAvailable2  = true;
+        $scope.checkUpAvailable3    = true;
+        $scope.sessionAvailable3    = true;
+        $scope.discoveryAvailable3  = true;
+
         
         $scope.bookingInfo = {
 

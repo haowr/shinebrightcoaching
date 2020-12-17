@@ -1173,6 +1173,8 @@
 
             $scope.id               = id
             $scope.dateCondensed    = datecondensed
+            $window.location.href = "/datepage";
+            console.log("openScheduledJobPage")
 
             if (!$scope.scheduledJobPageOpen) {
 

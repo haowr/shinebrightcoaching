@@ -68,6 +68,16 @@
                     }
                 }
             })
+            .when('/datepage', {
+                templateUrl: '../views/pages/datepage.html',
+                name: "SB| DATE",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
     
     
    
