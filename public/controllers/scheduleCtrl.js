@@ -215,6 +215,154 @@
         $scope.sessionTitle36       = false;
         $scope.sessionTitle37       = false;
 
+        $scope.bookeCheckup = true;
+            $scope.bookDiscovery8 = false
+            $scope.bookDiscovery9 = false;
+            $scope.bookDiscovery18 = false;
+            $scope.bookDiscovery19 = false;
+            $scope.bookDiscovery28 = false;
+            $scope.bookDiscovery29 = false;
+            $scope.bookDiscovery39 = false;
+            $scope.bookDiscovery49 = false;
+            $scope.bookDiscovery59 = false;
+            $scope.bookDiscovery10 = false;
+            $scope.bookDiscovery110 = false;
+            $scope.bookDiscovery210 = false;
+            $scope.bookDiscovery310 = false;
+            $scope.bookDiscovery410 = false;
+            $scope.bookDiscovery510 = false;
+            $scope.bookDiscovery11 = false;
+            $scope.bookDiscovery111 = false;
+            $scope.bookDiscovery211 = false;
+            $scope.bookDiscovery311 = false;
+            $scope.bookDiscovery411 = false;
+            $scope.bookDiscovery511 = false;
+            $scope.bookDiscovery12 = false;
+            $scope.bookDiscovery112 = false;
+            $scope.bookDiscovery212 = false;
+            $scope.bookDiscovery312 = false;
+            $scope.bookDiscovery412 = false;
+            $scope.bookDiscovery512 = false;
+            $scope.bookDiscovery1 = false;
+            $scope.bookDiscovery11 = false;
+            $scope.bookDiscovery21 = false;
+            $scope.bookDiscovery31 = false;
+            $scope.bookDiscovery41 = false;
+            $scope.bookDiscovery51 = false;
+            $scope.bookDiscovery2 = false;
+            $scope.bookDiscovery102 = false;
+            $scope.bookDiscovery22 = false;
+            $scope.bookDiscovery32 = false;
+            $scope.bookDiscovery42 = false;
+            $scope.bookDiscovery52 = false;
+            $scope.bookDiscovery3 = false;
+            $scope.bookDiscovery13 = false;
+            $scope.bookDiscovery23 = false;
+            $scope.bookDiscovery33 = false;
+            $scope.bookDiscovery43 = false;
+            $scope.bookDiscovery53 = false;
+            $scope.bookDiscovery38 = false;
+            $scope.bookDiscovery48 = false;
+            $scope.bookDiscovery58 = false;
+
+            $scope.bookSession8 = false
+            $scope.bookSession9 = false;
+            $scope.bookSession18 = false;
+            $scope.bookSession19 = false;
+            $scope.bookSession28 = false;
+            $scope.bookSession29 = false;
+            $scope.bookSession39 = false;
+            $scope.bookSession49 = false;
+            $scope.bookSession59 = false;
+            $scope.bookSession10 = false;
+            $scope.bookSession110 = false;
+            $scope.bookSession210 = false;
+            $scope.bookSession310 = false;
+            $scope.bookSession410 = false;
+            $scope.bookSession510 = false;
+            $scope.bookSession11 = false;
+            $scope.bookSession111 = false;
+            $scope.bookSession211 = false;
+            $scope.bookSession311 = false;
+            $scope.bookSession411 = false;
+            $scope.bookSession511 = false;
+            $scope.bookSession12 = false;
+            $scope.bookSession112 = false;
+            $scope.bookSession212 = false;
+            $scope.bookSession312 = false;
+            $scope.bookSession412 = false;
+            $scope.bookSession512 = false;
+            $scope.bookSession1 = false;
+            $scope.bookSession11 = false;
+            $scope.bookSession21 = false;
+            $scope.bookSession31 = false;
+            $scope.bookSession41 = false;
+            $scope.bookSession51 = false;
+            $scope.bookSession2 = false;
+            $scope.bookSession12 = false;
+            $scope.bookSession22 = false;
+            $scope.bookSession32 = false;
+            $scope.bookSession42 = false;
+            $scope.bookSession52 = false;
+            $scope.bookSession3 = false;
+            $scope.bookSession13 = false;
+            $scope.bookSession23 = false;
+            $scope.bookSession33 = false;
+            $scope.bookSession43 = false;
+            $scope.bookSession53 = false;
+            $scope.bookSession38 = false;
+            $scope.bookSession48 = false;
+            $scope.bookSession58 = false;
+
+            $scope.bookCheckUp8 = false
+            $scope.bookCheckUp9 = false;
+            $scope.bookCheckUp18 = false;
+            $scope.bookCheckUp19 = false;
+            $scope.bookCheckUp28 = false;
+            $scope.bookCheckUp29 = false;
+            $scope.bookCheckUp39 = false;
+            $scope.bookCheckUp49 = false;
+            $scope.bookCheckUp59 = false;
+            $scope.bookCheckUp10 = false;
+            $scope.bookCheckUp110 = false;
+            $scope.bookCheckUp210 = false;
+            $scope.bookCheckUp310 = false;
+            $scope.bookCheckUp410 = false;
+            $scope.bookCheckUp510 = false;
+            $scope.bookCheckUp11 = false;
+            $scope.bookCheckUp111 = false;
+            $scope.bookCheckUp211 = false;
+            $scope.bookCheckUp311 = false;
+            $scope.bookCheckUp411 = false;
+            $scope.bookCheckUp511 = false;
+            $scope.bookCheckUp12 = false;
+            $scope.bookCheckUp112 = false;
+            $scope.bookCheckUp212 = false;
+            $scope.bookCheckUp312 = false;
+            $scope.bookCheckUp412 = false;
+            $scope.bookCheckUp512 = false;
+            $scope.bookCheckUp1 = false;
+            $scope.bookCheckUp11 = false;
+            $scope.bookCheckUp21 = false;
+            $scope.bookCheckUp31 = false;
+            $scope.bookCheckUp41 = false;
+            $scope.bookCheckUp51 = false;
+            $scope.bookCheckUp2 = false;
+            $scope.bookCheckUp102 = false;
+            $scope.bookCheckUp22 = false;
+            $scope.bookCheckUp32 = false;
+            $scope.bookCheckUp42 = false;
+            $scope.bookCheckUp52 = false;
+            $scope.bookCheckUp3 = false;
+            $scope.bookCheckUp13 = false;
+            $scope.bookCheckUp23 = false;
+            $scope.bookCheckUp33 = false;
+            $scope.bookCheckUp43 = false;
+            $scope.bookCheckUp53 = false;
+            $scope.bookCheckUp38 = false;
+            $scope.bookCheckUp48 = false;
+            $scope.bookCheckUp58 = false;
+
         $scope.openScheduledJobPage = function (currentdate, id, datecondensed) {
 
             $scope.id               = id
@@ -5243,7 +5391,7 @@ console.log(data)
 
                         $location.path("/datepage/checkup");
 
-                        /*
+                        
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
 
                             $scope.bookCheckUp9 = false;
@@ -5287,7 +5435,7 @@ console.log(data)
                             $scope.bookCheckUp29 = false;
 
                         }
-                        */
+                        
 
                     }
 
