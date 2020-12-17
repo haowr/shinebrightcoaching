@@ -5241,7 +5241,7 @@ console.log(data)
                     }
                     if ($scope.hour == "nine") {
 
-                        $window.location.path("/datepage/checkup");
+                        $location.path("/datepage/checkup");
 
                         /*
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
