@@ -68,9 +68,9 @@
                     }
                 }
             })
-            .when('/datepage', {
-                templateUrl: '../views/pages/datepage.html',
-                name: "SB| DATE",
+            .when('/datepage/checkup', {
+                templateUrl: '../views/pages/checkup.html',
+                name: "SB| CHECKUP",
                 controller: "scheduleCtrl",
                 controllerAs: 'profile',
                 resolve: {
@@ -78,7 +78,16 @@
                     }
                 }
             })
-    
+            .when('/datepage', {
+                templateUrl: '../views/pages/datepage.html',
+                name: "SB| CHECKUP",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
     
    
   

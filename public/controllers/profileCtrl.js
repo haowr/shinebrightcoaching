@@ -5472,6 +5472,8 @@
 
             $scope.slot                     = slot;
             $scope.hour                     = slot;
+            $window.localStorage.setItem('hour', slot)
+
             $scope.bookingPageOpen          = true;
             $scope.scheduledJobPageOpen     = false;
             $scope.scheduleSDOrCiPageOpen   = false;

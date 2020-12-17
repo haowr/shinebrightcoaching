@@ -27,8 +27,7 @@ module.exports = function (app) {
 
     app.post('/users/addbooking', function (req, res) {
 
-        console.log("REQ.BODY")
-        console.log(req.body)
+  
 
         User.findOne({ _id: req.body.id }, function(err,user){
 
