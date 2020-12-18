@@ -6089,6 +6089,9 @@ console.log(data)
 
                     if ($scope.hour == "eight") {
 
+                        $location.path("/datepage/session/eight");
+
+
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
 
                             $scope.bookSession8     = false;
@@ -6210,7 +6213,8 @@ console.log(data)
                     }
 
                     if ($scope.hour == "nine") {
-                        $location.path("/datepage/session");
+
+                        $location.path("/datepage/session/nine");
 
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {

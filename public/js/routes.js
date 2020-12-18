@@ -98,6 +98,26 @@
                     }
                 }
             })
+            .when('/datepage/session/nine', {
+                templateUrl: '../views/pages/nine.html',
+                name: "SB| SESSION",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
+            .when('/datepage/session/eight', {
+                templateUrl: '../views/pages/eight.html',
+                name: "SB| SESSION",
+                controller: "scheduleCtrl",
+                controllerAs: 'profile',
+                resolve: {
+                    init: function ($route) {
+                    }
+                }
+            })
             .when('/datepage', {
                 templateUrl: '../views/pages/datepage.html',
                 name: "SB| CHECKUP",

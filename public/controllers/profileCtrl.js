@@ -12288,6 +12288,8 @@
 
             }
 
+
+            
         }
 
         $scope.openModal = function (size) {
