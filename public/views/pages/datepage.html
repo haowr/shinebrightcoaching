@@ -27,17 +27,17 @@
 
                       <div class="col s12 center-align">
 
-                            <p ng-show="checkUpTitle91" class="montserrat animated fadeIn flow-text" >
+                            <p ng-show="checkUpTitle80" class="montserrat animated fadeIn flow-text" >
                                   Check-Up</p>
-                            <p ng-show="discoveryTitle91" class="montserrat animated fadeIn flow-text">
+                            <p ng-show="discoveryTitle80" class="montserrat animated fadeIn flow-text">
                                   Discovery</p>
-                            <p ng-show="sessionTitle91" class="montserrat animated fadeIn flow-text" >
+                            <p ng-show="sessionTitle80" class="montserrat animated fadeIn flow-text" >
                                   Session</p>
-                            <p ng-show="checkUpTitle91" class="montserrat animated fadeIn flow-text" >(
+                            <p ng-show="checkUpTitle80" class="montserrat animated fadeIn flow-text" >(
                                   10 min )</p>
-                            <p ng-show="sessionTitle91" class="montserrat animated fadeIn flow-text">(
+                            <p ng-show="sessionTitle80" class="montserrat animated fadeIn flow-text">(
                                   50 min )</p>
-                            <p ng-show="discoveryTitle91" class="montserrat animated fadeIn flow-text" >(
+                            <p ng-show="discoveryTitle80" class="montserrat animated fadeIn flow-text" >(
                                   30 min )</p>
 
 
@@ -67,7 +67,7 @@
                       <div class="col s4">
 
                             <div ng-show="checkUpAvailable8 && !checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','green')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('checkup','1','green')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
                                   <i class="material-icons green-text text-lighten-2 flow-text"
@@ -76,7 +76,7 @@
                             </div>
 
                             <div ng-show="checkUpAvailable8 && checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','green')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('checkup','1','green')" class="animated fadeIn"
                                   class="animated fadeIn" style="border:;">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
@@ -85,7 +85,7 @@
 
                             </div>
                             <div ng-show="checkUpFull8 && !checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','red')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('checkup','1','red')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
                                   <i class="material-icons red-text text-lighten-2 flow-text"
@@ -94,7 +94,7 @@
                             </div>
 
                             <div ng-show="checkUpFull8 && checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','red')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('checkup','1','red')" class="animated fadeIn"
                                   class="animated fadeIn" style="border:;">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
@@ -103,7 +103,7 @@
 
                             </div>
                             <div ng-show="checkUpAlmostFull8 && !checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','yellow')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('checkup','1','yellow')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
                                   <i class="material-icons yellow-text text-lighten-2"
@@ -112,7 +112,7 @@
                             </div>
 
                             <div ng-show="checkUpAlmostFull8 && checkUp9Selected2"
-                                  ng-click="selectAppointmentType('checkup','2','yellow')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('checkup','1','yellow')" class="animated fadeIn"
                                   class="animated fadeIn" style="border:;">
 
                                   <!--<span class = " red-text">Checkup Available</span>-->
@@ -125,7 +125,7 @@
                       <div class="col s4">
 
                             <div ng-show="discoveryAvailable8 && !discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','green')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('discovery','1','green')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons green-text text-lighten-2 flow-text"
@@ -134,7 +134,7 @@
                             </div>
 
                             <div ng-show="discoveryAvailable8 && discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','green')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('discovery','1','green')" class="animated fadeIn"
                                   style="border:;">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
@@ -144,7 +144,7 @@
                             </div>
 
                             <div ng-show="discoveryAlmostFull8 && !discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','yellow')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('discovery','1','yellow')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons yellow-text text-lighten-2 flow-text"
@@ -153,7 +153,7 @@
                             </div>
 
                             <div ng-show="discoveryAlmostFull8 && discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','yellow')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('discovery','1','yellow')" class="animated fadeIn"
                                   style="border:;">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
@@ -163,7 +163,7 @@
                             </div>
 
                             <div ng-show="discoveryFull8 && !discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','yellow')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('discovery','1','yellow')" class="animated fadeIn">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons red-text text-lighten-2 flow-text"
@@ -172,7 +172,7 @@
                             </div>
 
                             <div ng-show="discoveryFull8 && discovery9Selected2"
-                                  ng-click="selectAppointmentType('discovery','2','yellow')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('discovery','1','yellow')" class="animated fadeIn"
                                   style="border:;">
 
                                   <!--<span class = " red-text">Discovery Available</span>-->
@@ -185,14 +185,14 @@
                       <div class="col s4">
 
                             <div ng-show="sessionAvailable8 && !session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','green')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('session','1','green')" class="animated fadeIn">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons green-text text-lighten-2 flow-text"
                                         style=" padding-top:10px;">hearing</i>
 
                             </div>
                             <div ng-show="sessionAvailable8 && session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','green')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('session','1','green')" class="animated fadeIn"
                                   style="border:;">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons green-text text-lighten-2 flow-text"
@@ -201,14 +201,14 @@
                             </div>
 
                             <div ng-show="sessionAlmostFull8 && !session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','yellow')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('session','1','yellow')" class="animated fadeIn">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons yellow-text text-lighten-2 flow-text"
                                         style=" padding-top:10px;">hearing</i>
 
                             </div>
                             <div ng-show="sessionAlmostFull8 && session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','yellow')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('session','1','yellow')" class="animated fadeIn"
                                   style="border:;">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons yellow-text text-lighten-2 flow-text"
@@ -216,14 +216,14 @@
 
                             </div>
                             <div ng-show="sessionFull8 && !session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','red')" class="animated fadeIn">
+                                  ng-click="selectAppointmentType('session','1','red')" class="animated fadeIn">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons red-text text-lighten-2 flow-text"
                                         style=" padding-top:10px;">hearing</i>
 
                             </div>
                             <div ng-show="sessionFull8 && session9Selected2"
-                                  ng-click="selectAppointmentType('session','2','red')" class="animated fadeIn"
+                                  ng-click="selectAppointmentType('session','1','red')" class="animated fadeIn"
                                   style="border:;">
                                   <!--<span class = " red-text">Discovery Available</span>-->
                                   <i class="material-icons red-text text-lighten-2 flow-text"
@@ -238,7 +238,7 @@
                       <div class="col s12 center-align">
 
 
-                            <button ng-click="openBookingPage('nine')" type="submit"
+                            <button ng-click="openBookingPage('eight')" type="submit"
                                   class="waves-effect waves-light blue-grey btn"
                                   style="border:2px solid black;">Open</button>
 
@@ -287,7 +287,7 @@
 
                       <div class="col s12">
 
-                            <span class="montserrat flow-text" >8:00am</span>
+                            <span class="montserrat flow-text" >9:00am</span>
 
                       </div>
                       <div class="col s12">
@@ -297,7 +297,7 @@
                       </div>
                       <div class="col s12">
 
-                            <span class="montserrat flow-text" >8:50am</span>
+                            <span class="montserrat flow-text" >9:50am</span>
 
                       </div>
 
@@ -524,7 +524,7 @@
 
                       <div class="col s12">
 
-                            <span class="montserrat flow-text" >8:00am</span>
+                            <span class="montserrat flow-text" >10:00am</span>
 
                       </div>
                       <div class="col s12">
@@ -534,7 +534,7 @@
                       </div>
                       <div class="col s12">
 
-                            <span class="montserrat flow-text" >8:50am</span>
+                            <span class="montserrat flow-text" >10:50am</span>
 
                       </div>
 
@@ -712,7 +712,7 @@
                       <div class="col s12 center-align">
 
 
-                            <button ng-click="openBookingPage('nine')" type="submit"
+                            <button ng-click="openModal('small')" type="submit"
                                   class="waves-effect waves-light blue-grey btn"
                                   style="border:2px solid black;">Open</button>
 
@@ -765,7 +765,7 @@
 
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:00am</span>
+                          <span class="montserrat flow-text" >11:00am</span>
 
                     </div>
                     <div class="col s12">
@@ -775,7 +775,7 @@
                     </div>
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:50am</span>
+                          <span class="montserrat flow-text" >11:50am</span>
 
                     </div>
 
@@ -953,9 +953,9 @@
                     <div class="col s12 center-align">
 
 
-                          <button ng-click="openBookingPage('nine')" type="submit"
-                                class="waves-effect waves-light blue-grey btn"
-                                style="border:2px solid black;">Open</button>
+                        <button ng-click="openModal('small')" type="submit"
+                        class="waves-effect waves-light blue-grey btn"
+                        style="border:2px solid black;">Open</button>
 
 
                     </div>
@@ -1002,7 +1002,7 @@
 
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:00am</span>
+                          <span class="montserrat flow-text" >12:00pm</span>
 
                     </div>
                     <div class="col s12">
@@ -1012,7 +1012,7 @@
                     </div>
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:50am</span>
+                          <span class="montserrat flow-text" >12:50pm</span>
 
                     </div>
 
@@ -1189,11 +1189,9 @@
 
                     <div class="col s12 center-align">
 
-
-                          <button ng-click="openBookingPage('nine')" type="submit"
-                                class="waves-effect waves-light blue-grey btn"
-                                style="border:2px solid black;">Open</button>
-
+                        <button ng-click="openModal('small')" type="submit"
+                        class="waves-effect waves-light blue-grey btn"
+                        style="border:2px solid black;">Open</button>
 
                     </div>
 
@@ -1239,7 +1237,7 @@
 
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:00am</span>
+                          <span class="montserrat flow-text" >1:00pm</span>
 
                     </div>
                     <div class="col s12">
@@ -1249,7 +1247,7 @@
                     </div>
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:50am</span>
+                          <span class="montserrat flow-text" >1:50pm</span>
 
                     </div>
 
@@ -1427,9 +1425,9 @@
                     <div class="col s12 center-align">
 
 
-                          <button ng-click="openBookingPage('nine')" type="submit"
-                                class="waves-effect waves-light blue-grey btn"
-                                style="border:2px solid black;">Open</button>
+                        <button ng-click="openModal('small')" type="submit"
+                        class="waves-effect waves-light blue-grey btn"
+                        style="border:2px solid black;">Open</button>
 
 
                     </div>
@@ -1480,7 +1478,7 @@
 
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:00am</span>
+                          <span class="montserrat flow-text" >2:00pm</span>
 
                     </div>
                     <div class="col s12">
@@ -1490,7 +1488,7 @@
                     </div>
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:50am</span>
+                          <span class="montserrat flow-text" >2:50pm</span>
 
                     </div>
 
@@ -1667,11 +1665,9 @@
 
                     <div class="col s12 center-align">
 
-
-                          <button ng-click="openBookingPage('nine')" type="submit"
-                                class="waves-effect waves-light blue-grey btn"
-                                style="border:2px solid black;">Open</button>
-
+                        <button ng-click="openModal('small')" type="submit"
+                        class="waves-effect waves-light blue-grey btn"
+                        style="border:2px solid black;">Open</button>
 
                     </div>
 
@@ -1717,7 +1713,7 @@
 
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:00am</span>
+                          <span class="montserrat flow-text" >3:00pm</span>
 
                     </div>
                     <div class="col s12">
@@ -1727,7 +1723,7 @@
                     </div>
                     <div class="col s12">
 
-                          <span class="montserrat flow-text" >8:50am</span>
+                          <span class="montserrat flow-text" >3:50pm</span>
 
                     </div>
 
@@ -1905,9 +1901,9 @@
                     <div class="col s12 center-align">
 
 
-                          <button ng-click="openBookingPage('nine')" type="submit"
-                                class="waves-effect waves-light blue-grey btn"
-                                style="border:2px solid black;">Open</button>
+                        <button ng-click="openModal('small')" type="submit"
+                        class="waves-effect waves-light blue-grey btn"
+                        style="border:2px solid black;">Open</button>
 
 
                     </div>
