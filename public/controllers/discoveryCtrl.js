@@ -177,7 +177,7 @@
 
                     }
                     if ($scope.currentHour == "nine") {
-                        $location.path("/datepage/discovery");
+                        //$location.path("/datepage/discovery");
 
 
                         if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
