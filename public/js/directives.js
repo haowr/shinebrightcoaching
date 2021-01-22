@@ -69,7 +69,7 @@
 					test: "",
 					time: ""
 				}
-				this.submitBooking2 = function () {
+				this.submitBooking2 =  function () {
 					console.log(this.discoveryData2)
 					console.log(scope)
 				}

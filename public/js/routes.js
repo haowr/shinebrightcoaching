@@ -157,10 +157,31 @@
                 controllerAs: 'schedule'
 
             })
-            .when('/scheduledjobpage', {
+            .when('/schedule/:date', {
                 templateUrl: '../views/pages/scheduledjobpage.html',
-                name: "QLH | PROFILE",
-                controller: "profileCtrl",
+                name: "QLH | DATE INFO",
+                controller: "dateCtrl",
+                controllerAs: 'profile'
+
+            })
+            .when('/schedule/:date/checkup', {
+                templateUrl: '../views/pages/checkup.html',
+                name: "QLH | BOOKINGS",
+                controller: "checkUpCtrl",
+                controllerAs: 'profile'
+
+            })
+            .when('/schedule/:date/session', {
+                templateUrl: '../views/pages/session.html',
+                name: "QLH | BOOKINGS",
+                controller: "sessionCtrl",
+                controllerAs: 'profile'
+
+            })            
+            .when('/schedule/:date/discovery', {
+                templateUrl: '../views/pages/discovery.html',
+                name: "QLH | BOOKINGS",
+                controller: "discoveryCtrl",
                 controllerAs: 'profile'
 
             })
