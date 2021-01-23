@@ -4510,6 +4510,10 @@
                         $scope.discoveryTitle80     = false;
                         $scope.checkUpTitle80       = true;
                         $scope.audio.play()
+                        console.log(
+
+                        "sjs"
+                        )
 
                     }
 
