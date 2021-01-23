@@ -11,8 +11,56 @@
     app.controller('checkUpCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope,$window) {
 
 
+        $scope.bookCheckUp8 = true
+        $scope.bookCheckUp9 = true;
+        $scope.bookCheckUp18 = true;
+        $scope.bookCheckUp19 = true;
+        $scope.bookCheckUp28 = true;
+        $scope.bookCheckUp29 = true;
+        $scope.bookCheckUp39 = true;
+        $scope.bookCheckUp49 = true;
+        $scope.bookCheckUp59 = true;
+        $scope.bookCheckUp10 = true;
+        $scope.bookCheckUp110 = true;
+        $scope.bookCheckUp210 = true;
+        $scope.bookCheckUp310 = true;
+        $scope.bookCheckUp410 = true;
+        $scope.bookCheckUp510 = true;
+        $scope.bookCheckUp11 = true;
+        $scope.bookCheckUp111 = true;
+        $scope.bookCheckUp211 = true;
+        $scope.bookCheckUp311 = true;
+        $scope.bookCheckUp411 = true;
+        $scope.bookCheckUp511 = true;
+        $scope.bookCheckUp12 = true;
+        $scope.bookCheckUp112 = true;
+        $scope.bookCheckUp212 = true;
+        $scope.bookCheckUp312 = true;
+        $scope.bookCheckUp412 = true;
+        $scope.bookCheckUp512 = true;
+        $scope.bookCheckUp1 = true;
+        $scope.bookCheckUp11 = true;
+        $scope.bookCheckUp21 = true;
+        $scope.bookCheckUp31 = true;
+        $scope.bookCheckUp41 = true;
+        $scope.bookCheckUp51 = true;
+        $scope.bookCheckUp2 = true;
+        $scope.bookCheckUp102 = true;
+        $scope.bookCheckUp22 = true;
+        $scope.bookCheckUp32 = true;
+        $scope.bookCheckUp42 = true;
+        $scope.bookCheckUp52 = true;
+        $scope.bookCheckUp3 = true;
+        $scope.bookCheckUp13 = true;
+        $scope.bookCheckUp23 = true;
+        $scope.bookCheckUp33 = true;
+        $scope.bookCheckUp43 = true;
+        $scope.bookCheckUp53 = true;
+        $scope.bookCheckUp38 = true;
+        $scope.bookCheckUp48 = true;
+        $scope.bookCheckUp58 = true;
 
-
+        
             $scope.currentHour = $window.localStorage.getItem('currentHour')
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
@@ -186,7 +234,6 @@
 
                     }
                     if ($scope.hour == "nine") {
-                        $location.path("/datepage/discovery");
 
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 2) {
@@ -272,7 +319,6 @@
                     }
                     if ($scope.currentHour == "nine") {
 
-                        $location.path("/datepage/checkup");
 
                         
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
@@ -411,7 +457,6 @@
 
                     if ($scope.currentHour == "eight") {
 
-                        $location.path("/datepage/session/eight");
 
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
@@ -535,8 +580,6 @@
                     }
 
                     if ($scope.currentHour == "nine") {
-
-                        $location.path("/datepage/session/nine");
 
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
