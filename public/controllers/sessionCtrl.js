@@ -11,6 +11,7 @@
     app.controller('sessionCtrl', function ($scope, User, $window) {
 
             $scope.currentHour = $window.localStorage.getItem('currentHour')
+            $scope.currentDate = $window.localStorage.getItem('currentDate')
 
             User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
