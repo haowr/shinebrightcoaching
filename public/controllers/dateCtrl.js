@@ -4446,6 +4446,22 @@
         $scope.sessionTitle36       = false;
         $scope.sessionTitle37       = false;
 
+
+        $scope.openModal = function (size) {
+
+            if(size == 'small'){
+
+                $('#modal1').modal('open');
+
+
+            }else{
+
+                $('#modal1large').modal('open');
+
+            }
+            
+        }
+
         $scope.openBookingPage = function (slot, appointmentype) {
 
             $scope.dateCondensed = $window.localStorage.getItem('dateCondensed')
